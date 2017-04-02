@@ -1,0 +1,15 @@
+# Ignore user specific Bundler stuff
+.bundle/
+
+# Ignore user gems at vendor/bundle or vendor/cache
+/vendor
+
+# Ignore built Jekyll site
+_site/
+
+# Ignore Jekyll and Sass cache stuff
+.jekyll-metadata
+.sass-cache/
+
+# Ignore macOS junk
+.DS_Store
