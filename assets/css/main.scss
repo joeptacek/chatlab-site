@@ -1,2 +1,99 @@
 ---
 ---
+
+/* Variables */
+
+$dark-white: #f2f2f3;
+$light-white: #f8f8f9;
+$red: #b20838;
+$light-red: #c95273;
+
+/* Resets */
+
+h1, h2, h3, p, ul {
+  margin: 0;
+}
+
+/* Main styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  padding: 2rem;
+}
+
+body {
+  background-color: $dark-white;
+  max-width: 50rem;
+  margin: 0 auto;
+  font-family: 'Gentium Basic', serif;
+}
+
+#logo {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  img, span {
+    margin-bottom: 2rem;
+  }
+  span {
+    font-size: 2.5rem;
+    color: grey;
+  }
+}
+
+#nav-site {
+  ul {
+    background-color: $light-white;
+    display: flex;
+    flex-flow: column;
+    padding: 0.5rem;
+    border: solid lightgrey 1px;
+    border-radius: 4px;
+    li {
+      list-style-type: none;
+      a {
+        display: block;
+        padding: 0.5rem;
+        text-align: center;
+        color: $light-red;
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 32rem) {
+  #logo {
+    flex-flow: row;
+    margin-bottom: 2rem;
+    img, span {
+      margin-bottom: 0;
+    }
+    img {
+      padding-right: 2.5rem;
+      border-right: solid 2px lightgrey;
+    }
+    span {
+      padding-left: 2.5rem;
+    }
+  }
+
+  #nav-site {
+    ul {
+      flex-flow: row wrap;
+      padding: 1rem 0 0 1.5rem;
+      li {
+        margin: 0 1.5rem 1rem 0;
+        a {
+          padding: 0;
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+}
