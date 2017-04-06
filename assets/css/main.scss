@@ -3,10 +3,10 @@
 
 /* Variables */
 
-$dark-white: #f2f2f3;
-$light-white: #f8f8f9;
-$red: #b20838;
-$light-red: #c95273;
+$background: #f2f2f3; /* background */
+$well: #ececec; /* well */
+$links: #c95273; /* links */
+$hover: #b20838; /* links hover */
 
 /* Resets */
 
@@ -20,11 +20,11 @@ h1, h2, h3, p, ul {
 }
 
 html {
-  padding: 2rem;
+  padding: 4rem;
 }
 
 body {
-  background-color: $dark-white;
+  background-color: $background;
   max-width: 50rem;
   margin: 0 auto;
   font-family: 'Gentium Basic', serif;
@@ -45,7 +45,7 @@ body {
 
 #nav-site {
   ul {
-    background-color: $light-white;
+    background-color: $well;
     display: flex;
     flex-flow: column;
     padding: 0.5rem;
@@ -57,7 +57,7 @@ body {
         display: block;
         padding: 0.5rem;
         text-align: center;
-        color: $light-red;
+        color: $links;
         text-decoration: none;
         font-size: 1.2rem;
       }
@@ -65,7 +65,19 @@ body {
   }
 }
 
-@media screen and (min-width: 32rem) {
+main {
+  display: flex;
+  flex-flow: column;
+}
+
+#nav-page {
+}
+
+@media screen and (min-width: 40rem) {
+  html {
+    padding: 4rem;
+  }
+
   #logo {
     flex-flow: row;
     margin-bottom: 2rem;
@@ -90,10 +102,18 @@ body {
         a {
           padding: 0;
           &:hover {
-            color: $red;
+            color: $hover;
           }
         }
       }
     }
+  }
+
+  main {
+    flex-flow: row;
+  }
+
+  #nav-page {
+    flex: 0 0 16rem;
   }
 }
