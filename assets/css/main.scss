@@ -4,14 +4,29 @@
 /* Variables */
 
 $background: #f2f2f3; /* background */
-$well: #ececec; /* well */
-$links: #c95273; /* links */
-$hover: #b20838; /* links hover */
+$well: #ececec; /* darker well */
+$card: #f7f7f7; /* lighter card */
+$site-links: #c95273; /* site links */
+$sl-hover: #b20838; /* site links hover */
+$page-links: #325a86;
+$pl-hover: #194577;
 
 /* Resets */
 
 h1, h2, h3, p, ul {
   margin: 0;
+}
+
+nav {
+  ul {
+    padding-left: 0;
+    li {
+      list-style-type: none;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 /* Main styles */
@@ -25,16 +40,21 @@ html {
 
 body {
   background-color: $background;
-  max-width: 50rem;
+  max-width: 60rem;
   margin: 0 auto;
   font-family: 'Gentium Basic', serif;
+}
+
+header {
+  margin-bottom: 4rem;
 }
 
 #logo {
   display: flex;
   flex-flow: column;
   align-items: center;
-  img, span {
+  margin-bottom: 2rem;
+  img {
     margin-bottom: 2rem;
   }
   span {
@@ -48,17 +68,14 @@ body {
     background-color: $well;
     display: flex;
     flex-flow: column;
-    padding: 0.5rem;
+    align-items: center;
+    padding: 1rem;
     border: solid lightgrey 1px;
     border-radius: 4px;
     li {
-      list-style-type: none;
+      padding: 0.75rem;
       a {
-        display: block;
-        padding: 0.5rem;
-        text-align: center;
-        color: $links;
-        text-decoration: none;
+        color: $site-links;
         font-size: 1.2rem;
       }
     }
@@ -70,7 +87,34 @@ main {
   flex-flow: column;
 }
 
+section {
+  background-color: $card;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
 #nav-page {
+  background-color: $card;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  h1 {
+    padding: 0.5rem;
+  }
+  ul {
+    li {
+      padding: 0.5rem;
+      a {
+        color: $page-links;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 40rem) {
@@ -81,7 +125,7 @@ main {
   #logo {
     flex-flow: row;
     margin-bottom: 2rem;
-    img, span {
+    img {
       margin-bottom: 0;
     }
     img {
@@ -96,13 +140,14 @@ main {
   #nav-site {
     ul {
       flex-flow: row wrap;
-      padding: 1rem 0 0 1.5rem;
+      padding: 1.5rem 0 0 1.75rem;
       li {
-        margin: 0 1.5rem 1rem 0;
+        padding: 0;
+        margin: 0 1.75rem 1.5rem 0;
         a {
           padding: 0;
           &:hover {
-            color: $hover;
+            color: $sl-hover;
           }
         }
       }
@@ -111,9 +156,27 @@ main {
 
   main {
     flex-flow: row;
+    align-items: flex-start;
   }
 
   #nav-page {
     flex: 0 0 16rem;
+    text-align: left;
+    margin-bottom: 0;
+    margin-right: 2rem;
+    ul {
+      li {
+        padding: 0.5rem;
+        a {
+          color: $page-links;
+        }
+      }
+    }
+  }
+
+  section {
+    h2 {
+      text-align: left;
+    }
   }
 }
