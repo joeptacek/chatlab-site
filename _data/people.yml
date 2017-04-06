@@ -1,0 +1,23 @@
+#FIGURE OUT RELATIVE LINKS FOR ASSETS
+- section_title: Director
+  people_list:
+  - name: Anjan Chatterjee
+    suffix: M.D., F.A.A.N.
+    photo: assets/img/people/anjan-bw.jpg
+    position: Professor of Neurology
+    bio: My area of interest is in Cognitive Neuroscience and Behavioral and Cognitive Neurology. My research is directed at understanding the architecture and neural bases for human cognition. The structure of cognition is at present (and perhaps in principle) not reduced easily to cellular or molecular explanations. The study of how the brain mediates cognition, while constrained by micro-neural facts, is more directly investigated at higher levels of organization by studying cognition in humans. We use experimental and neuroimaging techniques in normal subjects and examine the neuro-psychological effects of brain damage. A clear understanding of cognitive systems and their breakdown is essential in educating patients and families and critical in designing rational treatment strategies.
+    email: anjan@mail.med.upenn.edu
+- section_title: Staff
+  people_list:
+  - name: Eileen Cardillo
+    suffix: D. Phil.
+    photo: assets/img/people/eileen.jpg
+    position: Patient Coordinator
+    bio: As the coordinator of the Patient Database at the Center for Cognitive Neuroscience, I act as a liaison between patients with brain injury, their neurologists and families, and the scientists and clinicians studying the effects of brain injury on cognition. My own research concerns embodied approaches to language and their ability to account for normal comprehension and as well as the linguistic impairments following brain injury. Using a combination of behavioral and neuroimaging tasks with healthy adults and patients, I specifically focus on the neural basis of metaphoric and spatial language. I am also interested in cognitive and neural changes associated with different types of meditation practice.
+    email: eica@mail.med.upenn.edu
+  - name: Joe Ptacek
+    suffix: ""
+    photo: assets/img/people/joe.jpg
+    position: Research Specialist
+    bio: During my undergraduate training in neuroscience and linguistics at Macalester College, I contributed to research activities at the Reasoning and Language Investigations (RALI) Lab, focusing on questions related to discourse processing and pragmatics. Prior to joining Chat Lab, I spent several years at Minnesota Epilepsy Group, where I carried out cognitive assessment and assisted with clinical research within a pediatric population. Beyond my interests in cognitive neuroscience, I am curious to learn more about approaches in human-centered design that strive to make technology more usable and enjoyable. In my free time, I like building and modifying electronic musical instruments.
+    email: jptacek@mail.med.upenn.edu

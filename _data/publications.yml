@@ -1,0 +1,13 @@
+#FIGURE OUT RELATIVE LINKS FOR ASSETS
+#ESCAPING COLONS ETC
+- section_title: Language & Space
+  publication_list:
+  - title: 'Narratives of focal brain injured individuals: A macro-level analysis'
+    year: 2017
+    authors: Karaduman, A., Göksun, T., & Chatterjee, A.
+    journal: Neuropsychologia
+    volume: 99
+    issue: ""
+    pages: 314-325
+    doi: 10.1016/j.neuropsychologia.2017.03.027
+    pdf: assets/pdf/narrativesFocalBrain2017.pdf

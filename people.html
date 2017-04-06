@@ -1,0 +1,15 @@
+---
+layout: default
+title: Home
+---
+{% for section in site.data.people %}
+  <section>
+    <h2>{{ section.section_title }}</h2>
+    {% for person in section.people_list %}
+      <h3>{{ person.name }}</h3>
+      <p>{{ person.suffix }}</p>
+      <p>{{ person.position }}</p>
+      <p>{{ person.bio }}</p>
+    {% endfor %}
+  </section>
+{% endfor %}

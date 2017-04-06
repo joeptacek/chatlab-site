@@ -1,0 +1,11 @@
+---
+layout: default
+title: Home
+---
+{% for section in site.data.publications %}
+  <section>
+    <h2>{{ section.section_title }}</h2>
+    {% for publication in section.publication_list %}
+    {% endfor %}
+  </section>
+{% endfor %}

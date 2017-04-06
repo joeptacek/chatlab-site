@@ -8,7 +8,7 @@ $well: #ececec; /* darker well */
 $card: #f7f7f7; /* lighter card */
 $site-links: #c95273; /* site links */
 $sl-hover: #b20838; /* site links hover */
-$page-links: #325a86;
+$page-links: #6583A4;
 $pl-hover: #194577;
 
 /* Resets */
@@ -35,7 +35,7 @@ nav {
 }
 
 html {
-  padding: 4rem;
+  padding: 2rem;
 }
 
 body {
@@ -46,7 +46,7 @@ body {
 }
 
 header {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 #logo {
@@ -87,20 +87,9 @@ main {
   flex-flow: column;
 }
 
-section {
-  background-color: $card;
-  padding: 1rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  margin-bottom: 2rem;
-  h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-}
-
 #nav-page {
   background-color: $card;
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
   margin-bottom: 2rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -114,6 +103,17 @@ section {
         color: $page-links;
       }
     }
+  }
+}
+
+section {
+  background-color: $card;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
   }
 }
 
@@ -166,9 +166,10 @@ section {
     margin-right: 2rem;
     ul {
       li {
-        padding: 0.5rem;
         a {
-          color: $page-links;
+          &:hover {
+            color: $pl-hover;
+          }
         }
       }
     }
