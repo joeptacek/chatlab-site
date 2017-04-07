@@ -34,6 +34,10 @@ nav {
   box-sizing: border-box;
 }
 
+a {
+  color: $page-links;
+}
+
 html {
   padding: 2rem;
 }
@@ -99,9 +103,6 @@ main {
   ul {
     li {
       padding: 0.5rem;
-      a {
-        color: $page-links;
-      }
     }
   }
 }
@@ -117,9 +118,29 @@ section {
   }
 }
 
+/* Page-specific: Research */
+
+.citation {
+  /* Hanging indent */
+  padding-left: 2rem;
+  text-indent: -2rem;
+  a {
+    text-decoration: none;
+  }
+}
+
+cite {
+  font-style: normal;
+}
+
+
 @media screen and (min-width: 40rem) {
   html {
     padding: 4rem;
+  }
+
+  a:hover {
+    color: $pl-hover;
   }
 
   #logo {
@@ -164,15 +185,6 @@ section {
     text-align: left;
     margin-bottom: 0;
     margin-right: 2rem;
-    ul {
-      li {
-        a {
-          &:hover {
-            color: $pl-hover;
-          }
-        }
-      }
-    }
   }
 
   section {

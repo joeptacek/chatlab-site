@@ -4,19 +4,7 @@
   <body>
     {% include header.html %}
     <main>
-      <nav id="nav-page">
-        <h1>Page Title</h1>
-        <ul>
-          <li><a href="#">Section A</a></li>
-          <li><a href="#">Section B</a></li>
-          <li><a href="#">Section C</a></li>
-          <li><a href="#">Section D</a></li>
-          <li><a href="#">Section E</a></li>
-        </ul>
-      </nav>
-      <div> <!-- div necessary to make flex row with nav -->
-        {{ content }}
-      </div>
+      {{ content }}
     </main>
     {% include footer.html %}
   </body>
