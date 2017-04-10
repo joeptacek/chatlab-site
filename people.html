@@ -1,25 +1,6 @@
 ---
 layout: default
 title: People
+data_filename: people
+include_filename: items/people.html
 ---
-<nav id="nav-page">
-  <h1>{{ page.title }}</h1>
-  <ul>
-    {% for section in site.data.people %}
-      <li><a href="{{ "#" | append: section.section_id }}">{{ section.section_title }}</a></li>
-    {% endfor %}
-  </ul>
-</nav>
-<div> <!-- div necessary to make flex row with nav -->
-  {% for section in site.data.people %}
-    <section id="{{ section.section_id }}">
-      <h2>{{ section.section_title }}</h2>
-      {% for item in section.item_list %}
-        <h3>{{ item.name }}</h3>
-        <p>{{ item.suffix }}</p>
-        <p>{{ item.position }}</p>
-        <p>{{ item.bio }}</p>
-      {% endfor %}
-    </section>
-  {% endfor %}
-</div>

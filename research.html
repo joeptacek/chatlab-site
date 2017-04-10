@@ -1,22 +1,6 @@
 ---
 layout: default
 title: Research
+data_filename: research
+include_filename: items/research.html
 ---
-<nav id="nav-page">
-  <h1>{{ page.title }}</h1>
-  <ul>
-    {% for section in site.data.publications %}
-      <li><a href="{{ "#" | append: section.section_id }}">{{ section.section_title }}</a></li>
-    {% endfor %}
-  </ul>
-</nav>
-<div> <!-- div necessary to make flex row with nav -->
-  {% for section in site.data.publications %}
-    <section id="{{ section.section_id }}">
-      <h2>{{ section.section_title }}</h2>
-      {% for publication in section.item_list %}
-        <p class="citation">{{ publication.authors }} ({{ publication.year }}). <cite>{{ publication.title }}</cite>. <i>{{ publication.journal }}{% if publication.advance %}</i>. Advance online publication{% else %}, {{ publication.volume }}</i>{% if publication.issue %}({{ publication.issue }}){% endif %}, {{ publication.pages }}{% endif %}. doi: {{ publication.doi }} <a href="{{ publication.pdf }}">[PDF]</a>
-      {% endfor %}
-    </section>
-  {% endfor %}
-</div>

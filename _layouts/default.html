@@ -4,8 +4,24 @@
   <body>
     {% include header.html %}
     <main>
-      
-      {{ content }}
+      <nav id="nav-page">
+        <h1>{{ page.title }}</h1>
+        <ul>
+          {% for section in site.data[page.data_filename] %}
+            <li><a href="{{ "#" | append: section.section_id }}">{{ section.section_title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <div> <!-- div necessary to make flex row with nav -->
+        {% for section in site.data[page.data_filename] %}
+          <section id="{{ section.section_id }}">
+            <h2>{{ section.section_title }}</h2>
+            {% for item in section.item_list %}
+              {% include {{ page.include_filename }} pass=item %}
+            {% endfor %}
+          </section>
+        {% endfor %}
+      </div>
     </main>
     {% include footer.html %}
   </body>
