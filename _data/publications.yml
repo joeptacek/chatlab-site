@@ -7,7 +7,7 @@
 # Volume, issue, and pages should be 'null' if advance is 'false'
 - section_title: Language & Space
   section_id: language
-  publication_list:
+  item_list:
   - title: "Narratives of focal brain injured individuals: A macro-level analysis"
     year: 2017
     authors: Karaduman, A., Göksun, T., & Chatterjee, A.
