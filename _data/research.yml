@@ -7,6 +7,7 @@
 # Volume, issue, and pages should be 'null' if advance is 'false'
 - section_title: Language & Space
   section_id: language
+  section_description: One of the things we research is Language & Space.
   item_list:
   - title: "Narratives of focal brain injured individuals: A macro-level analysis"
     year: 2017

@@ -1,6 +1,7 @@
 #FIGURE OUT RELATIVE LINKS FOR ASSETS
 - section_title: Director
   section_id: director
+  section_description: null
   item_list:
   - name: Anjan Chatterjee
     suffix: M.D., F.A.A.N.
@@ -10,6 +11,7 @@
     email: anjan@mail.med.upenn.edu
 - section_title: Staff
   section_id: staff
+  section_description: null
   item_list:
   - name: Eileen Cardillo
     suffix: D. Phil.
