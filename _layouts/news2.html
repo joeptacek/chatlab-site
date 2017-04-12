@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <main>
+      <nav id="nav-page">
+        <h1>News</h1>
+      </nav>
+      <div> <!-- div necessary to make flex row with nav -->
+        <section>
+          <nav id="nav-news">
+            <ul>
+              <li><a href="/news/all.html">All</a></li>
+              <li><a href="/news/print.html">Print</a></li>
+              <li><a href="/news/video.html">Video</a></li>
+              <li><a href="/news/audio.html">Audio</a></li>
+            </ul>
+          </nav>
+          {% for item in site.data.news %}
+            {% if page.data_type contains item.type %}
+              {% include {{ page.include_filename }} pass=item %}
+            {% endif %}
+          {% endfor %}
+        </section>
+      </div>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

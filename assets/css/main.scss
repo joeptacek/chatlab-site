@@ -114,7 +114,17 @@ section {
   margin-bottom: 2rem;
   h2 {
     text-align: center;
-    margin-bottom: 1rem;
+  }
+}
+
+#nav-news {
+  ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    li {
+      margin: 0.5rem;
+    }
   }
 }
 
@@ -188,12 +198,23 @@ cite {
   }
 
   main div {
-    width: 42rem;
+    width: 42rem; /* weird, fix */
   }
 
   section {
     h2 {
       text-align: left;
+    }
+  }
+
+  #nav-news {
+    ul {
+      display: flex;
+      flex-flow: row;
+      justify-content: flex-start;
+      li {
+        margin: 0.5rem 0.5rem 0.5rem 0;
+      }
     }
   }
 }
