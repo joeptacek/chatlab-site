@@ -1,3 +1,12 @@
+## TODO
+#
+# - Check out YAML Lint
+#
+# - Fix mappings where value contains colon: wrap problematic values in quotes.
+#   Just use quotes for all mapping values, even when unnecessary?
+#   work_title: Aptness and beauty in metaphor << Fine without quotes
+#   work_title: "Narratives of focal brain injured individuals: A macro-level analysis" << Needs quotes to avoid problems
+#
 ## EXAMPLES
 #
 ## SECTION HEAD
