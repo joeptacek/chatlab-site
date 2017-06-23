@@ -4,7 +4,7 @@
 # ...journal title is title-case, not abbreviated, preserving punctuation style
 # Use quotes on titles containing colons
 # Advance should be either true or false (i.e., not a string)
-# Volume, issue, and pages should be 'null' if advance is 'false'
+# Volume, issue, and pages should be 'null' if advance is 'true'
 - section_title: Language & Space
   section_id: language
   section_description: One of the things we research is Language & Space.

@@ -1,11 +1,60 @@
 ## TODO
 #
+# - Restructure advance online publication case? Perhaps include journal_vol,
+#   journal_issue, and journal_pages under journal_edition_data. If
+#   journal_advance_tf is true, just set journal_edition_data to null.
+#
+# - Clarify ambiguous vol / issue / page numbers and DOIs
+#
+# - For edited work, instead of indicating page range with "pp."" and
+#   paretheses, maybe just use ordinary journal-style hypen format / rely on
+#   template to do proper formatting.
+#
+# - Flesh out APA styleguide and YAML styleguide
+#
 # - Check out YAML Lint
+#
+# - Dealing with titles that end with a question mark (e.g., do ?. or just .)
 #
 # - Fix mappings where value contains colon: wrap problematic values in quotes.
 #   Just use quotes for all mapping values, even when unnecessary?
 #   work_title: Aptness and beauty in metaphor << Fine without quotes
 #   work_title: "Narratives of focal brain injured individuals: A macro-level analysis" << Needs quotes to avoid problems
+#
+## APA STYLEGUIDE
+#
+# - Titles appear in sentence case (only first word / proper nouns capitalized).
+#   First word of subtitle after colon is capatalized.
+#
+# - Journal author list is separated by commas. Last name then first initial
+#    with period. Oxford comma after penultimate name, ampersand symbol instead
+#    of "and."
+#
+# - Journal title should be title case (major words capitalized). Do not
+#   abbreviate journals (exceptions, so far: "PLOS ONE" and ""). Preserve
+#   punctuation style.
+#
+# - Editors of edited work and authors of works under review should be indicated
+#   as first initial, middle initial, last name.
+#
+# - Maybe: Exclude period from end of title, include question mark
+#
+## YAML STYLEGUIDE / LOGICGUIDE
+#
+# - If from_journal_tf is false, journal_data should be null (same for
+#   from_edited_work_tf / edited_work_data, review_tf / review_data).
+#
+# - For work in a journal, journal_vol and journal_pages are necessary, but
+#   journal_issue is optional / case dependant.
+#
+# - Edited work types so far (use lowercase): book, conference.
+#
+# - Reviewed work types so far (use lowercase): book.
+#
+# - Probably: A work is either from a journal or from an edited work.
+#
+# - Probably: If a journal_advance_tf is true, journal_vol, journal_issue, and
+#   journal_pages should all be null.
 #
 ## EXAMPLES
 #
@@ -20,7 +69,7 @@
 #
 #   - work_authors: Karaduman, A., Göksun, T., & Chatterjee, A.
 #     work_year: 2017
-#     work_title: Narratives of focal brain injured individuals: A macro-level analysis
+#     work_title: "Narratives of focal brain injured individuals: A macro-level analysis"
 #     from_journal_tf: true
 #     journal_data:
 #       journal_title: Neuropsychologia
@@ -102,7 +151,7 @@
   item_list:
   - work_authors: Karaduman, A., Göksun, T., & Chatterjee, A.
     work_year: 2017
-    work_title: Narratives of focal brain injured individuals: A macro-level analysis
+    work_title: "Narratives of focal brain injured individuals: A macro-level analysis"
     from_journal_tf: true
     journal_data:
       journal_title: Neuropsychologia
@@ -134,7 +183,7 @@
     pdf_filename: ?????
   - work_authors: Jamrozic, A., McQuire, M., Cardillo, E., & Chatterjee, A.
     work_year: 2016
-    work_title: Metaphor: Bridging embodiment to abstraction
+    work_title: "Metaphor: Bridging embodiment to abstraction"
     from_journal_tf: true
     journal_data:
       journal_title: Psychonomic Bulletin & Review
@@ -166,7 +215,7 @@
     pdf_filename: ?????
   - work_authors: Göksun T., Lehet M., Malykhina K., & Chatterjee A.
     work_year: 2015
-    work_title: Spontaneous gesture and spatial language: evidence from focal brain injury
+    work_title: "Spontaneous gesture and spatial language: Evidence from focal brain injury"
     from_journal_tf: true
     journal_data:
       journal_title: Brain and Language
@@ -182,7 +231,7 @@
     pdf_filename: ?????
   - work_authors: Ianni, G.R., Cardillo, E.R., McQuire, M., & Chatterjee, A.
     work_year: 2014
-    work_title: Flying under the radar: figurative language impairments in focal lesion patients
+    work_title: "Flying under the radar: Figurative language impairments in focal lesion patients"
     from_journal_tf: true
     journal_data:
       journal_title: Frontiers in Human Neuroscience
@@ -231,7 +280,7 @@
     pdf_filename: ?????
   - work_authors: Göksun T., Lehet M., Malykhina K., & Chatterjee A.
     work_year: 2013
-    work_title: Naming and gesturing spatial relations: evidence from focal brain-injured individuals
+    work_title: "Naming and gesturing spatial relations: Evidence from focal brain-injured individuals"
     from_journal_tf: true
     journal_data:
       journal_title: Neuropsychologia
@@ -263,7 +312,7 @@
     pdf_filename: ?????
   - work_authors: Schmidt, G.L., Cardillo, E.R., Kranjec, A., Lehet, M., Widick, P., & Chatterjee, A.
     work_year: 2012
-    work_title: Not all analogies are created equal: associative and categorical analogy processing following brain damage
+    work_title: "Not all analogies are created equal: Associative and categorical analogy processing following brain damage"
     from_journal_tf: true
     journal_data:
       journal_title: Neuropsychologia
@@ -279,7 +328,7 @@
     pdf_filename: ?????
   - work_authors: Cardillo, E. R., Watson, C. E., Schmidt, G. L., Kranjec, A., & Chatterjee, A.
     work_year: 2012
-    work_title: From novel to familiar: tuning the brain for metaphors
+    work_title: "From novel to familiar: Tuning the brain for metaphors"
     from_journal_tf: true
     journal_data:
       journal_title: NeuroImage
@@ -327,7 +376,7 @@
     pdf_filename: ?????
   - work_authors: Wencil, E.B., Aguirre, G.K., Coslett, H.B., & Chatterjee, A.
     work_year: 2010
-    work_title: Carving the clock at its component joints: Neural basis for interval timing
+    work_title: "Carving the clock at its component joints: Neural basis for interval timing"
     from_journal_tf: true
     journal_data:
       journal_title: Journal of Neurophysiology
@@ -343,7 +392,7 @@
     pdf_filename: ?????
   - work_authors: Wencil, E.B., Radoeva, P., & Chatterjee, A.
     work_year: 2010
-    work_title: Size isn’t all that matters: Noticing differences in size and temporal order
+    work_title: "Size isn’t all that matters: Noticing differences in size and temporal order"
     from_journal_tf: true
     journal_data:
       journal_title: Frontiers in Human Neuroscience
@@ -359,7 +408,7 @@
     pdf_filename: ?????
   - work_authors: Cardillo, E., Schmidt, G., Kranjec, A., & Chatterjee, A.
     work_year: 2010
-    work_title: Stimulus design is an obstacle course: 560 matched literal and metaphorical sentences for testing neural hypotheses about metaphor
+    work_title: "Stimulus design is an obstacle course: 560 matched literal and metaphorical sentences for testing neural hypotheses about metaphor"
     from_journal_tf: true
     journal_data:
       journal_title: Behavior Research Methods
@@ -439,7 +488,7 @@
     pdf_filename: ?????
   - work_authors: Schmidt, G., Kranjec, A., Cardillo, E., & Chatterjee, A.
     work_year: 2009
-    work_title: Beyond laterality: A critical assessment of research on the neural basis of metaphor
+    work_title: "Beyond laterality: A critical assessment of research on the neural basis of metaphor"
     from_journal_tf: true
     journal_data:
       journal_title: Journal of the International Neuropsychological Society
@@ -503,7 +552,7 @@
     pdf_filename: ?????
   - work_authors: Gottfried, J.A., Sancar, F., & Chatterjee, A.
     work_year: 2003
-    work_title: Acquired mirror writing and reading: Evidence for reflected graphemic representations
+    work_title: "Acquired mirror writing and reading: Evidence for reflected graphemic representations"
     from_journal_tf: true
     journal_data:
       journal_title: Neuropsychologia
@@ -519,7 +568,7 @@
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2001
-    work_title: Language and space: Some interactions
+    work_title: "Language and space: Some interactions"
     from_journal_tf: true
     journal_data:
       journal_title: Trends in Cognitive Science
@@ -555,7 +604,7 @@
     pdf_filename: ?????
   - work_authors: Quandt, L.C., & Chatterjee, A.
     work_year: 2015
-    work_title: Rethinking actions: Implementation and association
+    work_title: "Rethinking actions: Implementation and association"
     from_journal_tf: true
     journal_data:
       journal_title: WIREs Cognitive Science
@@ -587,7 +636,7 @@
     pdf_filename: ?????
   - work_authors: Piedimonte, A., Woods, A.J., & Chatterjee, A.
     work_year: 2015
-    work_title: Disambiguating ambiguous motion perception: What are the cues?
+    work_title: "Disambiguating ambiguous motion perception: What are the cues?"
     from_journal_tf: true
     journal_data:
       journal_title: Frontiers in Psychology
@@ -619,7 +668,7 @@
     pdf_filename: ?????
   - work_authors: Watson, C.E., Cardillo, E.R., Ianni, G.R., & Chatterjee, A.
     work_year: 2013
-    work_title: Action concepts in the brain: An activation likelihood estimation meta-analysis
+    work_title: "Action concepts in the brain: An activation likelihood estimation meta-analysis"
     from_journal_tf: true
     journal_data:
       journal_title: Journal of Cognitive Neuroscience
@@ -735,7 +784,7 @@
   item_list:
   - work_authors: Coburn, A., Vartanian, O., & Chatterjee, A.
     work_year: 2017
-    work_title: Buildings, beauty, and the brain: A neuroscience of architectual experience
+    work_title: "Buildings, beauty, and the brain: A neuroscience of architectual experience"
     from_journal_tf: true
     journal_data:
       journal_title: Journal of Cognitive Neuroscience
@@ -786,7 +835,7 @@
     pdf_filename: ?????
   - work_authors: Pearce, M.T., Zaidel, D.W., Vartanian, O., Skov, M., Leder, H., Chatterjee, A., & Nadal, M.
     work_year: 2015
-    work_title: Neuroaesthetics: The cognitive neuroscience of aesthetic experience
+    work_title: "Neuroaesthetics: The cognitive neuroscience of aesthetic experience"
     from_journal_tf: true
     journal_data:
       journal_title: Perspectives on Psychological Science
@@ -818,7 +867,7 @@
     pdf_filename: ?????
   - work_authors: Vartanian, O., Navarrete, G., Chatterjee, A., Brorson Fich, L., Gonzalez-Mora, J.L., Leder, H., Modroño, C., Nadal, M., Rostrup, N., & Skov, M.
     work_year: 2015
-    work_title: Architectural design and the brain: Effects of ceiling height and perceived enclosure on beauty judgments and approach-avoidance decisions
+    work_title: "Architectural design and the brain: Effects of ceiling height and perceived enclosure on beauty judgments and approach-avoidance decisions"
     from_journal_tf: true
     journal_data:
       journal_title: Journal of Environmental Psychology
@@ -866,7 +915,7 @@
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2014
-    work_title: Scientific aesthetics: Three steps forward
+    work_title: "Scientific aesthetics: Three steps forward"
     from_journal_tf: true
     journal_data:
       journal_title: British Journal of Psychology
@@ -947,7 +996,7 @@
     pdf_filename: ?????
   - work_authors: Chatterjee A.
     work_year: 2011
-    work_title: Where there be dragons: Finding the edges of neuroaesthetics
+    work_title: "Where there be dragons: Finding the edges of neuroaesthetics"
     from_journal_tf: true
     journal_data:
       journal_title: Aesthetics
@@ -963,13 +1012,13 @@
     pdf_filename: ?????
   - work_authors: Chatterjee A.
     work_year: 2012
-    work_title: Neuroaesthetics: Growing pains of a new discipline
+    work_title: "Neuroaesthetics: Growing pains of a new discipline"
     from_journal_tf: false
     journal_data: null
     from_edited_work_tf: true
     edited_work_data:
       edited_work_type: book
-      edited_work_title: Aesthetic science: Connecting minds, brains, and experience
+      edited_work_title: "Aesthetic science: Connecting minds, brains, and experience"
       edited_work_pages: (pp. 219-317)
       edited_work_editor: A.P. Shimamura & S.E. Palmer (Eds.)
       edited_work_location: New York, NY
@@ -996,7 +1045,7 @@
     pdf_filename: ?????
   - work_authors: Chatterjee, A., Bromberger, B., Smith, W., Sternschein, R., & Widick, P.
     work_year: 2011
-    work_title: Artistic production following brain damage: A study of three artists
+    work_title: "Artistic production following brain damage: A study of three artists"
     from_journal_tf: true
     journal_data:
       journal_title: Leonardo
@@ -1012,7 +1061,7 @@
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2011
-    work_title: Neuroaesthetics: A coming of age story
+    work_title: "Neuroaesthetics: A coming of age story"
     from_journal_tf: true
     journal_data:
       journal_title: Journal of Cognitive Neuroscience
@@ -1060,7 +1109,7 @@
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2006
-    work_title: The neuropsychology of visual art: Conferring capacity
+    work_title: "The neuropsychology of visual art: Conferring capacity"
     from_journal_tf: true
     journal_data:
       journal_title: International Review of Neurobiology
@@ -1076,7 +1125,7 @@
     pdf_filename: ?????
   - work_authors: Wilson A., & Chatterjee A.
     work_year: 2005
-    work_title: The assessment of preference for balance: Introducing a new test
+    work_title: "The assessment of preference for balance: Introducing a new test"
     from_journal_tf: true
     journal_data:
       journal_title: Empirical Studies of the Arts
@@ -1144,7 +1193,7 @@
   item_list:
   - work_authors: Weisberg, S., Badgio, D., & Chatterjee, A.
     work_year: 2017
-    work_title: A CRISPR new world: attitudes in the public toward innovations in human genetic modification
+    work_title: "A CRISPR new world: Attitudes in the public toward innovations in human genetic modification"
     from_journal_tf: true
     journal_data:
       journal_title: Frontiers in Public Health
@@ -1176,7 +1225,7 @@
     pdf_filename: ?????
   - work_authors: Chancellor, B., & Chatterjee, A.
     work_year: 2011
-    work_title: Brain branding: When neuroscience and commerce collide
+    work_title: "Brain branding: When neuroscience and commerce collide"
     from_journal_tf: true
     journal_data:
       journal_title: AJOB Neuroscience
@@ -1208,7 +1257,7 @@
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2009
-    work_title: Correspondence: A medical view of potential adverse effects
+    work_title: "Correspondence: A medical view of potential adverse effects"
     from_journal_tf: true
     journal_data:
       journal_title: Nature
@@ -1224,7 +1273,7 @@
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2009
-    work_title: Head to head: Is it acceptable for people to take methylphenidate to enhance performance?
+    work_title: "Head to head: Is it acceptable for people to take methylphenidate to enhance performance?"
     from_journal_tf: true
     journal_data:
       journal_title: British Medical Journal
@@ -1256,7 +1305,7 @@
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2007
-    work_title: Cosmetic neurology and cosmetic surgery: Parallels, predictions and challenges
+    work_title: "Cosmetic neurology and cosmetic surgery: Parallels, predictions and challenges"
     from_journal_tf: true
     journal_data:
       journal_title: Quarterly of Healthcare Ethics
@@ -1288,7 +1337,7 @@
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2004
-    work_title: Cosmetic neurology: The controversy over enhancing movement, mentation, and mood
+    work_title: "Cosmetic neurology: The controversy over enhancing movement, mentation, and mood"
     from_journal_tf: true
     journal_data:
       journal_title: Neurology
@@ -1308,7 +1357,7 @@
   item_list:
   - work_authors: Siegler, J.E., Kable J.W., & Chatterjee, A.
     work_year: 2016
-    work_title: Resident decision making: Opioids in the outpatient setting
+    work_title: "Resident decision making: Opioids in the outpatient setting"
     from_journal_tf: true
     journal_data:
       journal_title: Journal of Graduate Medical Education
@@ -1356,10 +1405,10 @@
     pdf_filename: ?????
   - work_authors: Olson, I.R., Ezzyat, Y., Plotzker, A., & Chatterjee, A.
     work_year: 2014
-    work_title: The end point of the ventral visual stream: Face and non-face perceptual deficits following unilateral anterior temporal lobe damage
+    work_title: "The end point of the ventral visual stream: Face and non-face perceptual deficits following unilateral anterior temporal lobe damage"
     from_journal_tf: true
     journal_data:
-      journal_title: Neurocase: The Neural Basis of Cognition
+      journal_title: "Neurocase: The Neural Basis of Cognition"
       journal_advance_tf: false
       journal_vol: ?????
       journal_issue: ?????
@@ -1420,7 +1469,7 @@
     pdf_filename: ?????
   - work_authors: Fellows, L., Stark, M., Berg, A., & Chatterjee, A.
     work_year: 2008
-    work_title: Patient registries in cognitive neuroscience research: Advantages, challenges, and practical advice
+    work_title: "Patient registries in cognitive neuroscience research: Advantages, challenges, and practical advice"
     from_journal_tf: true
     journal_data:
       journal_title: Journal of Cognitive Neuroscience
@@ -1452,7 +1501,7 @@
     pdf_filename: ?????
   - work_authors: Biran, I., Giovannetti, T., Buxbaum, L., & Chatterjee, A.
     work_year: 2006
-    work_title: The alien hand syndrome: What makes the alien hand alien?
+    work_title: "The alien hand syndrome: What makes the alien hand alien?"
     from_journal_tf: true
     journal_data:
       journal_title: Cognitive Neuropsychology
@@ -1484,7 +1533,7 @@
     pdf_filename: ?????
   - work_authors: Ricci, R., Genero, R., Colombatti, S., Zampieri, D., & Chatterjee, A.
     work_year: 2005
-    work_title: Visuomotor links in awareness: Evidence from extinction
+    work_title: "Visuomotor links in awareness: Evidence from extinction"
     from_journal_tf: true
     journal_data:
       journal_title: Neuroreport
@@ -1564,7 +1613,7 @@
     pdf_filename: ?????
   - work_authors: Vaishnavi, S., Calhoun, J., & Chatterjee, A.
     work_year: 2001
-    work_title: Binding personal and peripersonal space: Evidence from tactile extinction
+    work_title: "Binding personal and peripersonal space: Evidence from tactile extinction"
     from_journal_tf: true
     journal_data:
       journal_title: Journal of Cognitive Neuroscience
