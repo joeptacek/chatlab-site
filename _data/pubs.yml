@@ -12,7 +12,8 @@
 #
 # - Flesh out APA styleguide and YAML styleguide
 #
-# - Check out YAML Lint
+# - Check out YAML Lint standards (need triple dash at top of file? OK to 
+#   format a list of dicts without newline after list item dash?)
 #
 # - Dealing with titles that end with a question mark (e.g., do ?. or just .)
 #
