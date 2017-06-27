@@ -12,7 +12,7 @@
 #
 # - Flesh out APA styleguide and YAML styleguide
 #
-# - Check out YAML Lint standards (need triple dash at top of file? OK to 
+# - Check out YAML Lint standards (need triple dash at top of file? OK to
 #   format a list of dicts without newline after list item dash?)
 #
 # - Dealing with titles that end with a question mark (e.g., do ?. or just .)
@@ -253,7 +253,7 @@
     journal_data:
       journal_title: PLOS ONE
       journal_advance_tf: false
-      journal_vol: 0
+      journal_vol: 9
       journal_issue: 5
       journal_pages: 1-9
     from_edited_work_tf: false
