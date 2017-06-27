@@ -1,21 +1,1651 @@
-#FIGURE OUT RELATIVE LINKS FOR ASSETS
-# APA style dictates...
-# ...article title is sentence-case (capitalize initial word and first word after colon/dash in subtitle)
-# ...journal title is title-case, not abbreviated, preserving punctuation style
-# Use quotes on titles containing colons
-# Advance should be either true or false (i.e., not a string)
-# Volume, issue, and pages should be 'null' if advance is 'true'
-- section_title: Language & Space
-  section_id: language
-  section_description: One of the things we research is Language & Space.
+## TODO
+#
+# - Clarify: only DOIs for journals? Restructure DOI into journal_data?
+#
+# - Restructure review case? Always in a journal?
+#
+# - Restructure advance online publication case? Perhaps include journal_vol,
+#   journal_issue, and journal_pages under journal_edition_data. If
+#   journal_advance_tf is true, just set journal_edition_data to null.
+#
+# - Clarify ambiguous vol / issue / page numbers and DOIs
+#
+# - For edited work, instead of indicating page range with "pp."" and
+#   paretheses, maybe just use ordinary journal-style hypen format / rely on
+#   template to do proper formatting.
+#
+# - Flesh out APA styleguide and YAML styleguide
+#
+# - Check out YAML Lint standards (need triple dash at top of file? OK to
+#   format a list of dicts without newline after list item dash?)
+#
+# - Dealing with titles that end with a question mark (e.g., do ?. or just .)
+#
+# - Fix mappings where value contains colon: wrap problematic values in quotes.
+#   Just use quotes for all mapping values, even when unnecessary?
+#   work_title: Aptness and beauty in metaphor << Fine without quotes
+#   work_title: "Narratives of focal brain injured individuals: A macro-level analysis" << Needs quotes to avoid problems
+#
+## APA STYLEGUIDE
+#
+# - Titles appear in sentence case (only first word / proper nouns capitalized).
+#   First word of subtitle after colon is capatalized.
+#
+# - Journal author list is separated by commas. Last name then first initial
+#    with period. Oxford comma after penultimate name, ampersand symbol instead
+#    of "and."
+#
+# - Journal title should be title case (major words capitalized). Do not
+#   abbreviate journals (exceptions, so far: "PLOS ONE" and ""). Preserve
+#   punctuation style.
+#
+# - Editors of edited work and authors of works under review should be indicated
+#   as first initial, middle initial, last name. Include "(Eds.)" or "(Ed.)"
+#   after final name, depending if there are one or multiple editors.
+#
+# - Maybe: Exclude period from end of title, include question mark
+#
+## YAML STYLEGUIDE / LOGICGUIDE
+#
+# - If from_journal_tf is false, journal_data should be null (same for
+#   from_edited_work_tf / edited_work_data, review_tf / review_data).
+#
+# - For work in a journal, journal_vol and journal_pages are necessary, but
+#   journal_issue is optional / case dependant.
+#
+# - Edited work types so far (use lowercase): book, conference.
+#
+# - Reviewed work types so far (use lowercase): book.
+#
+# - Probably: A work is either from a journal or from an edited work.
+#
+# - Probably: If a journal_advance_tf is true, journal_vol, journal_issue, and
+#   journal_pages should all be null.
+#
+## EXAMPLES
+#
+## SECTION HEAD
+#
+# - section_title: Language and Space
+#   section_id: language_space
+#   section_description: We research language and space!
+#   item_list:
+#
+## WORK APPEARING IN A JOURNAL
+#
+#   - work_authors: Karaduman, A., Göksun, T., & Chatterjee, A.
+#     work_year: 2017
+#     work_title: "Narratives of focal brain injured individuals: A macro-level analysis"
+#     from_journal_tf: true
+#     journal_data:
+#       journal_title: Neuropsychologia
+#       journal_advance_tf: false
+#       journal_vol: 99
+#       journal_issue: null
+#       journal_pages: 314-325
+#     from_edited_work_tf: false
+#     edited_work_data: null
+#     review_tf: false
+#     review_data: null
+#     doi: 10.1016/j.neuropsychologia.2017.03.027
+#     pdf_filename: ?????
+#
+## ADVANCE ONLINE PUBLICATION
+#
+#   - work_authors: McQuire, M., McCollum, L., & Chatterjee, A.
+#     work_year: 2016
+#     work_title: Aptness and beauty in metaphor
+#     from_journal_tf: true
+#     journal_data:
+#       journal_title: Language and Cognition
+#       journal_advance_tf: true
+#       journal_vol: null
+#       journal_issue: null
+#       journal_pages: null
+#     from_edited_work_tf: false
+#     edited_work_data: null
+#     review_tf: false
+#     review_data: null
+#     doi: 10.1017/langcog.2016.13
+#     pdf_filename: ?????
+#
+## WORK APPEARING IN AN EDITED WORK
+#
+#   - work_authors: Kranjec, A., Lehet, M., & Chatterjee, A.
+#     work_year: 2014
+#     work_title: Pitch affects estimates of space but not vice versa
+#     from_journal_tf: false
+#     journal_data: null
+#     from_edited_work_tf: true
+#     edited_work_data:
+#       edited_work_type: conference
+#       edited_work_title: Program of the 36th annual meeting of the Cognitive Science Society
+#       edited_work_pages: (pp. 779-784)
+#       edited_work_editors: P. Bello, M. Guarini, M. McShane, & B. Scassellati (Eds.)
+#       edited_work_location: Quebec City, Canada
+#       edited_work_publisher: Cognitive Science Society
+#     review_tf: false
+#     review_data: null
+#     doi: null
+#     pdf_filename: ?????
+#
+## WORK THAT REVIEWS ANOTHER WORK
+#
+#   - work_authors: Chatterjee, A.
+#     work_year: 2017
+#     work_title: A cognitive aesthetics of literature and the arts
+#     from_journal_tf: true
+#     journal_data:
+#       journal_title: Cognitive Semiotics
+#       journal_advance_tf: false
+#       journal_vol: 10
+#       journal_issue: 1
+#       journal_pages: 41-47
+#     from_edited_work_tf: false
+#     edited_work_data: null
+#     review_tf: true
+#     review_data:
+#       reviewed_work_type: book
+#       reviewed_work_title: Beauty and sublimity
+#       reviewed_work_author: P.C. Hogan
+#     doi: 10.1515/cogsem-2017-0003
+#     pdf_filename: ?????
+
+- section_title: Language and Space
+  section_id: language_space
+  section_description: null
   item_list:
-  - title: "Narratives of focal brain injured individuals: A macro-level analysis"
-    year: 2017
-    authors: Karaduman, A., Göksun, T., & Chatterjee, A.
-    journal: Neuropsychologia
-    advance: false
-    volume: 99
-    issue: null
-    pages: 314-325
+  - work_authors: Karaduman, A., Göksun, T., & Chatterjee, A.
+    work_year: 2017
+    work_title: "Narratives of focal brain injured individuals: A macro-level analysis"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neuropsychologia
+      journal_advance_tf: false
+      journal_vol: 99
+      journal_issue: null
+      journal_pages: 314-325
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
     doi: 10.1016/j.neuropsychologia.2017.03.027
-    pdf_filename: narrativesFocalBrain2017.pdf
+    pdf_filename: ?????
+  - work_authors: McQuire, M., McCollum, L., & Chatterjee, A.
+    work_year: 2016
+    work_title: Aptness and beauty in metaphor
+    from_journal_tf: true
+    journal_data:
+      journal_title: Language and Cognition
+      journal_advance_tf: true
+      journal_vol: null
+      journal_issue: null
+      journal_pages: null
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1017/langcog.2016.13
+    pdf_filename: ?????
+  - work_authors: Jamrozic, A., McQuire, M., Cardillo, E., & Chatterjee, A.
+    work_year: 2016
+    work_title: "Metaphor: Bridging embodiment to abstraction"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Psychonomic Bulletin & Review
+      journal_advance_tf: true
+      journal_vol: null
+      journal_issue: null
+      journal_pages: null
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.3758/s13423-015-0861-0
+    pdf_filename: ?????
+  - work_authors: Nozari, N., Göksun T., Thompson-Schill, S.L., & Chatterjee, A.
+    work_year: 2015
+    work_title: Phonological similarity affects production of gestures, even in the absence of overt speech
+    from_journal_tf: true
+    journal_data:
+      journal_title: Frontiers in Psychology
+      journal_advance_tf: false
+      journal_vol: 6?????
+      journal_issue: ?????
+      journal_pages: 1347?????
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.3389/fpsyg.2015.01347
+    pdf_filename: ?????
+  - work_authors: Göksun T., Lehet M., Malykhina K., & Chatterjee A.
+    work_year: 2015
+    work_title: "Spontaneous gesture and spatial language: Evidence from focal brain injury"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Brain and Language
+      journal_advance_tf: false
+      journal_vol: 150
+      journal_issue: null
+      journal_pages: 1-13
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1016/j.bandl.2015.07.012
+    pdf_filename: ?????
+  - work_authors: Ianni, G.R., Cardillo, E.R., McQuire, M., & Chatterjee, A.
+    work_year: 2014
+    work_title: "Flying under the radar: Figurative language impairments in focal lesion patients"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Frontiers in Human Neuroscience
+      journal_advance_tf: false
+      journal_vol: 8
+      journal_issue: 733
+      journal_pages: 1-25
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.3389/fnhum.2014.00733
+    pdf_filename: ?????
+  - work_authors: Kranjec, A., Lupyan, G., & Chatterjee, A.
+    work_year: 2014
+    work_title: Categorical biases in perceiving spatial relations
+    from_journal_tf: true
+    journal_data:
+      journal_title: PLOS ONE
+      journal_advance_tf: false
+      journal_vol: 9
+      journal_issue: 5
+      journal_pages: 1-9
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Kranjec, A., Lehet, M., & Chatterjee, A.
+    work_year: 2014
+    work_title: Pitch affects estimates of space but not vice versa
+    from_journal_tf: false
+    journal_data: null
+    from_edited_work_tf: true
+    edited_work_data:
+      edited_work_type: conference
+      edited_work_title: Program of the 36th annual meeting of the Cognitive Science Society
+      edited_work_pages: (pp. 779-784)
+      s: P. Bello, M. Guarini, M. McShane, & B. Scassellati (Eds.)
+      edited_work_location: Quebec City, Canada
+      edited_work_publisher: Cognitive Science Society
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Göksun T., Lehet M., Malykhina K., & Chatterjee A.
+    work_year: 2013
+    work_title: "Naming and gesturing spatial relations: Evidence from focal brain-injured individuals"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neuropsychologia
+      journal_advance_tf: false
+      journal_vol: 51
+      journal_issue: null
+      journal_pages: 1518-1527
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1016/j.neuropsychologia.2013.05.006
+    pdf_filename: ?????
+  - work_authors: Amorapanth, P., Kranjec, A., Bromberger, B., Lehet, M., Widick, P., Woods, A.J., Kimberg, D.Y., & Chatterjee, A.
+    work_year: 2012
+    work_title: Language, perception, and the schematic representation of spatial relations
+    from_journal_tf: true
+    journal_data:
+      journal_title: Brain and Language
+      journal_advance_tf: false
+      journal_vol: 120
+      journal_issue: null
+      journal_pages: 226-236
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1016/j.bandl.2011.09.007
+    pdf_filename: ?????
+  - work_authors: Schmidt, G.L., Cardillo, E.R., Kranjec, A., Lehet, M., Widick, P., & Chatterjee, A.
+    work_year: 2012
+    work_title: "Not all analogies are created equal: Associative and categorical analogy processing following brain damage"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neuropsychologia
+      journal_advance_tf: false
+      journal_vol: 50
+      journal_issue: null
+      journal_pages: 1372-1379
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Cardillo, E. R., Watson, C. E., Schmidt, G. L., Kranjec, A., & Chatterjee, A.
+    work_year: 2012
+    work_title: "From novel to familiar: Tuning the brain for metaphors"
+    from_journal_tf: true
+    journal_data:
+      journal_title: NeuroImage
+      journal_advance_tf: false
+      journal_vol: 59
+      journal_issue: null
+      journal_pages: 3212-3221
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Watson, C., & Chatterjee, A.
+    work_year: 2012
+    work_title: A bilateral frontoparietal network underlies visuospatial analogical reasoning
+    from_journal_tf: true
+    journal_data:
+      journal_title: NeuroImage
+      journal_advance_tf: false
+      journal_vol: 59
+      journal_issue: null
+      journal_pages: 2831-2838
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Kranjec, A., & Chatterjee, A.
+    work_year: 2010
+    work_title: Are temporal concepts embodied? A challenge for cognitive neuroscience
+    from_journal_tf: true
+    journal_data:
+      journal_title: Frontiers in Psychology
+      journal_advance_tf: false
+      journal_vol: 1
+      journal_issue: 240
+      journal_pages: 1-9
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.3389?????
+    pdf_filename: ?????
+  - work_authors: Wencil, E.B., Aguirre, G.K., Coslett, H.B., & Chatterjee, A.
+    work_year: 2010
+    work_title: "Carving the clock at its component joints: Neural basis for interval timing"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Neurophysiology
+      journal_advance_tf: false
+      journal_vol: 104?????
+      journal_issue: 1?????
+      journal_pages: 160-168?????
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Wencil, E.B., Radoeva, P., & Chatterjee, A.
+    work_year: 2010
+    work_title: "Size isn’t all that matters: Noticing differences in size and temporal order"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Frontiers in Human Neuroscience
+      journal_advance_tf: false
+      journal_vol: 4
+      journal_issue: 171
+      journal_pages: 1-10
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.3389/fnhum.2010.00171
+    pdf_filename: ?????
+  - work_authors: Cardillo, E., Schmidt, G., Kranjec, A., & Chatterjee, A.
+    work_year: 2010
+    work_title: "Stimulus design is an obstacle course: 560 matched literal and metaphorical sentences for testing neural hypotheses about metaphor"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Behavior Research Methods
+      journal_advance_tf: false
+      journal_vol: 42
+      journal_issue: 3
+      journal_pages: 651-664
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.3758?????
+    pdf_filename: ?????
+  - work_authors: Kranjec, A., Lehet, M., Bromberger, B., & Chatterjee, A.
+    work_year: 2010
+    work_title: A sinister bias for calling fouls in soccer
+    from_journal_tf: true
+    journal_data:
+      journal_title: PLOS ONE
+      journal_advance_tf: false
+      journal_vol: 5
+      journal_issue: 7
+      journal_pages: 1-4
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1371?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2010
+    work_title: Disembodying cognition
+    from_journal_tf: true
+    journal_data:
+      journal_title: Language and Cognition
+      journal_advance_tf: false
+      journal_vol: ?????
+      journal_issue: ?????
+      journal_pages: 79-116?????
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Kranjec, A., Cardillo, E., Schmidt, G., & Chatterjee, A.
+    work_year: 2010
+    work_title: Prescribed spatial prepositions influence how we think about time
+    from_journal_tf: true
+    journal_data:
+      journal_title: Cognition
+      journal_advance_tf: false
+      journal_vol: 114
+      journal_issue: null
+      journal_pages: 111-116
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1016/j.cognition.2009.09.008
+    pdf_filename: ?????
+  - work_authors: Amorapanth, P., Widick, P., & Chatterjee, A.
+    work_year: 2009
+    work_title: The neural basis for spatial relations
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Cognitive Neuroscience
+      journal_advance_tf: false
+      journal_vol: 22
+      journal_issue: 8
+      journal_pages: 1739-1753
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Schmidt, G., Kranjec, A., Cardillo, E., & Chatterjee, A.
+    work_year: 2009
+    work_title: "Beyond laterality: A critical assessment of research on the neural basis of metaphor"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of the International Neuropsychological Society
+      journal_advance_tf: false
+      journal_vol: ?????
+      journal_issue: ?????
+      journal_pages: 1-5?????
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1017/S1355617709990543
+    pdf_filename: ?????
+  - work_authors: Chen, E., Widick, P., & Chatterjee, A.
+    work_year: 2008
+    work_title: Functional-anatomical organization of predicate metaphor processing
+    from_journal_tf: true
+    journal_data:
+      journal_title: Brain and Language
+      journal_advance_tf: false
+      journal_vol: 107
+      journal_issue: null
+      journal_pages: 194-202
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2008
+    work_title: The neural organization of spatial thought and language
+    from_journal_tf: true
+    journal_data:
+      journal_title: Seminars in Speech and Language
+      journal_advance_tf: false
+      journal_vol: 29
+      journal_issue: null
+      journal_pages: 226-238
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Wu, D., Waller, S., & Chatterjee, A.
+    work_year: 2007
+    work_title: The functional neuroanatomy of thematic role and locative relational knowledge
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Cognitive Neuroscience
+      journal_advance_tf: false
+      journal_vol: 19
+      journal_issue: 9
+      journal_pages: 1542-1555
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Gottfried, J.A., Sancar, F., & Chatterjee, A.
+    work_year: 2003
+    work_title: "Acquired mirror writing and reading: Evidence for reflected graphemic representations"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neuropsychologia
+      journal_advance_tf: false
+      journal_vol: 41
+      journal_issue: null
+      journal_pages: 96-107
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2001
+    work_title: "Language and space: Some interactions"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Trends in Cognitive Science
+      journal_advance_tf: false
+      journal_vol: 5
+      journal_issue: null
+      journal_pages: 55-61
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+- section_title: Event Representation
+  section_id: event_representation
+  section_description: null
+  item_list:
+  - work_authors: Quandt, L.C., Cardillo, E.R., Kranjec, A., & Chatterjee, A.
+    work_year: 2015
+    work_title: Fronto-temporal regions encode the manner of motion in spatial language
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neuroscience Letters
+      journal_advance_tf: false
+      journal_vol: 609
+      journal_issue: null
+      journal_pages: 171-175
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1016/j.neulet.2015.10.041
+    pdf_filename: ?????
+  - work_authors: Quandt, L.C., & Chatterjee, A.
+    work_year: 2015
+    work_title: "Rethinking actions: Implementation and association"
+    from_journal_tf: true
+    journal_data:
+      journal_title: WIREs Cognitive Science
+      journal_advance_tf: false
+      journal_vol: ?????
+      journal_issue: ?????
+      journal_pages: ?????
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1002/wcs.1367
+    pdf_filename: ?????
+  - work_authors: Woods, A.J., Kranjec, A., Lehet, M., & Chatterjee, A.
+    work_year: 2015
+    work_title: Expertise and decision-making in American football
+    from_journal_tf: true
+    journal_data:
+      journal_title: Frontiers in Psychology
+      journal_advance_tf: false
+      journal_vol: 6
+      journal_issue: 994
+      journal_pages: 1-8
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.3389/fpsyg.2015.00994
+    pdf_filename: ?????
+  - work_authors: Piedimonte, A., Woods, A.J., & Chatterjee, A.
+    work_year: 2015
+    work_title: "Disambiguating ambiguous motion perception: What are the cues?"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Frontiers in Psychology
+      journal_advance_tf: false
+      journal_vol: 6
+      journal_issue: 902
+      journal_pages: 1-22
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.3389/fpsyg.2015.00902
+    pdf_filename: ?????
+  - work_authors: Watson, C.E., Cardillo, E.R., Bromberger, B., & Chatterjee, A.
+    work_year: 2014
+    work_title: The specificity of action knowledge in sensory and motor systems
+    from_journal_tf: true
+    journal_data:
+      journal_title: Frontiers in Psychology
+      journal_advance_tf: false
+      journal_vol: 5?????
+      journal_issue: 494?????
+      journal_pages: ?????
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.3389/fpsyg.2014.00494
+    pdf_filename: ?????
+  - work_authors: Watson, C.E., Cardillo, E.R., Ianni, G.R., & Chatterjee, A.
+    work_year: 2013
+    work_title: "Action concepts in the brain: An activation likelihood estimation meta-analysis"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Cognitive Neuroscience
+      journal_advance_tf: false
+      journal_vol: 25
+      journal_issue: null
+      journal_pages: 1191-1205
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1162/jocn_a_00401
+    pdf_filename: ?????
+  - work_authors: Watson, C., & Chatterjee, A.
+    work_year: 2011
+    work_title: The functional neuroanatomy of actions
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neurology
+      journal_advance_tf: false
+      journal_vol: 76
+      journal_issue: null
+      journal_pages: 1428-1434
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1212?????
+    pdf_filename: ?????
+  - work_authors: Wu, D., Morganti, A., & Chatterjee, A.
+    work_year: 2008
+    work_title: Neural substrates of processing path and manner information of a moving event
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neuropsychologia
+      journal_advance_tf: false
+      journal_vol: 46
+      journal_issue: null
+      journal_pages: 704-713
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Kable, J., & Chatterjee, A.
+    work_year: 2006
+    work_title: Specificity of action representations in occipitotemporal cortex
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Cognitive Neuroscience
+      journal_advance_tf: false
+      journal_vol: 18
+      journal_issue: 9
+      journal_pages: 1498-1517
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Kable, J., Kan, I.P., Wilson, A., Thompson-Schill, S.L., & Chatterjee, A.
+    work_year: 2005
+    work_title: Conceptual representations of action in the lateral temporal cortex
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Cognitive Neuroscience
+      journal_advance_tf: false
+      journal_vol: 17
+      journal_issue: 12
+      journal_pages: 1855-1870
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Kable, J., Lease-Spellmeyer, J., & Chatterjee, A.
+    work_year: 2002
+    work_title: The neural substrate of action event knowledge
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Cognitive Neuroscience
+      journal_advance_tf: false
+      journal_vol: 14
+      journal_issue: null
+      journal_pages: 785-794
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A., Southwood, M.H., & Basilico, D.
+    work_year: 1999
+    work_title: Verbs, events and spatial representations
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neuropsychologia
+      journal_advance_tf: false
+      journal_vol: 37
+      journal_issue: null
+      journal_pages: 395-402
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+- section_title: Neuroaesthetics
+  section_id: neuroaesthetics
+  section_description: null
+  item_list:
+  - work_authors: Coburn, A., Vartanian, O., & Chatterjee, A.
+    work_year: 2017
+    work_title: "Buildings, beauty, and the brain: A neuroscience of architectual experience"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Cognitive Neuroscience
+      journal_advance_tf: true
+      journal_vol: null
+      journal_issue: null
+      journal_pages: null
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1162/jocn_a_01146
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2017
+    work_title: A cognitive aesthetics of literature and the arts
+    from_journal_tf: true
+    journal_data:
+      journal_title: Cognitive Semiotics
+      journal_advance_tf: false
+      journal_vol: 10
+      journal_issue: 1
+      journal_pages: 41-47
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: true
+    review_data:
+      reviewed_work_type: book
+      reviewed_work_title: Beauty and sublimity
+      reviewed_work_author: P.C. Hogan
+    doi: 10.1515/cogsem-2017-0003
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A., & Vartanian, O.
+    work_year: 2016
+    work_title: Neuroscience of aesthetics
+    from_journal_tf: true
+    journal_data:
+      journal_title: Annals of the New York Academy of Sciences
+      journal_advance_tf: false
+      journal_vol: 1369
+      journal_issue: 1
+      journal_pages: 172-194
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1111/nyas.13035
+    pdf_filename: ?????
+  - work_authors: Pearce, M.T., Zaidel, D.W., Vartanian, O., Skov, M., Leder, H., Chatterjee, A., & Nadal, M.
+    work_year: 2015
+    work_title: "Neuroaesthetics: The cognitive neuroscience of aesthetic experience"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Perspectives on Psychological Science
+      journal_advance_tf: false
+      journal_vol: 11
+      journal_issue: 2
+      journal_pages: 265-279
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1177/1745691615621274
+    pdf_filename: ?????
+  - work_authors: Pegors, T.K., Kable, J.W., Chatterjee, A., & Epstein, R.A.
+    work_year: 2015
+    work_title: Common and unique representations in pFC for face and place attractiveness
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Cognitive Neuroscience
+      journal_advance_tf: false
+      journal_vol: ?????
+      journal_issue: ?????
+      journal_pages: ?????
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1162/jocn_a_00777
+    pdf_filename: ?????
+  - work_authors: Vartanian, O., Navarrete, G., Chatterjee, A., Brorson Fich, L., Gonzalez-Mora, J.L., Leder, H., Modroño, C., Nadal, M., Rostrup, N., & Skov, M.
+    work_year: 2015
+    work_title: "Architectural design and the brain: Effects of ceiling height and perceived enclosure on beauty judgments and approach-avoidance decisions"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Environmental Psychology
+      journal_advance_tf: false
+      journal_vol: 41?????
+      journal_issue: ?????
+      journal_pages: ?????
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1016/j.jenvp.2014.11.006
+    pdf_filename: ?????
+  - work_authors: Graham, D., Schwarz, B., Chatterjee, A.C., Kircher, T., & Straube, B.
+    work_year: 2014
+    work_title: Preference for luminance histogram regularities in natural scenes
+    from_journal_tf: true
+    journal_data:
+      journal_title: Vision Research
+      journal_advance_tf: false
+      journal_vol: 120
+      journal_issue: null
+      journal_pages: 11-21
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1016/j.visres.2015.03.018
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A., & Vartanian, O.
+    work_year: 2014
+    work_title: Neuroaesthetics
+    from_journal_tf: true
+    journal_data:
+      journal_title: Trends in Cognitive Sciences
+      journal_advance_tf: false
+      journal_vol: 18
+      journal_issue: 7
+      journal_pages: 370-375
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1016/j.tics.2014.03.003
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2014
+    work_title: "Scientific aesthetics: Three steps forward"
+    from_journal_tf: true
+    journal_data:
+      journal_title: British Journal of Psychology
+      journal_advance_tf: false
+      journal_vol: 105
+      journal_issue: null
+      journal_pages: 465-467
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1111/bjop.12086
+    pdf_filename: ?????
+  - work_authors: Chancellor, B., Duncan, A., & Chatterjee, A.
+    work_year: 2014
+    work_title: 'Art therapy for Alzheimer''s disease and other dementias'
+    from_journal_tf: true
+    journal_data:
+      journal_title: 'Journal of Alzheimer''s Disease'
+      journal_advance_tf: false
+      journal_vol: 34
+      journal_issue: null
+      journal_pages: 1-11
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.3233/JAD-131295
+    pdf_filename: ?????
+  - work_authors: Göksun, T., Kranjec, A., Chatterjee, A.
+    work_year: 2014
+    work_title: The development of visual art preferences
+    from_journal_tf: false
+    journal_data: null
+    from_edited_work_tf: true
+    edited_work_data:
+      edited_work_type: conference
+      edited_work_title: Proceedings of the twenty-third biennial congress of the International Association of Empirical Aesthetics
+      edited_work_pages: (pp. 223-225)
+      s: A. Kozbelt (Ed.)
+      edited_work_location: New York, NY
+      edited_work_publisher: International Association of Empirical Aesthetics
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Vartanian, O., Navarrete, G., Chatterjee, A., Fich, L.B., Leder, H., Modroño, C., Nadal, M., Rostrup, N., & Skov, M.
+    work_year: 2013
+    work_title: Impact of contour on aesthetic judgments and approach-avoidance decisions in architecture
+    from_journal_tf: true
+    journal_data:
+      journal_title: Proceedings of the National Academy of Sciences
+      journal_advance_tf: false
+      journal_vol: 110
+      journal_issue: 2
+      journal_pages: 1-8
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1073/pnas.1301227110
+    pdf_filename: ?????
+  - work_authors: van Buren, B., Bromberger, B., Potts, D., Miller, B., & Chatterjee A.
+    work_year: 2013
+    work_title: 'Changes in painting styles of two artists with Alzheimer''s disease'
+    from_journal_tf: true
+    journal_data:
+      journal_title: Psychology of Aesthetics, Creativity, and the Arts
+      journal_advance_tf: false
+      journal_vol: 7
+      journal_issue: 1
+      journal_pages: 89-94
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee A.
+    work_year: 2011
+    work_title: "Where there be dragons: Finding the edges of neuroaesthetics"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Aesthetics
+      journal_advance_tf: false
+      journal_vol: ?????
+      journal_issue: ?????
+      journal_pages: ?????
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee A.
+    work_year: 2012
+    work_title: "Neuroaesthetics: Growing pains of a new discipline"
+    from_journal_tf: false
+    journal_data: null
+    from_edited_work_tf: true
+    edited_work_data:
+      edited_work_type: book
+      edited_work_title: "Aesthetic science: Connecting minds, brains, and experience"
+      edited_work_pages: (pp. 219-317)
+      edited_work_editors: A.P. Shimamura & S.E. Palmer (Eds.)
+      edited_work_location: New York, NY
+      edited_work_publisher: Oxford University Press
+    review_tf: false
+    review_data: null
+    doi: null?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A., Widick, P., Sternschein, R., Smith, W. B., & Bromberger, B.
+    work_year: 2010
+    work_title: The assessment of art attributes
+    from_journal_tf: true
+    journal_data:
+      journal_title: Empirical Studies of the Arts
+      journal_advance_tf: false
+      journal_vol: 28
+      journal_issue: 2
+      journal_pages: 207-222
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A., Bromberger, B., Smith, W., Sternschein, R., & Widick, P.
+    work_year: 2011
+    work_title: "Artistic production following brain damage: A study of three artists"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Leonardo
+      journal_advance_tf: false
+      journal_vol: 44
+      journal_issue: 5
+      journal_pages: 405-410
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2011
+    work_title: "Neuroaesthetics: A coming of age story"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Cognitive Neuroscience
+      journal_advance_tf: false
+      journal_vol: 23
+      journal_issue: 1
+      journal_pages: 53-62
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A., Thomas, A., Smith, S.E., & Aguirre, G.K.
+    work_year: 2008
+    work_title: The neural response to facial attractiveness
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neuropsychology
+      journal_advance_tf: false
+      journal_vol: 23
+      journal_issue: null
+      journal_pages: 135-143
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A., Hamilton, R. H., & Amorapanth, P.X.
+    work_year: 2006
+    work_title: 'Art produced by a patient with Parkinson''s disease'
+    from_journal_tf: true
+    journal_data:
+      journal_title: Behavioural Neurology
+      journal_advance_tf: false
+      journal_vol: 17
+      journal_issue: null
+      journal_pages: 105-108
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2006
+    work_title: "The neuropsychology of visual art: Conferring capacity"
+    from_journal_tf: true
+    journal_data:
+      journal_title: International Review of Neurobiology
+      journal_advance_tf: false
+      journal_vol: 74
+      journal_issue: null
+      journal_pages: 39-49
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Wilson A., & Chatterjee A.
+    work_year: 2005
+    work_title: "The assessment of preference for balance: Introducing a new test"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Empirical Studies of the Arts
+      journal_advance_tf: false
+      journal_vol: 23
+      journal_issue: 2
+      journal_pages: 165-180
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee A.
+    work_year: 2004
+    work_title: The neuropsychology of visual artistic expression
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neuropsychologia
+      journal_advance_tf: false
+      journal_vol: 42
+      journal_issue: null
+      journal_pages: 1568-1583
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee A.
+    work_year: 2003
+    work_title: Prospects for a cognitive neuroscience of visual aesthetics
+    from_journal_tf: true
+    journal_data:
+      journal_title: Bulletin of Psychology and the Arts
+      journal_advance_tf: false
+      journal_vol: 4
+      journal_issue: 2
+      journal_pages: 55-60
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee A.
+    work_year: 2002
+    work_title: Portrait profiles and the notion of agency
+    from_journal_tf: true
+    journal_data:
+      journal_title: Empirical Studies of the Arts
+      journal_advance_tf: false
+      journal_vol: 20
+      journal_issue: null
+      journal_pages: 33-41
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+- section_title: Neuroethics
+  section_id: neuroethics
+  section_description: null
+  item_list:
+  - work_authors: Weisberg, S., Badgio, D., & Chatterjee, A.
+    work_year: 2017
+    work_title: "A CRISPR new world: Attitudes in the public toward innovations in human genetic modification"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Frontiers in Public Health
+      journal_advance_tf: false
+      journal_vol: 5?????
+      journal_issue: ?????
+      journal_pages: 117?????
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.3389/fpubh.2017.00117
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2013
+    work_title: Drugs to build a better brain
+    from_journal_tf: true
+    journal_data:
+      journal_title: Nature
+      journal_advance_tf: false
+      journal_vol: 496
+      journal_issue: null
+      journal_pages: 431-432
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chancellor, B., & Chatterjee, A.
+    work_year: 2011
+    work_title: "Brain branding: When neuroscience and commerce collide"
+    from_journal_tf: true
+    journal_data:
+      journal_title: AJOB Neuroscience
+      journal_advance_tf: false
+      journal_vol: 2
+      journal_issue: 4
+      journal_pages: 18-27
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Hamilton, R., Messing, S., & Chatterjee, A.
+    work_year: 2011
+    work_title: Rethinking the thinking cap
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neurology
+      journal_advance_tf: false
+      journal_vol: 76
+      journal_issue: null
+      journal_pages: 187-193
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2009
+    work_title: "Correspondence: A medical view of potential adverse effects"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Nature
+      journal_advance_tf: false
+      journal_vol: 457
+      journal_issue: null
+      journal_pages: 532-533
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2009
+    work_title: "Head to head: Is it acceptable for people to take methylphenidate to enhance performance?"
+    from_journal_tf: true
+    journal_data:
+      journal_title: British Medical Journal
+      journal_advance_tf: false
+      journal_vol: 338
+      journal_issue: null
+      journal_pages: 1532-1533
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2008
+    work_title: Framing pains, pills, and professors
+    from_journal_tf: true
+    journal_data:
+      journal_title: Expositions
+      journal_advance_tf: false
+      journal_vol: 2
+      journal_issue: 2
+      journal_pages: 139-146
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2007
+    work_title: "Cosmetic neurology and cosmetic surgery: Parallels, predictions and challenges"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Quarterly of Healthcare Ethics
+      journal_advance_tf: false
+      journal_vol: 16
+      journal_issue: null
+      journal_pages: 129-137
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2006
+    work_title: The promise and predicament of cosmetic neurology
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Medical Ethics
+      journal_advance_tf: false
+      journal_vol: 32
+      journal_issue: null
+      journal_pages: 110-113
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2004
+    work_title: "Cosmetic neurology: The controversy over enhancing movement, mentation, and mood"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neurology
+      journal_advance_tf: false
+      journal_vol: 63
+      journal_issue: null
+      journal_pages: 968-974
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+- section_title: Miscellaneous
+  section_id: miscellaneous
+  section_description: null
+  item_list:
+  - work_authors: Siegler, J.E., Kable J.W., & Chatterjee, A.
+    work_year: 2016
+    work_title: "Resident decision making: Opioids in the outpatient setting"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Graduate Medical Education
+      journal_advance_tf: false
+      journal_vol: 8
+      journal_issue: 2
+      journal_pages: 138-141
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.4300/JGME-D-15-00186.1
+    pdf_filename: ?????
+  - work_authors: Wende, K.C., Nagels, A., Stratmann, M., Chatterjee, A., Kircher, T., & Straube, B.
+    work_year: 2015
+    work_title: Neural basis of altered physical and social causality judgements in schizophrenia
+    from_journal_tf: true
+    journal_data:
+      journal_title: Schizophrenia Research
+      journal_advance_tf: false
+      journal_vol: ?????
+      journal_issue: ?????
+      journal_pages: ?????
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1016/j.schres.2014.11.007
+    pdf_filename: ?????
+  - work_authors: Vo, K., Rutledge, R.B., Chatterjee, A., & Kable, J.W.
+    work_year: 2014
+    work_title: Dorsal striatum is necessary for stimulus-value but not action-value learning in humans
+    from_journal_tf: true
+    journal_data:
+      journal_title: Brain
+      journal_advance_tf: false
+      journal_vol: ?????
+      journal_issue: ?????
+      journal_pages: 1-7?????
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1093/brain/awu277
+    pdf_filename: ?????
+  - work_authors: Olson, I.R., Ezzyat, Y., Plotzker, A., & Chatterjee, A.
+    work_year: 2014
+    work_title: "The end point of the ventral visual stream: Face and non-face perceptual deficits following unilateral anterior temporal lobe damage"
+    from_journal_tf: true
+    journal_data:
+      journal_title: "Neurocase: The Neural Basis of Cognition"
+      journal_advance_tf: false
+      journal_vol: ?????
+      journal_issue: ?????
+      journal_pages: 1-9?????
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1080/13554794.2014.959025
+    pdf_filename: ?????
+  - work_authors: Göksun, T., Woods, A.J., Chatterjee, A., Zelonis, S., Glass, L., & Smith, S.E.
+    work_year: 2013
+    work_title: 'Elementary school children''s attentional biases in physical and numerical space'
+    from_journal_tf: true
+    journal_data:
+      journal_title: European Journal of Developmental Psychology
+      journal_advance_tf: false
+      journal_vol: 10
+      journal_issue: null
+      journal_pages: 433-448
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1080/17405629.2012.692965
+    pdf_filename: ?????
+  - work_authors: Woods, A.J., Göksun, T., Chatterjee, A., Zelonis, S., Mehta, A., & Smith, S.
+    work_year: 2013
+    work_title: The development of organized visual search
+    from_journal_tf: true
+    journal_data:
+      journal_title: Acta Psychologica
+      journal_advance_tf: false
+      journal_vol: 143
+      journal_issue: null
+      journal_pages: 191-199
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: 10.1016/j.actpsy.2013.03.008
+    pdf_filename: ?????
+  - work_authors: Smith, S.E., & Chatterjee, A.
+    work_year: 2008
+    work_title: Visuospatial attention in children
+    from_journal_tf: true
+    journal_data:
+      journal_title: Archives of Neurology
+      journal_advance_tf: false
+      journal_vol: 65
+      journal_issue: 10
+      journal_pages: 1284-1288
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Fellows, L., Stark, M., Berg, A., & Chatterjee, A.
+    work_year: 2008
+    work_title: "Patient registries in cognitive neuroscience research: Advantages, challenges, and practical advice"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Cognitive Neuroscience
+      journal_advance_tf: false
+      journal_vol: 20
+      journal_issue: 6
+      journal_pages: 1107-1113
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A.
+    work_year: 2005
+    work_title: A madness to the methods in cognitive neuroscience?
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Cognitive Neuroscience
+      journal_advance_tf: false
+      journal_vol: 17
+      journal_issue: 6
+      journal_pages: 847-849
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Biran, I., Giovannetti, T., Buxbaum, L., & Chatterjee, A.
+    work_year: 2006
+    work_title: "The alien hand syndrome: What makes the alien hand alien?"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Cognitive Neuropsychology
+      journal_advance_tf: false
+      journal_vol: 23
+      journal_issue: 4
+      journal_pages: 563-582
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Snyder, J., & Chatterjee, A.
+    work_year: 2006
+    work_title: The frontal cortex and exogenous attentional orienting
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Cognitive Neuroscience
+      journal_advance_tf: false
+      journal_vol: 18
+      journal_issue: 11
+      journal_pages: 1913-1923
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Ricci, R., Genero, R., Colombatti, S., Zampieri, D., & Chatterjee, A.
+    work_year: 2005
+    work_title: "Visuomotor links in awareness: Evidence from extinction"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neuroreport
+      journal_advance_tf: false
+      journal_vol: 16
+      journal_issue: 8
+      journal_pages: 843-847
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Snyder, J., & Chatterjee, A.
+    work_year: 2004
+    work_title: Spatial-temporal anisometries following right parietal damage
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neuropsychologia
+      journal_advance_tf: false
+      journal_vol: 42
+      journal_issue: null
+      journal_pages: 1703-1708
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Ricci, R., & Chatterjee, A.
+    work_year: 2004
+    work_title: Sensory and response contributions to visual awareness in extinction
+    from_journal_tf: true
+    journal_data:
+      journal_title: Experimental Brain Research
+      journal_advance_tf: false
+      journal_vol: 157
+      journal_issue: null
+      journal_pages: 85-93
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Olson, E., Stark, M., & Chatterjee, A.
+    work_year: 2003
+    work_title: Evidence for a unimodal somatosensory attention system
+    from_journal_tf: true
+    journal_data:
+      journal_title: Experimental Brain Research
+      journal_advance_tf: false
+      journal_vol: 151
+      journal_issue: null
+      journal_pages: 15-23
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Ricci, R., & Chatterjee, A.
+    work_year: 2001
+    work_title: Context and crossover in unilateral neglect
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neuropsychologia
+      journal_advance_tf: false
+      journal_vol: 39
+      journal_issue: null
+      journal_pages: 1138-1143
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Vaishnavi, S., Calhoun, J., & Chatterjee, A.
+    work_year: 2001
+    work_title: "Binding personal and peripersonal space: Evidence from tactile extinction"
+    from_journal_tf: true
+    journal_data:
+      journal_title: Journal of Cognitive Neuroscience
+      journal_advance_tf: false
+      journal_vol: 13
+      journal_issue: null
+      journal_pages: 181-189
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
+  - work_authors: Chatterjee, A., Ricci, R., & Calhoun, J.
+    work_year: 2000
+    work_title: Weighing the evidence for cross over in neglect
+    from_journal_tf: true
+    journal_data:
+      journal_title: Neuropsychologia
+      journal_advance_tf: false
+      journal_vol: 38
+      journal_issue: null
+      journal_pages: 1390-1397
+    from_edited_work_tf: false
+    edited_work_data: null
+    review_tf: false
+    review_data: null
+    doi: ?????
+    pdf_filename: ?????
