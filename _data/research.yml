@@ -1,5 +1,12 @@
 ## TODO
 #
+# - Dealing with point-counterpoint style article in journal (e.g., see BMJ
+#   article on methylphenidate). Just cite as ordinary article?
+#
+# - Dealing with letters to editor (e.g., see "correspondence" with Nature).
+#   Maybe just keep the formatting out of the template with letters to editors
+#   AND with reviews of books?
+#
 # - Check for single quote / apostrophe weirdness
 #
 # - Check for missing PDFs
@@ -1283,7 +1290,7 @@
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2009
-    work_title: "Correspondence: A medical view of potential adverse effects"
+    work_title: A medical view of potential adverse effects [Letter to the editor]
     from_journal_tf: true
     journal_data:
       journal_title: Nature
@@ -1295,11 +1302,11 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1038/457532c
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2009
-    work_title: "Head to head: Is it acceptable for people to take methylphenidate to enhance performance?"
+    work_title: Is it acceptable for people to take methylphenidate to enhance performance? No
     from_journal_tf: true
     journal_data:
       journal_title: British Medical Journal
@@ -1311,7 +1318,7 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1136/bmj.b1956
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2008
@@ -1327,7 +1334,7 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1558/expo.v2i2.139
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2007
@@ -1343,7 +1350,7 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1017/S0963180107070156
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2006
@@ -1359,7 +1366,7 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1136/jme.2005.013599
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2004
@@ -1447,7 +1454,7 @@
     pdf_filename: ?????
   - work_authors: Göksun, T., Woods, A.J., Chatterjee, A., Zelonis, S., Glass, L., & Smith, S.E.
     work_year: 2013
-    work_title: 'Elementary school children''s attentional biases in physical and numerical space'
+    work_title: Elementary school children's attentional biases in physical and numerical space
     from_journal_tf: true
     journal_data:
       journal_title: European Journal of Developmental Psychology
