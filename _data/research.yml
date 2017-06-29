@@ -1,5 +1,9 @@
 ## TODO
 #
+# - Issue expressed as range (e.g., for Schizophrenia Research article: "2-3")
+#
+# - DOI formatting style? with https://doi.org prepended?
+#
 # - Dealing with point-counterpoint style article in journal (e.g., see BMJ
 #   article on methylphenidate). Just cite as ordinary article?
 #
@@ -24,10 +28,13 @@
 # - Check that DOI formats are consistent (e.g., all lowercase, no full urls,
 #   etc.)
 #
-# - Clarify: only DOIs for journals? Restructure DOI into journal_data? Do all
-#   journal articles have DOIs. UPDATE: at least one non-journal has DOI (see:
-#   "...growing pains of a new discipline...") so need to fix template (doesn't
-#   currently show a DOI for non-journal)
+# - Clarify: only DOIs for journals? Restructure DOI into journal_data? Do ALL
+#   journal articles have DOIs? UPDATE: at least one non-journal has DOI (see:
+#   "...growing pains of a new discipline...") so maybe fix template (doesn't
+#   currently show a DOI for non-journal). For physical books that also have a
+#   DOI, maybe just show the standard publisher / location info without DOI. At
+#   least one periodical doesn't have DOI (American Society for Aesthetics
+#   newsletter)
 #
 # - Restructure review case? Always in a journal?
 #
@@ -1058,7 +1065,7 @@
       edited_work_publisher: Oxford University Press
     review_tf: false
     review_data: null
-    doi: 10.1093/acprof:oso/9780199732142.001.0001?????
+    doi: null
     pdf_filename: ?????
   - work_authors: Chatterjee, A., Widick, P., Sternschein, R., Smith, W. B., & Bromberger, B.
     work_year: 2010
@@ -1376,13 +1383,13 @@
       journal_title: Neurology
       journal_advance_tf: false
       journal_vol: 63
-      journal_issue: null
+      journal_issue: 6
       journal_pages: 968-974
     from_edited_work_tf: false
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.​1212/​01.​WNL.​0000138438.​88589.​7C
     pdf_filename: ?????
 - section_title: Miscellaneous
   section_id: miscellaneous
@@ -1411,9 +1418,9 @@
     journal_data:
       journal_title: Schizophrenia Research
       journal_advance_tf: false
-      journal_vol: ?????
-      journal_issue: ?????
-      journal_pages: ?????
+      journal_vol: 161
+      journal_issue: 2-3
+      journal_pages: 244-251
     from_edited_work_tf: false
     edited_work_data: null
     review_tf: false
@@ -1427,9 +1434,9 @@
     journal_data:
       journal_title: Brain
       journal_advance_tf: false
-      journal_vol: ?????
-      journal_issue: ?????
-      journal_pages: 1-7?????
+      journal_vol: 137
+      journal_issue: 12
+      journal_pages: 3129-3135
     from_edited_work_tf: false
     edited_work_data: null
     review_tf: false
@@ -1443,9 +1450,9 @@
     journal_data:
       journal_title: "Neurocase: The Neural Basis of Cognition"
       journal_advance_tf: false
-      journal_vol: ?????
-      journal_issue: ?????
-      journal_pages: 1-9?????
+      journal_vol: 21
+      journal_issue: 5
+      journal_pages: 554-562
     from_edited_work_tf: false
     edited_work_data: null
     review_tf: false
@@ -1498,7 +1505,7 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1001/archneur.65.10.1284
     pdf_filename: ?????
   - work_authors: Fellows, L., Stark, M., Berg, A., & Chatterjee, A.
     work_year: 2008
@@ -1514,7 +1521,7 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1162/jocn.2008.20065
     pdf_filename: ?????
   - work_authors: Chatterjee, A.
     work_year: 2005
@@ -1530,7 +1537,7 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1162/0898929054021085
     pdf_filename: ?????
   - work_authors: Biran, I., Giovannetti, T., Buxbaum, L., & Chatterjee, A.
     work_year: 2006
@@ -1546,7 +1553,7 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1080/02643290500180282
     pdf_filename: ?????
   - work_authors: Snyder, J., & Chatterjee, A.
     work_year: 2006
@@ -1562,7 +1569,7 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1162/jocn.2006.18.11.1913
     pdf_filename: ?????
   - work_authors: Ricci, R., Genero, R., Colombatti, S., Zampieri, D., & Chatterjee, A.
     work_year: 2005
@@ -1578,7 +1585,7 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1080/17405629.2012.692965
     pdf_filename: ?????
   - work_authors: Snyder, J., & Chatterjee, A.
     work_year: 2004
@@ -1588,13 +1595,13 @@
       journal_title: Neuropsychologia
       journal_advance_tf: false
       journal_vol: 42
-      journal_issue: null
+      journal_issue: 12
       journal_pages: 1703-1708
     from_edited_work_tf: false
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1016/j.neuropsychologia.2004.04.003
     pdf_filename: ?????
   - work_authors: Ricci, R., & Chatterjee, A.
     work_year: 2004
@@ -1604,13 +1611,13 @@
       journal_title: Experimental Brain Research
       journal_advance_tf: false
       journal_vol: 157
-      journal_issue: null
+      journal_issue: 1
       journal_pages: 85-93
     from_edited_work_tf: false
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1007/s00221-003-1823-8
     pdf_filename: ?????
   - work_authors: Olson, E., Stark, M., & Chatterjee, A.
     work_year: 2003
@@ -1620,13 +1627,13 @@
       journal_title: Experimental Brain Research
       journal_advance_tf: false
       journal_vol: 151
-      journal_issue: null
+      journal_issue: 1
       journal_pages: 15-23
     from_edited_work_tf: false
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1007/s00221-003-1428-2
     pdf_filename: ?????
   - work_authors: Ricci, R., & Chatterjee, A.
     work_year: 2001
@@ -1636,13 +1643,13 @@
       journal_title: Neuropsychologia
       journal_advance_tf: false
       journal_vol: 39
-      journal_issue: null
+      journal_issue: 11
       journal_pages: 1138-1143
     from_edited_work_tf: false
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1016/S0028-3932(01)00054-9
     pdf_filename: ?????
   - work_authors: Vaishnavi, S., Calhoun, J., & Chatterjee, A.
     work_year: 2001
@@ -1652,13 +1659,13 @@
       journal_title: Journal of Cognitive Neuroscience
       journal_advance_tf: false
       journal_vol: 13
-      journal_issue: null
+      journal_issue: 2
       journal_pages: 181-189
     from_edited_work_tf: false
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1162/089892901564243
     pdf_filename: ?????
   - work_authors: Chatterjee, A., Ricci, R., & Calhoun, J.
     work_year: 2000
@@ -1668,11 +1675,11 @@
       journal_title: Neuropsychologia
       journal_advance_tf: false
       journal_vol: 38
-      journal_issue: null
+      journal_issue: 10
       journal_pages: 1390-1397
     from_edited_work_tf: false
     edited_work_data: null
     review_tf: false
     review_data: null
-    doi: ?????
+    doi: 10.1016/S0028-3932(00)00042-7
     pdf_filename: ?????
