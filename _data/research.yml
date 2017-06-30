@@ -1,5 +1,7 @@
 ## TODO
 #
+# - Drugs to build a better brain is a book review
+#
 # - Issue expressed as range (e.g., for Schizophrenia Research article: "2-3")
 #
 # - DOI formatting style? with https://doi.org prepended?
@@ -88,8 +90,8 @@
 ## YAML STYLEGUIDE / LOGICGUIDE
 #
 # - If from_journal_tf is false, journal_data should be null (same for
-  #     from_edited_work_tf / edited_work_data, review_tf / review_data).
-    #
+#   from_edited_work_tf / edited_work_data, review_tf / review_data).
+#
 # - For work in a journal, journal_vol and journal_pages are necessary, but
 #   journal_issue is optional / case dependant.
 #
@@ -108,87 +110,87 @@
 #
 # - section_title: Language and Space
 #     section_id: language_space
-  #   section_description: We research language and space!
-  #   item_list:
+#     section_description: We research language and space!
+#     item_list:
 #
 ## WORK APPEARING IN A JOURNAL
 #
-#   - work_authors: Karaduman, A., Göksun, T., & Chatterjee, A.
+#     - work_authors: Karaduman, A., Göksun, T., & Chatterjee, A.
 #       work_year: 2017
 #       work_title: "Narratives of focal brain injured individuals: A macro-level analysis"
 #       from_journal_tf: true
 #       journal_data:
-#           journal_title: Neuropsychologia
-    #       journal_advance_tf: false
-    #       journal_vol: 99
-    #       journal_issue: null
-    #       journal_pages: 314-325
-    #       journal_doi: 10.1016/j.neuropsychologia.2017.03.027
+#         journal_title: Neuropsychologia
+#         journal_advance_tf: false
+#         journal_vol: 99
+#         journal_issue: null
+#         journal_pages: 314-325
+#         journal_doi: 10.1016/j.neuropsychologia.2017.03.027
 #       from_edited_work_tf: false
-  #     edited_work_data: null
-  #     review_tf: false
-  #     review_data: null
+#       edited_work_data: null
+#       review_tf: false
+#       review_data: null
 #       pdf_filename: ?????
 #
 ## ADVANCE ONLINE PUBLICATION
 #
-#   - work_authors: McQuire, M., McCollum, L., & Chatterjee, A.
+#     - work_authors: McQuire, M., McCollum, L., & Chatterjee, A.
 #       work_year: 2016
 #       work_title: Aptness and beauty in metaphor
 #       from_journal_tf: true
 #       journal_data:
-#           journal_title: Language and Cognition
-    #       journal_advance_tf: true
-    #       journal_vol: null
-    #       journal_issue: null
-    #       journal_pages: null
-    #       journal_doi: 10.1017/langcog.2016.13
+#         journal_title: Language and Cognition
+#         journal_advance_tf: true
+#         journal_vol: null
+#         journal_issue: null
+#         journal_pages: null
+#         journal_doi: 10.1017/langcog.2016.13
 #       from_edited_work_tf: false
-  #     edited_work_data: null
-  #     review_tf: false
-  #     review_data: null
+#       edited_work_data: null
+#       review_tf: false
+#       review_data: null
 #       pdf_filename: ?????
 #
 ## WORK APPEARING IN AN EDITED WORK
 #
-#   - work_authors: Kranjec, A., Lehet, M., & Chatterjee, A.
+#     - work_authors: Kranjec, A., Lehet, M., & Chatterjee, A.
 #       work_year: 2014
 #       work_title: Pitch affects estimates of space but not vice versa
 #       from_journal_tf: false
 #       journal_data: null
 #       from_edited_work_tf: true
-  #     edited_work_data:
-#           edited_work_type: conference
-    #       edited_work_title: Program of the 36th annual meeting of the Cognitive Science Society
-    #       edited_work_pages: (pp. 779-784)
-    #       edited_work_editors: P. Bello, M. Guarini, M. McShane, & B. Scassellati (Eds.)
-    #       edited_work_location: Quebec City, Canada
-    #       edited_work_publisher: Cognitive Science Society
-  #     review_tf: false
-  #     review_data: null
+#       edited_work_data:
+#         edited_work_type: conference
+#         edited_work_title: Program of the 36th annual meeting of the Cognitive Science Society
+#         edited_work_pages: (pp. 779-784)
+#         edited_work_editors: P. Bello, M. Guarini, M. McShane, & B. Scassellati (Eds.)
+#         edited_work_location: Quebec City, Canada
+#         edited_work_publisher: Cognitive Science Society
+#       review_tf: false
+#       review_data: null
 #       pdf_filename: ?????
 #
 ## WORK THAT REVIEWS ANOTHER WORK
 #
-#   - work_authors: Chatterjee, A.
+#     - work_authors: Chatterjee, A.
 #       work_year: 2017
 #       work_title: A cognitive aesthetics of literature and the arts
 #       from_journal_tf: true
 #       journal_data:
-#           journal_title: Cognitive Semiotics
-    #       journal_advance_tf: false
-    #       journal_vol: 10
-    #       journal_issue: 1
-    #       journal_pages: 41-47
-    #       journal_doi: 10.1515/cogsem-2017-0003
+#         journal_title: Cognitive Semiotics
+#         journal_advance_tf: false
+#         journal_vol: 10
+#         journal_issue: 1
+#         journal_pages: 41-47
+#         journal_doi: 10.1515/cogsem-2017-0003
 #       from_edited_work_tf: false
-  #     edited_work_data: null
-  #     review_tf: true
-  #     review_data:
-#       reviewed_work_type: book
-#       reviewed_work_title: Beauty and sublimity
-#       reviewed_work_author: P.C. Hogan
-#       pdf_filename: ?????
+#       edited_work_data: null
+#       review_tf: true
+#       review_data:
+#         reviewed_work_type: book
+#         reviewed_work_title: Beauty and sublimity
+#         reviewed_work_author: P.C. Hogan
+#         pdf_filename: ?????
 
 - section_title: Language and Space
   section_id: language_space
@@ -577,7 +579,7 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    pdf_filename: Chatterjee%20SSL%202008.pdf
+    pdf_filename: Chatterjee_SSL_2008.pdf
   - work_authors: Wu, D., Waller, S., & Chatterjee, A.
     work_year: 2007
     work_title: The functional neuroanatomy of thematic role and locative relational knowledge
@@ -1212,7 +1214,7 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    pdf_filename: Prospects%20of%20Cog%20Neuro%20Visual%20Aes.pdf
+    pdf_filename: Prospects_of_Cog_Neuro_Visual_Aes.pdf
   - work_authors: Chatterjee A.
     work_year: 2002
     work_title: Portrait profiles and the notion of agency
@@ -1588,7 +1590,7 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    pdf_filename: Goksun_EJDP_2013.pdf
+    pdf_filename: null
   - work_authors: Snyder, J., & Chatterjee, A.
     work_year: 2004
     work_title: Spatial-temporal anisometries following right parietal damage
@@ -1684,4 +1686,4 @@
     edited_work_data: null
     review_tf: false
     review_data: null
-    pdf_filename: Goksun_EJDP_2013.pdf
+    pdf_filename: null
