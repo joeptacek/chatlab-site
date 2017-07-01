@@ -142,10 +142,14 @@ div.research-item {
   margin-bottom: 2rem;
 }
 
+div.research-item:last-of-type {
+  margin-bottom: 0;
+}
+
 .citation {
   /* Hanging indent */
-  padding-left: 2rem;
-  text-indent: -2rem;
+  padding-left: 1rem;
+  text-indent: -1rem;
 }
 
 cite {
