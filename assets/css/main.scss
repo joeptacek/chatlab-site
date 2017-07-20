@@ -146,13 +146,17 @@ div.research-item:last-of-type {
   margin-bottom: 0;
 }
 
-.citation {
+p.citation {
   /* Hanging indent */
   padding-left: 1rem;
   text-indent: -1rem;
 }
 
 cite {
+  font-style: italic; /* Should be italic by default, but just in case not */
+}
+
+cite.no-italic {
   font-style: normal;
 }
 
