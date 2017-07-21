@@ -1,12 +1,10 @@
 ## TODO
 #
+# - Clarify null vs nil
+#
 # - Clarify what to do with conference proceedings publisher / location
 #
-# - Find / create missing PDFs (where pdf_filename is null); deal with case
-#   where ultimately no PDF is available
-#
-# - Confirm that works without PDFs don't include (broken) links to PDFs (i.e.,
-#   when pdf_filename is null)
+# - Deal with case where ultimately no PDF is available
 #
 # - Fix journal titles (e.g., Aesthetics instead of American Society for
 #   Aesthetics)
@@ -353,7 +351,7 @@
       edited_work_editors: P. Bello, M. Guarini, M. McShane, & B. Scassellati (Eds.)
       edited_work_location: Quebec City, Canada
       edited_work_publisher: Cognitive Science Society
-    pdf_filename: null
+    pdf_filename: Kranjec_Lehet_Chatterjee_2014_01.pdf
   - work_authors: Göksun T., Lehet M., Malykhina K., & Chatterjee A.
     work_year: 2013
     work_title: "Naming and gesturing spatial relations: Evidence from focal brain-injured individuals"
@@ -717,7 +715,7 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: null
+    pdf_filename: Watson_Cardillo_Bromberger_Chatterjee_2014_01.pdf
   - work_authors: Watson, C.E., Cardillo, E.R., Ianni, G.R., & Chatterjee, A.
     work_year: 2013
     work_title: "Action concepts in the brain: An activation likelihood estimation meta-analysis"
@@ -1037,7 +1035,7 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: null
+    pdf_filename: Chatterjee_2011_02.pdf
   - work_authors: Chatterjee A.
     work_year: 2012
     work_title: "Neuroaesthetics: Growing pains of a new discipline"
@@ -1418,7 +1416,7 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: null
+    pdf_filename: Olson_Ezzyat_Plotzker_Chatterjee_2014_01.pdf
   - work_authors: Göksun, T., Woods, A.J., Chatterjee, A., Zelonis, S., Glass, L., & Smith, S.E.
     work_year: 2013
     work_title: Elementary school children's attentional biases in physical and numerical space
@@ -1538,7 +1536,7 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: null
+    pdf_filename: Ricci_Genero_Colombatti_Zampier_Chatterjee_2005_01.pdf
   - work_authors: Snyder, J., & Chatterjee, A.
     work_year: 2004
     work_title: Spatial-temporal anisometries following right parietal damage
@@ -1628,4 +1626,4 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: null
+    pdf_filename: Chatterjee_Ricci_Calhoun_2000_01.pdf
