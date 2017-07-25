@@ -125,25 +125,14 @@ section {
   }
 }
 
-#nav-news {
-  ul {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    li {
-      margin: 0.5rem;
-    }
-  }
-}
-
 /* Page-specific: Research */
 
 div.research-item {
   margin-bottom: 2rem;
-}
 
-div.research-item:last-of-type {
-  margin-bottom: 0;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 p.citation {
@@ -169,10 +158,10 @@ div.people-item {
 
   /* Center headshot and people-item-text elements */
   align-items: center;
-}
 
-div.people-item:last-of-type {
-  margin-bottom: 0;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 img.people-item-img {
@@ -190,6 +179,27 @@ div.people-item-text-header {
 
 p.people-item-text-suffix {
   margin-bottom: 0.5rem;
+}
+
+/* Page-specific: News */
+
+#nav-news {
+  ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    li {
+      margin: 0.5rem;
+    }
+  }
+}
+
+div.news-item {
+  margin-bottom: 2rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (min-width: 40rem) {
