@@ -1,5 +1,9 @@
 ## TODO
 #
+# - Use quotes on all strings? (Read about single vs double and escaping)
+#
+# - Set the order
+#
 # - Fix umlauts
 #
 # - Clarify null vs nil
