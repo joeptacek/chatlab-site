@@ -1,4 +1,6 @@
-TODO
+- em dash, en dash, hyphen
+
+- fix null dates and urls for media
 
 - null or ~
 
@@ -7,11 +9,11 @@ TODO
 
 - Things to be careful about with single-quoting strings: Single quotes inside
   single quotes need to be duplicated (e.g., '' for ') - but remember to use
-  curly quotes (‘’) whenever needed. Other special characters (e.g., " \ / : -)
-  should be rendered correctly inside single quotes. Can use double quotes for
-  strings containing non-printable / control escape sequences (e.g., \n produces
-  a line break), or really any arbitrary unicode. To make backslash in double
-  quotes, must use \x5c.
+  curly quotes (‘’) whenever needed (including apostrophes). Other special
+  characters (e.g., " \ / : -) should be rendered correctly inside single
+  quotes. Can use double quotes for strings containing non-printable / control
+  escape sequences (e.g., \n produces a line break), or really any arbitrary
+  unicode. To make backslash in double quotes, must use \x5c.
 
 - For special characters including apostrophes, curly quotes, umlauts, etc.,
   OK to use the rendered unicode character itself (e.g., alt + [ for “ on
