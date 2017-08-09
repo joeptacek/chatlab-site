@@ -1,3 +1,25 @@
+- Keep adding videos (next: Haverford)
+
+- Convert numeric months to words
+
+- Media platform / show: Title
+  Media publisher, date
+
+  Example:
+  CNS Blog: Beauty Is in the Brain of the Beholder
+  CNS, 1/21/15
+
+  CNS Conference 2015: xxx
+
+  Mural Blog: xxx
+  BPS Research Digest
+  Psychology Today Blog
+  BioLogos Blogs
+  etc.
+
+- Title case = AP style or...? See titlecase.com, check news.yml for
+  inconsistencies (e.g., "with" vs "With")... prefer more uppercasey AP style?
+
 - for news, null date_day is ok
 
 - Keep working on fixing strings. All should be in single quotes. Next to do:
