@@ -1,11 +1,16 @@
+- for news, null date_day is ok
+
+- Keep working on fixing strings. All should be in single quotes. Next to do:
+
+- supplemental content (e.g. corrections, tests)
+
+- generally: try to eventually update citations for advance online pubs
+
 - em dash, en dash, hyphen
 
 - fix null dates and urls for media
 
 - null or ~
-
-- Keep working on fixing strings. All should be in single quotes. Next to do:
-  edited_work_type
 
 - Things to be careful about with single-quoting strings: Single quotes inside
   single quotes need to be duplicated (e.g., '' for ') - but remember to use
