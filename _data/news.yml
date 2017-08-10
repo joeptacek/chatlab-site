@@ -405,14 +405,14 @@
   media_url: 'http://www.nytimes.com/2004/10/05/health/05side.html'
   type: 'print'
 - title: 'College Students Should Be Allowed to Take Smart Drugs'
-  source: 'Intelligence Squared'
+  source: 'Intelligence Squared?????'
   date_month: 11
   date_day: 2
   date_year: 2015
   media_url: 'http://www.intelligencesquaredus.org/debates/college-students-should-be-allowed-take-smart-drugs'
   type: 'video'
 - title: 'The Neuroscience of Aesthetics'
-  source: 'Interact Conference'
+  source: 'Interact Conference?????'
   date_month: 10
   date_day: 21
   date_year: 2015
@@ -426,7 +426,7 @@
   media_url: 'https://youtu.be/jKt7ZBpaZo8'
   type: 'video'
 - title: 'The Neuroaesthetics of Aesthetics and Art'
-  source: 'CNS Conference'
+  source: 'CNS Conference?????'
   date_month: 4
   date_day: 13
   date_year: 2015
@@ -438,4 +438,25 @@
   date_day: 10
   date_year: 2012
   media_url: 'http://www.pbs.org/video/tpt-documentaries-arts-mind-art-connection'
+  type: 'video'
+- title: 'Are Better Brains Better? Cosmetic Neurology and the Ethics of Enhancement'
+  source: 'Haverford?????'
+  date_month: 4
+  date_day: 18
+  date_year: 2010
+  media_url: null
+  type: 'video'
+- title: '?????'
+  source: 'Center for Neuroscience and Society (University of Pennsylvania)'
+  date_month: 1
+  date_day: 5
+  date_year: 2010
+  media_url: 'https://youtu.be/8nrdAFU3xpw'
+  type: 'video'
+- title: 'Neuroethcis: Are Better Brains Better? (Media Seminar on Neuroscience and Society)'
+  source: 'Center for Neuroscience and Society (University of Pennsylvania)'
+  date_month: 4
+  date_day: 13
+  date_year: 2009
+  media_url: https://youtu.be/Zh2VTVWI1P8'
   type: 'video'
