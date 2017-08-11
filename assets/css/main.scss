@@ -188,6 +188,7 @@ p.people-item-text-suffix {
     display: flex;
     flex-flow: row;
     justify-content: center;
+    margin-bottom: 2rem;
     li {
       margin: 0.5rem;
     }
@@ -195,10 +196,24 @@ p.people-item-text-suffix {
 }
 
 div.news-item {
+  display: flex;
+  flex-flow: row;
   margin-bottom: 2rem;
+
+  div:first-of-type {
+    flex: 0 0 5rem;
+  }
 
   &:last-of-type {
     margin-bottom: 0;
+  }
+
+  p.news-source {
+    margin-bottom: 1rem;
+  }
+
+  span.sub-source {
+    color: grey;
   }
 }
 
