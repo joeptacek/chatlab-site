@@ -1,5 +1,5 @@
 - title: 'Buildings, Beauty, and the Brain: Q & A with Anjan Chatterjee'
-  source: 'CNS'
+  source: 'Cognitive Neuroscience Society (CNS)'
   sub_source: 'CNS Blog'
   date_month: 6
   date_day: 15
@@ -119,7 +119,7 @@
   media_url: 'http://sciencebookaday.com/2015/09/21/science-book-a-day-interviews-anjan-chatterjee'
   type: 'print'
 - title: '5 Lessons From the Neuroscience of Art and Aesthetics'
-  source: 'CNS'
+  source: 'Cognitive Neuroscience Society (CNS)'
   sub_source: 'CNS Blog'
   date_month: 4
   date_day: 28
@@ -159,7 +159,7 @@
   media_url: 'http://nautil.us/issue/20/creativity/can-science-tell-us-what-beauty-is'
   type: 'print'
 - title: 'Beauty Is in the Brain of the Beholder'
-  source: 'CNS'
+  source: 'Cognitive Neuroscience Society (CNS)'
   sub_source: 'CNS Blog'
   date_month: 1
   date_day: 21
@@ -464,7 +464,7 @@
   type: 'video'
 - title: 'The Neuroscience of Aesthetics'
   source: 'Interact'
-  sub_source: 'Interact 2105'
+  sub_source: 'Interact 2015 (Keynote)'
   date_month: 10
   date_day: 21
   date_year: 2015
@@ -479,8 +479,8 @@
   media_url: 'https://youtu.be/jKt7ZBpaZo8'
   type: 'video'
 - title: 'The Neuroaesthetics of Aesthetics and Art'
-  source: 'CNS'
-  sub_source: 'CNS 2015'
+  source: 'Cognitive Neuroscience Society (CNS)'
+  sub_source: 'CNS 2015 (Keynote)'
   date_month: 4
   date_day: 13
   date_year: 2015
@@ -495,44 +495,36 @@
   media_url: 'http://www.pbs.org/video/tpt-documentaries-arts-mind-art-connection'
   type: 'video'
 - title: 'Are Better Brains Better? Cosmetic Neurology and the Ethics of Enhancement'
-  source: '????? (Haverford College)'
-  sub_source: null
+  source: 'Haverford College'
+  sub_source: '?????'
   date_month: 4
   date_day: 18
   date_year: 2010
   media_url: null
   type: 'video'
 - title: '?????'
-  source: 'Center for Neuroscience and Society (University of Pennsylvania)'
-  sub_source: null
+  source: 'University of Pennsylvania'
+  sub_source: 'Center for Neuroscience & Society'
   date_month: 1
   date_day: 5
   date_year: 2010
   media_url: 'https://youtu.be/8nrdAFU3xpw'
   type: 'video'
-- title: 'Neuroethcis: Are Better Brains Better?'
-  source: 'Center for Neuroscience and Society (University of Pennsylvania)'
-  sub_source: 'Media Seminar on Neuroscience and Society'
+- title: 'Neuroethics: Are Better Brains Better?'
+  source: 'University of Pennsylvania'
+  sub_source: 'Center for Neuroscience & Society (Media Seminar on Neuroscience and Society)'
   date_month: 4
   date_day: 13
   date_year: 2009
-  media_url: https://youtu.be/Zh2VTVWI1P8'
+  media_url: 'https://youtu.be/Zh2VTVWI1P8'
   type: 'video'
 - title: 'Is Beauty in the Eye of the Beholder?'
   source: 'NPR'
   sub_source: 'WNPR (The Colin McEnroe Show)'
-  date_moth:
-  date_day:
-  date_year:
-  media_url:
-  type: 'audio'
-- title: 'Drug May Be a Help to the Sleep Deprived'
-  source: 'NPR'
-  sub_source: 'NPR (Morning Edition)'
-  date_month: 8
-  date_day: 23
-  date_year: 2005
-  media_url: 'http://www.npr.org/templates/story/story.php?storyId=4811303'
+  date_month: 2
+  date_day: 7
+  date_year: 2017
+  media_url: 'http://wnpr.org/post/beauty-eye-beholder'
   type: 'audio'
 - title: 'Study Examines Art Therapy For Alzheimer’s, Dementia'
   source: 'NPR'
@@ -545,8 +537,56 @@
 - title: 'Smart Drugs'
   source: 'NPR'
   sub_source: 'WHYY (Radio Times)'
+  date_month: 11
+  date_day: 16
+  date_year: 2015
+  media_url: 'https://whyy.org/cms/radiotimes/2015/11/16/smart-drugs/'
+  type: 'audio'
+- title: 'Anjan Chatterjee Interview at #interactLDN 2015'
+  source: 'UX Podcast'
+  sub_source: null
+  date_month: 10
+  date_day: 21
+  date_year: 2015
+  media_url: 'http://uxpodcast.com/anjan-chatterjee-interactldn-2015/'
+  type: 'audio'
+- title: 'Why the Brain Likes Beauty'
+  source: 'NPR'
+  sub_source: 'KERA (Think)'
+  date_month: 9
+  date_day: 23
+  date_year: 2015
+  media_url: 'http://think.kera.org/2015/09/23/why-the-brain-likes-beauty/'
+  type: 'audio'
+- title: 'In the Brain of the Beholder'
+  source: 'The Economist'
+  sub_source: 'Prospero'
+  date_month: 12
+  date_day: 25
+  date_year: 2013
+  media_url: 'https://www.economist.com/blogs/prospero/2013/12/why-we-find-things-beautiful'
+  type: 'audio'
+- title: 'Anjan Chatterjee on Neuroethics, Cosmetic Neurology, and Neuromarketing'
+  source: 'Neurons Inc'
+  sub_source: 'BrainEthics Podcast'
+  date_month: 5
+  date_day: 19
+  date_year: 2011
+  media_url: 'http://neuronsinc.com/cosmetic-neurology/brainethics-podcast-anjan-chatterjee-on-neuroethics-cosmetic-neurology-and-neuromarketing/'
+  type: 'audio'
+- title: 'The Neuropsychology of Art'
+  source: 'The Beautiful Brain'
+  sub_source: 'The Beautiful Brain Podcast'
   date_month: 1
-  date_day: 6
-  date_year: 2017
-  media_url: 'http://kjzz.org/content/417763/study-examines-art-therapy-alzheimers-dementia'
+  date_day: 17
+  date_year: 2010
+  media_url: 'http://neuronsinc.com/cosmetic-neurology/brainethics-podcast-anjan-chatterjee-on-neuroethics-cosmetic-neurology-and-neuromarketing/'
+  type: 'audio'
+- title: 'Drug May Be a Help to the Sleep Deprived'
+  source: 'NPR'
+  sub_source: 'NPR (Morning Edition)'
+  date_month: 8
+  date_day: 23
+  date_year: 2005
+  media_url: 'http://www.npr.org/templates/story/story.php?storyId=4811303'
   type: 'audio'
