@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <main>
+      <nav id="nav-page">
+        <h1>{{ page.title }}</h1>
+        <ul>
+          <li><a href="#all">All News</a></li>
+          <li><a href="#print">Print</a></li>
+          <li><a href="#video">Video</a></li>
+          <li><a href="#audio">Audio</a></li>
+        </ul>
+      </nav>
+      <div> <!-- div necessary to make flex row with nav -->
+        <section id="all">
+          <h2>All News</h2>
+          {% for item in site.data.news limit:3 %}
+            {% include {{ page.include_filename }} pass=item %}
+          {% endfor %}
+        </section>
+        <section id="print">
+          <h2>Print</h2>
+          {% assign count = 0 %}
+          {% for item in site.data.news %}
+            {% if item.type == "print" %}
+              {% include {{ page.include_filename }} pass=item %}
+              {% assign count = count | plus: 1 %}
+              {% if count > 2 %}{% break %}{% endif %}
+            {% endif %}
+          {% endfor %}
+        </section>
+        <section id="video">
+          <h2>Video</h2>
+          {% assign count = 0 %}
+          {% for item in site.data.news %}
+            {% if item.type == "video" %}
+              {% include {{ page.include_filename }} pass=item %}
+              {% assign count = count | plus: 1 %}
+              {% if count > 2 %}{% break %}{% endif %}
+            {% endif %}
+          {% endfor %}
+        </section>
+        <section id="audio">
+          <h2>Audio</h2>
+          {% assign count = 0 %}
+          {% for item in site.data.news %}
+            {% if item.type == "audio" %}
+              {% include {{ page.include_filename }} pass=item %}
+              {% assign count = count | plus: 1 %}
+              {% if count > 2 %}{% break %}{% endif %}
+            {% endif %}
+          {% endfor %}
+        </section>
+      </div>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>
