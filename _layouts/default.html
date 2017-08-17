@@ -20,11 +20,11 @@
         {% endunless %}
         {% for section in site.data[page.data_filename] %}
           <section id="{{ section.section_id }}">
-            <h2>{{ section.section_title }}</h2>
-            <hr />
+            <h2 class="section-title">{{ section.section_title }}</h2>
             {% if section.section_description %}
-              <p>{{ section.section_description }}</p>
+              <p class="section-description">{{ section.section_description }}</p>
             {% endif %}
+            <hr />
             {% for item in section.item_list %}
               {% include {{ page.include_filename }} pass=item %}
             {% endfor %}

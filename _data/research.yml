@@ -1,6 +1,6 @@
 - section_title: 'Language and Space'
   section_id: 'language_space'
-  section_description: null
+  section_description: 'The lab’s research on language and space is concerned with a variety of concepts. Our primary interests lie in spatial and gestural representations in language, as well as in the processing of metaphoric and figurative language in patients and controls.'
   item_list:
   - work_authors: 'Karaduman, A., Göksun, T., & Chatterjee, A.'
     work_year: 2017
@@ -434,7 +434,7 @@
     pdf_filename: 'Chatterjee_2001_01.pdf'
 - section_title: 'Event Representation'
   section_id: 'event_representation'
-  section_description: null
+  section_description: 'Our examination of event representation focuses on how humans visualize and process moving events and infer causality within these events, as well as focusing on the neural bases of processing action-based information in general.'
   item_list:
   - work_authors: 'Quandt, L.C., Cardillo, E.R., Kranjec, A., & Chatterjee, A.'
     work_year: 2015
@@ -630,7 +630,7 @@
     pdf_filename: 'Chatterjee_Southwood_Basilico_1999_01.pdf'
 - section_title: 'Neuroaesthetics'
   section_id: 'neuroaesthetics'
-  section_description: null
+  section_description: 'Neuroaesthetics refers to the role of the brain in evaluating visual stimuli and their aesthetic appeal. Our research ranges from aesthetic choices of brain-injured individuals to aesthetic preferences in every day life (in architecture, art, and facial beauty).'
   item_list:
   - work_authors: 'Coburn, A., Vartanian, O., & Chatterjee, A.'
     work_year: 2017
@@ -1033,7 +1033,7 @@
     pdf_filename: 'Chatterjee_2002_01.pdf'
 - section_title: 'Neuroethics'
   section_id: 'neuroethics'
-  section_description: null
+  section_description: 'Neuroethics focuses mainly on the ethical implications of neuroscientific progress, such as “cosmetic neurology,” the use of drugs to enhance cognitive performance and ability.'
   item_list:
   - work_authors: 'Weisberg, S., Badgio, D., & Chatterjee, A.'
     work_year: 2017
@@ -1197,7 +1197,7 @@
     pdf_filename: 'Chatterjee_2004_02.pdf'
 - section_title: 'Miscellaneous'
   section_id: 'miscellaneous'
-  section_description: null
+  section_description: 'Cognitive neurology covers many different areas and we are interested in a number of these facets of brain and behavior. These topics include visuospatial attention, methodology in cognitive neuroscience, as well as some case study research.'
   item_list:
   - work_authors: 'Siegler, J.E., Kable J.W., & Chatterjee, A.'
     work_year: 2016
