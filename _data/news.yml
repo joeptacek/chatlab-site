@@ -22,6 +22,14 @@
   date_year: 2017
   media_url: 'https://www.nytimes.com/2017/02/10/well/mind/karen-pence-picks-a-cause-and-art-therapists-feel-angst.html'
   type: 'print'
+- title: 'Is Beauty in the Eye of the Beholder?'
+  source: 'NPR'
+  sub_source: 'WNPR (The Colin McEnroe Show)'
+  date_month: 2
+  date_day: 7
+  date_year: 2017
+  media_url: 'http://wnpr.org/post/beauty-eye-beholder'
+  type: 'audio'
 - title: 'Beauty and Anti-aging Is by Far the Largest Sector in the $3.7 Trillion Wellness Economy'
   source: 'Cosmetics Design USA'
   sub_source: null
@@ -38,6 +46,14 @@
   date_year: 2017
   media_url: 'http://www.sciartmagazine.com/straight-talk-with-neuroaesthetics-researcher-dr-anjan-chatterjee.html'
   type: 'print'
+- title: 'Study Examines Art Therapy For Alzheimer’s, Dementia'
+  source: 'NPR'
+  sub_source: 'KJZZ (The Show)'
+  date_month: 1
+  date_day: 6
+  date_year: 2017
+  media_url: 'http://kjzz.org/content/417763/study-examines-art-therapy-alzheimers-dementia'
+  type: 'audio'
 - title: 'Neurologists Study Beauty and Aesthetics'
   source: 'The Hofstra Chronicle'
   sub_source: null
@@ -94,6 +110,14 @@
   date_year: 2016
   media_url: 'https://blog.mural.ly/2016/04/22/this-is-your-brain-on-mural-interview-with-dr-anjan-chatterjee'
   type: 'print'
+- title: 'Smart Drugs'
+  source: 'NPR'
+  sub_source: 'WHYY (Radio Times)'
+  date_month: 11
+  date_day: 16
+  date_year: 2015
+  media_url: 'https://whyy.org/cms/radiotimes/2015/11/16/smart-drugs/'
+  type: 'audio'
 - title: '“Smart Drugs” Are Here - Should College Students Be Allowed to Use Them?'
   source: 'The Washington Post'
   sub_source: null
@@ -102,6 +126,30 @@
   date_year: 2015
   media_url: 'https://www.washingtonpost.com/news/speaking-of-science/wp/2015/11/03/smart-drugs-are-here-should-college-students-be-allowed-to-use-them'
   type: 'print'
+- title: 'College Students Should Be Allowed to Take Smart Drugs'
+  source: 'Intelligence Squared'
+  sub_source: 'Intelligence Squared Debates'
+  date_month: 11
+  date_day: 2
+  date_year: 2015
+  media_url: 'http://www.intelligencesquaredus.org/debates/college-students-should-be-allowed-take-smart-drugs'
+  type: 'video'
+- title: 'The Neuroscience of Aesthetics'
+  source: 'Interact'
+  sub_source: 'Interact 2015 (Keynote)'
+  date_month: 10
+  date_day: 21
+  date_year: 2015
+  media_url: 'https://2015.interactconf.com/speakers/anjan-chatterjee/index.html'
+  type: 'video'
+- title: 'Anjan Chatterjee Interview at #interactLDN 2015'
+  source: 'UX Podcast'
+  sub_source: null
+  date_month: 10
+  date_day: 21
+  date_year: 2015
+  media_url: 'http://uxpodcast.com/anjan-chatterjee-interactldn-2015/'
+  type: 'audio'
 - title: 'The Aesthetic Brain (Book Review)'
   source: 'The Journal of Clinical Psychiatry'
   sub_source: null
@@ -110,6 +158,14 @@
   date_year: 2015
   media_url: 'http://www.psychiatrist.com/JCP/article/Pages/2015/v76n10/v76n1013.aspx'
   type: 'print'
+- title: 'Why the Brain Likes Beauty'
+  source: 'NPR'
+  sub_source: 'KERA (Think)'
+  date_month: 9
+  date_day: 23
+  date_year: 2015
+  media_url: 'http://think.kera.org/2015/09/23/why-the-brain-likes-beauty/'
+  type: 'audio'
 - title: 'Science Book a Day Interviews Anjan Chatterjee'
   source: 'Science Book a Day'
   sub_source: null
@@ -134,6 +190,22 @@
   date_year: 2015
   media_url: 'http://www.nytimes.com/roomfordebate/2015/04/21/using-adderall-to-get-ahead-not-to-fight-adhd/the-use-of-workplace-productivity-drugs-is-the-probable-future'
   type: 'print'
+- title: 'The Brain, Smart Drugs, and Sports'
+  source: 'SCI TV'
+  sub_source: null
+  date_month: 4
+  date_day: 15
+  date_year: 2015
+  media_url: 'https://youtu.be/jKt7ZBpaZo8'
+  type: 'video'
+- title: 'The Neuroaesthetics of Aesthetics and Art'
+  source: 'Cognitive Neuroscience Society (CNS)'
+  sub_source: 'CNS 2015 (Keynote)'
+  date_month: 4
+  date_day: 13
+  date_year: 2015
+  media_url: 'https://www.cogneurosociety.org/cns2015_videos/'
+  type: 'video'
 - title: 'My Q and A With Cognitive Neuroscientist Anjan Chatterjee'
   source: 'Huffington Post'
   sub_source: null
@@ -214,6 +286,14 @@
   date_year: 2014
   media_url: 'http://www.guardian.co.tt/lifestyle/2014-07-29/study-parkinson%E2%80%99s-could-enhance-creativity'
   type: 'print'
+- title: 'In the Brain of the Beholder'
+  source: 'The Economist'
+  sub_source: 'Prospero'
+  date_month: 12
+  date_day: 25
+  date_year: 2013
+  media_url: 'https://www.economist.com/blogs/prospero/2013/12/why-we-find-things-beautiful'
+  type: 'audio'
 - title: 'Can Adderall Save the Boomers?'
   source: 'Philadelphia'
   sub_source: null
@@ -238,6 +318,14 @@
   date_year: 2013
   media_url: 'http://www.self.com/health/2013/03/adderall-the-get-ahead-drug'
   type: 'print'
+- title: 'The Art of Connection'
+  source: 'NPR'
+  sub_source: 'TPT Documentaries (Arts & the Mind)'
+  date_month: 9
+  date_day: 10
+  date_year: 2012
+  media_url: 'http://www.pbs.org/video/tpt-documentaries-arts-mind-art-connection'
+  type: 'video'
 - title: 'After Brain Damage, the Creative Juices Flow for Some'
   source: 'Los Angeles Times'
   sub_source: null
@@ -246,6 +334,14 @@
   date_year: 2011
   media_url: 'http://www.latimes.com/health/la-he-diseases-art-20110516-story.html'
   type: 'print'
+- title: 'Anjan Chatterjee on Neuroethics, Cosmetic Neurology, and Neuromarketing'
+  source: 'Neurons Inc'
+  sub_source: 'BrainEthics Podcast'
+  date_month: 5
+  date_day: 19
+  date_year: 2011
+  media_url: 'http://neuronsinc.com/cosmetic-neurology/brainethics-podcast-anjan-chatterjee-on-neuroethics-cosmetic-neurology-and-neuromarketing/'
+  type: 'audio'
 - title: 'Adults Who Claim to Have ADHD? 1 in 4 May Be Faking It'
   source: 'MSNBC'
   sub_source: null
@@ -382,6 +478,30 @@
   date_year: 2010
   media_url: null
   type: 'print'
+- title: 'Are Better Brains Better? Cosmetic Neurology and the Ethics of Enhancement'
+  source: 'Haverford College'
+  sub_source: '?????'
+  date_month: 4
+  date_day: 18
+  date_year: 2010
+  media_url: null
+  type: 'video'
+- title: 'The Neuropsychology of Art'
+  source: 'The Beautiful Brain'
+  sub_source: 'The Beautiful Brain Podcast'
+  date_month: 1
+  date_day: 17
+  date_year: 2010
+  media_url: 'http://neuronsinc.com/cosmetic-neurology/brainethics-podcast-anjan-chatterjee-on-neuroethics-cosmetic-neurology-and-neuromarketing/'
+  type: 'audio'
+- title: '?????'
+  source: 'University of Pennsylvania'
+  sub_source: 'Center for Neuroscience & Society'
+  date_month: 1
+  date_day: 5
+  date_year: 2010
+  media_url: 'https://youtu.be/8nrdAFU3xpw'
+  type: 'video'
 - title: 'Ritalin Backed As Brain-booster'
   source: 'BBC'
   sub_source: null
@@ -398,6 +518,14 @@
   date_year: 2009
   media_url: 'http://www.newyorker.com/magazine/2009/04/27/brain-gain'
   type: 'print'
+- title: 'Neuroethics: Are Better Brains Better?'
+  source: 'University of Pennsylvania'
+  sub_source: 'Center for Neuroscience & Society (Media Seminar on Neuroscience and Society)'
+  date_month: 4
+  date_day: 13
+  date_year: 2009
+  media_url: 'https://youtu.be/Zh2VTVWI1P8'
+  type: 'video'
 - title: 'Can a Pill Make You Smarter?'
   source: 'Marie Claire'
   sub_source: null
@@ -438,6 +566,14 @@
   date_year: 2007
   media_url: null
   type: 'print'
+- title: 'Drug May Be a Help to the Sleep Deprived'
+  source: 'NPR'
+  sub_source: 'NPR (Morning Edition)'
+  date_month: 8
+  date_day: 23
+  date_year: 2005
+  media_url: 'http://www.npr.org/templates/story/story.php?storyId=4811303'
+  type: 'audio'
 - title: 'Brain-boosting “Cosmetic Neurology” On the Horizon'
   source: 'The Seattle Times'
   sub_source: null
@@ -454,139 +590,3 @@
   date_year: 2004
   media_url: 'http://www.nytimes.com/2004/10/05/health/05side.html'
   type: 'print'
-- title: 'College Students Should Be Allowed to Take Smart Drugs'
-  source: 'Intelligence Squared'
-  sub_source: 'Intelligence Squared Debates'
-  date_month: 11
-  date_day: 2
-  date_year: 2015
-  media_url: 'http://www.intelligencesquaredus.org/debates/college-students-should-be-allowed-take-smart-drugs'
-  type: 'video'
-- title: 'The Neuroscience of Aesthetics'
-  source: 'Interact'
-  sub_source: 'Interact 2015 (Keynote)'
-  date_month: 10
-  date_day: 21
-  date_year: 2015
-  media_url: 'https://2015.interactconf.com/speakers/anjan-chatterjee/index.html'
-  type: 'video'
-- title: 'The Brain, Smart Drugs, and Sports'
-  source: 'SCI TV'
-  sub_source: null
-  date_month: 4
-  date_day: 15
-  date_year: 2015
-  media_url: 'https://youtu.be/jKt7ZBpaZo8'
-  type: 'video'
-- title: 'The Neuroaesthetics of Aesthetics and Art'
-  source: 'Cognitive Neuroscience Society (CNS)'
-  sub_source: 'CNS 2015 (Keynote)'
-  date_month: 4
-  date_day: 13
-  date_year: 2015
-  media_url: 'https://www.cogneurosociety.org/cns2015_videos/'
-  type: 'video'
-- title: 'The Art of Connection'
-  source: 'NPR'
-  sub_source: 'TPT Documentaries (Arts & the Mind)'
-  date_month: 9
-  date_day: 10
-  date_year: 2012
-  media_url: 'http://www.pbs.org/video/tpt-documentaries-arts-mind-art-connection'
-  type: 'video'
-- title: 'Are Better Brains Better? Cosmetic Neurology and the Ethics of Enhancement'
-  source: 'Haverford College'
-  sub_source: '?????'
-  date_month: 4
-  date_day: 18
-  date_year: 2010
-  media_url: null
-  type: 'video'
-- title: '?????'
-  source: 'University of Pennsylvania'
-  sub_source: 'Center for Neuroscience & Society'
-  date_month: 1
-  date_day: 5
-  date_year: 2010
-  media_url: 'https://youtu.be/8nrdAFU3xpw'
-  type: 'video'
-- title: 'Neuroethics: Are Better Brains Better?'
-  source: 'University of Pennsylvania'
-  sub_source: 'Center for Neuroscience & Society (Media Seminar on Neuroscience and Society)'
-  date_month: 4
-  date_day: 13
-  date_year: 2009
-  media_url: 'https://youtu.be/Zh2VTVWI1P8'
-  type: 'video'
-- title: 'Is Beauty in the Eye of the Beholder?'
-  source: 'NPR'
-  sub_source: 'WNPR (The Colin McEnroe Show)'
-  date_month: 2
-  date_day: 7
-  date_year: 2017
-  media_url: 'http://wnpr.org/post/beauty-eye-beholder'
-  type: 'audio'
-- title: 'Study Examines Art Therapy For Alzheimer’s, Dementia'
-  source: 'NPR'
-  sub_source: 'KJZZ (The Show)'
-  date_month: 1
-  date_day: 6
-  date_year: 2017
-  media_url: 'http://kjzz.org/content/417763/study-examines-art-therapy-alzheimers-dementia'
-  type: 'audio'
-- title: 'Smart Drugs'
-  source: 'NPR'
-  sub_source: 'WHYY (Radio Times)'
-  date_month: 11
-  date_day: 16
-  date_year: 2015
-  media_url: 'https://whyy.org/cms/radiotimes/2015/11/16/smart-drugs/'
-  type: 'audio'
-- title: 'Anjan Chatterjee Interview at #interactLDN 2015'
-  source: 'UX Podcast'
-  sub_source: null
-  date_month: 10
-  date_day: 21
-  date_year: 2015
-  media_url: 'http://uxpodcast.com/anjan-chatterjee-interactldn-2015/'
-  type: 'audio'
-- title: 'Why the Brain Likes Beauty'
-  source: 'NPR'
-  sub_source: 'KERA (Think)'
-  date_month: 9
-  date_day: 23
-  date_year: 2015
-  media_url: 'http://think.kera.org/2015/09/23/why-the-brain-likes-beauty/'
-  type: 'audio'
-- title: 'In the Brain of the Beholder'
-  source: 'The Economist'
-  sub_source: 'Prospero'
-  date_month: 12
-  date_day: 25
-  date_year: 2013
-  media_url: 'https://www.economist.com/blogs/prospero/2013/12/why-we-find-things-beautiful'
-  type: 'audio'
-- title: 'Anjan Chatterjee on Neuroethics, Cosmetic Neurology, and Neuromarketing'
-  source: 'Neurons Inc'
-  sub_source: 'BrainEthics Podcast'
-  date_month: 5
-  date_day: 19
-  date_year: 2011
-  media_url: 'http://neuronsinc.com/cosmetic-neurology/brainethics-podcast-anjan-chatterjee-on-neuroethics-cosmetic-neurology-and-neuromarketing/'
-  type: 'audio'
-- title: 'The Neuropsychology of Art'
-  source: 'The Beautiful Brain'
-  sub_source: 'The Beautiful Brain Podcast'
-  date_month: 1
-  date_day: 17
-  date_year: 2010
-  media_url: 'http://neuronsinc.com/cosmetic-neurology/brainethics-podcast-anjan-chatterjee-on-neuroethics-cosmetic-neurology-and-neuromarketing/'
-  type: 'audio'
-- title: 'Drug May Be a Help to the Sleep Deprived'
-  source: 'NPR'
-  sub_source: 'NPR (Morning Edition)'
-  date_month: 8
-  date_day: 23
-  date_year: 2005
-  media_url: 'http://www.npr.org/templates/story/story.php?storyId=4811303'
-  type: 'audio'
