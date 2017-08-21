@@ -201,13 +201,17 @@ p.people-item-text-suffix {
 /* Page-specific: News */
 
 #nav-news {
+  display: flex;
+  margin-bottom: 1rem;
+  p {
+    margin: 0.5rem 0.5rem 0.5rem 0;
+  }
   ul {
     display: flex;
     flex-flow: row;
     justify-content: center;
-    margin-bottom: 2rem;
     li {
-      margin: 0.5rem;
+      margin: 0.5rem 0.5rem 0.5rem 0;
     }
   }
 }

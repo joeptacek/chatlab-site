@@ -1,3 +1,5 @@
+- clarify SVG parameters
+
 - fix punctuation (e.g., quotes / apostrophes) in bios.
 
 - search center for neuroscience and society website for additional articles
