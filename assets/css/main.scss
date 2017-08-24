@@ -47,92 +47,6 @@ a {
   text-decoration: none;
 }
 
-html {
-  padding: 2rem;
-}
-
-body {
-  background-color: $background;
-  max-width: 60rem;
-  margin: 0 auto;
-  font-family: 'Gentium Basic', serif;
-}
-
-header {
-  margin-bottom: 2rem;
-}
-
-#logo {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  margin-bottom: 2rem;
-  img {
-    margin-bottom: 2rem;
-  }
-  span {
-    font-size: 2.5rem;
-    color: grey;
-  }
-}
-
-#nav-site {
-  ul {
-    background-color: $well;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    padding: 1rem;
-    border: solid lightgrey 1px;
-    border-radius: 4px;
-    li {
-      padding: 0.75rem;
-      a {
-        color: $site-links;
-        font-size: 1.2rem;
-      }
-    }
-  }
-}
-
-main {
-  display: flex;
-  flex-flow: column;
-}
-
-#nav-page {
-  background-color: $card;
-  padding: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  h1 {
-    padding: 0.5rem;
-  }
-  ul {
-    li {
-      padding: 0.5rem;
-    }
-  }
-}
-
-section {
-  background-color: $card;
-  padding: 2rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  margin-bottom: 2rem;
-
-  h2.section-title {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  p.section-description {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-  }
-}
-
 .icon {
   // display: inline-block;
   // width: 1rem;
@@ -142,174 +56,311 @@ section {
   // fill: currentColor;
 }
 
-/* Page-specific: Research */
+html {
+  padding: 2rem;
 
-div.research-item {
-  margin-bottom: 2rem;
+  body {
+    background-color: $background;
+    max-width: 60rem;
+    margin: 0 auto;
+    font-family: 'Gentium Basic', serif;
 
-  &:last-of-type {
-    margin-bottom: 0;
+    header {
+      margin-bottom: 2rem;
+
+      div#logo {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin-bottom: 2rem;
+        img {
+          margin-bottom: 2rem;
+        }
+        span {
+          font-size: 2.5rem;
+          color: grey;
+        }
+      }
+
+      nav#nav-site {
+        ul {
+          background-color: $well;
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          padding: 1rem;
+          border: solid lightgrey 1px;
+          border-radius: 4px;
+          li {
+            padding: 0.75rem;
+            a {
+              color: $site-links;
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+
+    main {
+      display: flex;
+      flex-flow: column;
+
+      nav#nav-page {
+        background-color: $card;
+        padding: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        h1 {
+          padding: 0.5rem;
+        }
+        ul {
+          li {
+            padding: 0.5rem;
+          }
+        }
+      }
+
+      div#page-content {
+        section {
+          background-color: $card;
+          padding: 2rem;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+          margin-bottom: 2rem;
+
+          h2.section-title {
+            text-align: center;
+            margin-bottom: 1rem;
+          }
+
+          p.section-description {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
   }
 }
 
-p.citation {
-  /* Hanging indent */
-  padding-left: 1rem;
-  text-indent: -1rem;
+/* Page-specific: Research */
+
+html {
+  body {
+    main {
+      div#page-content {
+        section {
+          div.research-item {
+            margin-bottom: 2rem;
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+
+            p.citation {
+              /* Hanging indent */
+              padding-left: 1rem;
+              text-indent: -1rem;
+
+              cite {
+                font-style: italic; /* Should be italic by default, but just in case not */
+              }
+
+              cite.no-italic {
+                font-style: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-cite {
-  font-style: italic; /* Should be italic by default, but just in case not */
-}
-
-cite.no-italic {
-  font-style: normal;
-}
 
 /* Page-specific: People */
 
-div.people-item {
-  display: flex;
-  flex-flow: column;
-  margin-bottom: 4rem;
+html {
+  body {
+    main {
+      div#page-content {
+        section {
+          div.people-item {
+            display: flex;
+            flex-flow: column;
+            margin-bottom: 4rem;
 
-  /* Center headshot and people-item-text elements */
-  align-items: center;
+            /* Center headshot and people-item-text elements */
+            align-items: center;
 
-  &:last-of-type {
-    margin-bottom: 0;
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+
+
+            img.people-item-img {
+              border-radius: 100%;
+              margin-bottom: 1rem;
+
+              /* Bugfix: After click-navigating to section, then refresh, images shrink */
+              flex: 0 0 175px;
+            }
+
+            div.people-item-text {
+              div.people-item-text-header {
+                text-align: center;
+                margin-bottom: 1rem;
+              }
+
+              p.people-item-text-suffix {
+                margin-bottom: 0.5rem;
+              }
+            }
+
+          }
+        }
+      }
+    }
   }
-}
-
-img.people-item-img {
-  border-radius: 100%;
-  margin-bottom: 1rem;
-
-  /* Bugfix: After click-navigating to section, then refresh, images shrink */
-  flex: 0 0 175px;
-}
-
-div.people-item-text-header {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-p.people-item-text-suffix {
-  margin-bottom: 0.5rem;
 }
 
 /* Page-specific: News */
 
-#nav-news {
-  display: flex;
-  margin-bottom: 1rem;
-  p {
-    margin: 0.5rem 0.5rem 0.5rem 0;
-  }
-  ul {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    li {
-      margin: 0.5rem 0.5rem 0.5rem 0;
+html {
+  body {
+    main {
+      div#page-content {
+        section {
+          nav#nav-news {
+            display: flex;
+            margin-bottom: 1rem;
+            p {
+              margin: 0.5rem 0.5rem 0.5rem 0;
+            }
+            ul {
+              display: flex;
+              flex-flow: row;
+              justify-content: center;
+              li {
+                margin: 0.5rem 0.5rem 0.5rem 0;
+              }
+            }
+          }
+
+          div.news-item {
+            display: flex;
+            flex-flow: row;
+            margin-bottom: 2rem;
+
+            svg.news-type-icon {
+              flex: 0 0 100px; // Instead of width, would probably be OK to use specify flex-basis via flex shorthand
+              // width: 64px;
+              height: 100px;
+              margin-right: 2rem;
+            }
+
+            p.news-source {
+              margin-bottom: 1rem;
+            }
+
+            span.sub-source {
+              color: grey;
+            }
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
     }
-  }
-}
-
-div.news-item {
-  display: flex;
-  flex-flow: row;
-  margin-bottom: 2rem;
-
-  svg.news-type-icon {
-    flex: 0 0 100px; // Instead of width, would probably be OK to use specify flex-basis via flex shorthand
-    // width: 64px;
-    height: 100px;
-    margin-right: 2rem;
-  }
-
-  p.news-source {
-    margin-bottom: 1rem;
-  }
-
-  span.sub-source {
-    color: grey;
-  }
-
-  &:last-of-type {
-    margin-bottom: 0;
   }
 }
 
 @media screen and (min-width: 40rem) {
-  html {
-    padding: 4rem;
-  }
-
   a:hover {
     color: $pl-hover;
   }
 
-  #logo {
-    flex-flow: row;
-    margin-bottom: 2rem;
-    img {
-      margin-bottom: 0;
-      padding-right: 2.5rem;
-      border-right: solid 2px lightgrey;
-    }
-    span {
-      padding-left: 2.5rem;
-    }
-  }
+  html {
+    padding: 4rem;
 
-  #nav-site {
-    ul {
-      flex-flow: row wrap;
-      padding: 1.5rem 0 0 1.75rem;
-      li {
-        padding: 0;
-        margin: 0 1.75rem 1.5rem 0;
-        a {
-          padding: 0;
-          &:hover {
-            color: $sl-hover;
+    body {
+      header {
+        div#logo {
+          flex-flow: row;
+          margin-bottom: 2rem;
+          img {
+            margin-bottom: 0;
+            padding-right: 2.5rem;
+            border-right: solid 2px lightgrey;
+          }
+          span {
+            padding-left: 2.5rem;
+          }
+        }
+
+        nav#nav-site {
+          ul {
+            flex-flow: row wrap;
+            padding: 1.5rem 0 0 1.75rem;
+            li {
+              padding: 0;
+              margin: 0 1.75rem 1.5rem 0;
+              a {
+                padding: 0;
+                &:hover {
+                  color: $sl-hover;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      main {
+        flex-flow: row;
+        align-items: flex-start;
+
+        nav#nav-page {
+          flex: 0 0 16rem;
+          text-align: left;
+          margin-bottom: 0;
+          margin-right: 2rem;
+        }
+
+        div#page-content {
+          flex: auto; /* Confirm this is the best way to do this (i.e., grow div to fill remaining space) */
+          section {
+            h2.section-title {
+              text-align: left;
+            }
           }
         }
       }
     }
   }
 
-  main {
-    flex-flow: row;
-    align-items: flex-start;
-  }
-
-  #nav-page {
-    flex: 0 0 16rem;
-    text-align: left;
-    margin-bottom: 0;
-    margin-right: 2rem;
-  }
-
-  #page-content {
-  }
-
-  section {
-    h2.section-title {
-      text-align: left;
-    }
-  }
-
   /* Page-specific: News */
 
-  #nav-news {
-    ul {
-      display: flex;
-      flex-flow: row;
-      justify-content: flex-start;
-      li {
-        margin: 0.5rem 0.5rem 0.5rem 0;
+  html {
+    body {
+      main {
+        div#page-content {
+          section {
+            nav#nav-news {
+              ul {
+                display: flex;
+                flex-flow: row;
+                justify-content: flex-start;
+                li {
+                  margin: 0.5rem 0.5rem 0.5rem 0;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -321,17 +372,29 @@ div.news-item {
 
   /* Page-specific: People */
 
-  div.people-item {
-    flex-flow: row;
-    align-items: flex-start;
-  }
+  html {
+    body {
+      main {
+        div#page-content {
+          section {
+            div.people-item {
+              flex-flow: row;
+              align-items: flex-start;
 
-  img.people-item-img {
-    margin-right: 2rem;
-    margin-bottom: 0;
-  }
+              img.people-item-img {
+                margin-right: 2rem;
+                margin-bottom: 0;
+              }
 
-  div.people-item-text-header {
-    text-align: left;
+              div.people-item-text {
+                div.people-item-text-header {
+                  text-align: left;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

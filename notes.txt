@@ -1,3 +1,5 @@
+- fix news overflow on horizontal resize
+
 - clarify SVG parameters
 
 - fix punctuation (e.g., quotes / apostrophes) in bios.
