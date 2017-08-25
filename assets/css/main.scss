@@ -241,7 +241,6 @@ html {
             ul {
               display: flex;
               flex-flow: row;
-              justify-content: center;
               li {
                 margin: 0.5rem 0.5rem 0.5rem 0;
               }
@@ -253,23 +252,26 @@ html {
             flex-flow: row;
             margin-bottom: 2rem;
 
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+
             svg.news-type-icon {
-              flex: 0 0 100px; // Instead of width, would probably be OK to use specify flex-basis via flex shorthand
-              // width: 64px;
+              flex: 0 0 100px; // no growing or shrinking, always 100px
               height: 100px;
               margin-right: 2rem;
             }
 
-            p.news-source {
-              margin-bottom: 1rem;
-            }
+            div.news-item-data {
+              h3.news-title {
+                margin-bottom: 0.3rem;
+              }
 
-            span.sub-source {
-              color: grey;
-            }
-
-            &:last-of-type {
-              margin-bottom: 0;
+              p.news-source {
+                span.sub-source {
+                  color: grey;
+                }
+              }
             }
           }
         }
@@ -331,33 +333,11 @@ html {
         }
 
         div#page-content {
-          flex: auto; /* Confirm this is the best way to do this (i.e., grow div to fill remaining space) */
+          flex: 1 1 auto; // allows flex item to grow to fill remaining width of body / main [initial default is 0 1 auto, corresponding to grow, shrink, basis]
+          overflow: hidden; // by default, flex items have min-width (and min-height) as auto, meaning will not shrink smallr than size of contents. override with mid-width: 0 or even more elegantly, overflow: hidden (any value of overflow except visible makes min-width: 0 and content will disappear at small sizes as needed)
           section {
             h2.section-title {
               text-align: left;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  /* Page-specific: News */
-
-  html {
-    body {
-      main {
-        div#page-content {
-          section {
-            nav#nav-news {
-              ul {
-                display: flex;
-                flex-flow: row;
-                justify-content: flex-start;
-                li {
-                  margin: 0.5rem 0.5rem 0.5rem 0;
-                }
-              }
             }
           }
         }
