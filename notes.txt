@@ -1,3 +1,14 @@
+- js at end of body or in head? jury is out
+
+- flesh out "frame" layout
+
+- move SVG defs to _includes subfolder; include page-specific SVG defs via YAML
+  frontmatter (e.g., include_svg: svg/news.html)
+
+- rename include_filename to include_item (in front matter, to parallel
+  include_svg), and section_items to item (in _includes directory, to parallel
+  svg subdirectory)
+
 - fix news overflow on horizontal resize
 
 - clarify SVG parameters
