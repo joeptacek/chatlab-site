@@ -1,18 +1,13 @@
-<!doctype html>
-<html lang="en">
-  {% include head.html %}
-  <body>
-    {% include header.html %}
-    <main>
-      <nav id="nav-page">
-        <h1>Home</h1>
-      </nav>
-      <div id="page-content"><!-- div necessary to make flex row with nav -->
-        <section>
-          {% include twitter.html %}
-        </section>
-      </div>
-    </main>
-    {% include footer.html %}
-  </body>
-</html>
+---
+layout: master
+---
+<main>
+  <nav id="nav-page">
+    <h1>Home</h1>
+  </nav>
+  <div id="page-content"><!-- div necessary to make flex row with nav -->
+    <section>
+      {% include twitter.html %}
+    </section>
+  </div>
+</main>

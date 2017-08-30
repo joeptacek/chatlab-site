@@ -1,37 +1,32 @@
-<!doctype html>
-<html lang="en">
-  {% include head.html %}
-  <body>
-    {% include header.html %}
-    <main>
-      <nav id="nav-page">
-        <h1>{{ page.title }}</h1>
-        <ul>
-          {% for section in site.data[page.data_filename] %}
-            <li><a href="{{ "#" | append: section.section_id }}">{{ section.section_title }}</a></li>
-          {% endfor %}
-        </ul>
-      </nav>
-      <div id="page-content"><!-- div necessary to make flex row with nav -->
-        {% unless page.content == "" %}
-          <section>
-            {{ content }}
-          </section>
-        {% endunless %}
-        {% for section in site.data[page.data_filename] %}
-          <section id="{{ section.section_id }}">
-            <h2 class="section-title">{{ section.section_title }}</h2>
-            {% if section.section_description %}
-              <p class="section-description">{{ section.section_description }}</p>
-            {% endif %}
-            <hr />
-            {% for item in section.item_list %}
-              {% include {{ page.include_filename }} pass=item %}
-            {% endfor %}
-          </section>
+---
+layout: master
+---
+<main>
+  <nav id="nav-page">
+    <h1>{{ page.title }}</h1>
+    <ul>
+      {% for section in site.data[page.data_filename] %}
+        <li><a href="{{ "#" | append: section.section_id }}">{{ section.section_title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <div id="page-content"><!-- div necessary to make flex row with nav -->
+    {% unless page.content == "" %}
+      <section>
+        {{ content }}
+      </section>
+    {% endunless %}
+    {% for section in site.data[page.data_filename] %}
+      <section id="{{ section.section_id }}">
+        <h2 class="section-title">{{ section.section_title }}</h2>
+        {% if section.section_description %}
+          <p class="section-description">{{ section.section_description }}</p>
+        {% endif %}
+        <hr />
+        {% for item in section.item_list %}
+          {% include {{ page.include_item }} pass=item %}
         {% endfor %}
-      </div>
-    </main>
-    {% include footer.html %}
-  </body>
-</html>
+      </section>
+    {% endfor %}
+  </div>
+</main>

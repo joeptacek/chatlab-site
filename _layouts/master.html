@@ -2,11 +2,11 @@
 <html lang="en">
   {% include head.html %}
   <body>
-    {% include page.include_svg }
+    {% if page.include_svg %}
+      {% include {{ page.include_svg }} %}
+    {% endif %}
     {% include header.html %}
-    <main>
-      {{ content }}
-    </main>
+    {{ content }}
     {% include footer.html %}
   </body>
 </html>
