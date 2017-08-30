@@ -19,7 +19,7 @@ layout: master
       <hr />
       {% for item in site.data.news %}
         {% if page.data_type contains item.type %}
-          {% include {{ page.include_item }} pass=item %}
+          {% include item/news.html pass=item %}
         {% endif %}
       {% endfor %}
     </section>

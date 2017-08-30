@@ -2,8 +2,9 @@
 <html lang="en">
   {% include head.html %}
   <body>
-    {% if page.include_svg %}
-      {% include {{ page.include_svg }} %}
+    {% if page.svg %}
+      {% assign include_path_svg = page.path | prepend: "svg/" %}
+      {% include {{ include_path_svg }} %}
     {% endif %}
     {% include header.html %}
     {{ content }}
