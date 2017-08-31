@@ -282,6 +282,23 @@ html {
   }
 }
 
+// Page specific: Index
+
+html {
+  body {
+    main {
+      div#page-content {
+        section#twitter-section {
+          div#twitter-div {
+            height: 300px;
+            overflow-y: scroll;            
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 40rem) {
   a:hover {
     color: $pl-hover;

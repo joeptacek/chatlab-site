@@ -1,3 +1,5 @@
+- clarify scrollability of twitter-div
+
 - js at end of body or in head? jury is out
 
 - clarify SVG parameters
