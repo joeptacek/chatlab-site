@@ -1,3 +1,11 @@
+- Add follow / tweet links
+
+- add books
+
+- add anjan specific page?
+
+- get local copy of psom logo
+
 - clarify scrollability of twitter-div
 
 - js at end of body or in head? jury is out
