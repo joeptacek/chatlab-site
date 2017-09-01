@@ -13,19 +13,39 @@ $pl-hover: #194577;
 
 // Resets
 
-h1, h2, h3, p, ul {
-  margin: 0;
-  // Add margin-bottom?
-}
-
 hr {
-  margin: 0 0 1.5rem 0;
+  margin: 1rem 0; // default: equal top / bottom spacing
   border: 0;
 
   // Subtle inset <hr /> inspired by Dan Eden's
   border: 0; /* Reset */
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+  h2 + & {
+    margin-top: 0.7rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 + & {
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p + & {
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p.section-description + & {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+h1, h2, h3, p, ul {
+  margin: 0;
+  // No default margin-bottom, should be added as needed via class
 }
 
 // Add overall image reset: margin-bottom?
@@ -136,20 +156,14 @@ html {
 
           h2.section-title {
             text-align: center;
-            margin-bottom: 1rem;
           }
 
           img {
             max-width: 100%; // or else, escapes the containing section (why?)
           }
 
-          p {
-            margin-bottom: 1rem;
-          }
-
           p.section-description {
             font-size: 1.1rem;
-            margin-bottom: 1rem;
           }
 
           // i.e., all children of section have same margin bottom except last
@@ -249,7 +263,7 @@ html {
           nav#nav-news {
             display: flex;
             margin-bottom: 1rem;
-            p {
+            span {
               margin: 0 0.5rem 0 0;
             }
             ul {
@@ -300,7 +314,7 @@ html {
   body {
     main {
       div#page-content {
-        section#twitter-section {
+        section {
           div#twitter-div {
             height: 300px;
             overflow-y: scroll;

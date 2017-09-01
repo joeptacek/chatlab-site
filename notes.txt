@@ -1,3 +1,7 @@
+- be careful about over-nesting with scss (consider the rendered css; see:
+  http://thesassway.com/beginner/the-inception-rule
+  https://www.sitepoint.com/beware-selector-nesting-sass/
+
 - Add follow / tweet links
 
 - add books
