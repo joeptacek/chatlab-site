@@ -13,42 +13,46 @@ $pl-hover: #194577;
 
 // Resets
 
+h1, h2, h3, p, ul {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h2, h3, p {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 hr {
-  margin: 1rem 0; // default: equal top / bottom spacing
+  margin: 0 0 2rem 0;
   border: 0;
 
   // Subtle inset <hr /> inspired by Dan Eden's
   border: 0; /* Reset */
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
-  h2 + & {
-    margin-top: 0.7rem;
-    margin-bottom: 1rem;
-  }
-
-  h3 + & {
-    margin-top: 0.3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  p + & {
-    margin-top: 0.3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  p.section-description + & {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
 }
 
-h1, h2, h3, p, ul {
-  margin: 0;
-  // No default margin-bottom, should be added as needed via class
-}
+img {
+  max-width: 100%; // Shrink images on horizontal resize
+  height: auto; // Scale height (seemingly needed for flex images)
 
-// Add overall image reset: margin-bottom?
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
 
 nav {
   ul {
@@ -137,12 +141,12 @@ html {
         text-align: center;
         margin-bottom: 2rem;
         box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        h1 {
-          padding: 0.5rem;
-        }
         ul {
           li {
-            padding: 0.5rem;
+            margin-bottom: 1rem;
+            &:last-child {
+              margin-bottom: 0;
+            }
           }
         }
       }
@@ -154,19 +158,17 @@ html {
           box-shadow: 0 1px 3px rgba(0,0,0,0.1);
           margin-bottom: 2rem;
 
-          h2.section-title {
-            text-align: center;
+          &:last-child {
+            margin-bottom: 0;
           }
 
-          img {
-            max-width: 100%; // or else, escapes the containing section (why?)
+          h2.section-title {
+            text-align: center;
           }
 
           p.section-description {
             font-size: 1.1rem;
           }
-
-          // i.e., all children of section have same margin bottom except last
         }
       }
     }
@@ -218,10 +220,8 @@ html {
           div.people-item {
             display: flex;
             flex-flow: column;
-            margin-bottom: 4rem;
-
-            // Center headshot and people-item-text elements
             align-items: center;
+            margin-bottom: 4rem;
 
             &:last-of-type {
               margin-bottom: 0;
@@ -230,15 +230,16 @@ html {
             img.people-item-img {
               border-radius: 100%;
               margin-bottom: 1rem;
-
-              // Bugfix: After click-navigating to section, then refresh, images shrink
-              flex: 0 0 175px;
             }
 
             div.people-item-text {
               div.people-item-text-header {
                 text-align: center;
                 margin-bottom: 1rem;
+              }
+
+              h3.people-item-text-name {
+                margin-bottom: 0;
               }
 
               p.people-item-text-suffix {
@@ -369,6 +370,7 @@ html {
       main {
         flex-flow: row;
         align-items: flex-start;
+        justify-content: flex-end;
 
         nav#nav-page {
           flex: 0 0 16rem;
@@ -378,7 +380,8 @@ html {
         }
 
         div#page-content {
-          flex: 1 1 auto; // allows flex item to grow to fill remaining width of body / main [initial default is 0 1 auto, corresponding to grow, shrink, basis]
+          // flex: 1 1 auto; // allows flex item to grow to fill remaining width of body / main [initial default is 0 1 auto, corresponding to grow, shrink, basis]
+          flex: 0 1 calc(100% - 18rem); // Calc is not well supported... perhaps implement in js?
           overflow: hidden; // by default, flex items have min-width (and min-height) as auto, meaning will not shrink smaller than size of contents. override with mid-width: 0 or even more elegantly, overflow: hidden (any value of overflow except visible makes min-width: 0 and content will disappear at small sizes as needed)
           section {
             h2.section-title {
@@ -421,5 +424,30 @@ html {
         }
       }
     }
+  }
+}
+
+// Styles for JS
+
+.scrolled {
+  position: static; // Default value
+}
+
+@media screen and (min-width: 40rem) {
+  #menu-toggle {
+    display: none;
+  }
+
+  .scrolled {
+    position: fixed;
+    width: 16rem;
+    top: 2rem;
+    left: 4rem; // Calc is not well supported... perhaps implement in js?
+  }
+}
+
+@media screen and (min-width: 68rem) {
+  .scrolled {
+    left: calc((100% - 60rem) / 2); // Calc is not well supported... perhaps implement in js?
   }
 }

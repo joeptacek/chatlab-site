@@ -1,17 +1,45 @@
 ---
-layout: default
+layout: master
 title: Home
 svg: false
 ---
-<section>
-  <h2 class="section-title">Welcome to ChatLab!</h2>
-  <hr />
-  <h3 class="section-subhead">Who We Are</h3>
-  <hr />
-  <p>Our lab is a part of the Center for Cognitive Neuroscience within the University of Pennsylvania Neurology Department. We are interested in interactions between cognition, language, and the brain. Our studies cover a diverse range of cognitive processes, including figurative and spatial language, event representation, aesthetics, neuroethics. Much of our research focuses on differences in processing of patients with brain injury, compared with healthy adults.</p>
-  <img src="assets/img/group/062217/group.jpg" alt="ChatLab: June 22, 2017" />
-  <!-- Add img width / height -->
-  <h3 class="section-subhead">Latest Tweets</h3>
-  <hr />
-  {% include twitter.html %}
-</section>
+<main>
+  <nav id="nav-page">
+    <h1>Home</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#lab_director">Lab Director</a></li>
+      <li><a href="#latest_tweets">Latest Tweets</a></li>
+    </ul>
+  </nav>
+  <div id="page-content"><!-- div necessary to make flex row with nav -->
+    <section id="about">
+      <h2 class="section-title">Welcome to ChatLab!</h2>
+      <hr />
+      <p>Our lab is a part of the Center for Cognitive Neuroscience within the University of Pennsylvania Neurology Department. We are interested in interactions between cognition, language, and the brain. Our studies cover a diverse range of cognitive processes, including figurative and spatial language, event representation, aesthetics, neuroethics. Much of our research focuses on differences in processing of patients with brain injury, compared with healthy adults.</p>
+      <img src="assets/img/group/062217/group.jpg" alt="ChatLab: June 22, 2017" />
+    </section>
+    <section id="lab_director">
+      <h2 class="section-title">Lab Director</h2>
+      <hr />
+      <!-- Directly borrowing people item include without a lot of consideration; check this -->
+      <div class="people-item">
+        <img class="people-item-img" src="/assets/img/people/175/anjan.jpg" alt="Anjan Chatterjee" width="175" height="175"/>
+        <div class="people-item-text">
+          <div class="people-item-text-header">
+            <h3 class="people-item-text-name">Anjan Chatterjee</h3>
+            <p class="people-item-text-suffix"><i><b>M.D., F.A.A.N.</b></i></p>
+            <p>Lab Director</p>
+          </div>
+          <p>Anjan Chatterjee is the Frank A. and Gwladys H. Elliott Professor and Chair of Neurology at Pennsylvania Hospital. He is a member of the Center for Cognitive Neuroscience, and the Center for Neuroscience and Society at the University of Pennsylvania. He received his BA in Philosophy from Haverford College, MD from the University of Pennsylvania and completed his neurology residency at the University of Chicago. His clinical practice focuses on patients with cognitive disorders. His research addresses questions about spatial cognition and language, attention, neuroethics, and neuroaesthetics. He wrote The Aesthetic Brain: How we evolved to desire beauty and enjoy art and co-edited: Neuroethics in Practice: Mind, medicine, and society, and The Roots of Cognitive Neuroscience: behavioral neurology and neuropsychology. He is or has been on the editorial boards of: American Journal of Bioethics: Neuroscience, Behavioural Neurology, Cognitive and Behavioral Neurology, Neuropsychology, Journal of Cognitive Neuroscience, Journal of Alzheimer’s Disease, Journal of the International Neuropsychological Society, European Neurology, Empirical Studies of the Arts, The Open Ethics Journal and Policy Studies in Ethics, Law and Technology. He was awarded the Norman Geschwind Prize in Behavioral and Cognitive Neurology by the American Academy of Neurology and the Rudolph Arnheim Prize for contributions to Psychology and the Arts by the American Psychological Association. He is a founding member of the Board of Governors of the Neuroethics Society, the past President of the International Association of Empirical Aesthetics, and the past President of the Behavioral and Cognitive Neurology Society. He serves on the Boards of Haverford College, the Associated Services for the Blind and Visually Impaired, The College of Physicians of Philadelphia, and Universal Promise.</p>
+        </div>
+      </div>
+
+    </section>
+    <section id="latest_tweets">
+      <h2 class="section-title">Latest Tweets</h2>
+      <hr />
+      {% include twitter.html %}
+    </section>
+  </div>
+</main>
