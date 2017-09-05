@@ -117,15 +117,25 @@ html {
           display: flex;
           flex-flow: column;
           align-items: center;
-          padding: 1rem;
+          padding: 1.75rem;
           border: solid lightgrey 1px;
           border-radius: 4px;
+
           li {
-            padding: 0.75rem;
-            a {
-              color: $site-links;
-              font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            &:last-child {
+              margin-bottom: 0;
             }
+          }
+
+          ul {
+            padding: 0;
+            border: none;
+          }
+
+          a {
+            color: $site-links;
+            font-size: 1.2rem;
           }
         }
       }
@@ -354,15 +364,19 @@ html {
         nav#nav-site {
           ul {
             flex-flow: row wrap;
-            padding: 1.5rem 0 0 1.75rem;
+            padding: 1.5rem 1.75rem;
+
             li {
-              padding: 0;
-              margin: 0 1.75rem 1.5rem 0;
-              a {
-                padding: 0;
-                &:hover {
-                  color: $sl-hover;
-                }
+              margin: 0 1.75rem 0 0;
+
+              &:last-child {
+                margin: 0;
+              }
+            }
+
+            a {
+              &:hover {
+                color: $sl-hover;
               }
             }
           }
@@ -465,8 +479,12 @@ html {
   position: static; // Default value
 }
 
+.hidden {
+  display: none;
+}
+
 @media screen and (min-width: 40rem) {
-  #menu-toggle {
+  #nav-site-toggle-button {
     display: none;
   }
 
@@ -475,6 +493,10 @@ html {
     width: 16rem;
     top: 2rem;
     left: 4rem; // Calc is not well supported... perhaps implement in js?
+  }
+
+  .hidden {
+    display: list-item; // Default value
   }
 }
 
