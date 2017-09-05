@@ -278,20 +278,22 @@ html {
 
           div.news-item {
             display: flex;
-            flex-flow: row;
-            margin-bottom: 2rem;
+            flex-flow: column;
+            align-items: center;
+            margin-bottom: 4rem;
 
-            &:last-of-type {
+            &:last-child {
               margin-bottom: 0;
             }
 
             svg.news-type-icon {
               flex: 0 0 100px; // no growing or shrinking, always 100px
               height: 100px;
-              margin-right: 2rem;
+              margin-bottom: 1rem;
             }
 
             div.news-item-data {
+              max-width: 20rem;
               h3.news-title {
                 margin-bottom: 0.3rem;
               }
@@ -418,6 +420,36 @@ html {
                 div.people-item-text-header {
                   text-align: left;
                 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Page-specific: News
+
+  html {
+    body {
+      main {
+        div#page-content {
+          section {
+            div.news-item {
+              flex-flow: row;
+              align-items: flex-start;
+              margin-bottom: 2rem;
+
+              &:last-of-type {
+                margin-bottom: 0;
+              }
+
+              svg.news-type-icon {
+                margin-right: 2rem;
+              }
+
+              div.news-item-data {
+                max-width: 100%;
               }
             }
           }
