@@ -133,9 +133,16 @@ html {
             border: none;
           }
 
-          a {
+          a, button {
             color: $site-links;
             font-size: 1.2rem;
+          }
+
+          button {
+            border: none;
+            padding: 0;
+            font-family: 'Gentium Basic', serif;
+            background-color: inherit;
           }
         }
       }
@@ -195,7 +202,7 @@ html {
           div.research-item {
             margin-bottom: 2rem;
 
-            &:last-of-type {
+            &:last-child {
               margin-bottom: 0;
             }
 
@@ -233,7 +240,7 @@ html {
             align-items: center;
             margin-bottom: 4rem;
 
-            &:last-of-type {
+            &:last-child {
               margin-bottom: 0;
             }
 
@@ -296,14 +303,29 @@ html {
               margin-bottom: 0;
             }
 
-            svg.news-type-icon {
-              flex: 0 0 100px; // no growing or shrinking, always 100px
-              height: 100px;
+            div.news-type-icon-outer {
               margin-bottom: 1rem;
+              padding: 1.5rem;
+              border-radius: 100%;
+              background-color: lightgrey;
+              border: solid rgb(50,50,50) 4px;
+            }
+
+            svg.news-type-icon {
+              // Height and width set the size of the SVG "frame" - the actual
+              // image will be contained within this frame in such a way that
+              // preserves aspect ratio.
+              display: block; // Or else extra space around element (default is inline)
+              width: 75px;
+              height: 75px;
+
+              fill: rgb(50,50,50);
             }
 
             div.news-item-data {
               max-width: 20rem;
+              text-align: center;
+
               h3.news-title {
                 margin-bottom: 0.3rem;
               }
@@ -338,7 +360,7 @@ html {
   }
 }
 
-@media screen and (min-width: 40rem) {
+@media screen and (min-width: 45rem) {
   a:hover {
     color: $pl-hover;
   }
@@ -451,19 +473,23 @@ html {
           section {
             div.news-item {
               flex-flow: row;
-              align-items: flex-start;
               margin-bottom: 2rem;
 
-              &:last-of-type {
+              &:last-child {
                 margin-bottom: 0;
               }
 
-              svg.news-type-icon {
+              div.news-type-icon-outer {
+                margin-bottom: 0;
                 margin-right: 2rem;
+              }
+
+              svg.news-type-icon {
               }
 
               div.news-item-data {
                 max-width: 100%;
+                text-align: left;
               }
             }
           }
@@ -483,7 +509,7 @@ html {
   display: none;
 }
 
-@media screen and (min-width: 40rem) {
+@media screen and (min-width: 45rem) {
   #nav-site-toggle-button {
     display: none;
   }

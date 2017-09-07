@@ -1,32 +1,42 @@
 document.getElementById("nav-site-main").classList.add("hidden");
 
-var at_top = true;
-var menu_visible = false;
+var atTop = true;
+var menuVisible = false;
+var navSiteToggleButton = document.getElementById("nav-site-toggle-button");
+var navSiteMain = document.getElementById("nav-site-main");
+var navPage = document.getElementById("nav-page");
 
 window.addEventListener("scroll", function() {
-  var scroll_Y = window.pageYOffset;
+  var scrollY = window.pageYOffset;
 
-  if (at_top) {
-    if (scroll_Y > 227) {
-      at_top = false;
+  if (atTop) {
+    if (scrollY > 227) {
+      atTop = false;
       // Only fires once when crossing from low to high
-      document.getElementById("nav-page").classList.add("scrolled");
+      navPage.classList.add("scrolled");
     }
   } else {
-    if (scroll_Y < 228) {
-      at_top = true;
+    if (scrollY < 228) {
+      atTop = true;
       // Only fires once when crossing from high to low
-      document.getElementById("nav-page").classList.remove("scrolled");
+      navPage.classList.remove("scrolled");
     }
   }
 });
 
-document.getElementById("nav-site-toggle-button").addEventListener("click", function() {
-  if (menu_visible) {
-    menu_visible = false;
-    document.getElementById("nav-site-main").classList.add("hidden")
+navSiteToggleButton.addEventListener("click", function() {
+  if (menuVisible) {
+    menuVisible = false;
+    navSiteMain.classList.add("hidden")
   } else {
-    menu_visible = true;
-    document.getElementById("nav-site-main").classList.remove("hidden")
+    menuVisible = true;
+    navSiteMain.classList.remove("hidden")
   }
+
+  // After button click, button element gains focus and glows via CSS outline
+  // property (looks weird). For accesibility, it's not a good idea to do
+  // button:focus { outline: none; }. Instead, just blur immediately after
+  // click event. Outline still visible when you :focus the button in other ways
+  // (e.g., with tab).
+  navSiteToggleButton.blur();
 });

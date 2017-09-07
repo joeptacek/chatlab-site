@@ -1,4 +1,10 @@
-- button styling (especially on mobile)
+- each news item = separate card?
+
+- play with max-width on news text, people text? not research text.
+
+- play with page-nav styles on mobile (not card? collapsable card?)
+
+- button styling in site-nav a little off compared to links?
 
 - multiple video links in old media section (one for img, one for text) - investigate? clue to missing haverford link?
 

@@ -1,12 +1,14 @@
 <div class="news-item">
-  {% case include.pass.type %}
-    {% when 'print' %}
-      <svg class="news-type-icon icon-newspaper"><use xlink:href="#icon-newspaper"></use></svg>
-    {% when 'video' %}
-      <svg class="news-type-icon icon-video-camera"><use xlink:href="#icon-video-camera"></use></svg>
-    {% when 'audio' %}
-      <svg class="news-type-icon icon-volume-medium"><use xlink:href="#icon-volume-medium"></use></svg>
-  {% endcase %}
+  <div class="news-type-icon-outer">
+    {% case include.pass.type %}
+      {% when 'print' %}
+        <svg class="news-type-icon icon-newspaper"><use xlink:href="#icon-newspaper"></use></svg>
+      {% when 'video' %}
+        <svg class="news-type-icon icon-video-camera"><use xlink:href="#icon-video-camera"></use></svg>
+      {% when 'audio' %}
+        <svg class="news-type-icon icon-volume-medium"><use xlink:href="#icon-volume-medium"></use></svg>
+    {% endcase %}
+  </div>
   <div class="news-item-data">
     <h3 class="news-title"><a href="{{ include.pass.media_url }}" target="_blank">{{ include.pass.title }}</a></h3>
     <p class="news-source">{{ include.pass.source }}{% if include.pass.sub_source != null %} | <span class="sub-source">{{ include.pass.sub_source }}</span>{% endif %}</p>
