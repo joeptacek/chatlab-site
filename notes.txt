@@ -1,3 +1,5 @@
+- there shouldn't be top or bottom padding on html (should be inherent in header / footer)
+
 - each news item = separate card?
 
 - play with max-width on news text, people text? not research text.
