@@ -162,8 +162,6 @@ html {
       display: flex;
       flex-flow: column;
 
-      margin-bottom: 2rem; // Like header
-
       nav#nav-page {
         background-color: $card;
         padding: 2rem;
@@ -205,9 +203,11 @@ html {
     footer {
       // As flex item (with main and footer), should not shrink
       flex: 0 0 auto;
-
-      height: 10rem;
-      background-color: darkgrey;
+      p {
+        text-align: center;
+        padding: 4rem 0 4rem;
+        color: grey;
+      }
     }
   }
 }
