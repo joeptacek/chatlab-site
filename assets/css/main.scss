@@ -43,14 +43,16 @@ hr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-img {
-  max-width: 100%; // Shrink images on horizontal resize
-  height: auto; // Scale height (seemingly needed for flex images)
+section {
+  img {
+    max-width: 100%; // Shrink images on horizontal resize
+    height: auto; // Scale height (seemingly needed for flex images)
 
-  margin-bottom: 1rem;
+    margin: 1rem;
 
-  &:last-child {
-    margin-bottom: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
