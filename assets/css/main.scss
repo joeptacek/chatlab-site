@@ -33,6 +33,14 @@ h2, h3, p {
   }
 }
 
+img {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 hr {
   margin: 0 0 2rem 0;
   border: 0;
@@ -41,19 +49,6 @@ hr {
   border: 0; /* Reset */
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-section {
-  img {
-    max-width: 100%; // Shrink images on horizontal resize
-    height: auto; // Scale height (seemingly needed for flex images)
-
-    margin: 1rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
 }
 
 nav {
@@ -198,6 +193,13 @@ html {
           p.section-description {
             font-size: 1.1rem;
           }
+
+          img.section-image {
+            max-width: 100%; // Shrink images on horizontal resize
+            height: auto; // Scale height (seemingly needed for flex images)
+            padding: 0.3rem;
+            border: solid lightgrey 1px;
+          }
         }
       }
     }
@@ -268,7 +270,8 @@ html {
 
             img.people-item-img {
               border-radius: 100%;
-              margin-bottom: 1rem;
+              padding: 0.3rem;
+              border: solid lightgrey 1px;
             }
 
             div.people-item-text {
@@ -338,8 +341,8 @@ html {
               // image will be contained within this frame in such a way that
               // preserves aspect ratio.
               display: block; // Or else extra space around element (default is inline)
-              width: 75px;
-              height: 75px;
+              width: 100px;
+              height: 100px;
 
               fill: rgb(50,50,50);
             }
