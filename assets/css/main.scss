@@ -328,24 +328,45 @@ html {
               margin-bottom: 0;
             }
 
-            div.news-type-icon-outer {
-              margin-bottom: 1rem;
-              padding: 1.5rem;
-              border-radius: 100%;
-              background-color: lightgrey;
-              border: solid rgb(50,50,50) 4px;
-            }
-
             svg.news-type-icon {
               // Height and width set the size of the SVG "frame" - the actual
               // image will be contained within this frame in such a way that
               // preserves aspect ratio.
               display: block; // Or else extra space around element (default is inline)
-              width: 100px;
-              height: 100px;
-
-              fill: rgb(50,50,50);
+              width: 75px;
+              height: 75px;
             }
+
+            div.news-type-icon-outer {
+              margin-bottom: 1rem;
+              padding: 2rem;
+              border-radius: 100%;
+
+              &.print-type {
+                background-color: rgba(50, 50, 50, .2);
+                // border: solid rgba(50, 50, 50, 1) 4px;
+                svg.news-type-icon {
+                  fill: rgba(50, 50, 50, 1);
+                }
+              }
+
+              &.video-type {
+                background-color: rgba(179, 8, 56, .15);
+                // border: solid rgba(179, 8, 56, 1) 4px;
+                svg.news-type-icon {
+                  fill: rgba(179, 8, 56, 1);
+                }
+              }
+
+              &.audio-type {
+                background-color: rgba(0, 51, 102, .25);
+                // border: solid rgba(0, 51, 102, 1) 4px;
+                svg.news-type-icon {
+                  fill: rgba(0, 51, 102, 1);
+                }
+              }
+            }
+
 
             div.news-item-data {
               max-width: 20rem;
