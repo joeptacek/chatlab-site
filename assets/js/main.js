@@ -6,7 +6,7 @@ var navSiteToggleButton = document.getElementById("nav-site-toggle-button");
 var navSiteMain = document.getElementById("nav-site-main");
 var navPage = document.getElementById("nav-page");
 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
   var scrollY = window.pageYOffset;
 
   if (atTop) {
@@ -24,7 +24,7 @@ window.addEventListener("scroll", function() {
   }
 });
 
-navSiteToggleButton.addEventListener("click", function() {
+navSiteToggleButton.addEventListener("click", function () {
   if (menuVisible) {
     menuVisible = false;
     navSiteMain.classList.add("hidden")
@@ -39,4 +39,16 @@ navSiteToggleButton.addEventListener("click", function() {
   // click event. Outline still visible when you :focus the button in other ways
   // (e.g., with tab).
   navSiteToggleButton.blur();
+});
+
+window.addEventListener("keypress", function (e) {
+  switch (e.key) {
+    case "j":
+      console.log("j");
+      increaseImgs();
+      break;
+    case "k":
+      console.log("k");
+      break;
+  }
 });
