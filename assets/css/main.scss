@@ -13,7 +13,7 @@ $pl-hover: #194577;
 
 // Resets
 
-h1, h2, h3, p, ul {
+h1, h2, h3, h4, p, ul {
   margin: 0;
 }
 
@@ -25,7 +25,7 @@ h1 {
   }
 }
 
-h2, h3, p {
+h2, h3, h4, p {
   margin-bottom: 1rem;
 
   &:last-child {
@@ -250,7 +250,6 @@ html {
   }
 }
 
-
 // Page-specific: People
 
 html {
@@ -269,6 +268,7 @@ html {
             }
 
             img.people-item-img {
+              flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
               border-radius: 100%;
               padding: 0.3rem;
               border: solid lightgrey 1px;
@@ -288,7 +288,6 @@ html {
                 margin-bottom: 0.5rem;
               }
             }
-
           }
         }
       }
@@ -333,13 +332,13 @@ html {
               // image will be contained within this frame in such a way that
               // preserves aspect ratio.
               display: block; // Or else extra space around element (default is inline)
-              width: 75px;
-              height: 75px;
+              width: 70px;
+              height: 70px;
             }
 
             div.news-type-icon-outer {
               margin-bottom: 1rem;
-              padding: 2rem;
+              padding: 2.25rem;
               border-radius: 100%;
 
               &.print-type {
@@ -399,6 +398,55 @@ html {
           div#twitter-div {
             height: 300px;
             overflow-y: scroll;
+          }
+
+          div#about-anjan {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            margin-bottom: 2rem;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            img#about-anjan-img {
+              flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
+              padding: 0.3rem;
+              border: solid lightgrey 1px;
+            }
+
+            div#about-anjan-text {
+              div#about-anjan-text-header {
+                text-align: center;
+                margin-bottom: 1rem;
+              }
+
+              h3#about-anjan-text-name {
+                margin-bottom: 0;
+              }
+
+              p#about-anjan-text-suffix {
+                margin-bottom: 0.5rem;
+              }
+            }
+          }
+
+          div.book-item {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            margin-bottom: 2rem;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            img.book-item-image {
+              flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
+              margin-bottom: 0;
+              margin-right: 2rem;
+            }
           }
         }
       }
@@ -538,6 +586,48 @@ html {
                 max-width: 100%;
                 text-align: left;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Page specific: Index
+
+  html {
+    body {
+      main {
+        div#page-content {
+          section {
+            div#about-anjan {
+              flex-flow: row;
+              align-items: flex-start;
+
+              img#about-anjan-img {
+                margin-right: 2rem;
+                margin-bottom: 0;
+              }
+
+              div#about-anjan-text {
+                div#about-anjan-text-header {
+                  text-align: left;
+                  margin-bottom: 1rem;
+                }
+
+                h3#about-anjan-text-name {
+                  margin-bottom: 0;
+                }
+
+                p#about-anjan-text-suffix {
+                  margin-bottom: 0.5rem;
+                }
+              }
+            }
+
+            div.book-item {
+              flex-flow: row;
+              align-items: flex-start;
             }
           }
         }
