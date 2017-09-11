@@ -17,20 +17,16 @@ h1, h2, h3, h4, p, ul {
   margin: 0;
 }
 
-h1 {
-  margin-bottom: 1.5rem;
+h1, h2, h3, h4, p {
+  margin-bottom: 1rem;
 
   &:last-child {
     margin-bottom: 0;
   }
 }
 
-h2, h3, h4, p {
-  margin-bottom: 1rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+h4 {
+  font-size: 1.17rem; // approx equal to h3 ... check this (otherwise h4 font size not usually explicitly defined, i.e., 1rem)
 }
 
 img {
@@ -39,6 +35,11 @@ img {
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+// Utility class for breaking margin-bottom rules
+.no-margin-bottom {
+  margin-bottom: 0;
 }
 
 hr {
@@ -165,6 +166,16 @@ html {
         text-align: center;
         margin-bottom: 2rem;
         box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+        h1.page-title {
+          margin-bottom: 1.5rem;
+
+          // When no ul with page links
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
         ul {
           li {
             margin-bottom: 1rem;
@@ -278,10 +289,6 @@ html {
               div.people-item-text-header {
                 text-align: center;
                 margin-bottom: 1rem;
-              }
-
-              h3.people-item-text-name {
-                margin-bottom: 0;
               }
 
               p.people-item-text-suffix {
@@ -422,10 +429,6 @@ html {
                 margin-bottom: 1rem;
               }
 
-              h3#about-anjan-text-name {
-                margin-bottom: 0;
-              }
-
               p#about-anjan-text-suffix {
                 margin-bottom: 0.5rem;
               }
@@ -435,17 +438,38 @@ html {
           div.book-item {
             display: flex;
             flex-flow: column;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 2rem;
 
             &:last-child {
               margin-bottom: 0;
             }
 
-            img.book-item-image {
-              flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
-              margin-bottom: 0;
-              margin-right: 2rem;
+            div.book-item-header {
+              display: flex;
+              align-items: flex-end;
+              margin-bottom: 1rem;
+
+              img.book-item-image {
+                flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
+                margin-right: 1rem;
+                margin-bottom: 0;
+              }
+
+              div.book-item-text {
+                h4.book-item-name {
+                  margin-bottom: 0.5rem;
+                }
+
+                p {
+                  margin-bottom: 0.2rem;
+                  font-size: 0.75rem;
+
+                  &:last-child {
+                    margin-bottom: 0rem;
+                  }
+                }
+              }
             }
           }
         }
@@ -623,11 +647,6 @@ html {
                   margin-bottom: 0.5rem;
                 }
               }
-            }
-
-            div.book-item {
-              flex-flow: row;
-              align-items: flex-start;
             }
           }
         }
