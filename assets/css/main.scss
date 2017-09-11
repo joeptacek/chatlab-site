@@ -343,36 +343,49 @@ html {
               height: 70px;
             }
 
-            div.news-type-icon-outer {
-              margin-bottom: 1rem;
-              padding: 2.25rem;
+            div.news-type-icon-outer-border {
+              padding: 0.3rem;
               border-radius: 100%;
+              margin-bottom: 1rem;
+
+              div.news-type-icon-outer {
+                padding: 2.25rem;
+                border-radius: 100%;
+              }
 
               &.print-type {
-                background-color: rgba(50, 50, 50, .2);
-                // border: solid rgba(50, 50, 50, 1) 4px;
-                svg.news-type-icon {
-                  fill: rgba(50, 50, 50, 1);
+                border: solid rgba(50, 50, 50, .2) 1px;
+                div.news-type-icon-outer {
+                  background-color: rgba(50, 50, 50, .2);
+                  // border: solid rgba(50, 50, 50, 1) 4px;
+                  svg.news-type-icon {
+                    fill: rgba(50, 50, 50, 1);
+                  }
                 }
               }
 
               &.video-type {
-                background-color: rgba(179, 8, 56, .15);
-                // border: solid rgba(179, 8, 56, 1) 4px;
-                svg.news-type-icon {
-                  fill: rgba(179, 8, 56, 1);
+                border: solid rgba(179, 8, 56, .15) 1px;
+                div.news-type-icon-outer {
+                  background-color: rgba(179, 8, 56, .15);
+                  // border: solid rgba(179, 8, 56, 1) 4px;
+                  svg.news-type-icon {
+                    fill: rgba(179, 8, 56, 1);
+                  }
                 }
               }
 
               &.audio-type {
-                background-color: rgba(0, 51, 102, .25);
-                // border: solid rgba(0, 51, 102, 1) 4px;
-                svg.news-type-icon {
-                  fill: rgba(0, 51, 102, 1);
+                border: solid rgba(0, 51, 102, .25) 1px;
+                div.news-type-icon-outer {
+                  background-color: rgba(0, 51, 102, .25);
+                  // border: solid rgba(0, 51, 102, 1) 4px;
+                  svg.news-type-icon {
+                    fill: rgba(0, 51, 102, 1);
+                  }
                 }
               }
             }
-
 
             div.news-item-data {
               max-width: 20rem;
@@ -438,36 +451,27 @@ html {
           div.book-item {
             display: flex;
             flex-flow: column;
-            align-items: flex-start;
+            align-items: center;
             margin-bottom: 2rem;
 
             &:last-child {
               margin-bottom: 0;
             }
 
-            div.book-item-header {
-              display: flex;
-              align-items: flex-end;
-              margin-bottom: 1rem;
+            img.book-item-image {
+              flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
+              border: solid lightgrey 1px;
+              padding: 0.3rem;
+              margin-bottom: 1rem; // Usually not necessary to explicitly declare margin-bottom on img (I have this in reset), but need to override :last-child causing margin-bottom: 0 (technically :last-child because inside <a>)
+            }
 
-              img.book-item-image {
-                flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
-                margin-right: 1rem;
-                margin-bottom: 0;
-              }
+            div.book-item-text {
+              div.book-item-header {
+                text-align: center;
+                margin-bottom: 1rem;
 
-              div.book-item-text {
-                h4.book-item-name {
+                p.book-item-pub {
                   margin-bottom: 0.5rem;
-                }
-
-                p {
-                  margin-bottom: 0.2rem;
-                  font-size: 0.75rem;
-
-                  &:last-child {
-                    margin-bottom: 0rem;
-                  }
                 }
               }
             }
@@ -598,7 +602,7 @@ html {
                 margin-bottom: 0;
               }
 
-              div.news-type-icon-outer {
+              div.news-type-icon-outer-border {
                 margin-bottom: 0;
                 margin-right: 2rem;
               }
@@ -645,6 +649,23 @@ html {
 
                 p#about-anjan-text-suffix {
                   margin-bottom: 0.5rem;
+                }
+              }
+            }
+
+            div.book-item {
+              display: flex;
+              flex-flow: row;
+              align-items: flex-start;
+
+              img.book-item-image {
+                margin-right: 2rem;
+                margin-bottom: 0;
+              }
+
+              div.book-item-text {
+                div.book-item-header {
+                  text-align: left;
                 }
               }
             }

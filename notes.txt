@@ -1,3 +1,5 @@
+- use <cite> for other titles (e.g. books, articles etc)
+
 - use more align-items: stretch instead of center for columns?
 
 - there shouldn't be top or bottom padding on html (should be inherent in header / footer)
