@@ -208,7 +208,7 @@ html {
           img.section-image {
             max-width: 100%; // Shrink images on horizontal resize
             height: auto; // Scale height (seemingly needed for flex images)
-            padding: 0.3rem;
+            padding: 5px;
             border: solid lightgrey 1px;
           }
         }
@@ -281,7 +281,7 @@ html {
             img.people-item-img {
               flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
               border-radius: 100%;
-              padding: 0.3rem;
+              padding: 5px;
               border: solid lightgrey 1px;
             }
 
@@ -343,13 +343,13 @@ html {
               height: 70px;
             }
 
-            div.news-type-icon-outer-border {
-              padding: 0.3rem;
+            div.news-type-icon-border {
+              padding: 5px;
               border-radius: 100%;
               margin-bottom: 1rem;
 
               div.news-type-icon-outer {
-                padding: 2.25rem;
+                padding: 59px;
                 border-radius: 100%;
               }
 
@@ -432,7 +432,7 @@ html {
 
             img#about-anjan-img {
               flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
-              padding: 0.3rem;
+              padding: 5px;
               border: solid lightgrey 1px;
             }
 
@@ -461,7 +461,7 @@ html {
             img.book-item-image {
               flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
               border: solid lightgrey 1px;
-              padding: 0.3rem;
+              padding: 5px;
               margin-bottom: 1rem; // Usually not necessary to explicitly declare margin-bottom on img (I have this in reset), but need to override :last-child causing margin-bottom: 0 (technically :last-child because inside <a>)
             }
 
@@ -602,7 +602,7 @@ html {
                 margin-bottom: 0;
               }
 
-              div.news-type-icon-outer-border {
+              div.news-type-icon-border {
                 margin-bottom: 0;
                 margin-right: 2rem;
               }
