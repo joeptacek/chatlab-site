@@ -206,7 +206,7 @@ html {
           }
 
           img.section-image {
-            max-width: 100%; // Shrink images on horizontal resize
+            max-width: 100%; // Shrink images on horizontal resize (doesn't work to set as absolute size like max-width: 400px... why?)
             height: auto; // Scale height (seemingly needed for flex images)
             padding: 5px;
             border: solid lightgrey 1px;
