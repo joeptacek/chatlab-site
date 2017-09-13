@@ -288,11 +288,45 @@ html {
             div.people-item-text {
               div.people-item-text-header {
                 text-align: center;
-                margin-bottom: 1rem;
-              }
+                margin-bottom: 1.25rem;
 
-              p.people-item-text-suffix {
-                margin-bottom: 0.5rem;
+                & > * {
+                  margin-bottom: 0.5rem;
+
+                  &:last-child {
+                    margin-bottom: 0;
+                  }
+
+                  &.no-margin-bottom {
+                    margin-bottom: 0;
+                  }
+                }
+
+                div.people-item-contact-links {
+                  // Could consider using display: flex or float to control extra spaces
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  & > * {
+                    margin-right: 0.5rem;
+
+                    &:last-child {
+                      margin-right: 0;
+                    }
+                  }
+
+                  a {
+                    // does making display: block help, as elsewhere?
+                    // display: block;
+                  }
+
+                  svg {
+                    display: block; // Or else extra space around element (default is inline)
+                    width: 1rem;
+                    height: 1rem;
+                  }
+                }
               }
             }
           }
@@ -440,10 +474,9 @@ html {
               div#about-anjan-text-header {
                 text-align: center;
                 margin-bottom: 1rem;
-              }
-
-              p#about-anjan-text-suffix {
-                margin-bottom: 0.5rem;
+                p#about-anjan-text-suffix {
+                  margin-bottom: 0.5rem;
+                }
               }
             }
           }
@@ -578,6 +611,10 @@ html {
               div.people-item-text {
                 div.people-item-text-header {
                   text-align: left;
+
+                  div.people-item-contact-links {
+                    justify-content: flex-start;
+                  }
                 }
               }
             }
@@ -605,9 +642,6 @@ html {
               div.news-type-icon-border {
                 margin-bottom: 0;
                 margin-right: 2rem;
-              }
-
-              svg.news-type-icon {
               }
 
               div.news-item-data {
@@ -641,14 +675,14 @@ html {
                 div#about-anjan-text-header {
                   text-align: left;
                   margin-bottom: 1rem;
-                }
 
-                h3#about-anjan-text-name {
-                  margin-bottom: 0;
-                }
+                  h3#about-anjan-text-name {
+                    margin-bottom: 0;
+                  }
 
-                p#about-anjan-text-suffix {
-                  margin-bottom: 0.5rem;
+                  p#about-anjan-text-suffix {
+                    margin-bottom: 0.5rem;
+                  }
                 }
               }
             }

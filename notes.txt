@@ -1,3 +1,9 @@
+- include icons for PDFs
+
+- confirm target _blank for all links
+
+- figure out better attribution for icomoon svgs (including font awesome subset)
+
 - make height of filter section on news the same as other pages where there is h2 (subtle parallel)
 
 - use <cite> for other titles (e.g. books, articles etc)
