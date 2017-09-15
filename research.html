@@ -1,5 +1,18 @@
 ---
-layout: data
+layout: master
 title: Research
 svg: false
 ---
+<main>
+  <nav id="nav-page">
+    <h1 class="page-title">{{ page.title }}</h1>
+    <ul>
+      {% for section in site.data.research %}
+        <li><a href="{{ "#" | append: section.section_id }}">{{ section.section_title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <div id="page-content"><!-- div necessary to make flex row with nav -->
+    {% include data.html pass="research" %}
+  </div>
+</main>

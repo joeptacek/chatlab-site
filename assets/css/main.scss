@@ -159,6 +159,7 @@ html {
 
       display: flex;
       flex-flow: column;
+      margin-bottom: 2rem;
 
       nav#nav-page {
         background-color: $card;
@@ -290,16 +291,13 @@ html {
                 text-align: center;
                 margin-bottom: 1.25rem;
 
-                & > * {
+                h3.people-item-text-name {
+                  margin-bottom: 0.1rem;
+                }
+
+                p.people-item-text-position {
+                  font-size: 1.1rem;
                   margin-bottom: 0.5rem;
-
-                  &:last-child {
-                    margin-bottom: 0;
-                  }
-
-                  &.no-margin-bottom {
-                    margin-bottom: 0;
-                  }
                 }
 
                 div.people-item-contact-links {
@@ -325,6 +323,10 @@ html {
                     display: block; // Or else extra space around element (default is inline)
                     width: 1rem;
                     height: 1rem;
+                    fill: rgb(127, 127, 127);
+                    &:hover {
+                      fill: black; // Individual colors for different social?
+                    }
                   }
                 }
               }

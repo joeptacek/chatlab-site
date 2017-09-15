@@ -9,6 +9,8 @@
     bio: My area of interest is in Cognitive Neuroscience and Behavioral and Cognitive Neurology. My research is directed at understanding the architecture and neural bases for human cognition. The structure of cognition is at present (and perhaps in principle) not reduced easily to cellular or molecular explanations. The study of how the brain mediates cognition, while constrained by micro-neural facts, is more directly investigated at higher levels of organization by studying cognition in humans. We use experimental and neuroimaging techniques in normal subjects and examine the neuro-psychological effects of brain damage. A clear understanding of cognitive systems and their breakdown is essential in educating patients and families and critical in designing rational treatment strategies.
     email: anjan@mail.med.upenn.edu
     website: null
+    twitter: https://twitter.com/Anjan435
+    instagram: null
     flickr: https://www.flickr.com/photos/anjan58/
 - section_title: Staff
   section_id: staff
@@ -21,14 +23,18 @@
     bio: As the coordinator of the Patient Database at the Center for Cognitive Neuroscience, I act as a liaison between patients with brain injury, their neurologists and families, and the scientists and clinicians studying the effects of brain injury on cognition. My own research concerns embodied approaches to language and their ability to account for normal comprehension and as well as the linguistic impairments following brain injury. Using a combination of behavioral and neuroimaging tasks with healthy adults and patients, I specifically focus on the neural basis of metaphoric and spatial language. I am also interested in cognitive and neural changes associated with different types of meditation practice.
     email: eica@mail.med.upenn.edu
     website: null
+    twitter: https://twitter.com/EileenCardillo
+    instagram: null
     flickr: null
   - name: Joe Ptacek
     photo_filename: joe.jpg
-    suffix: ""
+    suffix: null
     position: Research Specialist
     bio: During my undergraduate training in neuroscience and linguistics at Macalester College, I contributed to research activities at the Reasoning and Language Investigations (RALI) Lab, focusing on questions related to discourse processing and pragmatics. Prior to joining Chat Lab, I spent several years at Minnesota Epilepsy Group, where I carried out cognitive assessment and assisted with clinical research within a pediatric population. Beyond my interests in cognitive neuroscience, I am curious to learn more about approaches in human-centered design that strive to make technology more usable and enjoyable. In my free time, I like building and modifying electronic musical instruments.
     email: jptacek@mail.med.upenn.edu
     website: null
+    twitter: null
+    instagram: https://www.instagram.com/joeptacek/
     flickr: null
 - section_title: Postdoctoral Fellows
   section_id: postdoctoral-fellows
@@ -41,6 +47,8 @@
     bio: My research explores how people navigate. As a graduate student at Temple University, I conducted behavioral experiments in virtual environments to determine what makes some people navigational experts and others constantly lost. At Penn, I will incorporate patient and neuroimaging techniques to pursue questions at the intersection of language and navigation. Understanding how spatial and linguistic representations differ will hopefully provide windows to treatment for those with navigational deficits.
     email: stweis@mail.med.upenn.edu
     website: https://stevenmweisberg.com
+    twitter: https://twitter.com/3chordwonder
+    instagram: null
     flickr: null
   - name: Stacey Humphries
     photo_filename: stacey.jpg
@@ -49,6 +57,8 @@
     bio: I am interested in how action and spatial representations influence the way we understand and use language. I completed my Ph.D. at the University of Manchester in England, where I examined how impaired action representations affected the way patients with Parkinson’s disease gestured about action concepts in conversation. At Penn, I will investigate the relationships between spatial cognition and metaphor processing in neurological patients.
     email: hstace@mail.med.upenn.edu
     website: null
+    twitter: https://twitter.com/_SHumphries
+    instagram: null
     flickr: null
   - name: Nate Klooster
     photo_filename: nate.jpg
@@ -57,6 +67,8 @@
     bio: I’m interested in the neuroscience of memory and communication. I earned my Ph.D. at the University of Iowa where I studied patients with focal lesions or diffuse brain damage due to injury or disease. At Penn I will continue working with neurological patients, and will also utilize neuroimaging techniques to investigate semantic memory and analogical reasoning. Outside of lab, I like spending time with my wife Dana and dog Boogie.
     email: klooster@mail.med.upenn.edu
     website: null
+    twitter: null
+    instagram: null
     flickr: null
   - name: Madhushree Chakrabarty
     photo_filename: madhushree.jpg
@@ -65,6 +77,8 @@
     bio: I am interested in exploring language processing in the human brain, especially the subtle intricacies involved in the pragmatic use of language. I did my Ph.D. at the School of Cognitive Science, Jadavpur University, India. I have used behavioral methods to study the metaphor comprehension ability of patients with focal brain lesions and schizophrenia. I received a Fulbright award to work at Penn to investigate the comprehension of metaphorical and ironic meanings of sentences in patients with focal brain lesions.
     email: machak@mail.med.upenn.edu
     website: null
+    twitter: null
+    instagram: null
     flickr: null
   - name: Franziska Hartung
     photo_filename: franziska.jpg
@@ -73,6 +87,8 @@
     bio: My research is on how our brains create semantically rich representations in natural language comprehension. During my Ph.D. at the Max Planck Institute for Psycholinguistics and the Donders Institute for Brain, Cognition, and Behaviour in the Netherlands, I investigated the role of perspective for mental models of events and situations when people read fiction. Here at Penn, I want to extend my research on narrative comprehension by investigating differences between literal and figurative meanings. Next to behavioral and neuroimaging experiments, I plan to work with patient groups and brain stimulation. Other than research, I do a lot of sports like boxing and calisthenics and I love cooking and trying out new things.
     email: fhartung@mail.med.upenn.edu
     website: https://storiesandthebrain.com
+    twitter: https://twitter.com/FranHartung
+    instagram: null
     flickr: null
   - name: Erin Conrad
     photo_filename: erin.jpg
@@ -81,6 +97,8 @@
     bio: I am interested in ethical decision making and finding out what factors influence our understanding of ethical questions. I completed an M.A. in Philosophy, Politics, and Economics of Health at University College London, where I studied the ethics of research on large groups as well as the ethics of conscientious objection in medicine. I then completed my M.D. at University of Michigan. I am now a neurology resident at Penn.
     email: erin.conrad@uphs.upenn.edu
     website: null
+    twitter: null
+    instagram: null
     flickr: null
 - section_title: Student Researchers
   section_id: student-researchers
@@ -93,6 +111,8 @@
     bio: I graduated from St. John's College (Annapolis) where I studied the Liberal Arts by reading and discussing classic and canonical works. Currently at Penn I am taking courses and hoping to gain research experience in preparation for graduate school in neuroscience. Some of my interests that I'd like to pursue are in the domains of quantitative thinking, intuition, mathematical modelling of the brain, philosophy of neuroscience, and phenomenology.
     email: null
     website: null
+    twitter: null
+    instagram: null
     flickr: null
 - section_title: Visiting Researchers
   section_id: visiting-researchers
@@ -105,6 +125,8 @@
     bio: I am a Ph.D. candidate from University of Pennsylvania Department of Philosophy. My research focuses on the nature of human experience, and how cognitive neuroscience sheds light on this issue. Topics that I am working on include how we should understand the transition from perceptual experience to perceptual judgment and whether we can perceptually experience aesthetic properties.
     email: tingho@sas.upenn.edu
     website: null
+    twitter: null
+    instagram: null
     flickr: null
   - name: Alex Coburn
     photo_filename: alex.jpg
@@ -113,6 +135,8 @@
     bio: I’m a second year doctoral student in the Department of Architecture at Cambridge University. My research explores how architectural design impacts psychological health, with a particular focus on evaluating the potential cognitive and emotional benefits of biophilic, or nature-like, built	environments. As a visiting researcher at Penn, I plan to undertake a series of experiments measuring acute neuropsychological responses to architecture and to investigate the pathways by which external environmental features might influence internal psychological experiences.	In my free time, I enjoy hiking, playing soccer, and exploring new places.
     email: alexcoburn11@gmail.com
     website: null
+    twitter: null
+    instagram: null
     flickr: null
   - name: Miriam Rosen
     photo_filename: miriam.jpg
@@ -121,6 +145,8 @@
     bio: My research interests lie primarily in the intersection between medicine and art. I completed my B.A. in Art History and Visual Arts at Columbia University. I then spent a year in Berlin as a DAAD scholar at the Bild Wissen Gestaltung Interdisciplinary Laboratory at Humboldt University. While there, I worked on a project aimed to create a virtual database of facial expressions. I matriculated at the University of Pittsburgh Medical School in August 2016, and I have since taken time off to do research that examines implicit bias with respect to facial disfigurement. I am constantly exploring the intersection between medicine, neuroscience, psychology, art, and literature.
     email: miriamerosen@gmail.com
     website: null
+    twitter: null
+    instagram: null
     flickr: null
   - name: Vicente Estrada-Gonzalez
     photo_filename: vicente.jpg
@@ -129,4 +155,6 @@
     bio: I am interested in how preference for artworks is mediated by their level of complexity, which can be characterized by statistical measures. I am a second year master student in Cognitive Science at Universidad Autónoma del Estado de México. I graduated from Universidad Nacional Autónoma de México, where I received a B.Sc. in Psychology with a focus in Neuroscience. At Penn, I plan to do some experiments evaluating how statistical features of artworks can be used to predict aesthetic judgments.
     email: contact@vicenteestrada.com
     website: null
+    twitter: null
+    instagram: null
     flickr: null

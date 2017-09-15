@@ -1,3 +1,7 @@
+- more space under book items
+
+- links to social profiles: maybe just put username in data, build href from base url
+
 - include icons for PDFs
 
 - confirm target _blank for all links

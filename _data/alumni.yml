@@ -1,0 +1,12 @@
+- group_name: "Staff"
+  people:
+  - "Emily Rogers"
+- group_name: "Postdoctoral Fellows"
+  people:
+  - "Anja Jamrozik"
+- group_name: "Student Researchers"
+  people:
+  - "Antonio Nicosia"
+- group_name: "Visiting Researchers"
+  people:
+  - "Guo Yuyue"

@@ -1,5 +1,30 @@
 ---
-layout: data
+layout: master
 title: People
 svg: true
 ---
+<main>
+  <nav id="nav-page">
+    <h1 class="page-title">{{ page.title }}</h1>
+    <ul>
+      {% for section in site.data.people %}
+        <li><a href="{{ "#" | append: section.section_id }}">{{ section.section_title }}</a></li>
+      {% endfor %}
+      <li><a href="#lab_alumni">Lab Alumni</a></li>
+    </ul>
+  </nav>
+  <div id="page-content"><!-- div necessary to make flex row with nav -->
+    {% include data.html pass="people" %}
+    <section id="lab_alumni">
+      <h2 class="section-title">Lab Alumni</h2>
+      <hr />
+      {% for group in site.data.alumni %}
+        <h3>{{ group.group_name }}</h3>
+        <hr />
+        {% for person in group.people %}
+          <p>{{ person }}</p>
+        {% endfor %}
+      {% endfor %}
+    </section>
+  </div>
+</main>
