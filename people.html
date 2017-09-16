@@ -19,11 +19,13 @@ svg: true
       <h2 class="section-title">Lab Alumni</h2>
       <hr />
       {% for group in site.data.alumni %}
-        <h3>{{ group.group_name }}</h3>
-        <hr />
-        {% for person in group.people %}
-          <p>{{ person }}</p>
-        {% endfor %}
+        <div class="alumni-group">
+          <h3>{{ group.group_name }}</h3>
+          <hr />
+          {% for person in group.people %}
+            <p>{{ person }}</p>
+          {% endfor %}
+        </div>
       {% endfor %}
     </section>
   </div>
