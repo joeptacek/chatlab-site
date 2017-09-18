@@ -21,7 +21,7 @@ svg: true
       <div id="alumni-inner">
         {% for group in site.data.alumni %}
           <div class="alumni-group">
-            <h3><i>{{ group.group_name }}</i></h3>
+            <h3 class="alumni-group-name"><i>{{ group.group_name }}</i></h3>
             {% for person in group.people %}
               <p class="alumni-person">{{ person }}</p>
             {% endfor %}

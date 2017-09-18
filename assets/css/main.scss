@@ -270,9 +270,13 @@ html {
       div#page-content {
         section {
           #alumni-inner {
-            columns: 2;
+            columns: 3;
             column-gap: 2rem;
             font-size: 0.9rem;
+
+            h3.alumni-group-name {
+              margin-bottom: 0.25rem;
+            }
 
             div.alumni-group {
               margin-bottom: 1rem;
