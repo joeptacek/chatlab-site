@@ -1,18 +1,3 @@
-- group_name: "Patient Coordinators"
-  people:
-  - "Marianna Stark"
-- group_name: "Research Specialists"
-  people:
-  - "Emily Rogers"
-  - "Jonathan Yu"
-  - "Matt Lehet"
-  - "Bianca Bromberger"
-  - "Jesse Calhoun"
-  - "Page Widick"
-  - "Ashley Wilson"
-  - "Angela Armstrong"
-  - "Kenneth Thompson"
-  - "Feyza Sancar"
 - group_name: "Postdoctoral Fellows"
   people:
   - "Marguerite McQuire"
@@ -74,3 +59,18 @@
   - "Annika Hillebrandt"
   - "Roberta Daini"
   - "Bree Chancellor"
+- group_name: "Research Specialists"
+  people:
+  - "Emily Rogers"
+  - "Jonathan Yu"
+  - "Matt Lehet"
+  - "Bianca Bromberger"
+  - "Jesse Calhoun"
+  - "Page Widick"
+  - "Ashley Wilson"
+  - "Angela Armstrong"
+  - "Kenneth Thompson"
+  - "Feyza Sancar"
+- group_name: "Patient Coordinators"
+  people:
+  - "Marianna Stark"

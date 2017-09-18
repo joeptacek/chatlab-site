@@ -269,10 +269,27 @@ html {
     main {
       div#page-content {
         section {
+          #alumni-inner {
+            columns: 2;
+            column-gap: 2rem;
+            font-size: 0.9rem;
+
+            div.alumni-group {
+              margin-bottom: 1rem;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              p.alumni-person {
+                margin-bottom: 0;
+              }
+            }
+          }
+
           div.people-item {
             display: flex;
             flex-flow: column;
-            align-items: center;
             margin-bottom: 4rem;
 
             &:last-child {
@@ -331,9 +348,6 @@ html {
                 }
               }
             }
-          }
-          div.alumni-group {
-            margin-bottom: 2rem;
           }
         }
       }
