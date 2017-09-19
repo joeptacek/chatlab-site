@@ -24,7 +24,11 @@
   - "Sailee Shikhare"
   - "Annika Hillebrandt"
   - "Roberta Daini"
-  - "Bree Chancellor"  
+  - "Bree Chancellor"
+- group_name: "Medical Students"
+  people:
+  - "Lauren McCollum"
+  - "Sashank Prasad"
 - group_name: "Graduate Students"
   people:
   - "Prin Amorapanth"
@@ -32,10 +36,6 @@
   - "Elaine Wencil"
   - "Sandeep Vaishnavi"
   - "Lindsey Bupp"
-- group_name: "Medical Students"
-  people:
-  - "Lauren McCollum"
-  - "Sashank Prasad"
 - group_name: "Undergraduate & High School Students"
   people:
   - "Antonio Nicosia"

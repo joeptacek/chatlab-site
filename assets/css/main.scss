@@ -294,6 +294,7 @@ html {
           div.people-item {
             display: flex;
             flex-flow: column;
+            align-items: center;
             margin-bottom: 4rem;
 
             &:last-child {
