@@ -64,6 +64,14 @@ nav {
   }
 }
 
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
 // Main styles
 * {
   box-sizing: border-box;
@@ -269,28 +277,6 @@ html {
     main {
       div#page-content {
         section {
-          #alumni-inner {
-            columns: 3;
-            column-gap: 2rem;
-            font-size: 0.9rem;
-
-            h3.alumni-group-name {
-              margin-bottom: 0.25rem;
-            }
-
-            div.alumni-group {
-              margin-bottom: 1rem;
-
-              &:last-child {
-                margin-bottom: 0;
-              }
-
-              p.alumni-person {
-                margin-bottom: 0;
-              }
-            }
-          }
-
           div.people-item {
             display: flex;
             flex-flow: column;
@@ -351,6 +337,36 @@ html {
                     }
                   }
                 }
+              }
+            }
+          }
+
+          #alumni-inner {
+            font-size: 0.9rem;
+
+            h3.alumni-group-name {
+              margin-bottom: 0.25rem;
+            }
+
+            div[id^="alumni-col"] {
+              float: left;
+              width: 100%;
+              margin-bottom: 1rem;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+
+            div.alumni-group {
+              margin-bottom: 1rem;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              p.alumni-person {
+                margin-bottom: 0;
               }
             }
           }
@@ -604,6 +620,26 @@ html {
           section {
             h2.section-title {
               text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Page-specific: People
+
+  html {
+    body {
+      main {
+        div#page-content {
+          section {
+            #alumni-inner {
+              div[id^="alumni-col"] {
+
+                &:last-child {
+                }
+              }
             }
           }
         }

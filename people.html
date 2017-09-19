@@ -18,15 +18,37 @@ svg: true
     <section id="lab-alumni">
       <h2 class="section-title">Lab Alumni</h2>
       <hr />
-      <div id="alumni-inner">
-        {% for group in site.data.alumni %}
-          <div class="alumni-group">
-            <h3 class="alumni-group-name"><i>{{ group.group_name }}</i></h3>
-            {% for person in group.people %}
-              <p class="alumni-person">{{ person }}</p>
-            {% endfor %}
-          </div>
-        {% endfor %}
+      <div id="alumni-inner" class="clearfix">
+        <div id="alumni-col-1">
+          {% for group in site.data.alumni %}
+            <div class="alumni-group">
+              <h3 class="alumni-group-name"><i>{{ group.group_name }}</i></h3>
+              {% for person in group.people %}
+                <p class="alumni-person">{{ person }}</p>
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+        <div id="alumni-col-2">
+          {% for group in site.data.alumni %}
+            <div class="alumni-group">
+              <h3 class="alumni-group-name"><i>{{ group.group_name }}</i></h3>
+              {% for person in group.people %}
+                <p class="alumni-person">{{ person }}</p>
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+        <div id="alumni-col-3">
+          {% for group in site.data.alumni %}
+            <div class="alumni-group">
+              <h3 class="alumni-group-name"><i>{{ group.group_name }}</i></h3>
+              {% for person in group.people %}
+                <p class="alumni-person">{{ person }}</p>
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </section>
   </div>
