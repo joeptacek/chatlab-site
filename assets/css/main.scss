@@ -64,14 +64,6 @@ nav {
   }
 }
 
-.clearfix:after {
-  content: " ";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both;
-}
-
 // Main styles
 * {
   box-sizing: border-box;
@@ -100,6 +92,8 @@ html {
     max-width: 60rem;
     margin: 0 auto;
     font-family: 'Gentium Basic', serif;
+    // font-size: 1rem;
+    line-height: 1.3rem;
 
     display: flex; // Make header, main, footer as flex items
     flex-flow: column;
@@ -341,28 +335,22 @@ html {
             }
           }
 
-          #alumni-inner {
+          #alumni-cols {
+            columns: 1;
+            column-gap: 2rem;
             font-size: 0.9rem;
 
-            h3.alumni-group-name {
-              margin-bottom: 0.25rem;
-            }
-
-            div[id^="alumni-col"] {
-              float: left;
-              width: 100%;
-              margin-bottom: 1rem;
+            div.alumni-group {
+              text-align: center;
+              break-inside: avoid;
+              margin-bottom: 2rem;
 
               &:last-child {
                 margin-bottom: 0;
               }
-            }
 
-            div.alumni-group {
-              margin-bottom: 1rem;
-
-              &:last-child {
-                margin-bottom: 0;
+              h3.alumni-group-name {
+                margin-bottom: 0.5rem;
               }
 
               p.alumni-person {
@@ -634,11 +622,11 @@ html {
       main {
         div#page-content {
           section {
-            #alumni-inner {
-              div[id^="alumni-col"] {
+            #alumni-cols {
+              columns: 2;
 
-                &:last-child {
-                }
+              div.alumni-group {
+                text-align: left;
               }
             }
           }
@@ -677,6 +665,10 @@ html {
                   }
                 }
               }
+            }
+
+            #alumni-cols {
+              columns: 3;
             }
           }
         }
