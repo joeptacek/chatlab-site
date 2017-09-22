@@ -416,32 +416,37 @@ html {
               }
 
               &.print-type {
-                border: solid rgba(50, 50, 50, .2) 1px;
+                // border: solid rgba(50, 50, 50, .2) 1px;
+                border: solid rgb(198, 239, 231) 1px;
                 div.news-type-icon-outer {
-                  background-color: rgba(50, 50, 50, .2);
-                  // border: solid rgba(50, 50, 50, 1) 4px;
+                  // background-color: rgba(50, 50, 50, .2);
+                  background-color: rgb(198, 239, 231);
                   svg.news-type-icon {
-                    fill: rgba(50, 50, 50, 1);
+                    // fill: rgba(50, 50, 50, 1);
+                    fill: rgba(0, 51, 102, 1);
                   }
                 }
               }
 
               &.video-type {
-                border: solid rgba(179, 8, 56, .15) 1px;
+                // border: solid rgba(179, 8, 56, .15) 1px;
+                border: solid rgb(239, 198, 213) 1px;
                 div.news-type-icon-outer {
-                  background-color: rgba(179, 8, 56, .15);
-                  // border: solid rgba(179, 8, 56, 1) 4px;
+                  // background-color: rgba(179, 8, 56, .15);
+                  background-color: rgb(239, 198, 213);
                   svg.news-type-icon {
-                    fill: rgba(179, 8, 56, 1);
+                    // fill: rgba(179, 8, 56, 1);
+                    fill: rgba(0, 51, 102, 1);
                   }
                 }
               }
 
               &.audio-type {
-                border: solid rgba(0, 51, 102, .25) 1px;
+                // border: solid rgba(0, 51, 102, .25) 1px;
+                border: solid rgb(239, 236, 198) 1px;
                 div.news-type-icon-outer {
-                  background-color: rgba(0, 51, 102, .25);
-                  // border: solid rgba(0, 51, 102, 1) 4px;
+                  // background-color: rgba(0, 51, 102, .25);
+                  background-color: rgb(239, 236, 198);
                   svg.news-type-icon {
                     fill: rgba(0, 51, 102, 1);
                   }
@@ -541,6 +546,45 @@ html {
       }
     }
   }
+}
+
+// Page specific: Contact
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.contact-icon-border {
+  margin-right: 2rem;
+  padding: 5px;
+  border-radius: 100%;
+  margin-bottom: 1rem;
+  border: solid rgba(50, 50, 50, .09) 1px;
+}
+
+.contact-icon-outer {
+  padding: 59px;
+  border-radius: 100%;
+  background-color: rgba(50, 50, 50, .09);
+}
+
+.contact-icon {
+  display: block; // Or else extra space around element (default is inline)
+  width: 70px;
+  height: 70px;
+  fill: silver;
+}
+
+#map {
+  margin-bottom: 2rem;
+  padding: 5px;
+  border: solid lightgrey 1px;
 }
 
 @media screen and (min-width: 45rem) {
