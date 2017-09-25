@@ -5,13 +5,14 @@
       <h3 class="people-item-text-name">{{ include.pass.name }}{% if include.pass.suffix %}, {{ include.pass.suffix }}{% endif %}</h3>
       <p class="people-item-text-position"><i>{{ include.pass.position }}</i></p>
       <div class="people-item-contact-links">
-        <a href="mailto:{{ include.pass.email }}"><svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg></a>
+        <a href="mailto:{{ include.pass.email }}"><svg><use xlink:href="#icon-mail"></use></svg></a>
         {% if include.pass.website %}<a href="{{ include.pass.website }}" target="_blank"><svg><use xlink:href="#icon-earth"></use></svg></a>{% endif %}
         {% if include.pass.twitter %}<a href="{{ include.pass.twitter }}" target="_blank"><svg><use xlink:href="#icon-twitter"></use></svg></a>{% endif %}
         {% if include.pass.instagram %}<a href="{{ include.pass.instagram }}" target="_blank"><svg><use xlink:href="#icon-instagram"></use></svg></a>{% endif %}
         {% if include.pass.flickr %}<a href="{{ include.pass.flickr }}" target="_blank"><svg><use xlink:href="#icon-flickr"></use></svg></a>{% endif %}
       </div>
     </div>
+    <hr class="hr-small-media" />
     <p>{{ include.pass.bio }}</p>
   </div>
 </div>

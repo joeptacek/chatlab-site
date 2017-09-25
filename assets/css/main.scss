@@ -93,7 +93,7 @@ html {
     margin: 0 auto;
     font-family: 'Gentium Basic', serif;
     // font-size: 1rem;
-    line-height: 1.3rem;
+    line-height: 1.3; // things get messed up if use rem
 
     display: flex; // Make header, main, footer as flex items
     flex-flow: column;
@@ -170,20 +170,49 @@ html {
         margin-bottom: 2rem;
         box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 
-        h1.page-title {
-          margin-bottom: 1.5rem;
-
-          // When no ul with page links
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-
-        ul {
+        & > ul {
           li {
             margin-bottom: 1rem;
             &:last-child {
               margin-bottom: 0;
+            }
+          }
+        }
+
+        #nav-page-titlebar {
+          margin-bottom: 1.5rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          h1#page-title {
+            margin-bottom: 0.5rem;
+
+            // When no ul with page links
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          ul {
+            display: flex;
+            li {
+              margin-right: 0.5rem;
+
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+
+          svg {
+            display: block; // Or else extra space around element (default is inline)
+            width: 1rem;
+            height: 1rem;
+            fill: rgb(127, 127, 127);
+            &:hover {
+              fill: black; // Individual colors for different social?
             }
           }
         }
@@ -299,7 +328,7 @@ html {
 
                 p.people-item-text-position {
                   font-size: 1.1rem;
-                  margin-bottom: 0.5rem;
+                  margin-bottom: 1rem;
                 }
 
                 div.people-item-contact-links {
@@ -507,9 +536,6 @@ html {
               div#about-anjan-text-header {
                 text-align: center;
                 margin-bottom: 1rem;
-                p#about-anjan-text-suffix {
-                  margin-bottom: 0.5rem;
-                }
               }
             }
           }
@@ -518,7 +544,7 @@ html {
             display: flex;
             flex-flow: column;
             align-items: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2rem; // 4rem (maybe for all "items" on small screen?)
 
             &:last-child {
               margin-bottom: 0;
@@ -552,7 +578,8 @@ html {
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
+  flex-flow: column;
+  align-items: center;
   margin-bottom: 2rem;
 
   &:last-child {
@@ -561,7 +588,6 @@ html {
 }
 
 .contact-icon-border {
-  margin-right: 2rem;
   padding: 5px;
   border-radius: 100%;
   margin-bottom: 1rem;
@@ -581,8 +607,15 @@ html {
   fill: silver;
 }
 
+.contact-main {
+  width: 100%;
+
+  h3 {
+    text-align: center;
+  }
+}
+
 #map {
-  margin-bottom: 2rem;
   padding: 5px;
   border: solid lightgrey 1px;
 }
@@ -684,6 +717,10 @@ html {
 
   // These "desktop" styles look too squished at the 40rem breakpoint
 
+hr.hr-small-media {
+  display: none;
+}
+
   // Page-specific: People
 
   html {
@@ -770,15 +807,6 @@ html {
               div#about-anjan-text {
                 div#about-anjan-text-header {
                   text-align: left;
-                  margin-bottom: 1rem;
-
-                  h3#about-anjan-text-name {
-                    margin-bottom: 0;
-                  }
-
-                  p#about-anjan-text-suffix {
-                    margin-bottom: 0.5rem;
-                  }
                 }
               }
             }
@@ -802,6 +830,28 @@ html {
           }
         }
       }
+    }
+  }
+
+  // Page specific: Contact
+
+  .contact-item {
+    flex-flow: row;
+    align-items: flex-start; // default: top-align
+
+    &.item-align-center {
+      align-items: center; // optional: (re-)center-align with this class
+    }
+  }
+
+  .contact-icon-border {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  .contact-main {
+    h3 {
+      text-align: left;
     }
   }
 }

@@ -1,3 +1,5 @@
+- classes: eliminate specificity in items (e.g., book-item, people-item); just use generic "item" class and create / use additional helper classes (e.g., item-align-center) where necessary 
+
 - more space under book items
 
 - links to social profiles: maybe just put username in data, build href from base url
