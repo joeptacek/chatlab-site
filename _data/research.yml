@@ -450,6 +450,22 @@
   section_id: 'event_representation'
   section_description: 'Our examination of event representation focuses on how humans visualize and process moving events and infer causality within these events, as well as focusing on the neural bases of processing action-based information in general.'
   item_list:
+  - work_authors: 'Quandt, L.C., Lee, Y.-S., & Chatterjee, A.'
+    work_year: 2017
+    work_title: 'Neural bases of action abstraction'
+    work_publication_format: 'article_in_journal'
+    journal_data:
+      journal_title: 'Biological Psychology'
+      advance_tf: false
+      journal_vol: 129
+      journal_issue: null
+      journal_pages_start: 314
+      journal_pages_stop: 323
+      doi: '10.1016/j.biopsycho.2017.09.015'
+      review_tf: false
+      review_data: null
+    edited_work_data: null
+    pdf_filename: 'Quandt_Lee_Chatterjee_2017_01.pdf'
   - work_authors: 'Quandt, L.C., Cardillo, E.R., Kranjec, A., & Chatterjee, A.'
     work_year: 2015
     work_title: 'Fronto-temporal regions encode the manner of motion in spatial language'
