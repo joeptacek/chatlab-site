@@ -2,6 +2,20 @@
   section_id: 'language_space'
   section_description: 'The lab’s research on language and space is concerned with a variety of concepts. Our primary interests lie in spatial and gestural representations in language, as well as in the processing of metaphoric and figurative language in patients and controls.'
   item_list:
+  - work_authors: 'Özer, D., Tansan, M., Özer, E.E., Malykhina, K., Chatterjee, A., & Göksun, T.'
+    work_year: 2017
+    work_title: 'The effects of gesture restriction on spatial language in young and elderly adults'
+    work_publication_format: 'article_in_edited_work'
+    journal_data: null
+    edited_work_data:
+      edited_work_type: 'conference'
+      edited_work_title: 'Proceedings of the 39th Annual Meeting of the Cognitive Science Society'
+      edited_work_pages_start: 1471
+      edited_work_pages_stop: 1476
+      edited_work_editors: 'G. Gunzelmann, A. Howes, T. Tenbrink, & E. Davelaar (Eds.)'
+      edited_work_location: 'Austin, TX'
+      edited_work_publisher: 'Cognitive Science Society'
+    pdf_filename: 'Özer_Tansan_Özer_Malykhina_Chatterjee_Göksun_2017_01.pdf'
   - work_authors: 'Karaduman, A., Göksun, T., & Chatterjee, A.'
     work_year: 2017
     work_title: 'Narratives of focal brain injured individuals: A macro-level analysis'
