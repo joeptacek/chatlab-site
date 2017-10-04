@@ -110,6 +110,7 @@ html {
         align-items: center;
         margin-bottom: 2rem;
         img {
+          display: block; // Or else extra space around element (default is inline)
           margin-bottom: 2rem;
         }
         span {
@@ -179,42 +180,58 @@ html {
           }
         }
 
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+          fill: rgb(127, 127, 127);
+          &:hover {
+            fill: black; // Individual colors for different social?
+          }          
+        }
+
         #nav-page-titlebar {
+          display: flex;
           margin-bottom: 1.5rem;
+          font-size: 1.5rem;
+
 
           &:last-child {
             margin-bottom: 0;
           }
 
-          h1#page-title {
-            margin-bottom: 0.5rem;
-
-            // When no ul with page links
-            &:last-child {
-              margin-bottom: 0;
-            }
-          }
-
-          ul {
-            display: flex;
-            li {
-              margin-right: 0.5rem;
-
-              &:last-child {
-                margin-right: 0;
-              }
-            }
-          }
-
           svg {
-            display: block; // Or else extra space around element (default is inline)
-            width: 1rem;
-            height: 1rem;
+            width: 1.5rem;
+            height: 1.5rem;
             fill: rgb(127, 127, 127);
             &:hover {
               fill: black; // Individual colors for different social?
             }
           }
+
+          span {
+            margin: 0 0.5rem;
+          }
+
+          h1#page-title {
+            font-size: 1.5rem;
+            // margin-bottom: 0.5rem;
+            //
+            // // When no ul with page links
+            // &:last-child {
+            //   margin-bottom: 0;
+            // }
+          }
+
+          // ul {
+          //   display: flex;
+          //   li {
+          //     margin-right: 0.5rem;
+          //
+          //     &:last-child {
+          //       margin-right: 0;
+          //     }
+          //   }
+          // }
         }
       }
 
