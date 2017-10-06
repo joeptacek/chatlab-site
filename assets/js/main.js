@@ -40,15 +40,3 @@ navSiteToggleButton.addEventListener("click", function () {
   // (e.g., with tab).
   navSiteToggleButton.blur();
 });
-
-window.addEventListener("keypress", function (e) {
-  switch (e.key) {
-    case "j":
-      console.log("j");
-      increaseImgs();
-      break;
-    case "k":
-      console.log("k");
-      break;
-  }
-});
