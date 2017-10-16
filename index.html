@@ -4,15 +4,19 @@ title: Home
 svg: false
 ---
 <main>
-  <nav id="nav-page">
-    {% include nav-page-titlebar.html %}
-    <ul>
-      <!-- <li><a href="#about">About</a></li> -->
-      <li><a href="#latest_tweets">Latest Tweets</a></li>
-      <li><a href="#lab_director">Lab Director</a></li>
-    </ul>
-    <a href=""><svg><use xlink:href="#icon-arrow-up2"></use></svg></a>
-  </nav>
+  <div id="nav-page-outer">
+    <nav id="nav-page">
+      {% include nav-page-titlebar.html %}
+      <ul>
+        <!-- <li><a href="#about">About</a></li> -->
+        <li><a href="#latest_tweets">Latest Tweets</a></li>
+        <li><a href="#lab_director">Lab Director</a></li>
+      </ul>
+    </nav>
+    <div id="jump-up-box">
+      <a href=""><svg><use xlink:href="#icon-arrow-up2"></use></svg></a>
+    </div>
+  </div>
   <div id="page-content"><!-- div necessary to make flex row with nav -->
     <section id="about">
       <!-- <h2 class="section-title">About</h2> -->

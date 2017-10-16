@@ -4,7 +4,7 @@ var atTop = true;
 var menuVisible = false;
 var navSiteToggleButton = document.getElementById("nav-site-toggle-button");
 var navSiteMain = document.getElementById("nav-site-main");
-var navPage = document.getElementById("nav-page");
+var navPageOuter = document.getElementById("nav-page-outer");
 
 window.addEventListener("scroll", function () {
   var scrollY = window.pageYOffset;
@@ -13,13 +13,13 @@ window.addEventListener("scroll", function () {
     if (scrollY > 227) {
       atTop = false;
       // Only fires once when crossing from low to high
-      navPage.classList.add("scrolled");
+      navPageOuter.classList.add("scrolled");
     }
   } else {
     if (scrollY < 228) {
       atTop = true;
       // Only fires once when crossing from high to low
-      navPage.classList.remove("scrolled");
+      navPageOuter.classList.remove("scrolled");
     }
   }
 });

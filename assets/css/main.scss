@@ -164,6 +164,17 @@ html {
       flex-flow: column;
       margin-bottom: 2rem;
 
+      #nav-page-outer {
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+          fill: rgb(127, 127, 127);
+          &:hover {
+            fill: black; // Individual colors for different social?
+          }
+        }
+      }
+
       nav#nav-page {
         background-color: $card;
         padding: 2rem;
@@ -180,15 +191,6 @@ html {
           }
         }
 
-        svg {
-          width: 1.5rem;
-          height: 1.5rem;
-          fill: rgb(127, 127, 127);
-          &:hover {
-            fill: black; // Individual colors for different social?
-          }
-        }
-
         #nav-page-titlebar {
           display: flex;
           margin-bottom: 1.5rem;
@@ -197,15 +199,6 @@ html {
 
           &:last-child {
             margin-bottom: 0;
-          }
-
-          svg {
-            width: 1.5rem;
-            height: 1.5rem;
-            fill: rgb(127, 127, 127);
-            &:hover {
-              fill: black; // Individual colors for different social?
-            }
           }
 
           span {
@@ -233,6 +226,13 @@ html {
           //   }
           // }
         }
+      }
+
+      #jump-up-box {
+        background-color: $card;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
       }
 
       div#page-content {
@@ -687,11 +687,14 @@ html {
         align-items: flex-start;
         justify-content: flex-end;
 
-        nav#nav-page {
+        #nav-page-outer {
           flex: 0 0 16rem;
+          margin-right: 2rem;
+        }
+
+        nav#nav-page {
           text-align: left;
           margin-bottom: 0;
-          margin-right: 2rem;
         }
 
         div#page-content {
