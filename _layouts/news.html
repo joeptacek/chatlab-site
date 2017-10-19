@@ -2,10 +2,14 @@
 layout: master
 ---
 <main>
-  <nav id="nav-page">
-    {% include nav-page-titlebar.html %}
-    <a href=""><svg><use xlink:href="#icon-arrow-up2"></use></svg></a>
-  </nav>
+  <div id="nav-page-outer">
+    <nav id="nav-page">
+      {% include nav-page-titlebar.html %}
+    </nav>
+    <div id="jump-up-box">
+      <a href=""><svg><use xlink:href="#icon-arrow-up2"></use></svg></a>
+    </div>
+  </div>
   <div id="page-content"><!-- div necessary to make flex row with nav -->
     <section>
       <nav id="nav-news">
