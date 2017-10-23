@@ -196,20 +196,23 @@ html {
 
         #nav-page-titlebar {
           display: flex;
+          justify-content: center;
           margin-bottom: 1.5rem;
-          font-size: 1.5rem;
-
 
           &:last-child {
             margin-bottom: 0;
           }
 
+          a {
+            display: none;
+          }
+
           span {
-            margin: 0 0.5rem;
+            display: none;
           }
 
           h1#page-title {
-            font-size: 1.5rem;
+            // font-size: 1.5rem;
             // margin-bottom: 0.5rem;
             //
             // // When no ul with page links
@@ -232,20 +235,7 @@ html {
       }
 
       #jump-up-box {
-        display: inline-block;
-        position: relative;
-        top: -3.5rem;
-        z-index: 0;
-        background-color: $card;
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-        margin-left: 1.5rem;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        border-radius: 9999px;
-
-        svg {
-          margin-top: 3rem;
-        }
+        display: none;
       }
 
       div#page-content {
@@ -708,6 +698,37 @@ html {
         nav#nav-page {
           text-align: left;
           margin-bottom: 0;
+
+          #nav-page-titlebar {
+            display: flex;
+            font-size: 1.5rem;
+
+            a {
+              display: block;
+            }
+
+            span {
+              display: block;
+              margin: 0 0.5rem;
+            }
+          }
+        }
+
+        #jump-up-box {
+          display: inline-block;
+          position: relative;
+          top: -3.5rem;
+          z-index: 0;
+          background-color: $card;
+          padding: 1.5rem;
+          margin-bottom: 2rem;
+          margin-left: 1.5rem;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+          border-radius: 9999px;
+
+          svg {
+            margin-top: 3rem;
+          }
         }
 
         div#page-content {
