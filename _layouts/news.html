@@ -4,7 +4,11 @@ layout: master
 <main>
   <div id="nav-page-outer">
     <nav id="nav-page">
-      {% include nav-page-titlebar.html %}
+      <div id="nav-page-titlebar">
+        <a href="index.html"><svg><use xlink:href="#icon-home3"></use></svg></a>
+        <span>/</span>
+        <h1 id="page-title">{{ page.title }}</h1>
+      </div>
     </nav>
     <div id="jump-up-box">
       <a href=""><svg><use xlink:href="#icon-arrow-up2"></use></svg></a>

@@ -6,7 +6,11 @@ svg: false
 <main>
   <div id="nav-page-outer">
     <nav id="nav-page">
-      {% include nav-page-titlebar.html %}
+      <div id="nav-page-titlebar">
+        <a href="index.html"><svg><use xlink:href="#icon-home3"></use></svg></a>
+        <span>/</span>
+        <h1 id="page-title">{{ page.title }}</h1>
+      </div>
       <ul>
         <!-- <li><a href="#about">About</a></li> -->
         <li><a href="#about_chatlab">About ChatLab</a></li>
