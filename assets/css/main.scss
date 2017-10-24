@@ -86,512 +86,453 @@ a {
 html {
   padding: 2rem 2rem 0;
   height: 100%; // So body and main can expand to 100%
+}
 
-  body {
-    background-color: $background;
-    max-width: 60rem;
-    margin: 0 auto;
-    font-family: 'Gentium Basic', serif;
-    // font-size: 1rem;
-    line-height: 1.3; // things get messed up if use rem
+body {
+  background-color: $background;
+  max-width: 60rem;
+  margin: 0 auto;
+  font-family: 'Gentium Basic', serif;
+  // font-size: 1rem;
+  line-height: 1.3; // things get messed up if use rem
 
-    display: flex; // Make header, main, footer as flex items
+  display: flex; // Make header, main, footer as flex items
+  flex-flow: column;
+  height: 100%; // So body and main can expand to 100%
+}
+
+header {
+  flex: 0 0 auto; // As flex item (with main and footer), should not shrink
+  margin-bottom: 2rem;
+}
+
+#logo {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  img {
+    display: block; // Or else extra space around element (default is inline)
+    margin-bottom: 2rem;
+  }
+
+  span {
+    font-size: 2.5rem;
+    color: grey;
+  }
+}
+
+#nav-site {
+  ul {
+    background-color: $well;
+    display: flex;
     flex-flow: column;
-    height: 100%; // So body and main can expand to 100%
+    align-items: center;
+    padding: 1.75rem;
+    border: solid lightgrey 1px;
+    border-radius: 4px;
 
-    header {
-      flex: 0 0 auto; // As flex item (with main and footer), should not shrink
-
-      margin-bottom: 2rem;
-
-      div#logo {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        margin-bottom: 2rem;
-        img {
-          display: block; // Or else extra space around element (default is inline)
-          margin-bottom: 2rem;
-        }
-        span {
-          font-size: 2.5rem;
-          color: grey;
-        }
-      }
-
-      nav#nav-site {
-        ul {
-          background-color: $well;
-          display: flex;
-          flex-flow: column;
-          align-items: center;
-          padding: 1.75rem;
-          border: solid lightgrey 1px;
-          border-radius: 4px;
-
-          li {
-            margin-bottom: 1.5rem;
-            &:last-child {
-              margin-bottom: 0;
-            }
-          }
-
-          ul {
-            padding: 0;
-            border: none;
-          }
-
-          a, button {
-            color: $site-links;
-            font-size: 1.2rem;
-          }
-
-          button {
-            border: none;
-            padding: 0;
-            font-family: 'Gentium Basic', serif;
-            background-color: inherit;
-          }
-        }
+    li {
+      margin-bottom: 1.5rem;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
 
-    main {
-      // As flex item (with header, footer), should grow
-      flex: 1 0 auto;
-
-      display: flex;
-      flex-flow: column;
-      margin-bottom: 2rem;
-
-      #nav-page-outer {
-        svg {
-          display: block; // Fixes some subtle extra padding issues?
-          width: 1.5rem;
-          height: 1.5rem;
-          fill: $page-links;
-          &:hover {
-            fill: $pl-hover; // Individual colors for different social?
-          }
-        }
-      }
-
-      nav#nav-page {
-        position: relative;
-        z-index: 1;
-        background-color: $card;
-        padding: 2rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-
-        & > ul {
-          li {
-            margin-bottom: 1rem;
-            &:last-child {
-              margin-bottom: 0;
-            }
-          }
-        }
-
-        #nav-page-titlebar {
-          display: flex;
-          justify-content: center;
-          margin-bottom: 1.5rem;
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-
-          a {
-            display: none;
-          }
-
-          span {
-            display: none;
-          }
-
-          h1#page-title {
-            // font-size: 1.5rem;
-            // margin-bottom: 0.5rem;
-            //
-            // // When no ul with page links
-            // &:last-child {
-            //   margin-bottom: 0;
-            // }
-          }
-
-          // ul {
-          //   display: flex;
-          //   li {
-          //     margin-right: 0.5rem;
-          //
-          //     &:last-child {
-          //       margin-right: 0;
-          //     }
-          //   }
-          // }
-        }
-      }
-
-      #jump-up-box {
-        display: none;
-      }
-
-      div#page-content {
-        section {
-          background-color: $card;
-          padding: 2rem;
-          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-          margin-bottom: 2rem;
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-
-          h2.section-title {
-            text-align: center;
-          }
-
-          p.section-description {
-            font-size: 1.1rem;
-          }
-
-          img.section-image {
-            max-width: 100%; // Shrink images on horizontal resize (doesn't work to set as absolute size like max-width: 400px... why?)
-            height: auto; // Scale height (seemingly needed for flex images)
-            padding: 5px;
-            border: solid lightgrey 1px;
-          }
-        }
-      }
+    ul {
+      padding: 0;
+      border: none;
     }
 
-    footer {
-      // As flex item (with main and footer), should not shrink
-      flex: 0 0 auto;
-      p {
-        text-align: center;
-        padding: 4rem 0 4rem;
-        color: grey;
+    a, button {
+      color: $site-links;
+      font-size: 1.2rem;
+    }
+
+    button {
+      border: none;
+      padding: 0;
+      font-family: 'Gentium Basic', serif;
+      background-color: inherit;
+    }
+  }
+}
+
+main {
+  // As flex item (with header, footer), should grow
+  flex: 1 0 auto;
+
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 2rem;
+}
+
+#nav-page-outer {
+  svg {
+    display: block; // Fixes some subtle extra padding issues?
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: $page-links;
+    &:hover {
+      fill: $pl-hover; // Individual colors for different social?
+    }
+  }
+}
+
+#nav-page {
+  position: relative;
+  z-index: 1;
+  background-color: $card;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+  & > ul {
+    li {
+      margin-bottom: 1rem;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
+  }
+}
+
+#nav-page-titlebar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+
+  // For non-headers i.e., a and span
+  font-size: 1.75rem; // toggle this on scroll!
+
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    display: none;
+  }
+
+  span {
+    display: none;
+  }
+
+  h1 {
+    font-size: 1.75rem; // to exactly match font-size of a and span
+  }
+}
+
+#jump-up-box {
+  display: none;
+}
+
+#page-content {
+  section {
+    background-color: $card;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      text-align: center;
+    }
+
+    .section-description {
+      font-size: 1.1rem;
+    }
+
+    .section-image {
+      max-width: 100%; // Shrink images on horizontal resize (doesn't work to set as absolute size like max-width: 400px... why?)
+      height: auto; // Scale height (seemingly needed for flex images)
+      padding: 5px;
+      border: solid lightgrey 1px;
+    }
+  }
+}
+
+footer {
+  // As flex item (with main and footer), should not shrink
+  flex: 0 0 auto;
+
+  p {
+    text-align: center;
+    padding: 4rem 0 4rem;
+    color: grey;
   }
 }
 
 // Page-specific: Research
 
-html {
-  body {
-    main {
-      div#page-content {
-        section {
-          div.research-item {
-            margin-bottom: 2rem;
+.research-item {
+  margin-bottom: 2rem;
 
-            &:last-child {
-              margin-bottom: 0;
-            }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
 
-            p.citation {
-              // Hanging indent
-              padding-left: 1rem;
-              text-indent: -1rem;
+.citation {
+  // Hanging indent
+  padding-left: 1rem;
+  text-indent: -1rem;
 
-              cite {
-                font-style: italic; // Should be italic by default, but just in case not
-              }
+  cite {
+    font-style: italic; // Should be italic by default, but just in case not
+  }
 
-              cite.no-italic {
-                font-style: normal;
-              }
-            }
-          }
-        }
-      }
-    }
+  .no-italic {
+    font-style: normal;
   }
 }
 
 // Page-specific: People
 
-html {
-  body {
-    main {
-      div#page-content {
-        section {
-          div.people-item {
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            margin-bottom: 4rem;
+.people-item {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 4rem;
 
-            &:last-child {
-              margin-bottom: 0;
-            }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
 
-            img.people-item-img {
-              flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
-              border-radius: 100%;
-              padding: 5px;
-              border: solid lightgrey 1px;
-            }
+.people-item-img {
+  flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
+  border-radius: 100%;
+  padding: 5px;
+  border: solid lightgrey 1px;
+}
 
-            div.people-item-text {
-              div.people-item-text-header {
-                text-align: center;
-                margin-bottom: 1.25rem;
+.people-item-text-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
 
-                h3.people-item-text-name {
-                  margin-bottom: 0.1rem;
-                }
+.people-item-text-name {
+  margin-bottom: 0.1rem;
+}
 
-                p.people-item-text-position {
-                  font-size: 1.1rem;
-                  margin-bottom: 1rem;
-                }
+.people-item-text-position {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
 
-                div.people-item-contact-links {
-                  // Could consider using display: flex or float to control extra spaces
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
+.people-item-contact-links {
+  // Could consider using display: flex or float to control extra spaces
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-                  & > * {
-                    margin-right: 0.5rem;
+  & > * {
+    margin-right: 0.5rem;
 
-                    &:last-child {
-                      margin-right: 0;
-                    }
-                  }
-
-                  a {
-                    // does making display: block help, as elsewhere?
-                    // display: block;
-                  }
-
-                  svg {
-                    display: block; // Or else extra space around element (default is inline)
-                    width: 1rem;
-                    height: 1rem;
-                    fill: rgb(127, 127, 127);
-                    &:hover {
-                      fill: black; // Individual colors for different social?
-                    }
-                  }
-                }
-              }
-            }
-          }
-
-          #alumni-cols {
-            columns: 1;
-            column-gap: 2rem;
-            font-size: 0.9rem;
-
-            div.alumni-group {
-              text-align: center;
-              break-inside: avoid;
-              margin-bottom: 2rem;
-
-              &:last-child {
-                margin-bottom: 0;
-              }
-
-              h3.alumni-group-name {
-                margin-bottom: 0.5rem;
-              }
-
-              p.alumni-person {
-                margin-bottom: 0;
-              }
-            }
-          }
-        }
-      }
+    &:last-child {
+      margin-right: 0;
     }
   }
+
+  a {
+    // does making display: block help, as elsewhere?
+    // display: block;
+  }
+
+  svg {
+    display: block; // Or else extra space around element (default is inline)
+    width: 1rem;
+    height: 1rem;
+    fill: rgb(127, 127, 127);
+    &:hover {
+      fill: black; // Individual colors for different social?
+    }
+  }
+}
+
+#alumni-cols {
+  columns: 1;
+  column-gap: 2rem;
+  font-size: 0.9rem;
+}
+
+.alumni-group {
+  text-align: center;
+  break-inside: avoid;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.alumni-group-name {
+  margin-bottom: 0.5rem;
+}
+
+.alumni-person {
+  margin-bottom: 0;
 }
 
 // Page-specific: News
 
-html {
-  body {
-    main {
-      div#page-content {
-        section {
-          nav#nav-news {
-            display: flex;
-            margin-bottom: 1rem;
-            span {
-              margin: 0 0.5rem 0 0;
-            }
-            ul {
-              display: flex;
-              flex-flow: row;
-              li {
-                margin: 0 0.5rem 0 0;
-              }
-            }
-          }
+#nav-news {
+  display: flex;
+  margin-bottom: 1rem;
+  span {
+    margin: 0 0.5rem 0 0;
+  }
+  ul {
+    display: flex;
+    flex-flow: row;
+    li {
+      margin: 0 0.5rem 0 0;
+    }
+  }
+}
 
-          div.news-item {
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            margin-bottom: 4rem;
+.news-item {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 4rem;
 
-            &:last-child {
-              margin-bottom: 0;
-            }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
 
-            svg.news-type-icon {
-              // Height and width set the size of the SVG "frame" - the actual
-              // image will be contained within this frame in such a way that
-              // preserves aspect ratio.
-              display: block; // Or else extra space around element (default is inline)
-              width: 70px;
-              height: 70px;
-            }
+.news-type-icon {
+  // Height and width set the size of the SVG "frame" - the actual
+  // image will be contained within this frame in such a way that
+  // preserves aspect ratio.
+  display: block; // Or else extra space around element (default is inline)
+  width: 70px;
+  height: 70px;
+}
 
-            div.news-type-icon-border {
-              padding: 5px;
-              border-radius: 100%;
-              margin-bottom: 1rem;
+.news-type-icon-border {
+  padding: 5px;
+  border-radius: 100%;
+  margin-bottom: 1rem;
 
-              div.news-type-icon-outer {
-                padding: 59px;
-                border-radius: 100%;
-              }
+  &.print-type {
+    // border: solid rgba(50, 50, 50, .2) 1px;
+    border: solid rgb(198, 239, 231) 1px;
+    .news-type-icon-outer {
+      // background-color: rgba(50, 50, 50, .2);
+      background-color: rgb(198, 239, 231);
+      .news-type-icon {
+        // fill: rgba(50, 50, 50, 1);
+        fill: rgba(0, 51, 102, 1);
+      }
+    }
+  }
 
-              &.print-type {
-                // border: solid rgba(50, 50, 50, .2) 1px;
-                border: solid rgb(198, 239, 231) 1px;
-                div.news-type-icon-outer {
-                  // background-color: rgba(50, 50, 50, .2);
-                  background-color: rgb(198, 239, 231);
-                  svg.news-type-icon {
-                    // fill: rgba(50, 50, 50, 1);
-                    fill: rgba(0, 51, 102, 1);
-                  }
-                }
-              }
+  &.video-type {
+    // border: solid rgba(179, 8, 56, .15) 1px;
+    border: solid rgb(239, 198, 213) 1px;
+    .news-type-icon-outer {
+      // background-color: rgba(179, 8, 56, .15);
+      background-color: rgb(239, 198, 213);
+      .news-type-icon {
+        // fill: rgba(179, 8, 56, 1);
+        fill: rgba(0, 51, 102, 1);
+      }
+    }
+  }
 
-              &.video-type {
-                // border: solid rgba(179, 8, 56, .15) 1px;
-                border: solid rgb(239, 198, 213) 1px;
-                div.news-type-icon-outer {
-                  // background-color: rgba(179, 8, 56, .15);
-                  background-color: rgb(239, 198, 213);
-                  svg.news-type-icon {
-                    // fill: rgba(179, 8, 56, 1);
-                    fill: rgba(0, 51, 102, 1);
-                  }
-                }
-              }
-
-              &.audio-type {
-                // border: solid rgba(0, 51, 102, .25) 1px;
-                border: solid rgb(239, 236, 198) 1px;
-                div.news-type-icon-outer {
-                  // background-color: rgba(0, 51, 102, .25);
-                  background-color: rgb(239, 236, 198);
-                  svg.news-type-icon {
-                    fill: rgba(0, 51, 102, 1);
-                  }
-                }
-              }
-            }
-
-            div.news-item-data {
-              max-width: 20rem;
-              text-align: center;
-
-              h3.news-title {
-                margin-bottom: 0.3rem;
-              }
-
-              p.news-source {
-                span.sub-source {
-                  color: grey;
-                }
-              }
-            }
-          }
-        }
+  &.audio-type {
+    // border: solid rgba(0, 51, 102, .25) 1px;
+    border: solid rgb(239, 236, 198) 1px;
+    .news-type-icon-outer {
+      // background-color: rgba(0, 51, 102, .25);
+      background-color: rgb(239, 236, 198);
+      .news-type-icon {
+        fill: rgba(0, 51, 102, 1);
       }
     }
   }
 }
 
+.news-type-icon-outer {
+  padding: 59px;
+  border-radius: 100%;
+}
+
+.news-item-data {
+  max-width: 20rem;
+  text-align: center;
+}
+
+.news-title {
+  margin-bottom: 0.3rem;
+}
+
+.sub-source {
+  color: grey;
+}
+
 // Page specific: Index
 
-html {
-  body {
-    main {
-      div#page-content {
-        section {
-          div#twitter-div {
-            height: 300px;
-            overflow-y: scroll;
-          }
+#twitter-div {
+  height: 300px;
+  overflow-y: scroll;
+}
 
-          div#about-anjan {
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            margin-bottom: 2rem;
+#about-anjan {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 2rem;
 
-            &:last-child {
-              margin-bottom: 0;
-            }
-
-            img#about-anjan-img {
-              flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
-              padding: 5px;
-              border: solid lightgrey 1px;
-            }
-
-            div#about-anjan-text {
-              div#about-anjan-text-header {
-                text-align: center;
-                margin-bottom: 1rem;
-              }
-            }
-          }
-
-          div.book-item {
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            margin-bottom: 2rem; // 4rem (maybe for all "items" on small screen?)
-
-            &:last-child {
-              margin-bottom: 0;
-            }
-
-            img.book-item-image {
-              flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
-              border: solid lightgrey 1px;
-              padding: 5px;
-              margin-bottom: 1rem; // Usually not necessary to explicitly declare margin-bottom on img (I have this in reset), but need to override :last-child causing margin-bottom: 0 (technically :last-child because inside <a>)
-            }
-
-            div.book-item-text {
-              div.book-item-header {
-                text-align: center;
-                margin-bottom: 1rem;
-
-                p.book-item-pub {
-                  margin-bottom: 0.5rem;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+  &:last-child {
+    margin-bottom: 0;
   }
+}
+
+#about-anjan-img {
+  flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
+  padding: 5px;
+  border: solid lightgrey 1px;
+}
+
+#about-anjan-text-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.book-item {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 2rem; // 4rem (maybe for all "items" on small screen?)
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.book-item-image {
+  flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
+  border: solid lightgrey 1px;
+  padding: 5px;
+  margin-bottom: 1rem; // Usually not necessary to explicitly declare margin-bottom on img (I have this in reset), but need to override :last-child causing margin-bottom: 0 (technically :last-child because inside <a>)
+}
+
+.book-item-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.book-item-pub {
+  margin-bottom: 0.5rem;
 }
 
 // Page specific: Contact
@@ -647,123 +588,86 @@ html {
 
   html {
     padding: 4rem 4rem 0;
+  }
 
-    body {
-      header {
-        div#logo {
-          flex-flow: row;
-          margin-bottom: 2rem;
-          img {
-            margin-bottom: 0;
-            padding-right: 2.5rem;
-            border-right: solid 2px lightgrey;
-          }
-          span {
-            padding-left: 2.5rem;
-          }
-        }
+  #logo {
+    flex-flow: row;
+    margin-bottom: 2rem;
+    img {
+      margin-bottom: 0;
+      padding-right: 2.5rem;
+      border-right: solid 2px lightgrey;
+    }
+    span {
+      padding-left: 2.5rem;
+    }
+  }
 
-        nav#nav-site {
-          ul {
-            flex-flow: row wrap;
-            padding: 1.5rem 1.75rem;
+  #nav-site {
+    ul {
+      flex-flow: row wrap;
+      padding: 1.5rem 1.75rem;
 
-            li {
-              margin: 0 1.75rem 0 0;
+      li {
+        margin: 0 1.75rem 0 0;
 
-              &:last-child {
-                margin: 0;
-              }
-            }
-
-            a {
-              &:hover {
-                color: $sl-hover;
-              }
-            }
-          }
+        &:last-child {
+          margin: 0;
         }
       }
 
-      main {
-        flex-flow: row;
-        align-items: flex-start;
-        justify-content: flex-end;
-
-        #nav-page-outer {
-          flex: 0 0 16rem;
-          margin-right: 2rem;
+      a {
+        &:hover {
+          color: $sl-hover;
         }
+      }
+    }
+  }
 
-        nav#nav-page {
-          text-align: left;
-          margin-bottom: 0;
+  main {
+    flex-flow: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
 
-          #nav-page-titlebar {
-            display: flex;
-            font-size: 1.5rem;
+  #nav-page-outer {
+    flex: 0 0 16rem;
+    margin-right: 2rem;
+  }
 
-            a {
-              display: block;
-            }
+  #nav-page {
+    text-align: left;
+    margin-bottom: 0;
+  }
 
-            span {
-              display: block;
-              margin: 0 0.5rem;
-            }
-          }
-        }
+  #nav-page-titlebar {
+    justify-content: flex-start;
+  }
 
-        #jump-up-box {
-          display: inline-block;
-          position: relative;
-          top: -3.5rem;
-          z-index: 0;
-          background-color: $card;
-          padding: 1.5rem;
-          margin-bottom: 2rem;
-          margin-left: 1.5rem;
-          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-          border-radius: 9999px;
+  #jump-up-box {
+    display: none;
+  }
 
-          svg {
-            margin-top: 3rem;
-          }
-        }
-
-        div#page-content {
-          // flex: 1 1 auto; // allows flex item to grow to fill remaining width of body / main [initial default is 0 1 auto, corresponding to grow, shrink, basis]
-          flex: 0 1 calc(100% - 18rem); // Calc is not well supported... perhaps implement in js?
-          // overflow: hidden; // by default, flex items have min-width (and min-height) as auto, meaning will not shrink smaller than size of contents. override with mid-width: 0 or even more elegantly, overflow: hidden (any value of overflow except visible makes min-width: 0 and content will disappear at small sizes as needed)
-          min-width: 0; // overflow: hidden screws up shadows
-          section {
-            h2.section-title {
-              text-align: left;
-            }
-          }
-        }
+  #page-content {
+    // flex: 1 1 auto; // allows flex item to grow to fill remaining width of body / main [initial default is 0 1 auto, corresponding to grow, shrink, basis]
+    flex: 0 1 calc(100% - 18rem); // Calc is not well supported... perhaps implement in js?
+    // overflow: hidden; // by default, flex items have min-width (and min-height) as auto, meaning will not shrink smaller than size of contents. override with mid-width: 0 or even more elegantly, overflow: hidden (any value of overflow except visible makes min-width: 0 and content will disappear at small sizes as needed)
+    min-width: 0; // overflow: hidden screws up shadows
+    section {
+      .section-title {
+        text-align: left;
       }
     }
   }
 
   // Page-specific: People
 
-  html {
-    body {
-      main {
-        div#page-content {
-          section {
-            #alumni-cols {
-              columns: 2;
+  #alumni-cols {
+    columns: 2;
+  }
 
-              div.alumni-group {
-                text-align: left;
-              }
-            }
-          }
-        }
-      }
-    }
+  .alumni-group {
+    text-align: left;
   }
 }
 
@@ -771,120 +675,84 @@ html {
 
   // These "desktop" styles look too squished at the 40rem breakpoint
 
-hr.hr-small-media {
-  display: none;
-}
+  .hr-small-media {
+    display: none;
+  }
 
   // Page-specific: People
 
-  html {
-    body {
-      main {
-        div#page-content {
-          section {
-            div.people-item {
-              flex-flow: row;
-              align-items: flex-start;
+  .people-item {
+    flex-flow: row;
+    align-items: flex-start;
+  }
 
-              img.people-item-img {
-                margin-right: 2rem;
-                margin-bottom: 0;
-              }
+  .people-item-img {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
 
-              div.people-item-text {
-                div.people-item-text-header {
-                  text-align: left;
+  .people-item-text-header {
+    text-align: left;
+  }
 
-                  div.people-item-contact-links {
-                    justify-content: flex-start;
-                  }
-                }
-              }
-            }
+  .people-item-contact-links {
+    justify-content: flex-start;
+  }
 
-            #alumni-cols {
-              columns: 3;
-            }
-          }
-        }
-      }
-    }
+  #alumni-cols {
+    columns: 3;
   }
 
   // Page-specific: News
 
-  html {
-    body {
-      main {
-        div#page-content {
-          section {
-            div.news-item {
-              flex-flow: row;
-              margin-bottom: 2rem;
+  .news-item {
+    flex-flow: row;
+    margin-bottom: 2rem;
 
-              &:last-child {
-                margin-bottom: 0;
-              }
-
-              div.news-type-icon-border {
-                margin-bottom: 0;
-                margin-right: 2rem;
-              }
-
-              div.news-item-data {
-                max-width: 100%;
-                text-align: left;
-              }
-            }
-          }
-        }
-      }
+    &:last-child {
+      margin-bottom: 0;
     }
+  }
+
+  .news-type-icon-border {
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+
+  .news-item-data {
+    max-width: 100%;
+    text-align: left;
   }
 
   // Page specific: Index
 
-  html {
-    body {
-      main {
-        div#page-content {
-          section {
-            div#about-anjan {
-              flex-flow: row;
-              align-items: flex-start;
+  #about-anjan {
+    flex-flow: row;
+    align-items: flex-start;
+  }
 
-              img#about-anjan-img {
-                margin-right: 2rem;
-                margin-bottom: 0;
-              }
+  #about-anjan-img {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
 
-              div#about-anjan-text {
-                div#about-anjan-text-header {
-                  text-align: left;
-                }
-              }
-            }
+  #about-anjan-text-header {
+    text-align: left;
+  }
 
-            div.book-item {
-              display: flex;
-              flex-flow: row;
-              align-items: flex-start;
+  .book-item {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+  }
 
-              img.book-item-image {
-                margin-right: 2rem;
-                margin-bottom: 0;
-              }
+  .book-item-image {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
 
-              div.book-item-text {
-                div.book-item-header {
-                  text-align: left;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+  .book-item-header {
+    text-align: left;
   }
 
   // Page specific: Contact
@@ -930,6 +798,34 @@ hr.hr-small-media {
     width: 16rem;
     top: 2rem;
     left: 4rem; // Calc is not well supported... perhaps implement in js?
+
+    #nav-page-titlebar {
+      a {
+        display: block;
+      }
+
+      span {
+        display: block;
+        margin: 0 0.5rem;
+      }
+    }
+
+    #jump-up-box {
+      display: inline-block;
+      position: relative;
+      top: -3.5rem;
+      z-index: 0;
+      background-color: $card;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      margin-left: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-radius: 9999px;
+
+      svg {
+        margin-top: 3rem;
+      }
+    }
   }
 
   .hidden {
