@@ -1,6 +1,28 @@
-- classes: eliminate specificity in items (e.g., book-item, people-item); just use generic "item" class and create / use additional helper classes (e.g., item-align-center) where necessary 
+- highlight active section in page nav while scrolling
 
-- more space under book items
+- highlight current page in site nav
+
+- reorganize css (pare down unnecessary classes esp in items)
+
+- add footer
+
+- animate: jump-up-box, scroll (e.g., to top, to sections), menu open / close
+
+- bring back home link on menu?
+
+- switch menu toggle to top of menu
+
+- add jump to top fixed button on mobile
+
+- clicking link to page sections should leave gap at top
+
+- play around with
+
+- classes: eliminate specificity in items (e.g., book-item, people-item); just use generic "item" class and create / use additional helper classes (e.g., item-align-center) where necessary
+
+- more space under book items, contact items
+
+- parallax background image? schema icons?
 
 - links to social profiles: maybe just put username in data, build href from base url
 
