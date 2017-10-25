@@ -8,15 +8,16 @@ var navPageOuter = document.getElementById("nav-page-outer");
 
 window.addEventListener("scroll", function () {
   var scrollY = window.pageYOffset;
+  console.log(scrollY);
 
   if (atTop) {
-    if (scrollY > 227) {
+    if (scrollY > 229) {
       atTop = false;
       // Only fires once when crossing from low to high
       navPageOuter.classList.add("scrolled");
     }
   } else {
-    if (scrollY < 228) {
+    if (scrollY < 230) {
       atTop = true;
       // Only fires once when crossing from high to low
       navPageOuter.classList.remove("scrolled");
