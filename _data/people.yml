@@ -124,6 +124,26 @@
     twitter: null
     instagram: null
     flickr: null
+  - name: Claire Dinh
+    photo_filename: claire.jpg
+    suffix: null
+    position: Graduate Student
+    bio: I am a Penn Master of Bioethics student exploring the neural bases of language. Currently, I am assisting in a patient study on metaphor comprehension. As a Haverford College German major, I conducted research in the ChatLab for my honors thesis on the evolution of the German language and German prepositions. This project required using an interdisciplinary approach, as I employed research methods from linguistics, statistics, and the humanities.
+    email: null
+    website: null
+    twitter: null
+    instagram: null
+    flickr: null
+  - name: Emily Urban
+    photo_filename: emily.jpg
+    suffix: null
+    position: Undergraduate Student
+    bio: I am a Visual Studies and Fine Arts major in my senior year at Penn as an undergraduate. I am currently working on my Visual Studies senior thesis project, in which I am researching the aesthetics of the human body. By examining the neural correlates to aesthetic judgments of bodies and investigating representations of the figure throughout Art History, I hope to determine if one's perceptions of bodies may be modified in some way.
+    email: null
+    website: null
+    twitter: null
+    instagram: null
+    flickr: null
 - section_title: Visiting Researchers
   section_id: visiting-researchers
   section_description: null
