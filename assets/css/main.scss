@@ -226,22 +226,7 @@ main {
 }
 
 #jump-up-box {
-  transition: all 1s ease;
-  display: inline-block;
-  position: relative;
-  top: -5rem;
-  z-index: 0;
-  background-color: $card;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  margin-left: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  border-radius: 9999px;
-
-  svg {
-    transition: all 1s ease;
-    margin-top: 0;
-  }
+  display: none;
 }
 
 #page-content {
@@ -660,6 +645,22 @@ footer {
   }
 
   #jump-up-box {
+    transition: all 0.25s ease;
+    display: inline-block;
+    position: relative;
+    top: -5rem;
+    z-index: 0;
+    background-color: $card;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    margin-left: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 9999px;
+
+    svg {
+      transition: all 0.25s ease;
+      margin-top: 0;
+    }
   }
 
   #page-content {

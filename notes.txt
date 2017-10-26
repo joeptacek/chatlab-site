@@ -1,3 +1,11 @@
+- new email addresses!
+
+- fix screwed up titles in media section!!!
+
+- format addresses in some sort of blockquote thing
+
+- links to indiv twitter accounts from twitter box
+
 - highlight active section in page nav while scrolling
 
 - highlight current page in site nav
