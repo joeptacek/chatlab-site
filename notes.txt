@@ -1,3 +1,11 @@
+- favicon: move middle circle up? fix colors (e.g., make red more pinkish raspberry)? 
+
+- add anjan departmental page link?
+
+- why doesn't jump to top button trigger css transition
+
+- add subtle background texture?
+
 - collect ig / flickr accounts from lab members
 
 - improve twitter / media situation: ok on media page? twitter sidebar (per anjan?)
@@ -16,7 +24,7 @@
 
 - reorganize css (pare down unnecessary classes esp in items)
 
-- add footer
+- add footer!
 
 - animate: jump-up-box, scroll (e.g., to top, to sections), menu open / close
 
