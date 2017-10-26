@@ -9,23 +9,34 @@ layout: master
         <span>/</span>
         <h1 id="page-title">{{ page.title }}</h1>
       </div>
+      <ul>
+        <li><a href="#twitter">Twitter</a></li>
+        <li><a href="#other_media">Other Media</a></li>
+      </ul>
     </nav>
     <div id="jump-up-box">
       <a href=""><svg><use xlink:href="#icon-arrow-up2"></use></svg></a>
     </div>
   </div>
   <div id="page-content"><!-- div necessary to make flex row with nav -->
-    <section>
+    <section id="twitter">
+      <h2 class="section-title">Twitter</h2>
+      <hr />
+      {% include twitter.html %}
+    </section>
+    <section id="other_media">
+      <h2 class="section-title">Other Media</h2>
+      <hr />
       <nav id="nav-news">
+        <!-- Perhaps filter with js, eventually -->
         <span>Filter:</span>
         <ul>
-          <li><a href="/news/all.html">All</a></li>
-          <li><a href="/news/print.html">Print</a></li>
-          <li><a href="/news/video.html">Video</a></li>
-          <li><a href="/news/audio.html">Audio</a></li>
+          <li><a href="/news/all.html#other_media">All</a></li>
+          <li><a href="/news/print.html#other_media">Print</a></li>
+          <li><a href="/news/video.html#other_media">Video</a></li>
+          <li><a href="/news/audio.html#other_media">Audio</a></li>
         </ul>
       </nav>
-      <hr />
       {% for item in site.data.news %}
         {% if page.data_type contains item.type %}
           {% include item/news.html pass=item %}

@@ -1,3 +1,7 @@
+- collect ig / flickr accounts from lab members
+
+- improve twitter / media situation: ok on media page? twitter sidebar (per anjan?)
+
 - new email addresses!
 
 - fix screwed up titles in media section!!!
