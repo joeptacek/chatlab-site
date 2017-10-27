@@ -1,4 +1,12 @@
-- favicon: move middle circle up? fix colors (e.g., make red more pinkish raspberry)? 
+- google analytics
+
+- use higher resolution images than 200?
+
+- ?????
+
+- PDF UNAVAILABLE
+
+- favicon: move middle circle up? fix colors (e.g., make red more pinkish raspberry)?
 
 - add anjan departmental page link?
 
