@@ -229,32 +229,38 @@ main {
   display: none;
 }
 
-#page-content {
-  section {
-    background-color: $card;
-    padding: 2rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
+section {
+  background-color: $card;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 2.5rem; // needs to be larger than 2rem ie height of gap from top to nav-page, or else previous section shadow visible
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    .section-title {
-      text-align: center;
-    }
-
-    .section-description {
-      font-size: 1.1rem;
-    }
-
-    .section-image {
-      max-width: 100%; // Shrink images on horizontal resize (doesn't work to set as absolute size like max-width: 400px... why?)
-      height: auto; // Scale height (seemingly needed for flex images)
-      padding: 5px;
-      border: solid lightgrey 1px;
-    }
+  &:last-child {
+    margin-bottom: 0;
   }
+}
+
+.section-title {
+  text-align: center;
+
+  &:before {
+    display: block;
+    content: " "; // space or empty?
+    margin-top: -4rem;
+    height: 4rem;
+    visibility: hidden; // just in case?
+  }
+}
+
+.section-description {
+  font-size: 1.1rem;
+}
+
+.section-image {
+  max-width: 100%; // Shrink images on horizontal resize (doesn't work to set as absolute size like max-width: 400px... why?)
+  height: auto; // Scale height (seemingly needed for flex images)
+  padding: 5px;
+  border: solid lightgrey 1px;
 }
 
 footer {
@@ -663,11 +669,10 @@ footer {
     flex: 0 1 calc(100% - 18rem); // Calc is not well supported... perhaps implement in js?
     // overflow: hidden; // by default, flex items have min-width (and min-height) as auto, meaning will not shrink smaller than size of contents. override with mid-width: 0 or even more elegantly, overflow: hidden (any value of overflow except visible makes min-width: 0 and content will disappear at small sizes as needed)
     min-width: 0; // overflow: hidden screws up shadows
-    section {
-      .section-title {
-        text-align: left;
-      }
-    }
+  }
+
+  .section-title {
+    text-align: left;
   }
 
   // Page-specific: People

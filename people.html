@@ -24,8 +24,8 @@ svg: true
   </div>
   <div id="page-content"><!-- div necessary to make flex row with nav -->
     {% include data.html pass="people" %}
-    <section id="lab-alumni">
-      <h2 class="section-title">Lab Alumni</h2>
+    <section>
+      <h2 id="lab-alumni" class="section-title">Lab Alumni</h2>
       <hr />
       <div id="alumni-cols">
         {% for group in site.data.alumni %}
