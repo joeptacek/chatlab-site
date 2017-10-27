@@ -383,14 +383,9 @@ footer {
 // Page-specific: News
 
 #nav-news {
-  display: flex;
-  margin-bottom: 2rem;
-  span {
-    margin: 0 0.5rem 0 0;
-  }
+  margin-bottom: 1rem;
   ul {
     display: flex;
-    flex-flow: row;
     li {
       margin: 0 0.5rem 0 0;
     }
