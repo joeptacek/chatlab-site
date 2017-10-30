@@ -1,3 +1,5 @@
+- favicon: see wharton for good one. possible to just use a icon larger than 32px? seems like browser knows how to deal with this
+
 - google analytics
 
 - use higher resolution images than 200?

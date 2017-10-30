@@ -84,7 +84,7 @@ a {
 }
 
 html {
-  padding: 2rem 2rem 0;
+  padding: 4rem 2rem 0;
   height: 100%; // So body and main can expand to 100%
 }
 
@@ -113,6 +113,7 @@ header {
   margin-bottom: 2rem;
 
   img {
+    box-sizing: content-box; // or else image gets squashed. dimensions explicitly set in html, and border-box smushes image to account for margin-right... maybe there's a better fix?
     display: block; // Or else extra space around element (default is inline)
     margin-bottom: 2rem;
   }
@@ -165,7 +166,6 @@ main {
 
   display: flex;
   flex-flow: column;
-  margin-bottom: 2rem;
 }
 
 #nav-page-outer {
@@ -266,12 +266,7 @@ section {
 footer {
   // As flex item (with main and footer), should not shrink
   flex: 0 0 auto;
-
-  p {
-    text-align: center;
-    padding: 4rem 0 4rem;
-    color: grey;
-  }
+  text-align: center;
 }
 
 // Page-specific: Research
@@ -594,11 +589,13 @@ footer {
   #logo {
     flex-flow: row;
     margin-bottom: 2rem;
+
     img {
       margin-bottom: 0;
       padding-right: 2.5rem;
       border-right: solid 2px lightgrey;
     }
+
     span {
       padding-left: 2.5rem;
     }
