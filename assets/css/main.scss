@@ -161,6 +161,17 @@ header {
       background-color: inherit;
     }
   }
+
+  svg {
+    // FIX EXTRA SPACE
+    display: block; // Or else extra space around element (default is inline)
+    width: 1rem;
+    height: 1rem;
+    fill: rgb(127, 127, 127);
+    &:hover {
+      fill: black; // Individual colors for different social?
+    }
+  }
 }
 
 main {
