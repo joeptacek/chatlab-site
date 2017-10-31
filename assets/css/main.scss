@@ -6,6 +6,8 @@
 $background: #f2f2f3; // background
 $well: #ececec; // darker well
 $card: #f7f7f7; // lighter card
+$borders: lightgrey; // site-nav, images, icons, etc.
+$shadows: rgba(0, 0, 0, 0.1); // shadows
 $site-links: #c95273; // site links
 $sl-hover: #b20838; // site links hover
 $page-links: #6583A4;
@@ -125,14 +127,15 @@ header {
 }
 
 #nav-site {
+  background-color: $well;
+  padding: 1.75rem;
+  border: solid $borders 1px;
+  border-radius: 4px;
+
   ul {
-    background-color: $well;
     display: flex;
     flex-flow: column;
     align-items: center;
-    padding: 1.75rem;
-    border: solid lightgrey 1px;
-    border-radius: 4px;
 
     li {
       margin-bottom: 1.5rem;
@@ -187,7 +190,7 @@ main {
   padding: 2rem;
   text-align: center;
   margin-bottom: 2rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px $shadows;
 
   & > ul {
     li {
@@ -232,7 +235,7 @@ main {
 section {
   background-color: $card;
   padding: 2rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px $shadows;
   margin-bottom: 2.5rem; // needs to be larger than 2rem ie height of gap from top to nav-page, or else previous section shadow visible
 
   &:last-child {
@@ -260,7 +263,7 @@ section {
   max-width: 100%; // Shrink images on horizontal resize (doesn't work to set as absolute size like max-width: 400px... why?)
   height: auto; // Scale height (seemingly needed for flex images)
   padding: 5px;
-  border: solid lightgrey 1px;
+  border: solid $borders 1px;
 }
 
 footer {
@@ -271,7 +274,7 @@ footer {
 }
 
 #copyright {
-  color: lightgrey;
+  color: $borders;
 }
 
 // Page-specific: Research
@@ -315,7 +318,7 @@ footer {
   flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
   border-radius: 100%;
   padding: 5px;
-  border: solid lightgrey 1px;
+  border: solid $borders 1px;
 }
 
 .people-item-text-header {
@@ -501,7 +504,7 @@ footer {
 #about-anjan-img {
   flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
   padding: 5px;
-  border: solid lightgrey 1px;
+  border: solid $borders 1px;
 }
 
 #about-anjan-text-header {
@@ -522,7 +525,7 @@ footer {
 
 .book-item-image {
   flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
-  border: solid lightgrey 1px;
+  border: solid $borders 1px;
   padding: 5px;
   margin-bottom: 1rem; // Usually not necessary to explicitly declare margin-bottom on img (I have this in reset), but need to override :last-child causing margin-bottom: 0 (technically :last-child because inside <a>)
 }
@@ -579,7 +582,7 @@ footer {
 
 #map {
   padding: 5px;
-  border: solid lightgrey 1px;
+  border: solid $borders 1px;
 }
 
 @media screen and (min-width: 45rem) {
@@ -598,7 +601,7 @@ footer {
     img {
       margin-bottom: 0;
       padding-right: 2.5rem;
-      border-right: solid 2px lightgrey;
+      border-right: solid 2px $borders;
     }
 
     span {
@@ -607,9 +610,10 @@ footer {
   }
 
   #nav-site {
+    padding: 1.5rem 1.75rem;
+
     ul {
       flex-flow: row wrap;
-      padding: 1.5rem 1.75rem;
 
       li {
         margin: 0 1.75rem 0 0;
@@ -648,7 +652,7 @@ footer {
   }
 
   #jump-up-box {
-    transition: top 0.25s ease;
+    transition: top 0.2s ease;
     display: inline-block;
     position: relative;
     top: -5rem;
@@ -657,11 +661,11 @@ footer {
     padding: 1.5rem;
     margin-bottom: 2rem;
     margin-left: 1.5rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px $shadows;
     border-radius: 9999px;
 
     svg {
-      transition: margin-top 0.25s ease;
+      transition: margin-top 0.2s ease;
       margin-top: 0;
     }
   }
