@@ -1,3 +1,13 @@
+- better close menu button
+
+- pdf icons
+
+- sections should be expandable: research, about anjan
+
+- missing stuff: anjan CV! path manner 007 video!
+
+- get people's: CV, IG account, GitHub account, other accounts?
+
 - favicon: see wharton for good one. possible to just use a icon larger than 32px? seems like browser knows how to deal with this
 
 - google analytics
