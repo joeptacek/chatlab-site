@@ -518,14 +518,6 @@
   date_year: 2010
   media_url: null
   type: 'print'
-- title: 'Are Better Brains Better? Cosmetic Neurology and the Ethics of Enhancement'
-  source: 'Haverford College'
-  sub_source: '?????'
-  date_month: 4
-  date_day: 18
-  date_year: 2010
-  media_url: null
-  type: 'video'
 - title: 'The Neuropsychology of Art'
   source: 'The Beautiful Brain'
   sub_source: 'The Beautiful Brain Podcast'
@@ -534,14 +526,6 @@
   date_year: 2010
   media_url: 'http://neuronsinc.com/cosmetic-neurology/brainethics-podcast-anjan-chatterjee-on-neuroethics-cosmetic-neurology-and-neuromarketing/'
   type: 'audio'
-- title: '?????'
-  source: 'University of Pennsylvania'
-  sub_source: 'Center for Neuroscience & Society'
-  date_month: 1
-  date_day: 5
-  date_year: 2010
-  media_url: 'https://youtu.be/8nrdAFU3xpw'
-  type: 'video'
 - title: 'Ritalin Backed As Brain-booster'
   source: 'BBC'
   sub_source: null
