@@ -164,12 +164,9 @@ header {
 
   svg {
     display: block; // Or else extra space around element (default is inline)
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     fill: rgb(127, 127, 127);
-    &:hover {
-      fill: black; // Individual colors for different social?
-    }
   }
 }
 
@@ -819,9 +816,31 @@ footer {
   position: static; // Default value
 }
 
-.menu-closed {
+#nav-site {
+  svg {
+    &#icon-open-menu {
+      display: none;
+    }
+
+    &#icon-close-menu {
+      display: block;
+    }
+  }
+}
+
+#nav-site.menu-closed{
   #nav-site-main {
     display: none;
+  }
+
+  svg {
+    &#icon-open-menu {
+      display: block;
+    }
+
+    &#icon-close-menu {
+      display: none;
+    }
   }
 }
 
@@ -856,7 +875,7 @@ footer {
     }
   }
 
-  .menu-closed {
+  #nav-site.menu-closed {
     #nav-site-main {
       display: list-item; // Default value
     }
