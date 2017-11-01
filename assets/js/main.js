@@ -1,9 +1,9 @@
-document.getElementById("nav-site-main").classList.add("hidden");
+document.getElementById("nav-site").classList.add("menu-closed");
 
 var atTop = true;
 var menuVisible = false;
 var navSiteToggleButton = document.getElementById("nav-site-toggle-button");
-var navSiteMain = document.getElementById("nav-site-main");
+var navSite = document.getElementById("nav-site");
 var navPageOuter = document.getElementById("nav-page-outer");
 
 window.addEventListener("scroll", function () {
@@ -28,10 +28,10 @@ window.addEventListener("scroll", function () {
 navSiteToggleButton.addEventListener("click", function () {
   if (menuVisible) {
     menuVisible = false;
-    navSiteMain.classList.add("hidden")
+    navSite.classList.add("menu-closed");
   } else {
     menuVisible = true;
-    navSiteMain.classList.remove("hidden")
+    navSite.classList.remove("menu-closed");
   }
 
   // After button click, button element gains focus and glows via CSS outline
