@@ -6,12 +6,15 @@
 $background: #f2f2f3; // background
 $well: #ececec; // darker well
 $card: #f7f7f7; // lighter card
+$card-transp: rgba(247, 247, 247, 0.7); // transparent card
 $borders: lightgrey; // site-nav, images, icons, etc.
 $shadows: rgba(0, 0, 0, 0.1); // shadows
 $site-links: #c95273; // site links
 $sl-hover: #b20838; // site links hover
 $page-links: #6583A4;
+$page-links-transp: rgba(101, 131, 164, 0.7);
 $pl-hover: #194577;
+$pl-hover-transp: rgba(25, 29, 119, 0.7);
 
 // Resets
 
@@ -179,15 +182,6 @@ main {
 }
 
 #nav-page-outer {
-  svg {
-    display: block; // Fixes some subtle extra padding issues?
-    width: 1.75rem;
-    height: 1.75rem;
-    fill: $page-links;
-    &:hover {
-      fill: $pl-hover; // Individual colors for different social?
-    }
-  }
 }
 
 #nav-page {
@@ -237,6 +231,27 @@ main {
 
 #jump-up-box {
   display: none;
+  // MOBILE JUMP TO TOP
+  // display: inline-block;
+  // padding: 1.5rem;
+  // border-radius: 9999px;
+  // background-color: $card-transp;
+  // box-shadow: 0 1px 3px $shadows; // shadows already transp
+  //
+  // position: fixed;
+  // bottom: 1.5rem;
+  // right: 2.25rem;
+  // z-index: 2; // on top of everything including nav-page
+  //
+  // svg {
+  //   display: block; // Fixes some subtle extra padding issues?
+  //   width: 1.75rem;
+  //   height: 1.75rem;
+  //   fill: $page-links-transp;
+  //   &:hover {
+  //     fill: $pl-hover-transp;
+  //   }
+  // }
 }
 
 section {
@@ -660,20 +675,31 @@ footer {
 
   #jump-up-box {
     transition: top 0.2s ease;
+
     display: inline-block;
+    padding: 1.5rem;
+    border-radius: 9999px;
+    background-color: $card;
+    box-shadow: 0 1px 3px $shadows; // shadows already transp
+
     position: relative;
     top: -5rem;
+    left: 1.5rem;
+    bottom: auto; // reset
+    right: auto; // reset
     z-index: 0;
-    background-color: $card;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    margin-left: 1.5rem;
-    box-shadow: 0 1px 3px $shadows;
-    border-radius: 9999px;
 
     svg {
       transition: margin-top 0.2s ease;
+
+      display: block; // Fixes some subtle extra padding issues?
+      width: 1.75rem;
+      height: 1.75rem;
       margin-top: 0;
+      fill: $page-links;
+      &:hover {
+        fill: $pl-hover;
+      }
     }
   }
 
