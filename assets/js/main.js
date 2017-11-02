@@ -11,13 +11,13 @@ window.addEventListener("scroll", function () {
   console.log(scrollY);
 
   if (atTop) {
-    if (scrollY > 229) {
+    if (scrollY > 261) {
       atTop = false;
       // Only fires once when crossing from low to high
       navPageOuter.classList.add("scrolled");
     }
   } else {
-    if (scrollY < 230) {
+    if (scrollY < 262) {
       atTop = true;
       // Only fires once when crossing from high to low
       navPageOuter.classList.remove("scrolled");

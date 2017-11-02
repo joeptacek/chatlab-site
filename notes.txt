@@ -1,3 +1,5 @@
+- improve image appearance and performance. explore @2x, high resolution images, responsive images, picture element / srcset / webp polyfills, etc
+
 - get rid of extra svg defs
 
 - better close menu button
