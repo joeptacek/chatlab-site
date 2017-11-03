@@ -1,3 +1,5 @@
+- link to github from copyright?
+
 - research: add section with our downloadable tasks
 
 - research: show descriptions, hide publications under button

@@ -11,7 +11,7 @@
   {% if include.pass.pdf_filename == null %}
     {% capture pdf_link %}[PDF UNAVAILABLE]{% endcapture %}
   {% else %}
-    {% capture pdf_link %}<a href="/chatterjee/assets/pdf/publications/{{ include.pass.pdf_filename }}" target="_blank">[PDF]</a>{% endcapture %}
+    {% capture pdf_link %}<a href="{{ "/assets/pdf/publications/" | prepend: site.baseurl | append: include.pass.pdf_filename }}" target="_blank">[PDF]</a>{% endcapture %}
   {% endif %}
 
   {% case include.pass.work_publication_format %}

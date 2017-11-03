@@ -1,4 +1,5 @@
 title: ChatLab
+baseurl: /chatterjee
 exclude:
   - Gemfile
   - Gemfile.lock

@@ -1,18 +1,18 @@
 <header>
   <div id="logo">
-    <a href="http://www.med.upenn.edu" target="_blank"><img src="/chatterjee/assets/img/logo/psom_logo.png" alt="PSOM Logo" width="213" height="60" /></a>
-    <span><a href="/chatterjee/index.html">ChatLab</a></span>
+    <a href="http://www.med.upenn.edu" target="_blank"><img src="{{ "/assets/img/logo/psom_logo.png" | prepend: site.baseurl }}" alt="PSOM Logo" width="213" height="60" /></a>
+    <span><a href="{{ "/" | prepend: site.baseurl }}">ChatLab</a></span>
   </div>
   <nav id="nav-site">
     <ul>
       <li id="nav-site-main">
         <ul>
-          <li><a href="/chatterjee/index.html">Home</a></li>
-          <li><a href="/chatterjee/people.html">People</a></li>
-          <li><a href="/chatterjee/research.html">Research</a></li>
-          <li><a href="/chatterjee/news/all.html">News</a></li>
-          <li><a href="/chatterjee/contact.html">Contact</a></li>
-          <!-- <li><a href="/chatterjee/links.html">Links</a></li> -->
+          <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+          <li><a href="{{ "/people.html" | prepend: site.baseurl }}">People</a></li>
+          <li><a href="{{ "/research.html" | prepend: site.baseurl }}">Research</a></li>
+          <li><a href="{{ "/news/all.html" | prepend: site.baseurl }}">News</a></li>
+          <li><a href="{{ "/contact.html" | prepend: site.baseurl }}">Contact</a></li>
+          <!-- <li><a href="{{ "/links.html" | prepend: site.baseurl }}">Links</a></li> -->
         </ul>
       </li>
       <li id="nav-site-toggle">
