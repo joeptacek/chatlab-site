@@ -1,2 +1,2 @@
 # chatlab-site
-Website for ChatLab (University of Pennsylvania)
+Website for [ChatLab](http://ccn.upenn.edu/chatterjee) (University of Pennsylvania)
