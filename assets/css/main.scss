@@ -311,8 +311,8 @@ footer {
 
 .citation {
   // Hanging indent
-  padding-left: 1rem;
-  text-indent: -1rem;
+  padding-left: 0.75rem;
+  text-indent: -0.75rem;
 
   cite {
     font-style: italic; // Should be italic by default, but just in case not
