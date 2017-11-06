@@ -1,6 +1,14 @@
+- add meta description
+
+- add old htm tests in research
+
+- add old supplemental materials in research
+
+- add CVs
+
 - mobile nav site links and button should be width 100%
 
-- mobile nav-page style should be different/should not be a card? 
+- mobile nav-page style should be different/should not be a card?
 
 - mobile nav site links should jump down past logos
 
