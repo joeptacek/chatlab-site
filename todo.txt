@@ -1,3 +1,11 @@
+- mobile nav site links and button should be width 100%
+
+- mobile nav-page style should be different/should not be a card? 
+
+- mobile nav site links should jump down past logos
+
+- fix mobile nav site spacing (more at top?)
+
 - link to github from copyright?
 
 - research: add section with our downloadable tasks
