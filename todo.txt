@@ -1,3 +1,5 @@
+- change permissions on server dirs like backups
+
 - add meta description
 
 - add old htm tests in research
