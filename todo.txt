@@ -24,7 +24,7 @@
 
 - add contact / social links to anjan's section on main page
 
-- fix scrolling for twitter widget on mobile, incluse link to that twitter list
+- fix scrolling for twitter widget on mobile, includfe link to that twitter list
 
 - changed a bunch of src="" and href="" to remove preceding slash. used href="index.html" instead of just "/". why doesn't slash prefix work for href and src when serving from hosting.med.upenn.edu?
 
