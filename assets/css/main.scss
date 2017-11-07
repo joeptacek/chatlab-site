@@ -165,6 +165,17 @@ header {
     }
   }
 
+  // #top-nav {
+  //   margin-bottom: 0; // unset h2 default
+  //   &:before {
+  //     display: block;
+  //     content: " "; // space or empty?
+  //     margin-top: -3.75rem;
+  //     height: 3.75rem;
+  //     visibility: hidden; // just in case?
+  //   }
+  // }
+
   svg {
     display: block; // Or else extra space around element (default is inline)
     width: 1.75rem;
