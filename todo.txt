@@ -1,3 +1,5 @@
+- stamp git commit info into jekyll output? eg as comment at top of body? as txt file?
+
 - change permissions on server dirs like backups
 
 - add meta description
