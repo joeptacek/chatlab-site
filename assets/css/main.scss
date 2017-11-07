@@ -89,7 +89,7 @@ a {
 }
 
 html {
-  padding: 2rem 2rem 0;
+  padding: 4rem 2rem 0;
   // height: 100%; // So body and main can expand to 100%
 }
 
@@ -108,8 +108,6 @@ body {
 
 header {
   // flex: 0 0 auto; // As flex item (with main and footer), should not shrink
-  display: flex;
-  flex-flow: column-reverse; // alternatively, re-order html
   margin-bottom: 2rem;
 }
 
@@ -117,6 +115,7 @@ header {
   display: flex;
   flex-flow: column;
   align-items: center;
+  margin-bottom: 2rem;
 
   img {
     box-sizing: content-box; // or else image gets squashed. dimensions explicitly set in html, and border-box smushes image to account for margin-right... maybe there's a better fix?
@@ -132,7 +131,6 @@ header {
 
 #nav-site {
   background-color: $well;
-  margin-bottom: 2rem;
   padding: 1.75rem;
   border: solid $borders 1px;
   border-radius: 4px;
@@ -618,10 +616,6 @@ footer {
     padding: 6rem 4rem 0;
   }
 
-  header {
-    flex-flow: column;
-  }
-
   #logo {
     flex-flow: row;
     margin-bottom: 2rem;
@@ -638,7 +632,6 @@ footer {
   }
 
   #nav-site {
-    margin-bottom: 0;
     padding: 1.5rem 1.75rem;
 
     ul {
