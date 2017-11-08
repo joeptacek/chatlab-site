@@ -1,3 +1,11 @@
+- url stuff: using .htacces and rewriting engine to avoid html extension https://stackoverflow.com/questions/5730092/how-to-remove-html-from-url/5730126#5730126
+
+- url stuff: best practice is to add index.html to each directory (e.g., news)
+
+- url stuff: use redirects for news pages?
+
+- add 404
+
 - stamp git commit info into jekyll output? eg as comment at top of body? as txt file?
 
 - change permissions on server dirs like backups

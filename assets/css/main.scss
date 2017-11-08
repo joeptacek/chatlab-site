@@ -373,6 +373,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem; // space before CV
+
+  &:last-child {
+    margin-bottom: 0; // if no CV
+  }
 
   & > * {
     margin-right: 0.5rem;

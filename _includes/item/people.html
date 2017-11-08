@@ -9,8 +9,10 @@
         {% if include.pass.website %}<a href="{{ include.pass.website }}" target="_blank"><svg><use xlink:href="#icon-earth"></use></svg></a>{% endif %}
         {% if include.pass.twitter %}<a href="{{ include.pass.twitter }}" target="_blank"><svg><use xlink:href="#icon-twitter"></use></svg></a>{% endif %}
         {% if include.pass.instagram %}<a href="{{ include.pass.instagram }}" target="_blank"><svg><use xlink:href="#icon-instagram"></use></svg></a>{% endif %}
+        {% if include.pass.github %}<a href="{{ include.pass.github }}" target="_blank"><svg><use xlink:href="#icon-github"></use></svg></a>{% endif %}
         {% if include.pass.flickr %}<a href="{{ include.pass.flickr }}" target="_blank"><svg><use xlink:href="#icon-flickr"></use></svg></a>{% endif %}
       </div>
+      {% if include.pass.cv_filename %}<p><a href="{{ "/assets/pdf/cv/" | prepend: site.baseurl | append: include.pass.cv_filename }}" target="_blank">View CV</a></p>{% endif %}
     </div>
     <hr class="hr-small-media" />
     <p>{{ include.pass.bio }}</p>
