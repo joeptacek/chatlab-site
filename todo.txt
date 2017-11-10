@@ -1,3 +1,7 @@
+- use js to filter news results, move twitter to news page
+
+- encircle social icons
+
 - cv: on mobile, break onto another line?
 
 - create a more abstract class to do layout for people-item, news-item, book-item, contact-item etc
