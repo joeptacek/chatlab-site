@@ -1,4 +1,8 @@
-- url stuff: using .htacces and rewriting engine to avoid html extension https://stackoverflow.com/questions/5730092/how-to-remove-html-from-url/5730126#5730126
+- create a more abstract class to do layout for people-item, news-item, book-item, contact-item etc
+
+- typography: make certain elements sans (e.g., h1, h2, nav anchors, logos, icons, ui stuff etc), keep "content" serif
+
+- url stuff: using .htaccess and rewriting engine to avoid html extension https://stackoverflow.com/questions/5730092/how-to-remove-html-from-url/5730126#5730126
 
 - url stuff: best practice is to add index.html to each directory (e.g., news)
 

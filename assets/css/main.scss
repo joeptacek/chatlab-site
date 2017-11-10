@@ -357,6 +357,10 @@ footer {
 .people-item-text-header {
   text-align: center;
   margin-bottom: 1.25rem;
+
+  > :last-child { // same as `& > *:last-child` scss ampersand and wildcard both implied
+    margin-bottom: 0;
+  }
 }
 
 .people-item-text-name {
@@ -365,7 +369,10 @@ footer {
 
 .people-item-text-position {
   font-size: 1.1rem;
-  margin-bottom: 1rem;
+}
+
+.people-item-text-cv {
+  margin-bottom: 1.25rem; // to match header bottom, centering contact-links
 }
 
 .people-item-contact-links {
@@ -375,12 +382,12 @@ footer {
   align-items: center;
   margin-bottom: 1rem; // space before CV
 
-  &:last-child {
-    margin-bottom: 0; // if no CV
-  }
-
-  & > * {
+  > * { // same as `& > *` scss ampersand is implied
     margin-right: 0.5rem;
+
+    &.buttony-link {
+      margin-right: 1rem;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -400,6 +407,20 @@ footer {
     &:hover {
       fill: black; // Individual colors for different social?
     }
+  }
+}
+
+.buttony-link {
+  display: inline-block; // fixes minor gaps also maybe makes sense in context of added padding
+  padding: 0.25rem 0.5rem;
+  border: solid $page-links 1px;
+  border-radius: 9999px;
+  color: $page-links;
+  font-size: 0.75rem;
+
+  &:hover {
+    background-color: hsl(211, 26%, 96%); // i.e., page-links with more luminence
+    color: $page-links; // override $pl-hover default
   }
 }
 
