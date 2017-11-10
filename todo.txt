@@ -1,3 +1,5 @@
+- cv: on mobile, break onto another line?
+
 - create a more abstract class to do layout for people-item, news-item, book-item, contact-item etc
 
 - typography: make certain elements sans (e.g., h1, h2, nav anchors, logos, icons, ui stuff etc), keep "content" serif
