@@ -30,6 +30,11 @@ h1, h2, h3, h4, p {
   }
 }
 
+// ALL last-children should be flush with bottom of parent but there are specificity issues with this declaration (rule targeting pseudo-element will be overridden by rules targetting classes or ids; could use !important but unclear if this would have its own issues)
+// :last-child {
+//   margin-bottom: 0;
+// }
+
 h4 {
   font-size: 1.17rem; // approx equal to h3 ... check this (otherwise h4 font size not usually explicitly defined, i.e., 1rem)
 }
@@ -576,7 +581,7 @@ footer {
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin-bottom: 2rem; // 4rem (maybe for all "items" on small screen?)
+  margin-bottom: 4rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -605,7 +610,7 @@ footer {
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -637,6 +642,26 @@ footer {
 
   h3 {
     text-align: center;
+  }
+}
+
+address {
+  background-color: white;
+  font-size: 0.8rem;
+  font-style: normal;
+  padding: 0.8rem 1.25rem;
+  margin-bottom: 1rem;
+  border-left: solid $page-links 4px;
+  box-shadow: 0 1px 3px $shadows; // shadows already transp
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+    padding-left: 0.5rem;
+    text-indent: -0.5rem;
   }
 }
 
@@ -856,6 +881,7 @@ footer {
   .contact-item {
     flex-flow: row;
     align-items: flex-start; // default: top-align
+    margin-bottom: 2rem;
 
     &.item-align-center {
       align-items: center; // optional: (re-)center-align with this class

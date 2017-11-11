@@ -1,3 +1,5 @@
+- consider using microformats / microdata (schema.org) for citations, addresses
+
 - use js to filter news results, move twitter to news page
 
 - encircle social icons
