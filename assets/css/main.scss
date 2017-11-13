@@ -137,37 +137,31 @@ header {
 
 #nav-site {
   background-color: $well;
-  padding: 1.75rem;
+  padding: 1rem;
   border: solid $borders 1px;
   border-radius: 4px;
 
   ul {
     display: flex;
     flex-flow: column;
-    align-items: center;
+    align-items: stretch;
 
-    li {
-      margin-bottom: 1.5rem;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    ul {
-      padding: 0;
-      border: none;
-    }
-
-    a, button {
+    a {
       color: $site-links;
-      font-size: 1.2rem;
+      text-align: center;
     }
 
     button {
-      display: block; // Or else extra space around element (default is inline)
+      // reset default styles
       border: none;
-      padding: 0;
       background-color: inherit;
+    }
+
+    a, button {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1.2rem;
     }
   }
 
@@ -184,6 +178,7 @@ header {
 
   svg {
     display: block; // Or else extra space around element (default is inline)
+    margin: 0 auto; // ...centering block-level element
     width: 1.75rem;
     height: 1.75rem;
     fill: rgb(160, 160, 160);
@@ -695,25 +690,26 @@ address {
   }
 
   #nav-site {
-    padding: 1.5rem 1.75rem;
+    // padding: 1rem 1.75rem;
+    padding: 0.75rem 0.875rem;
 
     ul {
       flex-flow: row wrap;
-
-      li {
-        margin: 0 1.75rem 0 0;
-
-        &:last-child {
-          margin: 0;
-        }
-      }
 
       a {
         &:hover {
           color: $sl-hover;
         }
       }
+
+      a, button {
+        padding: 0.75rem 0.875rem;
+      }
     }
+  }
+
+  #nav-site-main {
+    padding: 0;
   }
 
   main {

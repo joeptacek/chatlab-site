@@ -1,4 +1,4 @@
-- cache indvalidation!
+- cache invalidation!
 
 - consider using microformats / microdata (schema.org) for citations, addresses
 
