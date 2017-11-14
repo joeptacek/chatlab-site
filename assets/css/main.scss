@@ -5,6 +5,7 @@
 
 $background: #f2f2f3; // background
 $well: #ececec; // darker well
+$button: #e8e8e8; // even (slighly) darker button
 $card: #f7f7f7; // lighter card
 $card-transp: rgba(247, 247, 247, 0.7); // transparent card
 $borders: lightgrey; // site-nav, images, icons, etc.
@@ -137,7 +138,6 @@ header {
 
 #nav-site {
   background-color: $well;
-  padding: 1rem;
   border: solid $borders 1px;
   border-radius: 4px;
 
@@ -149,12 +149,13 @@ header {
     a {
       color: $site-links;
       text-align: center;
+      border-bottom: solid $borders 1px;
     }
 
     button {
       // reset default styles
       border: none;
-      background-color: inherit;
+      background-color: $button;
     }
 
     a, button {
@@ -191,9 +192,6 @@ main {
   // How to have minimum height = screen height with pages showing limited content? In practice not a problem here.
   display: flex;
   flex-flow: column;
-}
-
-#nav-page-outer {
 }
 
 #nav-page {
@@ -697,6 +695,8 @@ address {
       flex-flow: row wrap;
 
       a {
+        border-bottom: none;
+
         &:hover {
           color: $sl-hover;
         }
