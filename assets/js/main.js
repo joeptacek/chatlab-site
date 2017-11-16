@@ -1,11 +1,11 @@
 // grab elements
+var navSiteLinks = document.getElementById("nav-site-links");
 var navSiteToggleButton = document.getElementById("nav-site-toggle-button");
 var navSiteToggleSVGUse = document.getElementById("nav-site-toggle-svg");
-var navSite = document.getElementById("nav-site");
 var navPageOuter = document.getElementById("nav-page-outer");
 
 // close menu on load (html without js displays open menu)
-navSite.classList.add("menu-closed");
+navSiteLinks.classList.add("menu-closed");
 navSiteToggleSVGUse.setAttribute("href", "#icon-menu");
 
 // initialize booleans
@@ -14,7 +14,6 @@ var menuVisible = false;
 
 window.addEventListener("scroll", function () {
   var scrollY = window.pageYOffset;
-  console.log(scrollY);
 
   if (atTop) {
     if (scrollY > 261) {
@@ -34,12 +33,12 @@ window.addEventListener("scroll", function () {
 navSiteToggleButton.addEventListener("click", function () {
   if (!menuVisible) {
     // if opening
-    navSite.classList.remove("menu-closed");
+    navSiteLinks.classList.remove("menu-closed");
     navSiteToggleSVGUse.setAttribute("href", "#icon-close");
     menuVisible = true;
   } else {
     // if closing
-    navSite.classList.add("menu-closed");
+    navSiteLinks.classList.add("menu-closed");
     navSiteToggleSVGUse.setAttribute("href", "#icon-menu");
     menuVisible = false;
   }

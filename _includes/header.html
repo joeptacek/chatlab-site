@@ -5,22 +5,16 @@
   </div>
   <nav id="nav-site">
     <!-- <a id="top-nav"></a> -->
-    <ul>
-      <li id="nav-site-main">
-        <ul>
-          <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
-          <li><a href="{{ "/people.html" | prepend: site.baseurl }}">People</a></li>
-          <li><a href="{{ "/research.html" | prepend: site.baseurl }}">Research</a></li>
-          <li><a href="{{ "/news/all.html" | prepend: site.baseurl }}">News</a></li>
-          <li><a href="{{ "/contact.html" | prepend: site.baseurl }}">Contact</a></li>
-        </ul>
-      </li>
-      <li id="nav-site-toggle">
-        <button id="nav-site-toggle-button">
-          <!-- <svg><use href="#icon-menu"></use></svg> -->
-          <svg><use id="nav-site-toggle-svg" href="#icon-close"></use></svg>
-        </button>
-      </li>
+    <ul id="nav-site-links">
+      <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+      <li><a href="{{ "/people.html" | prepend: site.baseurl }}">People</a></li>
+      <li><a href="{{ "/research.html" | prepend: site.baseurl }}">Research</a></li>
+      <li><a href="{{ "/news/all.html" | prepend: site.baseurl }}">News</a></li>
+      <li><a href="{{ "/contact.html" | prepend: site.baseurl }}">Contact</a></li>
     </ul>
+    <button id="nav-site-toggle-button">
+      <!-- <svg><use href="#icon-menu"></use></svg> -->
+      <svg><use id="nav-site-toggle-svg" href="#icon-close"></use></svg>
+    </button>
   </nav>
 </header>

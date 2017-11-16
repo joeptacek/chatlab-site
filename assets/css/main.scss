@@ -145,25 +145,12 @@ header {
     display: flex;
     flex-flow: column;
     align-items: stretch;
+  }
 
-    a {
-      color: $site-links;
-      text-align: center;
-      border-bottom: solid $borders 1px;
-    }
-
-    button {
-      // reset default styles
-      border: none;
-      background-color: $button;
-    }
-
-    a, button {
-      display: block;
-      width: 100%;
-      padding: 1.25rem;
-      font-size: 1.2rem;
-    }
+  a {
+    color: $site-links;
+    text-align: center;
+    border-bottom: solid $borders 1px;
   }
 
   // #top-nav {
@@ -185,6 +172,20 @@ header {
     fill: rgb(160, 160, 160);
   }
 }
+
+#nav-site-toggle-button {
+  // reset default styles
+  border: none;
+  background-color: $button;
+}
+
+#nav-site a, #nav-site-toggle-button {
+  display: block;
+  width: 100%;
+  padding: 1.25rem;
+  font-size: 1.2rem;
+}
+
 
 main {
   // As flex item (with header, footer), should grow
@@ -670,22 +671,23 @@ address {
   }
 
   #nav-site {
-    // padding: 1rem 1.75rem;
-    padding: 0.75rem 0.875rem;
+    padding: 1.5rem 2rem;
 
     ul {
       flex-flow: row wrap;
+    }
 
-      a {
-        border-bottom: none;
+    li {
+      margin-right: 1.5rem;
+    }
 
-        &:hover {
-          color: $sl-hover;
-        }
-      }
+    a {
+      text-align: left;
+      border-bottom: none;
+      padding: 0;
 
-      a, button {
-        padding: 0.75rem 0.875rem;
+      &:hover {
+        color: $sl-hover;
       }
     }
   }
@@ -876,14 +878,14 @@ address {
   position: static; // Default value
 }
 
-#nav-site.menu-closed{
-  #nav-site-main {
+#nav-site-links {
+  &.menu-closed {
     display: none;
   }
 }
 
 @media screen and (min-width: 45rem) {
-  #nav-site-toggle {
+  #nav-site-toggle-button {
     display: none;
   }
 
@@ -902,9 +904,9 @@ address {
     }
   }
 
-  #nav-site.menu-closed {
-    #nav-site-main {
-      display: list-item; // Default value
+  #nav-site-links {
+    &.menu-closed {
+      display: flex; // Default value
     }
   }
 }
