@@ -1,10 +1,16 @@
-document.getElementById("nav-site").classList.add("menu-closed");
-
-var atTop = true;
-var menuVisible = false;
+// grab elements
 var navSiteToggleButton = document.getElementById("nav-site-toggle-button");
+var navSiteToggleSVGUse = document.getElementById("nav-site-toggle-svg");
 var navSite = document.getElementById("nav-site");
 var navPageOuter = document.getElementById("nav-page-outer");
+
+// close menu on load (html without js displays open menu)
+navSite.classList.add("menu-closed");
+navSiteToggleSVGUse.setAttribute("href", "#icon-menu");
+
+// initialize booleans
+var atTop = true;
+var menuVisible = false;
 
 window.addEventListener("scroll", function () {
   var scrollY = window.pageYOffset;
@@ -26,12 +32,16 @@ window.addEventListener("scroll", function () {
 });
 
 navSiteToggleButton.addEventListener("click", function () {
-  if (menuVisible) {
-    menuVisible = false;
-    navSite.classList.add("menu-closed");
-  } else {
-    menuVisible = true;
+  if (!menuVisible) {
+    // if opening
     navSite.classList.remove("menu-closed");
+    navSiteToggleSVGUse.setAttribute("href", "#icon-close");
+    menuVisible = true;
+  } else {
+    // if closing
+    navSite.classList.add("menu-closed");
+    navSiteToggleSVGUse.setAttribute("href", "#icon-menu");
+    menuVisible = false;
   }
 
   // After button click, button element gains focus and glows via CSS outline

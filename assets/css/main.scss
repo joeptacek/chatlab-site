@@ -898,31 +898,9 @@ address {
   position: static; // Default value
 }
 
-#nav-site {
-  svg {
-    &#icon-open-menu {
-      display: none;
-    }
-
-    &#icon-close-menu {
-      display: block;
-    }
-  }
-}
-
 #nav-site.menu-closed{
   #nav-site-main {
     display: none;
-  }
-
-  svg {
-    &#icon-open-menu {
-      display: block;
-    }
-
-    &#icon-close-menu {
-      display: none;
-    }
   }
 }
 
