@@ -6,7 +6,7 @@ var navPageOuter = document.getElementById("nav-page-outer");
 
 // close menu on load (html without js displays open menu)
 navSiteLinks.classList.add("menu-closed");
-navSiteToggleSVGUse.setAttribute("href", "#icon-menu");
+navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-menu");
 
 // initialize booleans
 var atTop = true;
@@ -34,12 +34,12 @@ navSiteToggleButton.addEventListener("click", function () {
   if (!menuVisible) {
     // if opening
     navSiteLinks.classList.remove("menu-closed");
-    navSiteToggleSVGUse.setAttribute("href", "#icon-close");
+    navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-close");
     menuVisible = true;
   } else {
     // if closing
     navSiteLinks.classList.add("menu-closed");
-    navSiteToggleSVGUse.setAttribute("href", "#icon-menu");
+    navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-menu");
     menuVisible = false;
   }
 

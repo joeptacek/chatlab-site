@@ -7,12 +7,12 @@
       <div class="people-item-contact-links">
         {% comment %}in people.yml cv can be set as local file at /assets/pdf/cv/ (Anjan's case) OR an external url (Steve's case){% endcomment %}
         {% if include.pass.cv %}{% capture cv_slice %}{{ include.pass.cv | slice: 0, 4 }}{% endcapture %}<a class="buttony-link" href="{% if cv_slice == "http" %}{{ include.pass.cv }}{% else %}{{ "/assets/pdf/cv/" | prepend: site.baseurl | append: include.pass.cv }}{% endif %}" target="_blank">View CV</a>{% endif %}
-        {% if include.pass.email %}<a href="mailto:{{ include.pass.email }}"><svg><use href="#icon-mail"></use></svg></a>{% endif %}
-        {% if include.pass.website %}<a href="{{ include.pass.website }}" target="_blank"><svg><use href="#icon-earth"></use></svg></a>{% endif %}
-        {% if include.pass.twitter %}<a href="{{ include.pass.twitter }}" target="_blank"><svg><use href="#icon-twitter"></use></svg></a>{% endif %}
-        {% if include.pass.instagram %}<a href="{{ include.pass.instagram }}" target="_blank"><svg><use href="#icon-instagram"></use></svg></a>{% endif %}
-        {% if include.pass.github %}<a href="{{ include.pass.github }}" target="_blank"><svg><use href="#icon-github"></use></svg></a>{% endif %}
-        {% if include.pass.flickr %}<a href="{{ include.pass.flickr }}" target="_blank"><svg><use href="#icon-flickr"></use></svg></a>{% endif %}
+        {% if include.pass.email %}<a href="mailto:{{ include.pass.email }}"><svg><use xlink:href="#icon-mail"></use></svg></a>{% endif %}
+        {% if include.pass.website %}<a href="{{ include.pass.website }}" target="_blank"><svg><use xlink:href="#icon-earth"></use></svg></a>{% endif %}
+        {% if include.pass.twitter %}<a href="{{ include.pass.twitter }}" target="_blank"><svg><use xlink:href="#icon-twitter"></use></svg></a>{% endif %}
+        {% if include.pass.instagram %}<a href="{{ include.pass.instagram }}" target="_blank"><svg><use xlink:href="#icon-instagram"></use></svg></a>{% endif %}
+        {% if include.pass.github %}<a href="{{ include.pass.github }}" target="_blank"><svg><use xlink:href="#icon-github"></use></svg></a>{% endif %}
+        {% if include.pass.flickr %}<a href="{{ include.pass.flickr }}" target="_blank"><svg><use xlink:href="#icon-flickr"></use></svg></a>{% endif %}
       </div>
     </div>
     <hr class="hr-small-media" />
