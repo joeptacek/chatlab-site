@@ -161,7 +161,7 @@ header {
     a, button {
       display: block;
       width: 100%;
-      padding: 0.75rem;
+      padding: 1.25rem;
       font-size: 1.2rem;
     }
   }
@@ -211,31 +211,13 @@ main {
       }
     }
   }
-}
-
-#nav-page-titlebar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-
-  // For non-headers i.e., a and span
-  font-size: 1.75rem; // toggle this on scroll!
-
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  a {
-    display: none;
-  }
-
-  span {
-    display: none;
-  }
 
   h1 {
-    font-size: 1.75rem; // to exactly match font-size of a and span
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -724,10 +706,6 @@ address {
     margin-bottom: 0;
   }
 
-  #nav-page-titlebar {
-    justify-content: flex-start;
-  }
-
   #jump-up-box {
     transition: top 0.2s ease;
 
@@ -914,17 +892,6 @@ address {
     width: 16rem;
     top: 2rem;
     left: 4rem; // Calc is not well supported... perhaps implement in js?
-
-    #nav-page-titlebar {
-      a {
-        // display: block;
-      }
-
-      span {
-        // display: block;
-        // margin: 0 0.5rem;
-      }
-    }
 
     #jump-up-box {
       top: -3.5rem;
