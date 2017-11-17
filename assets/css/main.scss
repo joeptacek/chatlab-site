@@ -147,10 +147,13 @@ header {
     align-items: stretch;
   }
 
+  li {
+    border-bottom: solid $borders 1px;
+  }
+
   a {
     color: $site-links;
     text-align: center;
-    border-bottom: solid $borders 1px;
   }
 
   // #top-nav {
@@ -182,7 +185,7 @@ header {
 #nav-site a, #nav-site-toggle-button {
   display: block;
   width: 100%;
-  padding: 1.25rem;
+  padding: 1.25rem 0;
   font-size: 1.2rem;
 }
 
@@ -204,21 +207,25 @@ main {
   margin-bottom: 2rem;
   box-shadow: 0 1px 3px $shadows;
 
-  & > ul {
-    li {
-      margin-bottom: 1rem;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
   h1 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  li {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    display: block;
+    width: 100%;
   }
 }
 
@@ -679,11 +686,11 @@ address {
 
     li {
       margin-right: 1.5rem;
+      border-bottom: none;
     }
 
     a {
       text-align: left;
-      border-bottom: none;
       padding: 0;
 
       &:hover {
