@@ -1,3 +1,5 @@
+- add index to news dir to avoid errors
+
 - for svg <use>, use xlink:href for safari compatibility (svg 2 will eventually use href instead of xlink:href)
 
 - cache invalidation!
