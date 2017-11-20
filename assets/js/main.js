@@ -3,6 +3,8 @@ var navSiteLinks = document.getElementById("nav-site-links");
 var navSiteToggleButton = document.getElementById("nav-site-toggle-button");
 var navSiteToggleSVGUse = document.getElementById("nav-site-toggle-svg");
 var navPageOuter = document.getElementById("nav-page-outer");
+var navPageLinks = document.getElementById("nav-page-links");
+var showPageLinksButton = document.getElementById("show-page-links-button");
 
 // close menu on load (html without js displays open menu)
 navSiteLinks.classList.add("menu-closed");
@@ -49,4 +51,8 @@ navSiteToggleButton.addEventListener("click", function () {
   // click event. Outline still visible when you :focus the button in other ways
   // (e.g., with tab).
   navSiteToggleButton.blur();
+});
+
+showPageLinksButton.addEventListener("click", function () {
+  navPageOuter.classList.add("show-page-links");
 });

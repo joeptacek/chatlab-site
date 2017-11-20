@@ -202,16 +202,17 @@ main {
   position: relative;
   z-index: 1;
   background-color: $card;
-  padding: 2rem;
+  padding-top: 2rem;
   text-align: center;
   margin-bottom: 2rem;
   box-shadow: 0 1px 3px $shadows;
 
   h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     &:last-child {
       margin-bottom: 0;
+      padding-bottom: 2rem;
     }
   }
 
@@ -223,10 +224,28 @@ main {
     }
   }
 
-  a {
-    display: block;
-    width: 100%;
+  svg {
+    display: block; // Or else extra space around element (default is inline)
+    margin: 0 auto; // ...centering block-level element
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: rgb(160, 160, 160);
   }
+}
+
+#nav-page-links {
+  display: none;
+}
+
+#nav-page a, #show-page-links-button {
+  display: block;
+  width: 100%;
+}
+
+#show-page-links-button {
+  padding: 0.5rem 0;
+  border: none;
+  background-color: inherit;
 }
 
 #jump-up-box {
@@ -712,7 +731,28 @@ address {
 
   #nav-page {
     text-align: left;
+    padding: 2rem;
     margin-bottom: 0;
+
+    h1 {
+      margin-bottom: 2rem;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    a {
+      display: inline;
+    }
+  }
+
+  #nav-page-links {
+    display: block;
+  }
+
+  #show-page-links-button {
+    display: none;
   }
 
   #jump-up-box {
@@ -885,11 +925,30 @@ address {
   position: static; // Default value
 }
 
-#nav-site-links {
-  &.menu-closed {
+.menu-closed {
+  &#nav-site-links {
     display: none;
   }
 }
+
+.show-page-links {
+  #nav-page {
+    padding-bottom: 2rem;
+
+    h1 {
+      margin-bottom: 2rem;
+    }
+  }
+
+  #nav-page-links {
+    display: block;
+  }
+
+  #show-page-links-button {
+    display: none;
+  }
+}
+
 
 @media screen and (min-width: 45rem) {
   #nav-site-toggle-button {
