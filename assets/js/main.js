@@ -1,18 +1,24 @@
 // grab elements
-var navSiteLinks = document.getElementById("nav-site-links");
+var navSite = document.getElementById("nav-site");
 var navSiteToggleButton = document.getElementById("nav-site-toggle-button");
 var navSiteToggleSVGUse = document.getElementById("nav-site-toggle-svg");
 var navPageOuter = document.getElementById("nav-page-outer");
-var navPageLinks = document.getElementById("nav-page-links");
-var showPageLinksButton = document.getElementById("show-page-links-button");
+var navPage = document.getElementById("nav-page");
+var navPageToggleButton = document.getElementById("nav-page-toggle-button");
+var navPageToggleSVGUse = document.getElementById("nav-page-toggle-svg")
 
 // close menu on load (html without js displays open menu)
-navSiteLinks.classList.add("menu-closed");
+navSite.classList.add("nav-site-closed");
 navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-menu");
+
+// hide page links on load (html without js shows page links)
+navPage.classList.add("nav-page-closed");
+navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-down");
 
 // initialize booleans
 var atTop = true;
 var menuVisible = false;
+var pageLinksVisible = false;
 
 window.addEventListener("scroll", function () {
   var scrollY = window.pageYOffset;
@@ -35,12 +41,12 @@ window.addEventListener("scroll", function () {
 navSiteToggleButton.addEventListener("click", function () {
   if (!menuVisible) {
     // if opening
-    navSiteLinks.classList.remove("menu-closed");
+    navSite.classList.remove("nav-site-closed");
     navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-close");
     menuVisible = true;
   } else {
     // if closing
-    navSiteLinks.classList.add("menu-closed");
+    navSite.classList.add("nav-site-closed");
     navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-menu");
     menuVisible = false;
   }
@@ -53,6 +59,15 @@ navSiteToggleButton.addEventListener("click", function () {
   navSiteToggleButton.blur();
 });
 
-showPageLinksButton.addEventListener("click", function () {
-  navPageOuter.classList.add("show-page-links");
+navPageToggleButton.addEventListener("click", function () {
+  if (!pageLinksVisible) {
+    navPage.classList.remove("nav-page-closed");
+    navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-up");
+    pageLinksVisible = true;
+  } else {
+    navPage.classList.add("nav-page-closed");
+    navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-down");
+    pageLinksVisible = false;
+  }
+  navPageToggleButton.blur();
 });

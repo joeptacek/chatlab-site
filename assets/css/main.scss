@@ -141,21 +141,6 @@ header {
   border: solid $borders 1px;
   border-radius: 4px;
 
-  ul {
-    display: flex;
-    flex-flow: column;
-    align-items: stretch;
-  }
-
-  li {
-    border-bottom: solid $borders 1px;
-  }
-
-  a {
-    color: $site-links;
-    text-align: center;
-  }
-
   // #top-nav {
   //   margin-bottom: 0; // unset h2 default
   //   &:before {
@@ -166,6 +151,29 @@ header {
   //     visibility: hidden; // just in case?
   //   }
   // }
+}
+
+#nav-site-links {
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+
+  li {
+    border-bottom: solid $borders 1px;
+  }
+
+  a {
+    color: $site-links;
+    text-align: center;
+    padding: 1rem 0;
+  }
+}
+
+#nav-site-toggle-button {
+  // reset default styles
+  border: none;
+  background-color: $button;
+  padding: 1.5rem 0;
 
   svg {
     display: block; // Or else extra space around element (default is inline)
@@ -176,19 +184,11 @@ header {
   }
 }
 
-#nav-site-toggle-button {
-  // reset default styles
-  border: none;
-  background-color: $button;
-}
-
-#nav-site a, #nav-site-toggle-button {
+#nav-site-links a, #nav-site-toggle-button {
   display: block;
   width: 100%;
-  padding: 1.25rem 0;
   font-size: 1.2rem;
 }
-
 
 main {
   // As flex item (with header, footer), should grow
@@ -202,19 +202,23 @@ main {
   position: relative;
   z-index: 1;
   background-color: $card;
-  padding-top: 2rem;
   text-align: center;
   margin-bottom: 2rem;
   box-shadow: 0 1px 3px $shadows;
 
   h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 0; // reset
+    padding: 2rem;
+    padding-bottom: 1.5rem; // separation from page-links (2rem looks too wide)
 
     &:last-child {
-      margin-bottom: 0;
-      padding-bottom: 2rem;
+      padding-bottom: 2rem; // equal padding when no page-links
     }
   }
+}
+
+#nav-page-links {
+  padding-bottom: 1.5rem; // same as distance from h1
 
   li {
     margin-bottom: 1rem;
@@ -223,6 +227,15 @@ main {
       margin-bottom: 0;
     }
   }
+}
+
+#nav-page-toggle-button {
+  padding: 0; // reset
+  padding: 0.5rem 0;
+  border: none; // reset
+  border-top: solid $button 1px;
+  background-color: $background;
+  border-radius: 0;
 
   svg {
     display: block; // Or else extra space around element (default is inline)
@@ -233,44 +246,13 @@ main {
   }
 }
 
-#nav-page-links {
-  display: none;
-}
-
-#nav-page a, #show-page-links-button {
+#nav-page a, #nav-page-toggle-button {
   display: block;
   width: 100%;
 }
 
-#show-page-links-button {
-  padding: 0.5rem 0;
-  border: none;
-  background-color: inherit;
-}
-
 #jump-up-box {
   display: none;
-  // MOBILE JUMP TO TOP
-  // display: inline-block;
-  // padding: 1.5rem;
-  // border-radius: 9999px;
-  // background-color: $card-transp;
-  // box-shadow: 0 1px 3px $shadows; // shadows already transp
-  //
-  // position: fixed;
-  // bottom: 1.5rem;
-  // right: 2.25rem;
-  // z-index: 2; // on top of everything including nav-page
-  //
-  // svg {
-  //   display: block; // Fixes some subtle extra padding issues?
-  //   width: 1.75rem;
-  //   height: 1.75rem;
-  //   fill: $page-links-transp;
-  //   &:hover {
-  //     fill: $pl-hover-transp;
-  //   }
-  // }
 }
 
 section {
@@ -698,10 +680,10 @@ address {
 
   #nav-site {
     padding: 1.5rem 2rem;
+  }
 
-    ul {
-      flex-flow: row wrap;
-    }
+  #nav-site-links {
+    flex-flow: row wrap;
 
     li {
       margin-right: 1.5rem;
@@ -718,6 +700,7 @@ address {
     }
   }
 
+
   main {
     flex-flow: row;
     align-items: flex-start;
@@ -731,28 +714,16 @@ address {
 
   #nav-page {
     text-align: left;
-    padding: 2rem;
     margin-bottom: 0;
+  }
 
-    h1 {
-      margin-bottom: 2rem;
-
-      &:last-child {
-        padding-bottom: 0;
-      }
-    }
+  #nav-page-links {
+    padding: 2rem;
+    padding-top: 0; // flush with padded h1
 
     a {
       display: inline;
     }
-  }
-
-  #nav-page-links {
-    display: block;
-  }
-
-  #show-page-links-button {
-    display: none;
   }
 
   #jump-up-box {
@@ -925,26 +896,14 @@ address {
   position: static; // Default value
 }
 
-.menu-closed {
-  &#nav-site-links {
+.nav-site-closed {
+  #nav-site-links {
     display: none;
   }
 }
 
-.show-page-links {
-  #nav-page {
-    padding-bottom: 2rem;
-
-    h1 {
-      margin-bottom: 2rem;
-    }
-  }
-
+.nav-page-closed {
   #nav-page-links {
-    display: block;
-  }
-
-  #show-page-links-button {
     display: none;
   }
 }
@@ -952,6 +911,10 @@ address {
 
 @media screen and (min-width: 45rem) {
   #nav-site-toggle-button {
+    display: none;
+  }
+
+  #nav-page-toggle-button {
     display: none;
   }
 
@@ -970,9 +933,15 @@ address {
     }
   }
 
-  #nav-site-links {
-    &.menu-closed {
+  .nav-site-closed {
+    #nav-site-links {
       display: flex; // Default value
+    }
+  }
+
+  .nav-page-closed {
+    #nav-page-links {
+      display: block;
     }
   }
 }
