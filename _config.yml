@@ -4,3 +4,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - README.md
+  - todo.txt
+  - assets/archive
