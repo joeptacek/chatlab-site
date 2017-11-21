@@ -1,24 +1,6 @@
-// grab elements
-var navSite = document.getElementById("nav-site");
-var navSiteToggleButton = document.getElementById("nav-site-toggle-button");
-var navSiteToggleSVGUse = document.getElementById("nav-site-toggle-svg");
+// Stuff for sticky page links nav
 var navPageOuter = document.getElementById("nav-page-outer");
-var navPage = document.getElementById("nav-page");
-var navPageToggleButton = document.getElementById("nav-page-toggle-button");
-var navPageToggleSVGUse = document.getElementById("nav-page-toggle-svg")
-
-// close menu on load (html without js displays open menu)
-navSite.classList.add("nav-site-closed");
-navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-menu");
-
-// hide page links on load (html without js shows page links)
-navPage.classList.add("nav-page-closed");
-navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-down");
-
-// initialize booleans
 var atTop = true;
-var menuVisible = false;
-var pageLinksVisible = false;
 
 window.addEventListener("scroll", function () {
   var scrollY = window.pageYOffset;
@@ -38,17 +20,27 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// Stuff for showing / hiding SITE links
+var navSite = document.getElementById("nav-site");
+var navSiteToggleButton = document.getElementById("nav-site-toggle-button");
+var navSiteToggleSVGUse = document.getElementById("nav-site-toggle-svg");
+
+// Hide site links on load (html without js should show site links)
+navSite.classList.add("nav-site-closed");
+navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-menu");
+var siteLinksVisible = false;
+
 navSiteToggleButton.addEventListener("click", function () {
-  if (!menuVisible) {
-    // if opening
+  if (!siteLinksVisible) {
+    // Opening
     navSite.classList.remove("nav-site-closed");
     navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-close");
-    menuVisible = true;
+    siteLinksVisible = true;
   } else {
-    // if closing
+    // Closing
     navSite.classList.add("nav-site-closed");
     navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-menu");
-    menuVisible = false;
+    siteLinksVisible = false;
   }
 
   // After button click, button element gains focus and glows via CSS outline
@@ -59,15 +51,29 @@ navSiteToggleButton.addEventListener("click", function () {
   navSiteToggleButton.blur();
 });
 
-navPageToggleButton.addEventListener("click", function () {
-  if (!pageLinksVisible) {
-    navPage.classList.remove("nav-page-closed");
-    navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-up");
-    pageLinksVisible = true;
-  } else {
-    navPage.classList.add("nav-page-closed");
-    navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-down");
-    pageLinksVisible = false;
-  }
-  navPageToggleButton.blur();
-});
+// Stuff for showing / hiding PAGE links
+if (document.getElementById("nav-page-toggle-button")!=null) {
+  var navPage = document.getElementById("nav-page");
+  var navPageToggleButton = document.getElementById("nav-page-toggle-button");
+  var navPageToggleSVGUse = document.getElementById("nav-page-toggle-svg")
+
+  // Hide page links on load (html without js should show page links)
+  navPage.classList.add("nav-page-closed");
+  navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-down");
+  var pageLinksVisible = false;
+
+  navPageToggleButton.addEventListener("click", function () {
+    if (!pageLinksVisible) {
+      // Opening
+      navPage.classList.remove("nav-page-closed");
+      navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-up");
+      pageLinksVisible = true;
+    } else {
+      // Closing
+      navPage.classList.add("nav-page-closed");
+      navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-down");
+      pageLinksVisible = false;
+    }
+    navPageToggleButton.blur();
+  });
+}
