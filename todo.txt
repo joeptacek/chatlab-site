@@ -1,3 +1,5 @@
+- don't render any comments on build?
+
 - fix: border-radius on site nav button (when closed should inherit rounding from parent nav, when open should have rounding only on bottom corners)
 
 - add index to news dir to avoid errors

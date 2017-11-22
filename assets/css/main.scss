@@ -95,7 +95,7 @@ a {
 }
 
 html {
-  padding: 4rem 2rem 0;
+  padding: 0 2rem 0;
   // height: 100%; // So body and main can expand to 100%
 }
 
@@ -120,19 +120,23 @@ header {
 
 #logo {
   display: flex;
-  flex-flow: column;
+  justify-content: center;
   align-items: center;
+
+  padding-top: 6rem;
   margin-bottom: 2rem;
 
   img {
-    box-sizing: content-box; // or else image gets squashed. dimensions explicitly set in html, and border-box smushes image to account for margin-right... maybe there's a better fix?
+    // box-sizing: content-box; // or else image gets squashed. dimensions explicitly set in html, and border-box smushes image to account for margin-right... maybe there's a better fix?
     display: block; // Or else extra space around element (default is inline)
-    margin-bottom: 2rem;
+    padding-right: 1.5rem;
+    border-right: solid 2px $borders;
   }
 
   span {
     font-size: 2.5rem;
     color: grey;
+    padding-left: 1.5rem;
   }
 }
 
@@ -660,17 +664,16 @@ address {
   }
 
   html {
-    padding: 6rem 4rem 0;
+    padding: 0 4rem 0;
   }
 
   #logo {
-    flex-flow: row;
-    margin-bottom: 2rem;
+    justify-content: flex-start;
 
     img {
       margin-bottom: 0;
       padding-right: 2.5rem;
-      border-right: solid 2px $borders;
+      // border-right: solid 2px $borders;
     }
 
     span {

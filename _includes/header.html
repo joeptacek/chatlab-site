@@ -1,6 +1,12 @@
 <header>
   <div id="logo">
-    <a href="http://www.med.upenn.edu" target="_blank"><img src="{{ "/assets/img/logo/psom_logo.png" | prepend: site.baseurl }}" alt="PSOM Logo" width="213" height="60" /></a>
+    <a href="http://www.med.upenn.edu" target="_blank">
+      <picture>
+        <source srcset="{{ "/assets/img/logo/psom_logo.png" | prepend: site.baseurl }}" media="(min-width: 45rem)" />
+        <img srcset="{{ "/assets/img/logo/shield.png" | prepend: site.baseurl }}" alt="PSOM Logo">
+      </picture>
+      <!-- <img src="{{ "/assets/img/logo/psom_logo.png" | prepend: site.baseurl }}" alt="PSOM Logo" width="213" height="60" /> -->
+    </a>
     <span><a href="{{ "/" | prepend: site.baseurl }}">ChatLab</a></span>
   </div>
   <nav id="nav-site">
