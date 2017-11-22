@@ -1,3 +1,9 @@
+- prefixes!!
+
+- check css for logo img (need to move properties to picture element?)
+
+- picture element flickers on slow connection?
+
 - don't render any comments on build?
 
 - fix: border-radius on site nav button (when closed should inherit rounding from parent nav, when open should have rounding only on bottom corners)

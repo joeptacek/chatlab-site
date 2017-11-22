@@ -124,11 +124,16 @@ header {
   align-items: center;
   margin-bottom: 3rem;
 
+  picture {
+    display: block;
+    padding-right: 1.5rem;
+    border-right: solid 2px $borders;
+  }
+
   img {
     // box-sizing: content-box; // or else image gets squashed. dimensions explicitly set in html, and border-box smushes image to account for margin-right... maybe there's a better fix?
     display: block; // Or else extra space around element (default is inline)
-    padding-right: 1.5rem;
-    border-right: solid 2px $borders;
+    margin-bottom: 0; // reset default 1rem
   }
 
   span {
@@ -669,10 +674,8 @@ address {
     justify-content: flex-start;
     margin-bottom: 2rem;
 
-    img {
-      margin-bottom: 0;
+    picture {
       padding-right: 2.5rem;
-      // border-right: solid 2px $borders;
     }
 
     span {
