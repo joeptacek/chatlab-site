@@ -1,52 +1,10 @@
 ---
 ---
+// Front matter necessary on main.scss (processed like a page and output to _site as compiled main.css)
 
-// Variables
-
-$background: #f2f2f3; // background
-$well: #ececec; // darker well
-$button: #e8e8e8; // even (slighly) darker button
-$card: #f7f7f7; // lighter card
-$card-transp: rgba(247, 247, 247, 0.7); // transparent card
-$borders: lightgrey; // site-nav, images, icons, etc.
-$shadows: rgba(0, 0, 0, 0.1); // shadows
-$site-links: #c95273; // site links
-$sl-hover: #b20838; // site links hover
-$page-links: #6583A4;
-$page-links-transp: rgba(101, 131, 164, 0.7);
-$pl-hover: #194577;
-$pl-hover-transp: rgba(25, 29, 119, 0.7);
-
-// Resets
-
-h1, h2, h3, h4, p, ul {
-  margin: 0;
-}
-
-h1, h2, h3, h4, p {
-  margin-bottom: 1rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-// ALL last-children should be flush with bottom of parent but there are specificity issues with this declaration (rule targeting pseudo-element will be overridden by rules targetting classes or ids; could use !important but unclear if this would have its own issues)
-// :last-child {
-//   margin-bottom: 0;
-// }
-
-h4 {
-  font-size: 1.17rem; // approx equal to h3 ... check this (otherwise h4 font size not usually explicitly defined, i.e., 1rem)
-}
-
-img {
-  margin-bottom: 1rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
+@import "vendor/normalize";
+@import "modules/colors";
+@import "partials/reset";
 
 // Utility class for breaking margin-bottom rules
 .no-margin-bottom {

@@ -1,0 +1,28 @@
+h1, h2, h3, h4, p, ul {
+  margin: 0;
+}
+
+h1, h2, h3, h4, p {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ALL last-children should be flush with bottom of parent but there are specificity issues with this declaration (rule targeting pseudo-element will be overridden by rules targetting classes or ids; could use !important but unclear if this would have its own issues)
+// :last-child {
+//   margin-bottom: 0;
+// }
+
+h4 {
+  font-size: 1.17rem; // approx equal to h3 ... check this (otherwise h4 font size not usually explicitly defined, i.e., 1rem)
+}
+
+img {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

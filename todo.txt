@@ -1,3 +1,7 @@
+- standardization: single / double quotes, underscores / dashes
+
+- normalize... via cdn (performance benefits if cached) with local fallback? currently imported into main.scss as sass partial (reduces # of http requests)?
+
 - be aware that column layout CURRENTLY doesn't work in firefox (break after property)
 
 - use modernizr and require.js to test for picture element support and conditionally load a polyfill

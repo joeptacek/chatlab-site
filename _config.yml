@@ -8,3 +8,5 @@ exclude:
   - todo.txt
   - assets/archive
   - assets/img/originals
+sass:
+  style: compressed
