@@ -1,3 +1,5 @@
+- google pagespeed tools
+
 - prefixes!!
 
 - check css for logo img (need to move properties to picture element?)
