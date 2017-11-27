@@ -1,6 +1,10 @@
+- use modernizr and require.js to test for picture element support and conditionally load a polyfill
+
 - google pagespeed tools
 
-- prefixes!!
+- prefixes!! via jekyll plugin for now?
+
+- logically modularize css and js, concatenate on build
 
 - check css for logo img (need to move properties to picture element?)
 
@@ -14,7 +18,7 @@
 
 - for svg <use>, use xlink:href for safari compatibility (svg 2 will eventually use href instead of xlink:href)
 
-- cache invalidation!
+- cache invalidation / cache-busting
 
 - consider using microformats / microdata (schema.org) for citations, addresses
 
