@@ -1,3 +1,13 @@
+- where: js including picturefill, google analytics, site-specific js (cdn? local? end of body or head? async?)
+
+- where: vendor styles including normalize, google fonts (cdn? local?)
+
+- build tools to concat / minify javascript? (jekyll plugin (ruby gem)? npm package (node)? gulp, webpack?)
+
+- build tools to post-process css (autoprefixer, other postcss plugins) ... sass handles concat and compress
+
+- build tools to optimize assets including images
+
 - standardization: single / double quotes, underscores / dashes
 
 - normalize... via cdn (performance benefits if cached) with local fallback? currently imported into main.scss as sass partial (reduces # of http requests)?
