@@ -1,0 +1,61 @@
+// Styles for JS ---------------------------------------------------------------
+
+.scrolled {
+  position: static; // Default value
+}
+
+.nav-site-closed {
+  #nav-site-links {
+    display: none;
+  }
+}
+
+.nav-page-closed {
+  #nav-page-links {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 45rem) {
+  #nav-site-toggle-button {
+    display: none;
+  }
+
+  #nav-page-toggle-button {
+    display: none;
+  }
+
+  .scrolled {
+    position: fixed;
+    width: 16rem;
+    top: 2rem;
+    left: 4rem; // Calc is not well supported... perhaps implement in js?
+
+    #jump-up-box {
+      top: -3.5rem;
+
+      svg {
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  .nav-site-closed {
+    #nav-site-links {
+      display: flex; // Default value
+    }
+  }
+
+  .nav-page-closed {
+    #nav-page-links {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: 68rem) {
+  .scrolled {
+    left: calc((100% - 60rem) / 2); // Calc is not well supported... perhaps implement in js?
+  }
+}
