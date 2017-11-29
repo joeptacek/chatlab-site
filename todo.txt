@@ -1,3 +1,5 @@
+- alternative site generator tools (hexo / hugo / gatsby, grunt / gulp, npm scripts, rails)
+
 - where: js including picturefill, google analytics, site-specific js (cdn? local? end of body or head? async?)
 
 - where: vendor styles including normalize, google fonts (cdn? local?)
