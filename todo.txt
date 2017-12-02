@@ -1,4 +1,6 @@
-- alternative site generator tools (hexo / hugo / gatsby, grunt / gulp, npm scripts, rails)
+- png fallbacks for svg
+
+- alternative site generator tools (hexo / hugo / gatsby, grunt / gulp / npm scripts, rails / sprockets)
 
 - where: js including picturefill, google analytics, site-specific js (cdn? local? end of body or head? async?)
 
