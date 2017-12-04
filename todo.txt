@@ -1,3 +1,13 @@
+- look into liquid whitespace control for dealing with extra blank lines
+
+- do a css lint
+
+- incorporate prefixes asap for flex, columns, etc.
+
+- polyfill for columns in firefox?
+
+- warn ie 8 users (lots of css3 stuff including calc, rem, flex)? see doiuse.herokuapp.com
+
 - png fallbacks for svg
 
 - alternative site generator tools (hexo / hugo / gatsby, grunt / gulp / npm scripts, rails / sprockets)
@@ -11,6 +21,8 @@
 - build tools to post-process css (autoprefixer, other postcss plugins) ... sass handles concat and compress
 
 - build tools to optimize assets including images
+
+- other build tools (clean/minify html due to jekyll outputting blank lines, strip comments http://jch.penibelst.de/)
 
 - standardization: single / double quotes, underscores / dashes
 
