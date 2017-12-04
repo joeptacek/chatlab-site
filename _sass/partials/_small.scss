@@ -1,0 +1,127 @@
+// Styles for small screens ----------------------------------------------------
+
+@media screen and (min-width: 45rem) {
+  a:hover {
+    color: $pl-hover;
+  }
+
+  html {
+    padding: 6rem 4rem 0;
+  }
+
+  #logo {
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+
+    picture {
+      padding-right: 2.5rem;
+    }
+
+    span {
+      padding-left: 2.5rem;
+    }
+  }
+
+  #nav-site {
+    padding: 1.5rem 2rem;
+  }
+
+  #nav-site-links {
+    flex-flow: row wrap;
+
+    li {
+      margin-right: 1.5rem;
+      border-bottom: none;
+    }
+
+    a {
+      text-align: left;
+      padding: 0;
+
+      &:hover {
+        color: $sl-hover;
+      }
+    }
+  }
+
+
+  main {
+    flex-flow: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  #nav-page-outer {
+    flex: 0 0 16rem;
+    margin-right: 2rem;
+  }
+
+  #nav-page {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  #nav-page-links {
+    padding: 2rem;
+    padding-top: 0; // flush with padded h1
+
+    a {
+      display: inline;
+    }
+  }
+
+  #jump-up-box {
+    transition: top 0.2s ease;
+
+    display: inline-block;
+    padding: 1.5rem;
+    border-radius: 9999px;
+    background-color: $card;
+    box-shadow: 0 1px 3px $shadows; // shadows already transp
+
+    position: relative;
+    top: -5rem;
+    left: 1.5rem;
+    bottom: auto; // reset
+    right: auto; // reset
+    z-index: 0;
+
+    svg {
+      transition: margin-top 0.2s ease;
+
+      display: block; // Fixes some subtle extra padding issues?
+      width: 1.75rem;
+      height: 1.75rem;
+      margin-top: 0;
+      fill: $page-links;
+      &:hover {
+        fill: $pl-hover;
+      }
+    }
+  }
+
+  #page-content {
+    // flex: 1 1 auto; // allows flex item to grow to fill remaining width of body / main [initial default is 0 1 auto, corresponding to grow, shrink, basis]
+    flex: 0 1 calc(100% - 18rem); // Calc is not well supported... perhaps implement in js?
+    // overflow: hidden; // by default, flex items have min-width (and min-height) as auto, meaning will not shrink smaller than size of contents. override with mid-width: 0 or even more elegantly, overflow: hidden (any value of overflow except visible makes min-width: 0 and content will disappear at small sizes as needed)
+    min-width: 0; // overflow: hidden screws up shadows
+  }
+
+  .section-title {
+    text-align: left;
+  }
+
+  footer {
+    padding: 6rem 0;
+  }
+
+  // Page-specific: People
+
+  #alumni-cols {
+    columns: 2;
+  }
+
+  .alumni-group {
+    text-align: left;
+  }
+}

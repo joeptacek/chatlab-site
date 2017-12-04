@@ -1,10 +1,18 @@
 <header>
   <div id="logo">
-    <a href="http://www.med.upenn.edu" target="_blank"><img src="{{ "/assets/img/logo/psom_logo.png" | prepend: site.baseurl }}" alt="PSOM Logo" width="213" height="60" /></a>
+    <a href="http://www.med.upenn.edu" target="_blank">
+      <picture>
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source srcset="{{ "/assets/img/logo/psom_logo.png" | prepend: site.baseurl }}" media="(min-width: 45rem)" />
+        <source srcset="{{ "/assets/img/logo/shield.png" | prepend: site.baseurl }}" />
+        <!-- Omitting src/srcset on the required fallback image to prevent flash of wrong image on Safari (...may cause problems on Android <=2.3)-->
+        <img alt="PSOM Logo" />
+        <!--[if IE 9]></video><![endif]-->
+      </picture>
+    </a>
     <span><a href="{{ "/" | prepend: site.baseurl }}">ChatLab</a></span>
   </div>
   <nav id="nav-site">
-    <!-- <a id="top-nav"></a> -->
     <ul id="nav-site-links">
       <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
       <li><a href="{{ "/people.html" | prepend: site.baseurl }}">People</a></li>

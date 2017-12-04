@@ -7,3 +7,6 @@ exclude:
   - README.md
   - todo.txt
   - assets/archive
+  - assets/img/originals
+sass:
+  style: compressed

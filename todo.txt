@@ -1,10 +1,56 @@
+- look into liquid whitespace control for dealing with extra blank lines
+
+- do a css lint
+
+- incorporate prefixes asap for flex, columns, etc.
+
+- polyfill for columns in firefox?
+
+- warn ie 8 users (lots of css3 stuff including calc, rem, flex)? see doiuse.herokuapp.com
+
+- png fallbacks for svg
+
+- alternative site generator tools (hexo / hugo / gatsby, grunt / gulp / npm scripts, rails / sprockets)
+
+- where: js including picturefill, google analytics, site-specific js (cdn? local? end of body or head? async?)
+
+- where: vendor styles including normalize, google fonts (cdn? local?)
+
+- build tools to concat / minify javascript? (jekyll plugin (ruby gem)? npm package (node)? gulp, webpack?)
+
+- build tools to post-process css (autoprefixer, other postcss plugins) ... sass handles concat and compress
+
+- build tools to optimize assets including images
+
+- other build tools (clean/minify html due to jekyll outputting blank lines, strip comments http://jch.penibelst.de/)
+
+- standardization: single / double quotes, underscores / dashes
+
+- normalize... via cdn (performance benefits if cached) with local fallback? currently imported into main.scss as sass partial (reduces # of http requests)?
+
+- be aware that column layout CURRENTLY doesn't work in firefox (break after property)
+
+- use modernizr and require.js to test for picture element support and conditionally load a polyfill
+
+- google pagespeed tools
+
+- prefixes!! via jekyll plugin for now?
+
+- logically modularize css and js, concatenate on build
+
+- check css for logo img (need to move properties to picture element?)
+
+- picture element flickers on slow connection?
+
+- don't render any comments on build?
+
 - fix: border-radius on site nav button (when closed should inherit rounding from parent nav, when open should have rounding only on bottom corners)
 
 - add index to news dir to avoid errors
 
 - for svg <use>, use xlink:href for safari compatibility (svg 2 will eventually use href instead of xlink:href)
 
-- cache invalidation!
+- cache invalidation / cache-busting
 
 - consider using microformats / microdata (schema.org) for citations, addresses
 
