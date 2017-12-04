@@ -1,3 +1,5 @@
+- add more favicon support including hi res
+
 - look into liquid whitespace control for dealing with extra blank lines
 
 - do a css lint
