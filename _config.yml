@@ -5,7 +5,6 @@ exclude:
   - Gemfile.lock
   - vendor
   - README.md
-  - todo.txt
   - assets/archive
   - assets/img/originals
 sass:
