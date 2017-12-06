@@ -1,3 +1,6 @@
+# Ignore local npm packages
+node_modules
+
 # Ignore user specific Bundler stuff
 .bundle/
 
