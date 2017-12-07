@@ -4,6 +4,10 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - node_modules
+  - package.json
+  - package-lock.json
+  - gulpfile.js
   - README.md
   - assets/archive
   - assets/img/originals
