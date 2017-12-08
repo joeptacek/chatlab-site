@@ -12,4 +12,7 @@ exclude:
   - assets/archive
   - assets/img/originals
 sass:
+  sass_dir: _assets/sass
   style: compressed
+keep_files:
+  - assets/js
