@@ -12,7 +12,9 @@ exclude:
   - assets/archive
   - assets/img/originals
 sass:
+  # where to find sass partials
   sass_dir: _assets/sass
   style: compressed
 keep_files:
+  # things gulp outputs to _site from _assets; these would otherwise get clobbered during jekyll build or serve
   - assets/js
