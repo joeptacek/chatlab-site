@@ -11,7 +11,7 @@ exclude:
   - README.md
   - assets/archive
   - assets/img/originals
-keep_files:
-  # things gulp outputs to _site from _assets; these would otherwise get clobbered during jekyll build or serve
-  - assets/js
-  - assets/css
+# keep_files:
+#   # uncomment to protect gulp output from jekyll clobbering during serve or build
+#   - assets/js
+#   - assets/css

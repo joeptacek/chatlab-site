@@ -1,10 +1,21 @@
 var gulp = require('gulp');
+
 var sass = require('gulp-sass');
+
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var cssnano = require('cssnano');
+
 var uglify = require('gulp-uglify');
 
 gulp.task('css', function () {
+  var plugins = [
+      autoprefixer(),
+      cssnano()
+  ];
   return gulp.src('_assets/sass/**/*.scss')
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss(plugins))
     .pipe(gulp.dest('_site/assets/css'))
 });
 
