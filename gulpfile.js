@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+// var sourcemaps = require('gulp-sourcemaps');
 
 var sass = require('gulp-sass');
 
@@ -14,15 +15,26 @@ gulp.task('css', function () {
       cssnano()
   ];
   return gulp.src('_assets/sass/**/*.scss')
+    // .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(plugins))
-    .pipe(gulp.dest('_site/assets/css'))
+    // .pipe(sourcemaps.write())
+    .pipe(gulp.dest('_site/assets/css'));
 });
 
 gulp.task('js', function () {
   return gulp.src('_assets/js/**/*.js')
+    // .pipe(sourcemaps.init())
     .pipe(uglify())
-    .pipe(gulp.dest('_site/assets/js'))
+    // .pipe(sourcemaps.write())
+    .pipe(gulp.dest('_site/assets/js'));
 });
 
-gulp.task('default', [ 'css', 'js' ]);
+gulp.task('build', ['css', 'js']);
+
+gulp.task('watch', [ 'build' ], function () {
+  gulp.watch('_assets/sass/**/*.scss', ['css']);
+  gulp.watch('_assets/js/**/*.js', ['js']);
+});
+
+gulp.task('default', [ 'build' ]);
