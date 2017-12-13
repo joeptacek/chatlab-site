@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var spawn = require('child_process').spawn;
+var exec = require('child_process').exec;
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -8,8 +8,8 @@ var uglify = require('gulp-uglify');
 
 gulp.task('css', function () {
   var plugins = [
-      autoprefixer(),
-      cssnano()
+    autoprefixer(),
+    cssnano()
   ];
   return gulp.src('_assets/sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -23,17 +23,31 @@ gulp.task('js', function () {
     .pipe(gulp.dest('_site/assets/js'));
 });
 
-gulp.task('jekyll', function (done) {
-  return spawn('bundle', ['exec', 'jekyll', 'build', '--incremental'], {stdio: 'inherit'})
-    .on('close', done);
+gulp.task('jekyll', function (cb) {
+  // jekyll build process clobbers everything in _site, but excludes js and css dirs in _site/assets. this is specified in _config.yml (add to separate gulp-specific jekyll config?)
+  exec('bundle exec jekyll build --incremental', function (err) {
+    if (err) return cb(err); // return error
+    cb(); // finished task
+  });
 });
 
-gulp.task('build', ['css', 'js']);
-
-gulp.task('watch', [ 'build' ], function () {
+gulp.task('watcher', function () {
   gulp.watch('_assets/sass/**/*.scss', ['css']);
   gulp.watch('_assets/js/**/*.js', ['js']);
-  // gulp.watch(['./*.html'], ['jekyll'])
+
+  // jekyll stuff
+  gulp.watch([
+    '**/*.+(html|md|markdown|MD)',
+    '!_site/**',
+    '_data/**/*.+(yml|yaml|csv|json)',
+    '_config.yml',
+    'favicon*'
+  ], ['jekyll']);
 });
 
-gulp.task('default', [ 'build' ]);
+// Safe to run jekyll, css, and js concurrently. Jekyll build process clobbers everything in _site, but excludes js and css dirs in _site/assets
+gulp.task('build', ['jekyll', 'css', 'js']);
+
+gulp.task('watch', ['build', 'watcher']);
+
+gulp.task('default', ['build']);
