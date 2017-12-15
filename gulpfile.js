@@ -34,67 +34,32 @@ gulp.task('js', function () {
     .pipe(gulp.dest('_site/assets/js'));
 });
 
+gulp.task('assets-build', ['css', 'js'], function (done) {
+  done(); // including callback so assets-watch can use assets-build as dependency; good form (?), but possibly unnecessary?
+});
+
 // BTW: jekyll build process clobbers everything in _site, but excludes js and css dirs in _site/assets. this is specified in _config.yml (add to separate gulp-specific jekyll config?)
 // is it ok to skip adding callback to task?
 // removed --watch for now (letting Gulp handle this)
 // spawn vs exec: spawn has better log formatting via stdio, also performance possibly better
 // jekyll seems more lenient with errors when building with --incremental
 
-// EXEC (TASK WITH NO CALLBACK)
-// gulp.task('jekyll', function () {
-//   exec('bundle exec jekyll build --incremental');
-// });
-
-// SPAWN (TASK WITH NO CALLBACK)
-// gulp.task('jekyll', function () {
-//   spawn('bundle', ['exec', 'jekyll', 'build', '--incremental']);
-// });
-
-// EXEC WITH LOGGING VIA CALLBACK (TASK WITH NO CALLBACK)
-// ...
-
-// SPAWN WITH LOGGING VIA INHERITED STDIO (TASK WITH NO CALLBACK)
-gulp.task('jekyll', function () {
+gulp.task('jekyll-build', function () {
   spawn('bundle', ['exec', 'jekyll', 'build', '--incremental'], {stdio: 'inherit'})
 });
 
-// EXEC WITH LOGGING VIA CALLBACK (TASK WITH CALLBACK)
-// gulp.task('jekyll', function (done) {
-//   exec('bundle exec jekyll build --incremental', function (error, stdout, stderr) {
-//     if (error) {
-//         gutil.log('Jekyll: ', error);
-//         return;
-//     }
-//     gutil.log('Jekyll: ', stdout);
-//     gutil.log('Jekyll: ', stderr);
-//     done();
-//   });
-// });
+gulp.task('jekyll-watch', function () {
+  spawn('bundle', ['exec', 'jekyll', 'build', '--incremental', '--watch'], {stdio: 'inherit'})
+});
 
-// SPAWN WITH LOGGING VIA INHERITED STDIO (TASK WITH CALLBACK)
-// gulp.task('jekyll', function (done) {
-//   spawn('bundle', ['exec', 'jekyll', 'build', '--incremental'], {stdio: 'inherit'})
-//     .on('close', done);
-// });
-
-
-gulp.task('watcher', function () {
+gulp.task('assets-watch', ['assets-build'], function () {
   gulp.watch('_assets/sass/**/*.scss', ['css']);
   gulp.watch('_assets/js/**/*.js', ['js']);
-
-  // jekyll stuff (alternatively, handled by jekyll build --watch)
-  gulp.watch([
-    '**/*.+(html|md|markdown|MD)',
-    '!_site/**',
-    '_data/**/*.+(yml|yaml|csv|json)',
-    '_config.yml',
-    'favicon*'
-  ], ['jekyll']);
 });
 
 // Safe to run jekyll, css, and js concurrently. Jekyll build process clobbers everything in _site, but excludes js and css dirs in _site/assets
-gulp.task('build', ['jekyll', 'css', 'js']);
+gulp.task('build', ['jekyll-build', 'assets-build']);
 
-gulp.task('watch', ['build', 'watcher']);
+gulp.task('watch', ['jekyll-watch', 'assets-watch']);
 
 gulp.task('default', ['build']);
