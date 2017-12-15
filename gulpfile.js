@@ -45,11 +45,26 @@ gulp.task('assets-build', ['css', 'js'], function (done) {
 // jekyll seems more lenient with errors when building with --incremental
 
 gulp.task('jekyll-build', function () {
-  spawn('bundle', ['exec', 'jekyll', 'build', '--incremental'], {stdio: 'inherit'})
+  spawn('bundle', [
+    'exec',
+    'jekyll',
+    'build',
+    '--config',
+    '_config.yml,_config-gulp.yml',
+    '--incremental'
+  ], {stdio: 'inherit'})
 });
 
 gulp.task('jekyll-watch', function () {
-  spawn('bundle', ['exec', 'jekyll', 'build', '--incremental', '--watch'], {stdio: 'inherit'})
+  spawn('bundle', [
+    'exec',
+    'jekyll',
+    'build',
+    '--config',
+    '_config.yml,_config-gulp.yml',
+    '--incremental', 
+    '--watch'
+  ], {stdio: 'inherit'})
 });
 
 gulp.task('assets-watch', ['assets-build'], function () {

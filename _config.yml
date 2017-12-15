@@ -11,7 +11,3 @@ exclude:
   - README.md
   - assets/archive
   - assets/img/originals
-keep_files:
-  # uncomment to protect gulp output from jekyll clobbering during serve or build
-  - assets/js
-  - assets/css
