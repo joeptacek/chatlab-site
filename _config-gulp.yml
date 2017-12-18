@@ -1,3 +1,4 @@
+incremental: true;
 keep_files:
   # protect gulp output from jekyll clobbering during serve or build
   - assets/js
