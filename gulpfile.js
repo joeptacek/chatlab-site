@@ -2,6 +2,7 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var spawn = require('child_process').spawn;
+var bs = require('browser-sync').create();
 // var debug = require('gulp-debug');
 
 // css
