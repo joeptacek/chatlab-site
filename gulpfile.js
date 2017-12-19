@@ -75,10 +75,18 @@ gulp.task('assets-watch', ['assets-build'], function () {
   gulp.watch('_assets/js/**/*.js', ['js']);
 });
 
+gulp.task('bs', function () {
+  bs.init({
+    files: '_site/**',
+    server: '_site',
+  });
+});
+
 // safe to run jekyll, css, and js concurrently - jekyll build process clobbers
 // everything in _site, but excludes js and css dirs in _site/assets
 gulp.task('build', ['jekyll-build', 'assets-build']);
 gulp.task('watch', ['jekyll-watch', 'assets-watch']);
+gulp.task('serve', ['watch', 'bs']);
 gulp.task('default', ['build']);
 
 // require var vs const?
