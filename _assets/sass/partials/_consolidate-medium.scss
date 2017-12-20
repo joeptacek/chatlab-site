@@ -1,0 +1,118 @@
+// ITEMS
+
+.people-item {
+  flex-flow: row;
+  align-items: flex-start;
+}
+
+.news-item {
+  flex-flow: row;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.book-item {
+  flex-flow: row;
+  align-items: flex-start;
+}
+
+.contact-item {
+  flex-flow: row;
+  align-items: flex-start; // default: top-align
+  margin-bottom: 2rem;
+
+  &.item-align-center {
+    align-items: center; // optional: (re-)center-align with this class
+  }
+}
+
+// CONSOLIDATED
+
+.flex-item {
+  flex-flow: row;
+  align-items: flex-start; // default: top-align
+
+  &.row-centered {
+    align-items: center; // optional: (re-)center-align with this class
+  }
+
+  &.row-compact {
+    margin-bottom: 2rem;
+  }
+}
+
+// Page-specific: People
+
+
+.people-item-img {
+  margin-right: 2rem;
+  margin-bottom: 0;
+}
+
+.people-item-text-header {
+  text-align: left;
+}
+
+.people-item-contact-links {
+  justify-content: flex-start;
+}
+
+#alumni-cols {
+  columns: 3;
+}
+
+// Page-specific: News
+
+
+.news-type-icon-border {
+  margin-bottom: 0;
+  margin-right: 2rem;
+}
+
+.news-item-data {
+  max-width: 100%;
+  text-align: left;
+}
+
+// Page specific: Index
+
+#about-anjan {
+  flex-flow: row;
+  align-items: flex-start;
+}
+
+#about-anjan-img {
+  margin-right: 2rem;
+  margin-bottom: 0;
+}
+
+#about-anjan-text-header {
+  text-align: left;
+}
+
+
+.book-item-image {
+  margin-right: 2rem;
+  margin-bottom: 0;
+}
+
+.book-item-header {
+  text-align: left;
+}
+
+// Page specific: Contact
+
+
+.contact-icon-border {
+  margin-right: 2rem;
+  margin-bottom: 0;
+}
+
+.contact-main {
+  h3 {
+    text-align: left;
+  }
+}
