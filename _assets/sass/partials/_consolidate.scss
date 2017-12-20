@@ -138,30 +138,6 @@
   }
 }
 
-#alumni-cols {
-  columns: 1;
-  column-gap: 2rem;
-  font-size: 0.9rem;
-}
-
-.alumni-group {
-  text-align: center;
-  break-inside: avoid;
-  margin-bottom: 2rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.alumni-group-name {
-  margin-bottom: 0.5rem;
-}
-
-.alumni-person {
-  margin-bottom: 0;
-}
-
 // Page-specific: News
 
 #nav-news {
@@ -271,7 +247,7 @@
 }
 
 
-.book-item-image {
+.book-item-img {
   flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
   border: solid $borders 1px;
   padding: 5px;

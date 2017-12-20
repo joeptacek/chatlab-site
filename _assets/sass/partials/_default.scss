@@ -367,7 +367,7 @@ footer {
 
 .alumni-group {
   text-align: center;
-  break-inside: avoid;
+  break-inside: avoid; // poorly supported by firefox
   margin-bottom: 2rem;
 
   &:last-child {
