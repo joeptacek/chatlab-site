@@ -65,6 +65,7 @@ gulp.task('jekyll-watch', function () {
       'build',
       '--config',
       '_config.yml,_config-gulp.yml',
+      // '-V',
       '--watch'
     ], {stdio: 'inherit'});
   }
@@ -78,7 +79,15 @@ gulp.task('assets-watch', ['assets-build'], function () {
 gulp.task('bs', function () {
   bs.init({
     files: '_site/**',
-    server: '_site',
+    startPath: '/chatterjee',
+    server: {
+      baseDir: '_site',
+      routes: {
+        '/chatterjee': '_site'
+      }
+    },
+    // logLevel: 'debug',
+    notify: false
   });
 });
 
@@ -86,7 +95,10 @@ gulp.task('bs', function () {
 // everything in _site, but excludes js and css dirs in _site/assets
 gulp.task('build', ['jekyll-build', 'assets-build']);
 gulp.task('watch', ['jekyll-watch', 'assets-watch']);
+
+// probably better to wait to do bs after watch finishes
 gulp.task('serve', ['watch', 'bs']);
+
 gulp.task('default', ['build']);
 
 // require var vs const?
@@ -101,3 +113,5 @@ gulp.task('default', ['build']);
 // possibly better
 
 // jekyll seems more lenient with errors when building with --incremental
+
+// consider preceding dot for globs (explictly reference cwd)

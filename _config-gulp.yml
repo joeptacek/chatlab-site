@@ -1,4 +1,20 @@
 incremental: true;
+exclude:
+  # exclude _assets so jekyll-watch ignores these file changes (files / directories with leading underscore won't be built, but jekyll-watch will still monitor them for changes unless excluded)
+  - _assets
+
+  # need to re-exclude everything from _config.yml
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - package.json
+  - package-lock.json
+  - gulpfile.js
+  - README.md
+  - assets/archive
+  - assets/img/originals
+
 keep_files:
   # protect gulp output from jekyll clobbering during serve or build
   - assets/js
