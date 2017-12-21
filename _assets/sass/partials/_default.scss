@@ -234,6 +234,81 @@ section {
   border: solid $borders 1px;
 }
 
+.flex-item {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 4rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.col-compact {
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.item-icon-bg {
+  background-color: rgba(50, 50, 50, .09);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.item-icon {
+  flex: 0 0 auto; // avoids shrinking (default: 0 1 auto)
+  padding: 5px;
+  border-radius: 100%;
+  margin-bottom: 1rem;
+  width: 200px;
+  height: 200px;
+
+  border: solid rgba(50, 50, 50, .09) 1px;
+
+  svg {
+    fill: silver;
+    width: 70px;
+    height: 70px;
+  }
+
+  &.print-type {
+    border: solid $print-bg 1px;
+    svg {
+      fill: $news-icon;
+    }
+    .item-icon-bg {
+      background-color: $print-bg;
+    }
+  }
+
+  &.video-type {
+    border: solid $video-bg 1px;
+    svg {
+      fill: $news-icon;
+    }
+    .item-icon-bg {
+      background-color: $video-bg;
+    }
+  }
+
+  &.audio-type {
+    border: solid $audio-bg 1px;
+    svg {
+      fill: $news-icon;
+    }
+    .item-icon-bg {
+      background-color: $audio-bg;
+    }
+  }
+}
+
 footer {
   // As flex item (with main and footer), should not shrink
   // flex: 0 0 auto;
@@ -270,17 +345,6 @@ footer {
 }
 
 // Page-specific: People
-
-.people-item {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  margin-bottom: 4rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
 
 .people-item-img {
   flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
@@ -395,75 +459,6 @@ footer {
   }
 }
 
-.news-item {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  margin-bottom: 4rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.news-type-icon {
-  // Height and width set the size of the SVG "frame" - the actual
-  // image will be contained within this frame in such a way that
-  // preserves aspect ratio.
-  display: block; // Or else extra space around element (default is inline)
-  width: 70px;
-  height: 70px;
-}
-
-.news-type-icon-border {
-  padding: 5px;
-  border-radius: 100%;
-  margin-bottom: 1rem;
-
-  &.print-type {
-    // border: solid rgba(50, 50, 50, .2) 1px;
-    border: solid rgb(198, 239, 231) 1px;
-    .news-type-icon-outer {
-      // background-color: rgba(50, 50, 50, .2);
-      background-color: rgb(198, 239, 231);
-      .news-type-icon {
-        // fill: rgba(50, 50, 50, 1);
-        fill: rgba(0, 51, 102, 1);
-      }
-    }
-  }
-
-  &.video-type {
-    // border: solid rgba(179, 8, 56, .15) 1px;
-    border: solid rgb(239, 198, 213) 1px;
-    .news-type-icon-outer {
-      // background-color: rgba(179, 8, 56, .15);
-      background-color: rgb(239, 198, 213);
-      .news-type-icon {
-        // fill: rgba(179, 8, 56, 1);
-        fill: rgba(0, 51, 102, 1);
-      }
-    }
-  }
-
-  &.audio-type {
-    // border: solid rgba(0, 51, 102, .25) 1px;
-    border: solid rgb(239, 236, 198) 1px;
-    .news-type-icon-outer {
-      // background-color: rgba(0, 51, 102, .25);
-      background-color: rgb(239, 236, 198);
-      .news-type-icon {
-        fill: rgba(0, 51, 102, 1);
-      }
-    }
-  }
-}
-
-.news-type-icon-outer {
-  padding: 59px;
-  border-radius: 100%;
-}
-
 .news-item-data {
   max-width: 20rem;
   text-align: center;
@@ -479,17 +474,6 @@ footer {
 
 // Page specific: Index
 
-#about-anjan {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  margin-bottom: 2rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
 #about-anjan-img {
   flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
   padding: 5px;
@@ -501,17 +485,7 @@ footer {
   margin-bottom: 1rem;
 }
 
-.book-item {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  margin-bottom: 4rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
+// some book-item-image attributes should probably be on the surrounding anchor
 .book-item-image {
   flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
   border: solid $borders 1px;
@@ -529,37 +503,6 @@ footer {
 }
 
 // Page specific: Contact
-
-.contact-item {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  margin-bottom: 4rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.contact-icon-border {
-  padding: 5px;
-  border-radius: 100%;
-  margin-bottom: 1rem;
-  border: solid rgba(50, 50, 50, .09) 1px;
-}
-
-.contact-icon-outer {
-  padding: 59px;
-  border-radius: 100%;
-  background-color: rgba(50, 50, 50, .09);
-}
-
-.contact-icon {
-  display: block; // Or else extra space around element (default is inline)
-  width: 70px;
-  height: 70px;
-  fill: silver;
-}
 
 .contact-main {
   width: 100%;

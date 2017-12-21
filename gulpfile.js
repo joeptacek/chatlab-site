@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var spawn = require('child_process').spawn;
 var bs = require('browser-sync').create();
+var sourcemaps = require('gulp-sourcemaps');
 // var debug = require('gulp-debug');
 
 // css
@@ -32,8 +33,10 @@ gulp.task('css', function () {
   ];
   return gulp.src('_assets/sass/**/*.scss')
     // .pipe(debug({title: 'Debug (css):'}))
+    .pipe(sourcemaps.init()) // only in development
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss(plugins))
+    .pipe(sourcemaps.write()) // only in development
+    // .pipe(postcss(plugins)) // only in production
     .pipe(gulp.dest('_site/assets/css'));
 });
 
