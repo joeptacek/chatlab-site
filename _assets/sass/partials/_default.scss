@@ -22,23 +22,13 @@ hr {
 nav {
   ul {
     padding-left: 0;
-    li {
-      list-style-type: none;
-      a {
-        display: block; // Fixes a very minor height error...
-      }
-    }
   }
-}
-
-
-.icon {
-  // display: inline-block;
-  // width: 1rem;
-  // height: 1rem;
-  // stroke-width: 0;
-  // stroke: currentColor;
-  // fill: currentColor;
+  li {
+    list-style-type: none;
+  }
+  a {
+    display: block; // Fixes a very minor height error...
+  }
 }
 
 html {
@@ -244,7 +234,7 @@ section {
     margin-bottom: 0;
   }
 
-  &.col-compact {
+  &.compact {
     margin-bottom: 2rem;
     &:last-child {
       margin-bottom: 0;
@@ -280,31 +270,31 @@ section {
 
   &.print-type {
     border: solid $print-bg 1px;
-    svg {
-      fill: $news-icon;
-    }
     .item-icon-bg {
       background-color: $print-bg;
+    }
+    svg {
+      fill: $news-icon;
     }
   }
 
   &.video-type {
     border: solid $video-bg 1px;
-    svg {
-      fill: $news-icon;
-    }
     .item-icon-bg {
       background-color: $video-bg;
+    }
+    svg {
+      fill: $news-icon;
     }
   }
 
   &.audio-type {
     border: solid $audio-bg 1px;
-    svg {
-      fill: $news-icon;
-    }
     .item-icon-bg {
       background-color: $audio-bg;
+    }
+    svg {
+      fill: $news-icon;
     }
   }
 }
