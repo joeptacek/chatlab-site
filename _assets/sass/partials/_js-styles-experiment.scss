@@ -1,0 +1,32 @@
+// Styles for JS ---------------------------------------------------------------
+
+.hidden {
+  // hidden at all breakpoints
+  display: none;
+}
+
+[class^="hidden-mobile"] {
+  // hidden only on mobile
+  display: none;
+}
+
+@media screen and (min-width: 45rem) {
+  .hidden-mobile {
+    // reset to default display (usually block?)
+    display: block;
+  }
+
+  .hidden-mobile-flex {
+    // reset to default display (flex case)
+    display: flex;
+  }
+
+  .hidden-wide {
+    // hidden only on wide screens
+    display: none;
+  }
+}
+
+@media screen and (min-width: 68rem) {
+
+}
