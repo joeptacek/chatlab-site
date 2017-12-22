@@ -1,5 +1,5 @@
 // Stuff for sticky page links nav
-var navPageOuter = document.getElementById("nav-page-outer");
+var navPage = document.getElementById("nav-page");
 var atTop = true;
 
 window.addEventListener("scroll", function () {
@@ -9,13 +9,13 @@ window.addEventListener("scroll", function () {
     if (scrollY > 261) {
       atTop = false;
       // Only fires once when crossing from low to high
-      navPageOuter.classList.add("scrolled");
+      navPage.classList.add("scrolled");
     }
   } else {
     if (scrollY < 262) {
       atTop = true;
       // Only fires once when crossing from high to low
-      navPageOuter.classList.remove("scrolled");
+      navPage.classList.remove("scrolled");
     }
   }
 });
@@ -53,24 +53,24 @@ navSiteToggleButton.addEventListener("click", function () {
 
 // Stuff for showing / hiding PAGE links
 if (document.getElementById("nav-page-toggle-button")!=null) {
-  var navPage = document.getElementById("nav-page");
+  var navPageMain = document.getElementById("nav-page-main");
   var navPageToggleButton = document.getElementById("nav-page-toggle-button");
   var navPageToggleSVGUse = document.getElementById("nav-page-toggle-svg")
 
   // Hide page links on load (html without js should show page links)
-  navPage.classList.add("nav-page-closed");
+  navPageMain.classList.add("nav-page-closed");
   navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-down");
   var pageLinksVisible = false;
 
   navPageToggleButton.addEventListener("click", function () {
     if (!pageLinksVisible) {
       // Opening
-      navPage.classList.remove("nav-page-closed");
+      navPageMain.classList.remove("nav-page-closed");
       navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-up");
       pageLinksVisible = true;
     } else {
       // Closing
-      navPage.classList.add("nav-page-closed");
+      navPageMain.classList.add("nav-page-closed");
       navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-down");
       pageLinksVisible = false;
     }

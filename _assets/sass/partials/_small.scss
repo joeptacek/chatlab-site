@@ -53,12 +53,12 @@
     justify-content: flex-end;
   }
 
-  #nav-page-outer {
+  #nav-page {
     flex: 0 0 16rem;
     margin-right: 2rem;
   }
 
-  #nav-page {
+  #nav-page-main {
     text-align: left;
     margin-bottom: 0;
   }
@@ -72,7 +72,7 @@
     }
   }
 
-  #jump-up-box {
+  #nav-page-jumpup {
     transition: top 0.2s ease;
 
     display: inline-block;

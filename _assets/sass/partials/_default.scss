@@ -69,26 +69,28 @@ header {
   }
 
   img {
-    display: block; // Or else extra space around element (default is inline)
+    display: block; // default inline leaves a gap
   }
 }
 
 #nav-site {
+  display: flex; // items: nav-site-links, nav-site-toggle-button
+  flex-flow: column;
   background-color: $well;
   border: solid $borders 1px;
   border-radius: 4px;
 }
 
 #nav-site-links {
-  display: flex;
+  display: flex; // items: list items
   flex-flow: column;
-  align-items: stretch;
 
   li {
     border-bottom: solid $borders 1px;
   }
 
   a {
+    font-size: 1.2rem;
     color: $site-links;
     text-align: center;
     padding: 1rem 0;
@@ -96,35 +98,26 @@ header {
 }
 
 #nav-site-toggle-button {
-  // reset default styles
+  // reset default button styles
   border: none;
   background-color: $button;
   padding: 1.5rem 0;
 
   svg {
-    display: block; // Or else extra space around element (default is inline)
-    margin: 0 auto; // ...centering block-level element
+    display: block; // default inline leaves a gap
+    margin: 0 auto;
     width: 1.75rem;
     height: 1.75rem;
     fill: rgb(160, 160, 160);
   }
 }
 
-#nav-site-links a, #nav-site-toggle-button {
-  display: block;
-  width: 100%;
-  font-size: 1.2rem;
-}
-
 main {
-  // As flex item (with header, footer), should grow
-  // flex: 1 0 auto;
-  // How to have minimum height = screen height with pages showing limited content? In practice not a problem here.
-  display: flex;
+  display: flex; // items: nav-page, page-content
   flex-flow: column;
 }
 
-#nav-page {
+#nav-page-main {
   position: relative;
   z-index: 1;
   background-color: $card;
@@ -177,7 +170,7 @@ main {
   width: 100%;
 }
 
-#jump-up-box {
+#nav-page-jumpup {
   display: none;
 }
 
