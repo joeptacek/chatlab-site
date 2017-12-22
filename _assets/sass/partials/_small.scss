@@ -13,11 +13,13 @@
     justify-content: flex-start;
     margin-bottom: 2rem;
 
-    picture {
+    a:first-child {
+      // shield
       padding-right: 2.5rem;
     }
 
-    span {
+    a:last-child {
+      // chatlab
       padding-left: 2.5rem;
     }
   }

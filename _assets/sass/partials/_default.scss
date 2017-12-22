@@ -27,33 +27,26 @@ nav {
     list-style-type: none;
   }
   a {
-    display: block; // Fixes a very minor height error...
+    display: block; // Fixes a very minor height error
   }
 }
 
 html {
+  background-color: $background;
   padding: 6rem 2rem 0;
-  // height: 100%; // So body and main can expand to 100%
+  font-family: 'Gentium Basic', serif;
+  // font-family: "Open Sans", sans-serif;
+  line-height: 1.3; // line-height is unitless
 }
 
 body {
-  background-color: $background;
   max-width: 60rem;
   margin: 0 auto;
-  font-family: 'Gentium Basic', serif;
-  // font-family: "Open Sans", sans-serif;
-  // font-size: 1rem;
-  line-height: 1.3; // things get messed up if use rem
-
-  display: flex; // Make header, main, footer flex items
-  flex-flow: column;
-  // height: 100%; // So body and main can expand to 100%
 
   -webkit-font-smoothing: subpixel-antialiased // otherwise, text inside a fixed element (e.g., nav-page) appears thinner in Safari
 }
 
 header {
-  // flex: 0 0 auto; // As flex item (with main and footer), should not shrink
   margin-bottom: 2rem;
 }
 
@@ -63,22 +56,20 @@ header {
   align-items: center;
   margin-bottom: 3rem;
 
-  picture {
-    display: block;
+  a:first-child {
+    // shield
     padding-right: 1.5rem;
     border-right: solid 2px $borders;
   }
 
-  img {
-    // box-sizing: content-box; // or else image gets squashed. dimensions explicitly set in html, and border-box smushes image to account for margin-right... maybe there's a better fix?
-    display: block; // Or else extra space around element (default is inline)
-    margin-bottom: 0; // reset default 1rem
+  a:last-child {
+    // chatlab
+    font-size: 2.5rem;
+    padding-left: 1.5rem;
   }
 
-  span {
-    font-size: 2.5rem;
-    color: grey;
-    padding-left: 1.5rem;
+  img {
+    display: block; // Or else extra space around element (default is inline)
   }
 }
 
