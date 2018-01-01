@@ -32,7 +32,7 @@ gulp.task('css', function () {
     cssnano()
   ];
   return gulp.src('_assets/sass/**/*.scss')
-    // .pipe(debug({title: 'Debug (css):'}))
+    // .pipe(debug({title: 'Debug (css):'})) // debug mode
     .pipe(sourcemaps.init()) // only in development
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write()) // only in development
@@ -42,7 +42,7 @@ gulp.task('css', function () {
 
 gulp.task('js', function () {
   return gulp.src('_assets/js/**/*.js')
-    // .pipe(debug({title: 'Debug (js):'}))
+    // .pipe(debug({title: 'Debug (js):'})) // debug mode
     .pipe(uglify())
     .pipe(gulp.dest('_site/assets/js'));
 });
@@ -68,7 +68,7 @@ gulp.task('jekyll-watch', function () {
       'build',
       '--config',
       '_config.yml,_config-gulp.yml',
-      // '-V',
+      // '-V', // debug mode
       '--watch'
     ], {stdio: 'inherit'});
   }
@@ -94,6 +94,8 @@ gulp.task('bs', function () {
   });
 });
 
+
+
 // safe to run jekyll, css, and js concurrently - jekyll build process clobbers
 // everything in _site, but excludes js and css dirs in _site/assets
 gulp.task('build', ['jekyll-build', 'assets-build']);
@@ -115,6 +117,7 @@ gulp.task('default', ['build']);
 // spawn vs exec: spawn has better log formatting via stdio, also performance
 // possibly better
 
+// use jekyll build --incremental?
 // jekyll seems more lenient with errors when building with --incremental
 
 // consider preceding dot for globs (explictly reference cwd)

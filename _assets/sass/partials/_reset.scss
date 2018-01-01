@@ -22,3 +22,7 @@ h1, h2, h3, h4, p, img {
 h4 {
   font-size: 1.17rem; // approx equal to h3 ... check this (otherwise h4 font size not usually explicitly defined, i.e., 1rem)
 }
+
+.rounded {
+  border-radius: 9999px;
+}

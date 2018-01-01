@@ -1,12 +1,5 @@
 // Page-specific: People
 
-.people-item-img {
-  flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
-  border-radius: 100%;
-  padding: 5px;
-  border: solid $borders 1px;
-}
-
 .people-item-text-header {
   text-align: center;
   margin-bottom: 1.25rem;
@@ -89,65 +82,6 @@
   }
 }
 
-
-.news-type-icon {
-  // Height and width set the size of the SVG "frame" - the actual
-  // image will be contained within this frame in such a way that
-  // preserves aspect ratio.
-  display: block; // Or else extra space around element (default is inline)
-  width: 70px;
-  height: 70px;
-}
-
-.news-type-icon-border {
-  padding: 5px;
-  border-radius: 100%;
-  margin-bottom: 1rem;
-
-  &.print-type {
-    // border: solid rgba(50, 50, 50, .2) 1px;
-    border: solid rgb(198, 239, 231) 1px;
-    .news-type-icon-outer {
-      // background-color: rgba(50, 50, 50, .2);
-      background-color: rgb(198, 239, 231);
-      .news-type-icon {
-        // fill: rgba(50, 50, 50, 1);
-        fill: rgba(0, 51, 102, 1);
-      }
-    }
-  }
-
-  &.video-type {
-    // border: solid rgba(179, 8, 56, .15) 1px;
-    border: solid rgb(239, 198, 213) 1px;
-    .news-type-icon-outer {
-      // background-color: rgba(179, 8, 56, .15);
-      background-color: rgb(239, 198, 213);
-      .news-type-icon {
-        // fill: rgba(179, 8, 56, 1);
-        fill: rgba(0, 51, 102, 1);
-      }
-    }
-  }
-
-  &.audio-type {
-    // border: solid rgba(0, 51, 102, .25) 1px;
-    border: solid rgb(239, 236, 198) 1px;
-    .news-type-icon-outer {
-      // background-color: rgba(0, 51, 102, .25);
-      background-color: rgb(239, 236, 198);
-      .news-type-icon {
-        fill: rgba(0, 51, 102, 1);
-      }
-    }
-  }
-}
-
-.news-type-icon-outer {
-  padding: 59px;
-  border-radius: 100%;
-}
-
 .news-item-data {
   max-width: 20rem;
   text-align: center;
@@ -174,23 +108,9 @@
   }
 }
 
-#about-anjan-img {
-  flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
-  padding: 5px;
-  border: solid $borders 1px;
-}
-
 #about-anjan-text-header {
   text-align: center;
   margin-bottom: 1rem;
-}
-
-
-.book-item-img {
-  flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
-  border: solid $borders 1px;
-  padding: 5px;
-  margin-bottom: 1rem; // Usually not necessary to explicitly declare margin-bottom on img (I have this in reset), but need to override :last-child causing margin-bottom: 0 (technically :last-child because inside <a>)
 }
 
 .book-item-header {
@@ -203,27 +123,6 @@
 }
 
 // Page specific: Contact
-
-
-.contact-icon-border {
-  padding: 5px;
-  border-radius: 100%;
-  margin-bottom: 1rem;
-  border: solid rgba(50, 50, 50, .09) 1px;
-}
-
-.contact-icon-outer {
-  padding: 59px;
-  border-radius: 100%;
-  background-color: rgba(50, 50, 50, .09);
-}
-
-.contact-icon {
-  display: block; // Or else extra space around element (default is inline)
-  width: 70px;
-  height: 70px;
-  fill: silver;
-}
 
 .contact-main {
   width: 100%;

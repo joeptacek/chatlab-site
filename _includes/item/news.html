@@ -2,24 +2,24 @@
   {% case include.pass.type %}
     {% when 'print' %}
       <a href="{{ include.pass.media_url }}" target="_blank">
-        <div class="item-icon print-type">
-          <div class="item-icon-bg">
+        <div class="item-img rounded item-icon print-type">
+          <div class="item-icon-bg rounded">
             <svg><use xlink:href="#icon-newspaper"></use></svg>
           </div>
         </div>
       </a>
     {% when 'video' %}
     <a href="{{ include.pass.media_url }}" target="_blank">
-      <div class="item-icon video-type">
-        <div class="item-icon-bg">
+      <div class="item-img rounded item-icon video-type">
+        <div class="item-icon-bg rounded">
           <svg><use xlink:href="#icon-video-camera"></use></svg>
         </div>
       </div>
     </a>
     {% when 'audio' %}
     <a href="{{ include.pass.media_url }}" target="_blank">
-      <div class="item-icon audio-type">
-        <div class="item-icon-bg">
+      <div class="item-img rounded item-icon audio-type">
+        <div class="item-icon-bg rounded">
           <svg><use xlink:href="#icon-volume-high"></use></svg>
         </div>
       </div>

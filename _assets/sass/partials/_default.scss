@@ -226,32 +226,38 @@ section {
   }
 }
 
-.item-icon-bg {
-  background-color: rgba(50, 50, 50, .09);
+.item-img {
+  flex: 0 0 auto; // avoids shrinking (default: 0 1 auto)
+  margin-bottom: 1rem; // when element is <img>, this is sort of redundant with margin-bottom already applied in reset
+  border: solid $borders 1px;
+  padding: 5px;
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  border-radius: 100%;
+a > img.item-img:last-child {
+  margin-bottom: 1rem; // by default, <img> has this margin-bottom via reset (also redundantly re-applied above), but reset also specifies 0 margin-bottom for img:last-child. this overrides .item-img class since element:pseudo-class has higher specificity, so need to (re-)re-apply it here (when wrapping <img> with parent <a> it becomes :last-child). other solutions exist (e.g., use !important for margin-bottom on .item-img).
 }
 
 .item-icon {
-  flex: 0 0 auto; // avoids shrinking (default: 0 1 auto)
-  padding: 5px;
-  border-radius: 100%;
-  margin-bottom: 1rem;
   width: 200px;
   height: 200px;
-
-  border: solid rgba(50, 50, 50, .09) 1px;
 
   svg {
     fill: silver;
     width: 70px;
     height: 70px;
   }
+}
 
+.item-icon-bg {
+  background-color: rgb(229, 229, 229);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.item-icon {
   &.print-type {
     border: solid $print-bg 1px;
     .item-icon-bg {
@@ -320,13 +326,6 @@ footer {
 
 // Page-specific: People
 
-.people-item-img {
-  flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
-  border-radius: 100%;
-  padding: 5px;
-  border: solid $borders 1px;
-}
-
 .people-item-text-header {
   text-align: center;
   margin-bottom: 1.25rem;
@@ -387,7 +386,6 @@ footer {
   display: inline-block; // fixes minor gaps also maybe makes sense in context of added padding
   padding: 0.25rem 0.5rem;
   border: solid $page-links 1px;
-  border-radius: 9999px;
   color: $page-links;
   font-size: 0.75rem;
 
@@ -448,23 +446,9 @@ footer {
 
 // Page specific: Index
 
-#about-anjan-img {
-  flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
-  padding: 5px;
-  border: solid $borders 1px;
-}
-
 #about-anjan-text-header {
   text-align: center;
   margin-bottom: 1rem;
-}
-
-// some book-item-image attributes should probably be on the surrounding anchor
-.book-item-image {
-  flex: 0 0 auto; // Possibly preventing bug: occasionally, flex item image shrinks on load
-  border: solid $borders 1px;
-  padding: 5px;
-  margin-bottom: 1rem; // Usually not necessary to explicitly declare margin-bottom on img (I have this in reset), but need to override :last-child causing margin-bottom: 0 (technically :last-child because inside <a>)
 }
 
 .book-item-header {
