@@ -97,17 +97,6 @@
 
 // Page specific: Index
 
-#about-anjan {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  margin-bottom: 2rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
 #about-anjan-text-header {
   text-align: center;
   margin-bottom: 1rem;
