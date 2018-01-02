@@ -226,63 +226,50 @@ section {
   }
 }
 
-.item-img {
+.item-head {
+  // can be applied to an <img> (people items), an <a> containing an <img> (book items), or a div.item-icon (contact items) / a.item-icon (news items)
   flex: 0 0 auto; // avoids shrinking (default: 0 1 auto)
   margin-bottom: 1rem; // when element is <img>, this is sort of redundant with margin-bottom already applied in reset
   border: solid $borders 1px;
   padding: 5px;
-}
 
-a > img.item-img:last-child {
-  margin-bottom: 1rem; // by default, <img> has this margin-bottom via reset (also redundantly re-applied above), but reset also specifies 0 margin-bottom for img:last-child. this overrides .item-img class since element:pseudo-class has higher specificity, so need to (re-)re-apply it here (when wrapping <img> with parent <a> it becomes :last-child). other solutions exist (e.g., use !important for margin-bottom on .item-img).
-}
-
-.item-icon {
-  width: 200px;
-  height: 200px;
-
-  svg {
-    fill: silver;
-    width: 70px;
-    height: 70px;
+  img {
+    display: block; // when .item-head is applied to parent <a>, need to get rid of gap left by inline <img>
   }
 }
 
-.item-icon-bg {
-  background-color: rgb(229, 229, 229);
+.item-icon {
+  background-color: rgb(229, 229, 229); // default bg color
+  background-clip: content-box; // clip within padding (issues with ie8)
 
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-}
+  width: 200px;
+  height: 200px;
 
-.item-icon {
-  &.print-type {
-    border: solid $print-bg 1px;
-    .item-icon-bg {
-      background-color: $print-bg;
-    }
+  svg {
+    fill: silver; // default icon color
+    width: 70px;
+    height: 70px;
+  }
+
+  &.print-icon {
+    background-color: $print-bg;
     svg {
       fill: $news-icon;
     }
   }
 
-  &.video-type {
-    border: solid $video-bg 1px;
-    .item-icon-bg {
-      background-color: $video-bg;
-    }
+  &.video-icon {
+    background-color: $video-bg;
     svg {
       fill: $news-icon;
     }
   }
 
-  &.audio-type {
-    border: solid $audio-bg 1px;
-    .item-icon-bg {
-      background-color: $audio-bg;
-    }
+  &.audio-icon {
+    background-color: $audio-bg;
     svg {
       fill: $news-icon;
     }
