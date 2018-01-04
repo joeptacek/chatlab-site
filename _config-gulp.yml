@@ -1,9 +1,9 @@
 incremental: true;
 exclude:
-  # exclude _assets so jekyll-watch ignores these file changes (files / directories with leading underscore won't be built, but jekyll-watch will still monitor them for changes unless excluded)
+  # exclude _assets so jekyll-watch ignores these file changes (by default, files / directories with leading underscore aren't BUILT, but jekyll-watch will still monitor them for changes unless excluded)
   - _assets
 
-  # need to re-exclude everything from _config.yml
+  # need to re-exclude everything from _config.yml, otherwise will only exclude _assets (when multiple configs are loaded, sequences are overwritten, not appended)
   - Gemfile
   - Gemfile.lock
   - vendor
@@ -16,6 +16,6 @@ exclude:
   - assets/img/originals
 
 keep_files:
-  # protect gulp output from jekyll clobbering during serve or build
+  # protect gulp output from jekyll clobbering during serve or build (only clobber _site)
   - assets/js
   - assets/css

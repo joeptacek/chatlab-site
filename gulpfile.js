@@ -1,3 +1,5 @@
+// REQUIRE ---------------------------------------------------------------------
+
 // core
 var gulp = require('gulp');
 var gutil = require('gulp-util');
@@ -15,17 +17,25 @@ var cssnano = require('cssnano');
 // js
 var uglify = require('gulp-uglify');
 
-// tasks
-gulp.task('jekyll-build', function () {
-  spawn('bundle', [
-    'exec',
-    'jekyll',
-    'build',
-    '--config',
-    '_config.yml,_config-gulp.yml',
-  ], {stdio: 'inherit'});
-});
+// VARIABLES -------------------------------------------------------------------
 
+var child_jk; // needs to be global so able to kill later
+
+var bundle_args_jkbuild = [
+  'exec',
+  'jekyll',
+  'build',
+  // '--incremental', // seems to make jekyll more leninet in error reporting
+  '--config',
+  '_config.yml,_config-gulp.yml', // load base _config.yml and then _config-gulp.yml
+  // '-V', // debug mode
+];
+
+var bundle_args_jkwatch = bundle_args_jkbuild.concat('watch');
+
+// TASKS -----------------------------------------------------------------------
+
+// build css (development only: sourcemaps; production only: autoprefixer, cssnano)
 gulp.task('css', function () {
   var plugins = [
     autoprefixer(),
@@ -40,6 +50,7 @@ gulp.task('css', function () {
     .pipe(gulp.dest('_site/assets/css'));
 });
 
+// build js
 gulp.task('js', function () {
   return gulp.src('_assets/js/**/*.js')
     // .pipe(debug({title: 'Debug (js):'})) // debug mode
@@ -47,11 +58,23 @@ gulp.task('js', function () {
     .pipe(gulp.dest('_site/assets/js'));
 });
 
+// build assets
 gulp.task('assets-build', ['css', 'js']);
 
-var child_jk; // needs to be global
+// (build and) watch assets
+gulp.task('assets-watch', ['assets-build'], function () {
+  gulp.watch('_assets/sass/**/*.scss', ['css']);
+  gulp.watch('_assets/js/**/*.js', ['js']);
+});
+
+// build jekyll
+gulp.task('jekyll-build', function () {
+  spawn('bundle', bundle_args_jkbuild, {stdio: 'inherit'});
+});
+
+// (build and) watch jekyll
 gulp.task('jekyll-watch', function () {
-  // spawn initial jekyll, assign to global so can kill later
+  // spawn initial jekyll, assign to global to kill later
   child_jk = spawn_jk();
 
   gulp.watch('@(_config.yml|_config-*.yml)', function () {
@@ -62,23 +85,11 @@ gulp.task('jekyll-watch', function () {
   });
 
   function spawn_jk () {
-    return spawn('bundle', [
-      'exec',
-      'jekyll',
-      'build',
-      '--config',
-      '_config.yml,_config-gulp.yml',
-      // '-V', // debug mode
-      '--watch'
-    ], {stdio: 'inherit'});
+    return spawn('bundle', bundle_args_jkwatch, {stdio: 'inherit'});
   }
 });
 
-gulp.task('assets-watch', ['assets-build'], function () {
-  gulp.watch('_assets/sass/**/*.scss', ['css']);
-  gulp.watch('_assets/js/**/*.js', ['js']);
-});
-
+// start browser-sync development server
 gulp.task('bs', function () {
   bs.init({
     files: '_site/**',
@@ -89,35 +100,29 @@ gulp.task('bs', function () {
         '/chatterjee': '_site'
       }
     },
-    // logLevel: 'debug',
+    // logLevel: 'debug', // debug mode
     notify: false
   });
 });
 
-
-
-// safe to run jekyll, css, and js concurrently - jekyll build process clobbers
-// everything in _site, but excludes js and css dirs in _site/assets
+// build everything
 gulp.task('build', ['jekyll-build', 'assets-build']);
+
+// (build and) watch everything
 gulp.task('watch', ['jekyll-watch', 'assets-watch']);
 
-// probably better to wait to do bs after watch finishes
-gulp.task('serve', ['watch', 'bs']);
+// (build and) watch everything AND boot development server
+gulp.task('serve', ['watch', 'bs']); // might be better to do these consequentively (add callback to watch so it can be a dependency for bs serve task)?
 
-gulp.task('default', ['build']);
+// default task
+gulp.task('default', ['serve']);
+
+// NOTES -----------------------------------------------------------------------
 
 // require var vs const?
 
-// is it necessary to have EVERY task accept a callback / return a stream? yes,
-// when trying to make another task run in series afterwards - but otherwise?
+// is it necessary to have EVERY task accept a callback / return a stream? yes, when trying to make another task run in series afterwards - but otherwise?
 
-// jekyll build process clobbers everything in _site, but excludes js and css
-// dirs in _site/assets (this is specified in _config-gulp.yml)
-
-// spawn vs exec: spawn has better log formatting via stdio, also performance
-// possibly better
-
-// use jekyll build --incremental?
-// jekyll seems more lenient with errors when building with --incremental
+// spawn vs exec: spawn has somewhat better log formatting via stdio, also performance possibly better
 
 // consider preceding dot for globs (explictly reference cwd)

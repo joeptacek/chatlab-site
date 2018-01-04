@@ -1,13 +1,15 @@
 title: ChatLab
 baseurl: /chatterjee
 exclude:
-  - Gemfile
-  - Gemfile.lock
   - vendor
-  - node_modules
   - package.json
   - package-lock.json
   - gulpfile.js
   - README.md
   - assets/archive
   - assets/img/originals
+
+  # excluded by default (need to re-exclude because user _config.yml overwrites the default sequence, doesn't append to it)
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
