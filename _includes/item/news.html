@@ -1,19 +1,27 @@
-<div class="flex-item row-compact row-centered">
-  {% case include.pass.type %}
-    {% when 'print' %}
-      <a class="item-head item-icon print-icon rounded" href="{{ include.pass.media_url }}" target="_blank">
-        <svg><use xlink:href="#icon-newspaper"></use></svg>
-      </a>
-    {% when 'video' %}
-      <a class="item-head item-icon video-icon rounded" href="{{ include.pass.media_url }}" target="_blank">
-        <svg><use xlink:href="#icon-video-camera"></use></svg>
-      </a>
-    {% when 'audio' %}
-      <a class="item-head item-icon audio-icon rounded" href="{{ include.pass.media_url }}" target="_blank">
-        <svg><use xlink:href="#icon-volume-high"></use></svg>
-      </a>
-  {% endcase %}
-  <div class="news-item-data">
+<div class="flex-item fi-md-compact fi-md-center">
+  <header class="rounded-descending">
+    {% case include.pass.type %}
+      {% when 'print' %}
+        <a href="{{ include.pass.media_url }}" target="_blank">
+          <div class="item-icon print-icon">
+            <svg class="rounded-skip"><use xlink:href="#icon-newspaper"></use></svg>
+          </div>
+        </a>
+      {% when 'video' %}
+        <a href="{{ include.pass.media_url }}" target="_blank">
+          <div class="item-icon video-icon">
+            <svg class="rounded-skip"><use xlink:href="#icon-video-camera"></use></svg>
+          </div>
+        </a>
+      {% when 'audio' %}
+        <a href="{{ include.pass.media_url }}" target="_blank">
+          <div class="item-icon audio-icon">
+            <svg class="rounded-skip"><use xlink:href="#icon-volume-high"></use></svg>
+          </div>
+        </a>
+    {% endcase %}
+  </header>
+  <div class="fi-main fi-main-mobile-sm-compact text-center-md-left">
     <h3 class="news-title"><a href="{{ include.pass.media_url }}" target="_blank">{{ include.pass.title }}</a></h3>
     <p class="news-source">{{ include.pass.source }}{% if include.pass.sub_source != null %} | <span class="sub-source">{{ include.pass.sub_source }}</span>{% endif %}</p>
     <p>{% if include.pass.date_year != null %}<!-- show date when at least year is known -->{% if include.pass.date_month != null %}<!-- show month/ or month/day/ if these exist; nested if logic should prevent poorly-formed null/day/year month/day/null etc. -->{{ include.pass.date_month }}/{% if include.pass.date_day != null %}{{ include.pass.date_day }}/{% endif %}{% endif %}<!-- endifs for date_month != null, date_day != null -->{{ include.pass.date_year }}<!-- at least show year if it exists -->{% endif %}<!-- endif for date_year != null --></p>

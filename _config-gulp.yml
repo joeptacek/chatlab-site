@@ -1,4 +1,3 @@
-incremental: true;
 exclude:
   # exclude _assets so jekyll-watch ignores these file changes (by default, files / directories with leading underscore aren't BUILT, but jekyll-watch will still monitor them for changes unless excluded)
   - _assets

@@ -1,5 +1,36 @@
 // Resets ----------------------------------------------------------------------
 
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: $page-links;
+  text-decoration: none;
+}
+
+hr {
+  margin: 0 0 2rem 0;
+  border: 0;
+
+  // Subtle inset <hr /> inspired by Dan Eden's
+  border: 0; /* Reset */
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+nav {
+  ul {
+    padding-left: 0;
+  }
+  li {
+    list-style-type: none;
+  }
+  a {
+    display: block; // Fixes a very minor height error
+  }
+}
+
 // No margin-top, margin-bottom 1rem unless :last-child
 
 h1, h2, h3, h4, p, ul {
@@ -14,15 +45,11 @@ h1, h2, h3, h4, p, img {
   }
 }
 
-// Utility class for breaking margin-bottom rules
-.no-margin-bottom {
-  margin-bottom: 0;
-}
-
 h4 {
   font-size: 1.17rem; // approx equal to h3 ... check this (otherwise h4 font size not usually explicitly defined, i.e., 1rem)
 }
 
-.rounded {
-  border-radius: 9999px;
+// Utility class for breaking margin-bottom rules
+.no-margin-bottom {
+  margin-bottom: 0;
 }

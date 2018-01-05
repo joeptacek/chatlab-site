@@ -4,7 +4,11 @@
 
   // These "desktop" styles look too squished at the 40rem breakpoint
 
-  .hr-small-media {
+  .text-center-md-left {
+    text-align: left;
+  }
+
+  .md-display-none {
     display: none;
   }
 
@@ -12,28 +16,30 @@
     flex-flow: row;
     align-items: flex-start; // default: top-align
 
-    &.row-centered {
+    &.fi-md-center {
       align-items: center; // optional: (re-)center-align with this class
     }
 
-    &.row-compact {
+    &.fi-md-compact {
       margin-bottom: 2rem;
       &:last-child {
         margin-bottom: 0;
       }
     }
+
+    > header {
+      margin-right: 2rem;
+      margin-bottom: 0;
+    }
   }
 
-  .item-head {
-    margin-right: 2rem;
-    margin-bottom: 0;
+  .fi-main {
+    &.fi-main-mobile-sm-compact {
+      max-width: none;
+    }
   }
 
   // Page-specific: People
-
-  .people-item-text-header {
-    text-align: left;
-  }
 
   .people-item-contact-links {
     justify-content: flex-start;
@@ -41,30 +47,5 @@
 
   #alumni-cols {
     columns: 3;
-  }
-
-  // Page-specific: News
-
-  .news-item-data {
-    max-width: 100%;
-    text-align: left;
-  }
-
-  // Page specific: Index
-
-  #about-anjan-text-header {
-    text-align: left;
-  }
-
-  .book-item-header {
-    text-align: left;
-  }
-
-  // Page specific: Contact
-
-  .contact-main {
-    h3 {
-      text-align: left;
-    }
   }
 }

@@ -1,34 +1,29 @@
 // Default styles (mobile-first) -----------------------------------------------
 
-* {
-  box-sizing: border-box;
+// Round only this element (element should be block or inline-block)
+.rounded {
+  border-radius: 9999px;
 }
 
-a {
-  color: $page-links;
-  text-decoration: none;
-}
+// Round this element and all children
+.rounded-descending {
+  border-radius: 9999px;
 
-hr {
-  margin: 0 0 2rem 0;
-  border: 0;
+  * {
+    border-radius: 9999px;
 
-  // Subtle inset <hr /> inspired by Dan Eden's
-  border: 0; /* Reset */
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-nav {
-  ul {
-    padding-left: 0;
+    &.rounded-skip {
+      border-radius: 0; // for use with rounded-descending
+    }
   }
-  li {
-    list-style-type: none;
-  }
+
   a {
-    display: block; // Fixes a very minor height error
+    display: block; // otherwise won't be rounded (default inline)
   }
+}
+
+.text-center-md-left {
+  text-align: center;
 }
 
 html {
@@ -46,7 +41,7 @@ body {
   -webkit-font-smoothing: subpixel-antialiased // otherwise, text inside a fixed element (e.g., nav-page) appears thinner in Safari
 }
 
-header {
+#page-header {
   margin-bottom: 2rem;
 }
 
@@ -218,23 +213,30 @@ section {
     margin-bottom: 0;
   }
 
-  &.compact {
+  &.fi-compact {
     margin-bottom: 2rem;
     &:last-child {
       margin-bottom: 0;
     }
   }
+
+  > header {
+    // flex: 0 0 auto; // avoids shrinking (default: 0 1 auto)
+    margin-bottom: 1rem; // when element is <img>, this is sort of redundant with margin-bottom already applied in reset
+    border: solid $borders 1px;
+    padding: 5px;
+
+    img {
+      display: block; // need to get rid of gap left by inline <img>
+    }
+  }
 }
 
-.item-head {
-  // can be applied to an <img> (people items), an <a> containing an <img> (book items), or a div.item-icon (contact items) / a.item-icon (news items)
-  flex: 0 0 auto; // avoids shrinking (default: 0 1 auto)
-  margin-bottom: 1rem; // when element is <img>, this is sort of redundant with margin-bottom already applied in reset
-  border: solid $borders 1px;
-  padding: 5px;
+.fi-main {
+  width: 100%; // for very short content e.g., contact page
 
-  img {
-    display: block; // when .item-head is applied to parent <a>, need to get rid of gap left by inline <img>
+  &.fi-main-mobile-sm-compact {
+    max-width: 20rem;
   }
 }
 
@@ -289,14 +291,6 @@ footer {
 
 // Page-specific: Research
 
-.research-item {
-  margin-bottom: 2rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
 .citation {
   // Hanging indent
   padding-left: 0.75rem;
@@ -314,7 +308,6 @@ footer {
 // Page-specific: People
 
 .people-item-text-header {
-  text-align: center;
   margin-bottom: 1.25rem;
 
   > :last-child { // same as `& > *:last-child` scss ampersand and wildcard both implied
@@ -418,11 +411,6 @@ footer {
   }
 }
 
-.news-item-data {
-  max-width: 20rem;
-  text-align: center;
-}
-
 .news-title {
   margin-bottom: 0.3rem;
 }
@@ -434,12 +422,10 @@ footer {
 // Page specific: Index
 
 #about-anjan-text-header {
-  text-align: center;
   margin-bottom: 1rem;
 }
 
 .book-item-header {
-  text-align: center;
   margin-bottom: 1rem;
 }
 
@@ -448,14 +434,6 @@ footer {
 }
 
 // Page specific: Contact
-
-.contact-main {
-  width: 100%;
-
-  h3 {
-    text-align: center;
-  }
-}
 
 address {
   background-color: white;

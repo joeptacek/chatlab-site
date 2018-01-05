@@ -25,13 +25,13 @@ var bundle_args_jkbuild = [
   'exec',
   'jekyll',
   'build',
-  // '--incremental', // seems to make jekyll more leninet in error reporting
-  '--config',
-  '_config.yml,_config-gulp.yml', // load base _config.yml and then _config-gulp.yml
+  // '--incremental', // i don't 100% trust incremental
   // '-V', // debug mode
+  '--config',
+  '_config.yml,_config-gulp.yml' // load base _config.yml and then _config-gulp.yml
 ];
 
-var bundle_args_jkwatch = bundle_args_jkbuild.concat('watch');
+var bundle_args_jkwatch = bundle_args_jkbuild.concat('--watch');
 
 // TASKS -----------------------------------------------------------------------
 
@@ -89,11 +89,10 @@ gulp.task('jekyll-watch', function () {
   }
 });
 
-// start browser-sync development server
+// start browsersync development server
 gulp.task('bs', function () {
   bs.init({
-    files: '_site/**',
-    startPath: '/chatterjee',
+    files: '_site/**', // changes are either injected (CSS / img) or cause browser reload
     server: {
       baseDir: '_site',
       routes: {
@@ -101,6 +100,7 @@ gulp.task('bs', function () {
       }
     },
     // logLevel: 'debug', // debug mode
+    // reloadDebounce: 2000, // prevents a ton of reloads while jekyll completes initial build (browsersync might miss meaningful changes later on)
     notify: false
   });
 });
@@ -112,7 +112,7 @@ gulp.task('build', ['jekyll-build', 'assets-build']);
 gulp.task('watch', ['jekyll-watch', 'assets-watch']);
 
 // (build and) watch everything AND boot development server
-gulp.task('serve', ['watch', 'bs']); // might be better to do these consequentively (add callback to watch so it can be a dependency for bs serve task)?
+gulp.task('serve', ['watch', 'bs']); // might be better to do these async - specifically, wait until jekyll finishes initial build (use hooks?) and THEN serve via browsersync (or else browsersync watches / reloads while jekyll builds)
 
 // default task
 gulp.task('default', ['serve']);
