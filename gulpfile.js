@@ -101,6 +101,7 @@ gulp.task('bs', function () {
     },
     // logLevel: 'debug', // debug mode
     // reloadDebounce: 2000, // prevents a ton of reloads while jekyll completes initial build (browsersync might miss meaningful changes later on)
+    startPath: "/chatterjee",
     notify: false
   });
 });

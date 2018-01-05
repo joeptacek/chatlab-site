@@ -9,15 +9,12 @@
         {% include svg/header.html %}
 
         <!-- page-specific defs -->
-        {% if page.svg %}
-          {% assign include_path_svg = page.path | prepend: "svg/" %}
-          {% include {{ include_path_svg }} %}
-        {% endif %}
+        {% include svg/news.html %}
       </defs>
     </svg>
-    {% include header.html %}
+    <h1>Styleguide</h1>
+    <hr />
     {{ content }}
-    {% include footer.html %}
     <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
   </body>
 </html>
