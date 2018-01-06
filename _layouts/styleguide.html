@@ -12,9 +12,9 @@
         {% include svg/news.html %}
       </defs>
     </svg>
-    <h1>Styleguide</h1>
-    <hr />
+    {% include header.html %}
     {{ content }}
+    {% include footer.html %}
     <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
   </body>
 </html>

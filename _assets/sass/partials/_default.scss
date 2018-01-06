@@ -323,16 +323,11 @@ footer {
   font-size: 1.1rem;
 }
 
-.people-item-text-cv {
-  margin-bottom: 1.25rem; // to match header bottom, centering contact-links
-}
-
 .people-item-contact-links {
   // Could consider using display: flex or float to control extra spaces
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem; // space before CV
 
   > * { // same as `& > *` scss ampersand is implied
     margin-right: 0.5rem;
