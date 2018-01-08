@@ -1,0 +1,44 @@
+// Utility classes -------------------------------------------------------------
+
+// To override default italics, for example in a <cite>
+.font-style-normal {
+  font-style: normal !important;
+}
+
+// Round only this element (element should be block or inline-block)
+.rounded {
+  border-radius: 9999px;
+}
+
+// Round this element and all children
+.rounded-descending {
+  border-radius: 9999px;
+
+  * {
+    border-radius: 9999px;
+
+    &.rounded-skip {
+      border-radius: 0; // for use with rounded-descending
+    }
+  }
+
+  a {
+    display: block; // otherwise won't be rounded (default inline)
+  }
+}
+
+.text-center-md-left {
+  text-align: center;
+}
+
+.list-reset {
+  padding-left: 0;
+
+  li {
+    list-style: none;
+
+    a {
+      display: block; // Fixes a very minor height error (?) LEAVE THIS IN FOR NOW FIX LATER
+    }
+  }
+}

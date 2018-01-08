@@ -1,8 +1,63 @@
 // Resets ----------------------------------------------------------------------
 
+// Universal resets ------------------------------------------------------------
+
 * {
   box-sizing: border-box;
 }
+
+// Element resets: html / body -------------------------------------------------
+
+html {
+  background-color: $background;
+  padding: 6rem 2rem 0;
+  font-family: 'Gentium Basic', serif;
+  // font-family: "Open Sans", sans-serif;
+  line-height: 1.3; // line-height is unitless
+}
+
+body {
+  max-width: 60rem;
+  margin: 0 auto;
+
+  -webkit-font-smoothing: subpixel-antialiased // otherwise, text inside a fixed element (e.g., nav-page) appears thinner in Safari
+}
+
+// Element resets: vertical rhythm ---------------------------------------------
+
+h4 {
+  font-size: 1.17rem; // approx equal to h3 ... check this (otherwise h4 font size not usually explicitly defined, i.e., 1rem)
+}
+
+// Margin rules: no margin-top, margin-bottom 1rem unless :last-child
+h1, h2, h3, h4, p, ul {
+  margin: 0;
+}
+
+h1, h2, h3, h4, p {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  // More compact inside header of flex-items
+  .flex-item header & {
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Utility class for breaking margin rules
+.no-margin-bottom {
+  margin-bottom: 0 !important; // !important so don't need to worry about specificity
+}
+
+
+// Element resets: other text elements -----------------------------------------
 
 a {
   color: $page-links;
@@ -19,17 +74,11 @@ hr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-nav {
-  ul {
-    padding-left: 0;
-  }
-  li {
-    list-style-type: none;
-  }
-  a {
-    display: block; // Fixes a very minor height error
-  }
+cite {
+  font-style: italic; // Should be italic by default, but just in case not
 }
+
+// Element resets: images
 
 img {
   max-width: 100%;
@@ -42,34 +91,4 @@ img {
 
 img, svg {
   display: block; // default leaves gap (e.g., in picture elements, in flex-item headers)
-}
-
-// No margin-top, margin-bottom 1rem unless :last-child
-h1, h2, h3, h4, p, ul {
-  margin: 0;
-}
-
-h1, h2, h3, h4, p {
-  margin-bottom: 1rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  .flex-item header & {
-    margin-bottom: 0.5rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-// Utility class for breaking margin-bottom rules
-.no-margin-bottom {
-  margin-bottom: 0 !important; // !important so don't need to worry about specificity
-}
-
-h4 {
-  font-size: 1.17rem; // approx equal to h3 ... check this (otherwise h4 font size not usually explicitly defined, i.e., 1rem)
 }
