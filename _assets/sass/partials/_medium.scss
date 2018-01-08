@@ -28,6 +28,7 @@
     }
 
     > header {
+      flex: 0 0 212px; // or else shrinks
       margin-right: 2rem;
       margin-bottom: 0;
     }
@@ -37,11 +38,15 @@
     &.fi-main-mobile-sm-compact {
       max-width: none;
     }
+
+    header {
+      text-align: left;
+    }
   }
 
   // Page-specific: People
 
-  .people-item-contact-links {
+  .contact-links {
     justify-content: flex-start;
   }
 

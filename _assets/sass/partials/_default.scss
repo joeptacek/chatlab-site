@@ -62,10 +62,6 @@ body {
     font-size: 2.5rem;
     padding-left: 1.5rem;
   }
-
-  img {
-    display: block; // default inline leaves a gap
-  }
 }
 
 #nav-site {
@@ -99,7 +95,6 @@ body {
   padding: 1.5rem 0;
 
   svg {
-    display: block; // default inline leaves a gap
     margin: 0 auto;
     width: 1.75rem;
     height: 1.75rem;
@@ -152,7 +147,6 @@ main {
   border-radius: 0;
 
   svg {
-    display: block; // Or else extra space around element (default is inline)
     margin: 0 auto; // ...centering block-level element
     width: 1.75rem;
     height: 1.75rem;
@@ -197,10 +191,16 @@ section {
 }
 
 .section-image {
-  max-width: 100%; // Shrink images on horizontal resize (doesn't work to set as absolute size like max-width: 400px... why?)
-  height: auto; // Scale height (seemingly needed for flex images)
+  // display: block;
+  // max-width: 100%; // Shrink images on horizontal resize (doesn't work to set as absolute size like max-width: 400px... why?)
+  // height: auto; // Scale height (seemingly needed for flex images)
   padding: 5px;
   border: solid $borders 1px;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .flex-item {
@@ -220,23 +220,36 @@ section {
     }
   }
 
+  // flex-item header (containing for <img> or item-icon)
   > header {
-    // flex: 0 0 auto; // avoids shrinking (default: 0 1 auto)
-    margin-bottom: 1rem; // when element is <img>, this is sort of redundant with margin-bottom already applied in reset
+    width: 212px; // 200px content + (1px border + 5px pading) x 2
+    max-width: 100%; // shrink inside parent at small screen widths
+
+    margin-bottom: 1rem;
     border: solid $borders 1px;
     padding: 5px;
-
-    img {
-      display: block; // need to get rid of gap left by inline <img>
-    }
   }
 }
 
 .fi-main {
-  width: 100%; // for very short content e.g., contact page
+  width: 100%; // stretching very short content e.g., contact page
 
   &.fi-main-mobile-sm-compact {
     max-width: 20rem;
+  }
+
+  // fi-main header (title, subtile, etc.)
+  > header {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    + hr {
+      margin-bottom: 1.5rem; // default 2rem; more compact inside fi-main header
+    }
   }
 }
 
@@ -247,8 +260,12 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
-  height: 200px;
+
+  &:before {
+    content: "";
+    display: block; // default inline (need block for padding)
+    padding-top: 100%; // i.e., 100% of width (forces height equal to width)
+  }
 
   svg {
     fill: silver; // default icon color
@@ -307,27 +324,11 @@ footer {
 
 // Page-specific: People
 
-.people-item-text-header {
-  margin-bottom: 1.25rem;
-
-  > :last-child { // same as `& > *:last-child` scss ampersand and wildcard both implied
-    margin-bottom: 0;
-  }
-}
-
-.people-item-text-name {
-  margin-bottom: 0.1rem;
-}
-
-.people-item-text-position {
-  font-size: 1.1rem;
-}
-
-.people-item-contact-links {
-  // Could consider using display: flex or float to control extra spaces
+.contact-links {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
 
   > * { // same as `& > *` scss ampersand is implied
     margin-right: 0.5rem;
@@ -341,13 +342,7 @@ footer {
     }
   }
 
-  a {
-    // does making display: block help, as elsewhere?
-    // display: block;
-  }
-
   svg {
-    display: block; // Or else extra space around element (default is inline)
     width: 1rem;
     height: 1rem;
     fill: rgb(127, 127, 127);
@@ -358,7 +353,6 @@ footer {
 }
 
 .buttony-link {
-  display: inline-block; // fixes minor gaps also maybe makes sense in context of added padding
   padding: 0.25rem 0.5rem;
   border: solid $page-links 1px;
   color: $page-links;
@@ -398,16 +392,14 @@ footer {
 
 #nav-news {
   margin-bottom: 1rem;
+
   ul {
     display: flex;
-    li {
-      margin: 0 0.5rem 0 0;
-    }
   }
-}
 
-.news-title {
-  margin-bottom: 0.3rem;
+  li {
+    margin: 0 0.5rem 0 0;
+  }
 }
 
 .sub-source {
@@ -416,17 +408,6 @@ footer {
 
 // Page specific: Index
 
-#about-anjan-text-header {
-  margin-bottom: 1rem;
-}
-
-.book-item-header {
-  margin-bottom: 1rem;
-}
-
-.book-item-pub {
-  margin-bottom: 0.5rem;
-}
 
 // Page specific: Contact
 
@@ -451,6 +432,7 @@ address {
 }
 
 #map {
+  display: block;
   padding: 5px;
   border: solid $borders 1px;
 }
