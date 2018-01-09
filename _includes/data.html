@@ -1,6 +1,6 @@
 {% assign include_path_item = include.pass | prepend: "item/" | append: ".html" %}
 {% for section in site.data[include.pass] %}
-  <section>
+  <section class="card">
     <h2 id="{{ section.section_id }}" class="section-title">{{ section.section_title }}</h2>
     {% if section.section_description %}
       <p class="section-description">{{ section.section_description }}</p>

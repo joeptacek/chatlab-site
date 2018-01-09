@@ -7,7 +7,7 @@ svg: true
   <div id="nav-page">
     <nav id="nav-page-main">
       <h1>{{ page.title }}</h1>
-      <ul id="nav-page-links" class="list-reset">
+      <ul id="nav-page-links" class="list-reset no-margin-bottom">
         {% for section in site.data.people %}
           <li><a href="{{ "#" | append: section.section_id }}">{{ section.section_title }}</a></li>
         {% endfor %}
@@ -21,7 +21,7 @@ svg: true
   </div>
   <div id="page-content"><!-- div necessary to make flex row with nav -->
     {% include data.html pass="people" %}
-    <section>
+    <section class="card">
       <h2 id="lab-alumni" class="section-title">Lab Alumni</h2>
       <hr />
       <div id="alumni-cols">

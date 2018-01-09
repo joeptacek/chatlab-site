@@ -7,7 +7,7 @@ svg: false
   <div id="nav-page">
     <nav id="nav-page-main">
       <h1>{{ page.title }}</h1>
-      <ul id="nav-page-links" class="list-reset">
+      <ul id="nav-page-links" class="list-reset no-margin-bottom">
         <li><a href="#about_chatlab">About ChatLab</a></li>
         <li><a href="#lab_director">Lab Director</a></li>
         <li><a href="#twitter">Twitter</a></li>
@@ -19,7 +19,7 @@ svg: false
     </div>
   </div>
   <div id="page-content"><!-- div necessary to make flex row with nav -->
-    <section>
+    <section class="card">
       <!-- <h2 class="section-title">About</h2> -->
       <h2 id="about_chatlab" class="section-title">About ChatLab</h2>
       <hr />
@@ -27,7 +27,7 @@ svg: false
       <p>Our studies cover a diverse range of cognitive processes, including figurative and spatial language, event representation, aesthetics, neuroethics. Much of our research focuses on differences in processing of patients with brain injury, compared with healthy adults.</p>
       <img class="section-image" src="{{ "/assets/img/group/062217/800/group.jpg" | prepend: site.baseurl }}" alt="ChatLab: June 22, 2017" width="800" height="600" />
     </section>
-    <section>
+    <section class="card">
       <h2 id="lab_director" class="section-title">Lab Director</h2>
       <hr />
       <!-- Directly borrowing people item include without a lot of consideration; check this -->
@@ -97,7 +97,7 @@ svg: false
         </div>
       </div>
     </section>
-    <section>
+    <section class="card">
       <h2 id="twitter" class="section-title">Twitter</h2>
       <hr />
       {% include twitter.html %}

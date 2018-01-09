@@ -30,11 +30,14 @@ h4 {
 }
 
 // Margin rules: no margin-top, margin-bottom 1rem unless :last-child
+
+// Clear default margins on elements that have them
 h1, h2, h3, h4, p, ul {
   margin: 0;
 }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, ul, address {
+  // Add back margin-bottom on elements wherever desired
   margin-bottom: 1rem;
 
   &:last-child {
@@ -78,7 +81,18 @@ cite {
   font-style: italic; // Should be italic by default, but just in case not
 }
 
-// Element resets: images
+address {
+  p {
+    // each line of address should go in <p> for pretty styling
+    margin-bottom: 0;
+
+    // hanging indent
+    padding-left: 0.5rem;
+    text-indent: -0.5rem;
+  }
+}
+
+// Element resets: images ------------------------------------------------------
 
 img {
   max-width: 100%;

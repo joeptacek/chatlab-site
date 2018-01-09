@@ -1,6 +1,11 @@
 // Utility classes -------------------------------------------------------------
 
-// To override default italics, for example in a <cite>
+.hanging-indent {
+  padding-left: 0.75rem;
+  text-indent: -0.75rem;
+}
+
+// To override default italics, for example in a <cite> or <address>
 .font-style-normal {
   font-style: normal !important;
 }

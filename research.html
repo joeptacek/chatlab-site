@@ -7,7 +7,7 @@ svg: false
   <div id="nav-page">
     <nav id="nav-page-main">
       <h1>{{ page.title }}</h1>
-      <ul id="nav-page-links" class="list-reset">
+      <ul id="nav-page-links" class="list-reset no-margin-bottom">
         {% for section in site.data.research %}
           <li><a href="{{ "#" | append: section.section_id }}">{{ section.section_title }}</a></li>
         {% endfor %}

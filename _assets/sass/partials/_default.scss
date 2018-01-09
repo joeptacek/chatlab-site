@@ -122,12 +122,25 @@ main {
   display: none;
 }
 
-// Create class for this instead of applying to element
-section {
+.card {
   background-color: $card;
   padding: 2rem;
   box-shadow: 0 1px 3px $shadows;
-  margin-bottom: 2.5rem; // needs to be larger than 2rem ie height of gap from top to nav-page, or else previous section shadow visible
+  margin-bottom: 2.5rem; // needs to be larger than 2rem ie height of gap from top to nav-page, or else previous section shadow visible after jumping down to section (change this so that padding here is 2 section-title :before is < 2)
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card-mini {
+  background-color: white;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 3px $shadows;
+  margin-bottom: 1rem;
+
+  border-left: solid $page-links 4px;
+  font-size: 0.8rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -266,14 +279,6 @@ footer {
   color: $borders;
 }
 
-// Page-specific: Research
-
-.citation {
-  // Hanging indent
-  padding-left: 0.75rem;
-  text-indent: -0.75rem;
-}
-
 // Page-specific: People
 
 .contact-links {
@@ -356,32 +361,6 @@ footer {
 
 .sub-source {
   color: grey;
-}
-
-// Page specific: Index
-
-
-// Page specific: Contact
-
-// Create class for this instead of applying to element
-address {
-  background-color: white;
-  font-size: 0.8rem;
-  font-style: normal;
-  padding: 0.8rem 1.25rem;
-  margin-bottom: 1rem;
-  border-left: solid $page-links 4px;
-  box-shadow: 0 1px 3px $shadows; // shadows already transp
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  p {
-    margin-bottom: 0;
-    padding-left: 0.5rem;
-    text-indent: -0.5rem;
-  }
 }
 
 #map {
