@@ -1,12 +1,23 @@
 // Styles for small screens ----------------------------------------------------
 
 @media screen and (min-width: 45rem) {
-  a:hover {
-    color: $pl-hover;
-  }
 
   html {
     padding: 6rem 4rem 0;
+  }
+
+  main {
+    flex-flow: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  footer {
+    padding: 6rem 0;
+  }
+
+  a:hover {
+    color: $pl-hover;
   }
 
   #logo {
@@ -44,13 +55,6 @@
         color: $sl-hover;
       }
     }
-  }
-
-
-  main {
-    flex-flow: row;
-    align-items: flex-start;
-    justify-content: flex-end;
   }
 
   #nav-page {
@@ -110,10 +114,6 @@
 
   .section-title {
     text-align: left;
-  }
-
-  footer {
-    padding: 6rem 0;
   }
 
   // Page-specific: People

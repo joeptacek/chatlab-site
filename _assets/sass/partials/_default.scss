@@ -1,7 +1,34 @@
 // Default styles (mobile-first) -----------------------------------------------
 
+html {
+  background-color: $background;
+  padding: 6rem 2rem 0;
+  font-family: 'Gentium Basic', serif;
+  // font-family: "Open Sans", sans-serif;
+  line-height: 1.3; // line-height is unitless
+}
+
+body {
+  max-width: 60rem;
+  margin: 0 auto;
+
+  -webkit-font-smoothing: subpixel-antialiased // otherwise, text inside a fixed element (e.g., nav-page) appears thinner in Safari
+}
+
 #page-header {
   margin-bottom: 2rem;
+}
+
+main {
+  display: flex; // items: nav-page, page-content
+  flex-flow: column;
+}
+
+footer {
+  // As flex item (with main and footer), should not shrink
+  // flex: 0 0 auto;
+  padding: 4rem 0;
+  text-align: center;
 }
 
 #logo {
@@ -59,11 +86,6 @@
     height: 1.75rem;
     fill: rgb(160, 160, 160);
   }
-}
-
-main {
-  display: flex; // items: nav-page, page-content
-  flex-flow: column;
 }
 
 #nav-page-main {
@@ -226,6 +248,7 @@ main {
   }
 }
 
+// rename fi-icon
 .item-icon {
   background-color: rgb(229, 229, 229); // default bg color
   background-clip: content-box; // clip within padding (issues with ie8)
@@ -266,13 +289,6 @@ main {
       fill: $news-icon;
     }
   }
-}
-
-footer {
-  // As flex item (with main and footer), should not shrink
-  // flex: 0 0 auto;
-  padding: 4rem 0;
-  text-align: center;
 }
 
 #copyright {

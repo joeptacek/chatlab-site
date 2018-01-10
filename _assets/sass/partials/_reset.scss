@@ -6,23 +6,6 @@
   box-sizing: border-box;
 }
 
-// Element resets: html / body -------------------------------------------------
-
-html {
-  background-color: $background;
-  padding: 6rem 2rem 0;
-  font-family: 'Gentium Basic', serif;
-  // font-family: "Open Sans", sans-serif;
-  line-height: 1.3; // line-height is unitless
-}
-
-body {
-  max-width: 60rem;
-  margin: 0 auto;
-
-  -webkit-font-smoothing: subpixel-antialiased // otherwise, text inside a fixed element (e.g., nav-page) appears thinner in Safari
-}
-
 // Element resets: vertical rhythm ---------------------------------------------
 
 h4 {
@@ -86,7 +69,7 @@ address {
     // each line of address should go in <p> for pretty styling
     margin-bottom: 0;
 
-    // hanging indent
+    // hanging indent (helpful when wrapping at small width)
     padding-left: 0.5rem;
     text-indent: -0.5rem;
   }
@@ -99,7 +82,7 @@ img {
   height: auto;
 
   &.no-shrink {
-    max-width: none;
+    max-width: none !important;
   }
 }
 
