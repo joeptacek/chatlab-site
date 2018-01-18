@@ -1,3 +1,5 @@
+// TODO: wait until DOMContentLoaded or load before adding / removing any classes from elements!
+
 // Stuff for sticky page links nav
 var navPage = document.getElementById("nav-page");
 var atTop = true;
