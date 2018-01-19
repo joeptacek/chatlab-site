@@ -1,4 +1,4 @@
-<div class="flex-item fi-md-compact fi-md-center">
+<div class="flex-item fi-med-compact fi-med-center">
   <header class="rounded-descending">
     {% case include.pass.type %}
       {% when 'print' %}
@@ -21,7 +21,7 @@
         </a>
     {% endcase %}
   </header>
-  <div class="fi-main fi-main-mobile-sm-compact text-center-md-left">
+  <div class="fi-main fi-main-def-sm-compact text-center-med-left">
     <header>
       <h3><a href="{{ include.pass.media_url }}" target="_blank">{{ include.pass.title }}</a></h3>
       <p>{{ include.pass.source }}{% if include.pass.sub_source != null %} | <span class="sub-source">{{ include.pass.sub_source }}</span>{% endif %}</p>

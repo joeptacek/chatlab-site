@@ -229,7 +229,7 @@ footer {
 .fi-main {
   width: 100%; // stretching very short content e.g., contact page - TODO: consider how this affects things when width aligns with main- vs. cross-axis
 
-  &.fi-main-mobile-sm-compact {
+  &.fi-main-def-sm-compact {
     max-width: 20rem;
   }
 

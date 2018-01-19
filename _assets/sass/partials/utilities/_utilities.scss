@@ -1,5 +1,10 @@
-// Utility classes -------------------------------------------------------------
+// Utility classes
 
+.fancy-sticky {
+  position: static;
+}
+
+// Hanging indent (e.g., for citations)
 .hanging-indent {
   padding-left: 0.75rem;
   text-indent: -0.75rem;
@@ -32,11 +37,14 @@
   }
 }
 
+// Text centered at default, left at medium breakpoint
 .text-center-md-left {
   text-align: center;
 }
 
+// Reset formatting (e.g., for horizontal lists) ... rename: horizontal list?
 .list-reset {
+  // include flex?
   padding-left: 0;
 
   li {

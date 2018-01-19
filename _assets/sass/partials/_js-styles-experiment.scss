@@ -5,18 +5,18 @@
   display: none;
 }
 
-[class^="hidden-mobile"] {
+[class^="hidden-def"] {
   // hidden only on mobile
   display: none;
 }
 
 @media screen and (min-width: 45rem) {
-  .hidden-mobile {
+  .hidden-def {
     // reset to default display (usually block?)
     display: block;
   }
 
-  .hidden-mobile-flex {
+  .hidden-def-flex {
     // reset to default display (flex case)
     display: flex;
   }

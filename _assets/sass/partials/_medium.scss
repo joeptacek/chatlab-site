@@ -3,11 +3,11 @@
 @media screen and (min-width: 60rem) {
   // These "desktop" styles look too squished at the 40rem breakpoint
 
-  .text-center-md-left {
+  .text-center-med-left {
     text-align: left;
   }
 
-  .md-display-none {
+  .med-display-none {
     display: none;
   }
 
@@ -15,11 +15,11 @@
     flex-flow: row;
     align-items: flex-start; // default: top-align
 
-    &.fi-md-center {
+    &.fi-med-center {
       align-items: center; // optional: (re-)center-align with this class
     }
 
-    &.fi-md-compact {
+    &.fi-med-compact {
       margin-bottom: 2rem;
       &:last-child {
         margin-bottom: 0;
@@ -34,7 +34,7 @@
   }
 
   .fi-main {
-    &.fi-main-mobile-sm-compact {
+    &.fi-main-def-sm-compact {
       max-width: none;
     }
 
