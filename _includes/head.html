@@ -12,9 +12,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gentium+Basic">
 
   <script>
-    document.createElement( "picture" ); // Picture element HTML5 shiv (so picturefill doesn't break on older browsers while js loads async, not necessary if using Modernizr bundled with html5shiv)
+    // Picture element HTML5 shiv (so that picturefill doesn't break on older browsers while js loads async, not necessary if using Modernizr bundled with html5shiv)
+    document.createElement( "picture" );
   </script>
   <script async src="{{ "/assets/js/vendor/picturefill.js" | prepend: site.baseurl }}"></script>
   {% if jekyll.environment == "production" %}{% include analytics.html %}{% endif %}
-  <script async src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
 </head>

@@ -1,4 +1,4 @@
-// TODO: wait until DOMContentLoaded or load before adding / removing any classes from elements!
+// DOM manipulation OK here because this isn't executed until immediately before final </body>
 
 // Stuff for sticky page links nav
 var navPage = document.getElementById("nav-page");
@@ -27,7 +27,7 @@ var navSite = document.getElementById("nav-site");
 var navSiteToggleButton = document.getElementById("nav-site-toggle-button");
 var navSiteToggleSVGUse = document.getElementById("nav-site-toggle-svg");
 
-// Hide site links on load (html without js should show site links)
+// Hide site links (html without js should show site links)
 navSite.classList.add("nav-site-closed");
 navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-menu");
 var siteLinksVisible = false;
@@ -59,7 +59,7 @@ if (document.getElementById("nav-page-toggle-button")!=null) {
   var navPageToggleButton = document.getElementById("nav-page-toggle-button");
   var navPageToggleSVGUse = document.getElementById("nav-page-toggle-svg")
 
-  // Hide page links on load (html without js should show page links)
+  // Hide page links (html without js should show page links)
   navPageMain.classList.add("nav-page-closed");
   navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-down");
   var pageLinksVisible = false;
