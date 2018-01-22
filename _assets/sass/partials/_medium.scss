@@ -1,7 +1,7 @@
 // Styles for medium screens ---------------------------------------------------
 
 @media screen and (min-width: 60rem) {
-  // These "desktop" styles look too squished at the 40rem breakpoint
+  @import "partials/utilities/utilities-med";
 
   .text-center-med-left {
     text-align: left;

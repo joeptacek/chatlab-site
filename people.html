@@ -4,8 +4,8 @@ title: People
 svg: true
 ---
 <main>
-  <div id="nav-page">
-    <nav id="nav-page-main">
+  <nav id="nav-page">
+    <div id="nav-page-main">
       <h1>{{ page.title }}</h1>
       <ul id="nav-page-links" class="list-reset no-margin-bottom">
         {% for section in site.data.people %}
@@ -13,12 +13,14 @@ svg: true
         {% endfor %}
         <li><a href="#lab-alumni">Lab Alumni</a></li>
       </ul>
-      <button id="nav-page-toggle-button"><svg><use id="nav-page-toggle-svg" xlink:href="#icon-chevron-up"></use></svg></button>
-    </nav>
+      <button id="nav-page-toggle-button">
+        <svg><use id="nav-page-toggle-svg" xlink:href="#icon-chevron-up"></use></svg>
+      </button>
+    </div>
     <div id="nav-page-jumpup">
       <a href="#top"><svg><use xlink:href="#icon-arrow-up2"></use></svg></a>
     </div>
-  </div>
+  </nav>
   <div id="page-content"><!-- div necessary to make flex row with nav -->
     {% include data.html pass="people" %}
     <section class="card">

@@ -1,7 +1,8 @@
 // DOM manipulation OK here because this isn't executed until immediately before final </body>
 
-// Stuff for sticky page links nav
+// Stuff that happens on scroll (nav-page sticky, nav-page-jumpup lowered)
 var navPage = document.getElementById("nav-page");
+var navPageJumpUp = document.getElementById("nav-page-jumpup");
 var atTop = true;
 
 window.addEventListener("scroll", function () {
@@ -11,36 +12,38 @@ window.addEventListener("scroll", function () {
     if (scrollY > 261) {
       atTop = false;
       // Only fires once when crossing from low to high
-      navPage.classList.add("scrolled");
+      navPage.classList.add("nav-page-fancy-fixed");
+      navPageJumpUp.classList.add("nav-page-jumpup-lowered");
     }
   } else {
     if (scrollY < 262) {
       atTop = true;
       // Only fires once when crossing from high to low
-      navPage.classList.remove("scrolled");
+      navPage.classList.remove("nav-page-fancy-fixed");
+      navPageJumpUp.classList.remove("nav-page-jumpup-lowered");
     }
   }
 });
 
 // Stuff for showing / hiding SITE links
-var navSite = document.getElementById("nav-site");
+var navSiteLinks = document.getElementById("nav-site-links");
 var navSiteToggleButton = document.getElementById("nav-site-toggle-button");
 var navSiteToggleSVGUse = document.getElementById("nav-site-toggle-svg");
 
 // Hide site links (html without js should show site links)
-navSite.classList.add("nav-site-closed");
+navSiteLinks.classList.add("hidden-def-flex-sm");
 navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-menu");
 var siteLinksVisible = false;
 
 navSiteToggleButton.addEventListener("click", function () {
   if (!siteLinksVisible) {
     // Opening
-    navSite.classList.remove("nav-site-closed");
+    navSiteLinks.classList.remove("hidden-def-flex-sm");
     navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-close");
     siteLinksVisible = true;
   } else {
     // Closing
-    navSite.classList.add("nav-site-closed");
+    navSiteLinks.classList.add("hidden-def-flex-sm");
     navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-menu");
     siteLinksVisible = false;
   }
@@ -55,24 +58,24 @@ navSiteToggleButton.addEventListener("click", function () {
 
 // Stuff for showing / hiding PAGE links
 if (document.getElementById("nav-page-toggle-button")!=null) {
-  var navPageMain = document.getElementById("nav-page-main");
+  var navPageLinks = document.getElementById("nav-page-links");
   var navPageToggleButton = document.getElementById("nav-page-toggle-button");
   var navPageToggleSVGUse = document.getElementById("nav-page-toggle-svg")
 
   // Hide page links (html without js should show page links)
-  navPageMain.classList.add("nav-page-closed");
+  navPageLinks.classList.add("hidden-def-flex-sm");
   navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-down");
   var pageLinksVisible = false;
 
   navPageToggleButton.addEventListener("click", function () {
     if (!pageLinksVisible) {
       // Opening
-      navPageMain.classList.remove("nav-page-closed");
+      navPageLinks.classList.remove("hidden-def-flex-sm");
       navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-up");
       pageLinksVisible = true;
     } else {
       // Closing
-      navPageMain.classList.add("nav-page-closed");
+      navPageLinks.classList.add("hidden-def-flex-sm");
       navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-down");
       pageLinksVisible = false;
     }

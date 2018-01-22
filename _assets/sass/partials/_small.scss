@@ -1,6 +1,7 @@
 // Styles for small screens ----------------------------------------------------
 
 @media screen and (min-width: 45rem) {
+  @import "partials/utilities/utilities-sm";
 
   html {
     padding: 6rem 4rem 0;
@@ -57,9 +58,20 @@
     }
   }
 
+  #nav-site-toggle-button {
+    display: none;
+  }
+
   #nav-page {
     flex: 0 0 16rem;
     margin-right: 2rem;
+
+    &.nav-page-fancy-fixed {
+      position: fixed;
+      width: 16rem;
+      top: 2rem;
+      left: 4rem;
+    }
   }
 
   #nav-page-main {
@@ -72,8 +84,12 @@
     padding-top: 0; // flush with padded h1
 
     a {
-      display: inline;
+      display: inline; // shouldn't be full-width block otherwise empty space clickable
     }
+  }
+
+  #nav-page-toggle-button {
+    display: none;
   }
 
   #nav-page-jumpup {
@@ -99,8 +115,17 @@
       height: 1.75rem;
       margin-top: 0;
       fill: $page-links;
+
       &:hover {
         fill: $pl-hover;
+      }
+    }
+
+    &.nav-page-jumpup-lowered {
+      top: -3.5rem;
+
+      svg {
+        margin-top: 3rem;
       }
     }
   }

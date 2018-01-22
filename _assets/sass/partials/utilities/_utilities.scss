@@ -1,7 +1,5 @@
-// Utility classes
-
-.fancy-sticky {
-  position: static;
+.hidden-def-flex-sm {
+  display: none !important;
 }
 
 // Hanging indent (e.g., for citations)
@@ -38,7 +36,7 @@
 }
 
 // Text centered at default, left at medium breakpoint
-.text-center-md-left {
+.text-center-med-left {
   text-align: center;
 }
 

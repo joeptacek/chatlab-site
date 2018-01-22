@@ -1,0 +1,11 @@
+// Styles for screens greater or equal to <body> max-width + <html> padding-----
+
+@media screen and (min-width: 68rem) {
+  @import "partials/utilities/utilities-full";
+
+  #nav-page {
+    &.nav-page-fancy-fixed {
+      left: calc((100% - 60rem) / 2); // Calc is not well supported... perhaps implement in js?
+    }
+  }
+}
