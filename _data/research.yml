@@ -662,6 +662,42 @@
   section_id: 'neuroaesthetics'
   section_description: 'Neuroaesthetics refers to the role of the brain in evaluating visual stimuli and their aesthetic appeal. Our research ranges from aesthetic choices of brain-injured individuals to aesthetic preferences in every day life (in architecture, art, and facial beauty).'
   item_list:
+  - work_authors: 'Vartanian, O., Navarrete, G., Chatterjee, A., Fich, L. B., Leder, H., Modroño, C., Rostrup, N., Skov, M., Corradi, G., & Nadal, M.'
+    work_year: 2017
+    work_title: 'Preference for curvilinear contour in interior architectural spaces: Evidence from experts and nonexperts'
+    work_publication_format: 'article_in_journal'
+    journal_data:
+      journal_title: 'Psychology of Aesthetics, Creativity, and the Arts'
+      advance_tf: true
+      journal_vol: null
+      journal_issue: null
+      journal_pages_start: null
+      journal_pages_stop: null
+      doi: '10.1037/aca0000150'
+      review_tf: false
+      review_data: null
+    edited_work_data: null
+    pdf_filename: 'Vartanian_Navarrete_Chatterjee_Fich_Leder_Modroño_Rostrup_Skov_Corradi_Nadal_2017_01.pdf'
+  - work_authors: 'Chatterjee, A.'
+    work_year: 2017
+    work_title: 'Orange is the new aesthetic'
+    work_publication_format: 'article_in_journal'
+    journal_data:
+      journal_title: 'Behavioral and Brain Sciences'
+      advance_tf: false
+      journal_vol: 40
+      journal_issue: 355
+      journal_pages_start: 1
+      journal_pages_stop: 2
+      doi: '10.1017/S0140525X17001637'
+      review_tf: true
+      review_data:
+        review_type: 'commentary'
+        reviewed_work_type: 'journal article'
+        reviewed_work_title: 'The Distancing-Embracing model of the enjoyment of negative emotions in art reception'
+        reviewed_work_author: 'W. Menninghaus, V. Wagner, J. Hanich, E. Wassiliwizky, T. Jacobsen, & S. Koelsch'
+    edited_work_data: null
+    pdf_filename: 'Chatterjee_2017_01.pdf'
   - work_authors: 'Coburn, A., Vartanian, O., & Chatterjee, A.'
     work_year: 2017
     work_title: 'Buildings, beauty, and the brain: A neuroscience of architectual experience'
@@ -692,6 +728,7 @@
       doi: '10.1515/cogsem-2017-0003'
       review_tf: true
       review_data:
+        review_type: 'review'
         reviewed_work_type: 'book'
         reviewed_work_title: 'Beauty and sublimity'
         reviewed_work_author: 'P.C. Hogan'
@@ -745,7 +782,7 @@
       review_data: null
     edited_work_data: null
     pdf_filename: 'Pegors_Kable_Chatterjee_Epstein_2015_01.pdf'
-  - work_authors: 'Vartanian, O., Navarrete, G., Chatterjee, A., Brorson Fich, L., Gonzalez-Mora, J.L., Leder, H., Modroño, C., Nadal, M., Rostrup, N., & Skov, M.'
+  - work_authors: 'Vartanian, O., Navarrete, G., Chatterjee, A., Fich, L. B., Gonzalez-Mora, J. L., Leder, H., Modroño, C., Nadal, M., Rostrup, N., & Skov, M.'
     work_year: 2015
     work_title: 'Architectural design and the brain: Effects of ceiling height and perceived enclosure on beauty judgments and approach-avoidance decisions'
     work_publication_format: 'article_in_journal'
@@ -839,7 +876,7 @@
       edited_work_location: 'New York, NY'
       edited_work_publisher: 'International Association of Empirical Aesthetics'
     pdf_filename: 'Göksun_Kranjec_Chatterjee_2014_01.pdf'
-  - work_authors: 'Vartanian, O., Navarrete, G., Chatterjee, A., Fich, L.B., Leder, H., Modroño, C., Nadal, M., Rostrup, N., & Skov, M.'
+  - work_authors: 'Vartanian, O., Navarrete, G., Chatterjee, A., Fich, L. B., Leder, H., Modroño, C., Nadal, M., Rostrup, N., & Skov, M.'
     work_year: 2013
     work_title: 'Impact of contour on aesthetic judgments and approach-avoidance decisions in architecture'
     work_publication_format: 'article_in_journal'
