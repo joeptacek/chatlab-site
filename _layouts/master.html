@@ -10,7 +10,7 @@
 
         <!-- page-specific defs -->
         {% if page.svg %}
-          {% assign include_path_svg = page.path | prepend: "svg/" %}
+          {% assign include_path_svg = page.path | remove_first: "_pages" | prepend: "svg/" %}
           {% include {{ include_path_svg }} %}
         {% endif %}
       </defs>

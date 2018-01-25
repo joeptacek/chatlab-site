@@ -1,5 +1,9 @@
 title: ChatLab
 baseurl: /chatterjee
+collections:
+  pages:
+    output: true
+    permalink: /:path
 exclude:
   - vendor
   - package.json
