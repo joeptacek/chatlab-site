@@ -2,9 +2,11 @@
 layout: default
 title: Contact
 svg: true
+sections:
+  - Address
 ---
 <section class="card">
-  <h2 class="section-title">Address</h2>
+  <h2 id="{{ page.sections[0] | slugify }}" class="section-title">{{ page.sections[0] }}</h2>
   <hr />
   <div class="flex-item fi-med-compact">
     <header class="rounded-descending">
