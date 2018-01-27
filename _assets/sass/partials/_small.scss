@@ -137,17 +137,21 @@
     min-width: 0; // overflow: hidden screws up shadows
   }
 
-  .section-title {
-    text-align: left;
+  .page-section {
+    h2, h3, h4 {
+      text-align: left;
+    }
   }
 
-  // Page-specific: People
-
-  #alumni-cols {
+  .section-group-cols {
     columns: 2;
   }
 
-  .alumni-group {
-    text-align: left;
+  .fi-main {
+    > header {
+      h3, h4 {
+        text-align: center; // undoing default for page section headers
+      }
+    }
   }
 }

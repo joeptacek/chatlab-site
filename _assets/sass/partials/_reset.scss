@@ -8,9 +8,10 @@
 
 // Element resets: vertical rhythm ---------------------------------------------
 
-h4 {
-  font-size: 1.17rem; // approx equal to h3 ... check this (otherwise h4 font size not usually explicitly defined, i.e., 1rem)
-}
+h1 {font-size: 2.000em;}
+h2 {font-size: 1.500em;}
+h3 {font-size: 1.333em;}
+h4 {font-size: 1.167em;} // default 1em
 
 // Margin rules: no margin-top, margin-bottom 1rem unless :last-child
 
@@ -26,22 +27,12 @@ h1, h2, h3, h4, p, ul, address {
   &:last-child {
     margin-bottom: 0;
   }
-
-  // More compact inside header of flex-items
-  .flex-item header & {
-    margin-bottom: 0.5rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
 }
 
 // Utility class for breaking margin rules
 .no-margin-bottom {
   margin-bottom: 0 !important; // !important so don't need to worry about specificity
 }
-
 
 // Element resets: other text elements -----------------------------------------
 

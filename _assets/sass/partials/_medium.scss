@@ -3,12 +3,12 @@
 @media screen and (min-width: 60rem) {
   @import "partials/utilities/utilities-med";
 
-  .text-center-med-left {
-    text-align: left;
-  }
-
   .med-display-none {
     display: none;
+  }
+
+  .section-group-cols {
+    columns: 3;
   }
 
   .flex-item {
@@ -38,8 +38,11 @@
       max-width: none;
     }
 
-    header {
+    > header {
       text-align: left;
+      h3, h4 {
+        text-align: left;
+      }
     }
   }
 
@@ -47,9 +50,5 @@
 
   .contact-links {
     justify-content: flex-start;
-  }
-
-  #alumni-cols {
-    columns: 3;
   }
 }

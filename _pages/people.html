@@ -11,17 +11,9 @@ sections:
   - Lab Alumni
 ---
 {% include data_sections.html data_source="people" item_type="person" %}
-<section class="card">
+<section class="page-section card">
   <h2 id="lab-alumni" class="section-title">Lab Alumni</h2>
   <hr />
-  <div id="alumni-cols">
-    {% for group in site.data.alumni %}
-      <div class="alumni-group">
-        <h3 class="alumni-group-name"><i>{{ group.group_name }}</i></h3>
-        {% for person in group.people %}
-          <p class="alumni-person">{{ person }}</p>
-        {% endfor %}
-      </div>
-    {% endfor %}
+    {% include data_section_groups.html data_source="alumni" item_type="alumnus" cols=true %}
   </div>
 </section>

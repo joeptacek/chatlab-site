@@ -1,5 +1,5 @@
 {% for section in site.data[include.data_source] %}
-  <section class="card">
+  <section class="page-section card">
     <h2 id="{{ section.section_title | slugify }}" class="section-title">{{ section.section_title }}</h2>
     {% if section.section_description %}
       <p class="section-description">{{ section.section_description }}</p>
