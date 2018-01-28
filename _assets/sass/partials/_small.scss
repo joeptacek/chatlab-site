@@ -17,10 +17,6 @@
     padding: 6rem 0;
   }
 
-  a:hover {
-    color: $pl-hover;
-  }
-
   #logo {
     justify-content: flex-start;
     margin-bottom: 2rem;
@@ -150,7 +146,8 @@
   .fi-main {
     > header {
       h3, h4 {
-        text-align: center; // undoing default for page section headers
+        // page-section headings shift back left, but headings inside flex-item headers should stay centered until med breakpoint
+        text-align: center;
       }
     }
   }

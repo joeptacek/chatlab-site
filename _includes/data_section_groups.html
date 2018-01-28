@@ -1,8 +1,10 @@
 {% if include.cols %}<div class="section-group-cols">{% endif %}
   {% for group in site.data[include.data_source] %}
     <div class="section-group{% if include.cols %} col-group{% endif %}">
-      <h3>{{ group.group_title }}</h3>
-      {% unless include.cols %}<hr />{% endunless %}
+      {% if group.group_title %}
+        <h3>{{ group.group_title }}</h3>
+        {% unless include.cols %}<hr />{% endunless %}
+      {% endif %}
       {% assign item_path = include.item_type | prepend: "item/" | append: ".html" %}
       {% for item in group.items %}
         {% include {{ item_path }} pass=item %}

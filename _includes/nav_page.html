@@ -7,7 +7,7 @@
           <li><a href="{{ section | slugify | prepend: "#" }}">{{ section }}</a></li>
         {% endfor %}
       </ul>
-      <button id="nav-page-toggle-button">
+      <button type="button" id="nav-page-toggle-button">
         <svg><use id="nav-page-toggle-svg" xlink:href="#icon-chevron-up"></use></svg>
       </button>
     {% endif %}

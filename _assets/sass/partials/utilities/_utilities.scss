@@ -1,4 +1,4 @@
-.hidden-def-flex-sm {
+.no-display, .no-display-def-flex-sm {
   display: none !important;
 }
 
@@ -46,5 +46,28 @@
     a {
       display: block; // Fixes a very minor height error (?) LEAVE THIS IN FOR NOW FIX LATER
     }
+  }
+}
+
+.button-reset {
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  background-color: inherit;
+  padding: 0;
+}
+
+.hover-pointer {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+button.hover-pointer {
+  // move to reset?
+  color: $page-links;
+
+  &:hover {
+    color: $pl-hover;
   }
 }

@@ -27,7 +27,7 @@
     }
 
     > header {
-      flex: 0 0 212px; // or else shrinks
+      flex: 0 0 212px; // or else shrinks (200px header + 5px paddings + 1px borders)
       margin-right: 2rem;
       margin-bottom: 0;
     }

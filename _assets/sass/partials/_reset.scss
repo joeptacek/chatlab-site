@@ -39,6 +39,10 @@ h1, h2, h3, h4, p, ul, address {
 a {
   color: $page-links;
   text-decoration: none;
+
+  &:hover {
+    color: $pl-hover;
+  }
 }
 
 hr {

@@ -54,7 +54,7 @@ gulp.task('css', function () {
 gulp.task('js', function () {
   return gulp.src('_assets/js/**/*.js')
     // .pipe(debug({title: 'Debug (js):'})) // debug mode
-    .pipe(uglify())
+    // .pipe(uglify()) // only in production
     .pipe(gulp.dest('_site/assets/js'));
 });
 

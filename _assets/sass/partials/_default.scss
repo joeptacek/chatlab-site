@@ -7,13 +7,12 @@ html {
   padding: 6rem 2rem 0;
   font-family: 'Gentium Basic', serif;
   // font-family: "Open Sans", sans-serif;
-  line-height: 1.3; // line-height is unitless
+  line-height: 1.3;
 }
 
 body {
   max-width: 60rem;
   margin: 0 auto;
-
   -webkit-font-smoothing: subpixel-antialiased // otherwise, text inside a fixed element (e.g., nav-page) appears thinner in Safari
 }
 
@@ -181,8 +180,6 @@ footer {
 }
 
 .section-title {
-  text-align: center;
-
   &:before {
     display: block;
     content: " "; // space or empty?
@@ -280,7 +277,7 @@ footer {
 
   // fi-main header (title, subtile, etc.)
   > header {
-    text-align: center;
+    text-align: center; // primarily for p elements in header (redundant for headings - already centered inside .page-section)
     margin-bottom: 1rem;
 
     &:last-child {
@@ -288,6 +285,7 @@ footer {
     }
 
     > h3, h4, p {
+      // move to reset?
       margin-bottom: 0.5rem;
 
       &:last-child {
@@ -296,6 +294,7 @@ footer {
     }
 
     + hr {
+      // move to reset?
       margin-bottom: 1.5rem; // default 2rem; more compact inside fi-main header
     }
   }
@@ -322,21 +321,21 @@ footer {
     height: 70px;
   }
 
-  &.print-icon {
+  .media-type-print & {
     background-color: $print-bg;
     svg {
       fill: $news-icon;
     }
   }
 
-  &.video-icon {
+  .media-type-video & {
     background-color: $video-bg;
     svg {
       fill: $news-icon;
     }
   }
 
-  &.audio-icon {
+  .media-type-audio & {
     background-color: $audio-bg;
     svg {
       fill: $news-icon;
@@ -345,6 +344,7 @@ footer {
 }
 
 #copyright {
+  // merge with .sub-source / .grey class
   color: $borders;
 }
 
@@ -379,6 +379,7 @@ footer {
 }
 
 .buttony-link {
+  // turn this into .pill class
   padding: 0.25rem 0.5rem;
   border: solid $page-links 1px;
   color: $page-links;
@@ -406,10 +407,12 @@ footer {
 }
 
 .sub-source {
+  // turn this into .grey class
   color: grey;
 }
 
 #map {
+  // thurn this into .border class
   display: block;
   padding: 5px;
   border: solid $borders 1px;
