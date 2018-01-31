@@ -79,6 +79,10 @@
     padding: 2rem;
     padding-top: 0; // flush with padded h1
 
+    li {
+      margin-bottom: 0.6rem;
+    }
+
     a {
       display: inline; // shouldn't be full-width block otherwise empty space clickable
     }
@@ -134,7 +138,7 @@
   }
 
   .page-section {
-    h2, h3, h4 {
+    h1, h2, h3, h4 {
       text-align: left;
     }
   }
@@ -145,10 +149,16 @@
 
   .fi-main {
     > header {
-      h3, h4 {
+      h1, h2, h3, h4 {
         // page-section headings shift back left, but headings inside flex-item headers should stay centered until med breakpoint
         text-align: center;
       }
+    }
+  }
+
+  #nav-news {
+    ul {
+      justify-content: flex-start;
     }
   }
 }

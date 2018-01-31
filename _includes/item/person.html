@@ -4,12 +4,12 @@
   </header>
   <div class="fi-main">
     <header>
-      <h3 class="no-margin-bottom">{{ include.pass.name }}{% if include.pass.suffix %}, {{ include.pass.suffix }}{% endif %}</h3>
-      <p><i>{{ include.pass.position }}</i></p>
+      <h3 class="margin-bottom-compact">{{ include.pass.name }}{% if include.pass.suffix %}, {{ include.pass.suffix }}{% endif %}</h3>
+      <p class="font-large">{{ include.pass.position }}</p>
     </header>
     <div class="contact-links">
       {% comment %}in people.yml cv can be set as local file at /assets/pdf/cv/ (Anjan's case) OR an external url (Steve's case){% endcomment %}
-      {% if include.pass.cv %}{% capture cv_slice %}{{ include.pass.cv | slice: 0, 4 }}{% endcapture %}<a class="buttony-link rounded" href="{% if cv_slice == "http" %}{{ include.pass.cv }}{% else %}{{ "/assets/pdf/cv/" | prepend: site.baseurl | append: include.pass.cv }}{% endif %}" target="_blank">View CV</a>{% endif %}
+      {% if include.pass.cv %}{% capture cv_slice %}{{ include.pass.cv | slice: 0, 4 }}{% endcapture %}<a class="button-frame rounded" href="{% if cv_slice == "http" %}{{ include.pass.cv }}{% else %}{{ "/assets/pdf/cv/" | prepend: site.baseurl | append: include.pass.cv }}{% endif %}" target="_blank">View CV</a>{% endif %}
       {% if include.pass.email %}<a href="mailto:{{ include.pass.email }}"><svg><use xlink:href="#icon-mail"></use></svg></a>{% endif %}
       {% if include.pass.website %}<a href="{{ include.pass.website }}" target="_blank"><svg><use xlink:href="#icon-earth"></use></svg></a>{% endif %}
       {% if include.pass.twitter %}<a href="{{ include.pass.twitter }}" target="_blank"><svg><use xlink:href="#icon-twitter"></use></svg></a>{% endif %}

@@ -1,3 +1,18 @@
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.button-frame {
+  padding: 0.25rem 0.5rem;
+  border: solid $page-links 1px;
+  color: $page-links;
+
+  &:hover {
+    background-color: hsl(211, 26%, 96%); // i.e., page-links with more luminence
+    color: $page-links; // override $pl-hover default
+  }
+}
+
 .no-display, .no-display-def-flex-sm {
   display: none !important;
 }

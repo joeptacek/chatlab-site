@@ -3,10 +3,6 @@
 @media screen and (min-width: 60rem) {
   @import "partials/utilities/utilities-med";
 
-  .med-display-none {
-    display: none;
-  }
-
   .section-group-cols {
     columns: 3;
   }
@@ -40,7 +36,8 @@
 
     > header {
       text-align: left;
-      h3, h4 {
+      h1, h2, h3, h4 {
+        // headings inside flex-item headers finally shift left
         text-align: left;
       }
     }

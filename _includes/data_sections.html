@@ -2,7 +2,7 @@
   <section class="page-section card">
     <h2 id="{{ section.section_title | slugify }}" class="section-title">{{ section.section_title }}</h2>
     {% if section.section_description %}
-      <p class="section-description">{{ section.section_description }}</p>
+      <p class="font-large">{{ section.section_description }}</p>
     {% endif %}
     <hr />
     {% assign item_path = include.item_type | prepend: "item/" | append: ".html" %}

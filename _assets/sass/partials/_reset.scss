@@ -6,12 +6,60 @@
   box-sizing: border-box;
 }
 
-// Element resets: vertical rhythm ---------------------------------------------
+// Element resets: Typography --------------------------------------------------
 
-h1 {font-size: 2.000em;}
-h2 {font-size: 1.500em;}
-h3 {font-size: 1.333em;}
-h4 {font-size: 1.167em;} // default 1em
+$font-default: 'Open Sans', sans-serif;
+$font-headings: 'Bitter', serif;
+$font-ui: 'Open Sans', sans-serif;
+
+html {
+  // font-family: 'Gentium Basic', serif;
+  font-family: $font-default;
+  font-size: 1rem;
+}
+
+.font-family-reset {
+  font-family: $font-default;
+}
+
+.font-weight-reset {
+  font-weight: normal;
+}
+
+.font-size-reset {
+  // font-size: 1em
+}
+
+.site-title, h1, h2, h3, h4 {
+  font-family: $font-headings;
+}
+
+nav a, .button-frame {
+  // font-family: 'Bitter', serif;
+  font-family: $font-ui;
+}
+
+nav a {
+  font-size: 1.1em;
+}
+
+// Element resets: Vertical rhythm ---------------------------------------------
+
+// Major second / 9:8 / 1.125
+p  {
+  font-size: 1em;
+  &.font-large {
+    font-size: 1.1em;
+  }
+}
+h4 {font-size: 1.125em;}
+h3 {font-size: 1.266em;}
+h2 {font-size: 1.424em;}
+h1 {font-size: 1.602em;}
+.site-title {font-size: 1.802em} // skipping...
+.site-title {font-size: 2.027em} // skipping...
+.site-title {font-size: 2.281em} // ...nice and big
+
 
 // Margin rules: no margin-top, margin-bottom 1rem unless :last-child
 
@@ -22,10 +70,37 @@ h1, h2, h3, h4, p, ul {
 
 h1, h2, h3, h4, p, ul, address {
   // Add back margin-bottom on elements wherever desired
+  // change to em?
   margin-bottom: 1rem;
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  .section-group-cols > .section-group &,
+  .fi-main > header & {
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.margin-bottom-compact {
+  margin-bottom: 0.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-group-cols > .section-group &,
+  .fi-main > header & {
+    margin-bottom: 0.25rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -53,6 +128,14 @@ hr {
   border: 0; /* Reset */
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
++ hr {
+  // is this use of a naked + safe? seems ok when naked + is nested under another selector (e.g., p { + hr {} } which implies p { & + hr {} } i.e., not truly naked); seems like it might be less okay to do it this way (e.g., + hr { p & {} }), esp risky if one of the nested items DOESN'T use a trailing ampersand to reference / append the outer selector (e.g., + hr { p {} }), which would cause a truly naked + to be compiled to css - would this be invalid css (e.g., is + hr p {} invalid), thus is this bad practice??
+  .section-group-cols > .section-group &,
+  .fi-main > header & {
+    margin-bottom: 1.5rem; // default 2rem; more compact inside fi-main header
+  }
 }
 
 cite {
