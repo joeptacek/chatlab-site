@@ -33,19 +33,19 @@ window.addEventListener("scroll", function () {
 // var navSiteToggleSVGUse = document.getElementById("nav-site-toggle-svg");
 //
 // // Hide site links (html without js should show site links)
-// navSiteLinks.classList.add("no-display-def-flex-sm");
+// navSiteLinks.classList.add("no-display-only-mobile");
 // navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-menu");
 // var siteLinksVisible = false;
 //
 // navSiteToggleButton.addEventListener("click", function () {
 //   if (!siteLinksVisible) {
 //     // Opening
-//     navSiteLinks.classList.remove("no-display-def-flex-sm");
+//     navSiteLinks.classList.remove("no-display-only-mobile");
 //     navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-close");
 //     siteLinksVisible = true;
 //   } else {
 //     // Closing
-//     navSiteLinks.classList.add("no-display-def-flex-sm");
+//     navSiteLinks.classList.add("no-display-only-mobile");
 //     navSiteToggleSVGUse.setAttribute("xlink:href", "#icon-menu");
 //     siteLinksVisible = false;
 //   }
@@ -65,19 +65,19 @@ window.addEventListener("scroll", function () {
 //   var navPageToggleSVGUse = document.getElementById("nav-page-toggle-svg")
 //
 //   // Hide page links (html without js should show page links)
-//   navPageLinks.classList.add("no-display-def-flex-sm");
+//   navPageLinks.classList.add("no-display-only-mobile");
 //   navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-down");
 //   var pageLinksVisible = false;
 //
 //   navPageToggleButton.addEventListener("click", function () {
 //     if (!pageLinksVisible) {
 //       // Opening
-//       navPageLinks.classList.remove("no-display-def-flex-sm");
+//       navPageLinks.classList.remove("no-display-only-mobile");
 //       navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-up");
 //       pageLinksVisible = true;
 //     } else {
 //       // Closing
-//       navPageLinks.classList.add("no-display-def-flex-sm");
+//       navPageLinks.classList.add("no-display-only-mobile");
 //       navPageToggleSVGUse.setAttribute("xlink:href", "#icon-chevron-down");
 //       pageLinksVisible = false;
 //     }
@@ -85,53 +85,79 @@ window.addEventListener("scroll", function () {
 //   });
 // }
 
-var toggleButtons = document.getElementsByName("toggle-button");
-if (toggleButtons) {
-  var toggleButton, buttonType, toggleTargets, toggleTarget, sib, opening;
+// TODO: clean up old css for nav-site / nav-page - separate out any styles related to js (e.g., hiding buttons at larger breakpoints - otherwise regular non-mobile menus won't work)
+// if there are any buttons named toggle-button
+if (toggleButtons = document.getElementsByName("toggle-button")) {
+  var thisToggleButton, buttonType, toggleTargets, sib, opening;
+
+  // TODO: create SVG element with js, based on button value
+
+  // click handler for every toggle-button, all values (i.e., all button types)
   function toggleState(e) {
-    toggleButton = e.currentTarget;
-    buttonType = toggleButton.value;
+    thisToggleButton = e.currentTarget;
 
     toggleTargets = [];
-    sib = toggleButton.parentNode.firstChild;
+    sib = thisToggleButton.parentNode.firstChild;
     do {
       // search button's siblings for every local toggle-target
       if (sib.nodeType == 1 && sib.classList.contains("toggle-target")) {
-        // check if sibling is an element-type node (skip text nodes)
+        // if sibling is an element type node (skip text nodes)
         toggleTargets.push(sib);
       }
     } while (sib = sib.nextSibling);
 
+    buttonType = thisToggleButton.value;
     for (var i = 0; i < toggleTargets.length; i++) {
-      toggleTarget = toggleTargets[i];
+      this.blur(); // get rid of css button outline the accesible way
 
-      opening = toggleTarget.classList.contains("no-display-def-flex-sm");
-      toggleTarget.classList.toggle("no-display-def-flex-sm");
-
+      // check open state (for icon switching, below) and then toggle open state
       switch (buttonType) {
         case "menu":
+        case "drawer":
+          opening = toggleTargets[i].classList.contains("no-display");
+          toggleTargets[i].classList.toggle("no-display");
+          break;
+        case "menu-only-mobile":
+        case "drawer-only-mobile":
+          opening = toggleTargets[i].classList.contains("no-display-only-mobile");
+          toggleTargets[i].classList.toggle("no-display-only-mobile");
+          break;
+        case "drawer-incremental":
+          break;
+        case "drawer-incremental-only-mobile":
+          break;
+      }
+
+      // switch icon used based on button type and open state
+      switch (buttonType) {
+        case "menu":
+        case "menu-only-mobile":
           if (opening) {
-            toggleButton.getElementsByTagName("use")[0].setAttribute("xlink:href", "#icon-close");
+            thisToggleButton.getElementsByTagName("use")[0].setAttribute("xlink:href", "#icon-close");
           } else {
-            toggleButton.getElementsByTagName("use")[0].setAttribute("xlink:href", "#icon-menu");
+            // closing
+            thisToggleButton.getElementsByTagName("use")[0].setAttribute("xlink:href", "#icon-menu");
           }
           break;
         case "drawer":
+        case "drawer-only-mobile":
+        case "drawer-incremental":
+        case "drawer-incremental-only-mobile":
           if (opening) {
-            toggleButton.getElementsByTagName("use")[0].setAttribute("xlink:href", "#icon-chevron-up");
+            thisToggleButton.getElementsByTagName("use")[0].setAttribute("xlink:href", "#icon-chevron-up");
           } else {
-            toggleButton.getElementsByTagName("use")[0].setAttribute("xlink:href", "#icon-chevron-down");
+            // closing
+            thisToggleButton.getElementsByTagName("use")[0].setAttribute("xlink:href", "#icon-chevron-down");
           }
           break;
       }
     }
-
-    this.blur();
   }
 
   for (var i = 0; i < toggleButtons.length; i++) {
     toggleButtons[i].addEventListener("click", toggleState);
-    toggleButtons[i].click();
+    toggleButtons[i].click(); // initialize by clicking all closable buttons (i.e., not incremental)
+    // for incremental button, don't initialize via click - need to explicitly set display state
   }
 }
 

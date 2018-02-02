@@ -1,3 +1,9 @@
-.no-display-def-flex-sm {
-  display: flex !important; // sort of don't need !important (included for consistency)
+.no-display-only-mobile {
+  // i.e., only mobile = only at default "breakpoint"
+  display: block; // default
+
+  &.flex-show {
+    // include .flex-show on no-display-only-mobile element if the visible display state should be flex instead of block (e.g., if primarily styled via another class specifying display: flex)
+    display: flex !important; // sort of don't need !important (included for consistency)
+  }
 }

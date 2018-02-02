@@ -2,12 +2,12 @@
   <div id="nav-page-main">
     <h1 class="no-margin-bottom">{{ page.title }}</h1>
     {% if page.sections.size > 1 %}
-      <ul id="nav-page-links" class="list-reset no-margin-bottom toggle-target">
+      <ul id="nav-page-links" class="list-reset no-margin-bottom toggle-target flex-show">
         {% for section in page.sections %}
           <li><a href="{{ section | slugify | prepend: "#" }}">{{ section }}</a></li>
         {% endfor %}
       </ul>
-      <button type="button" id="nav-page-toggle-button" name="toggle-button" value="drawer">
+      <button type="button" id="nav-page-toggle-button" name="toggle-button" value="drawer-only-mobile">
         <svg><use xlink:href="#icon-chevron-up"></use></svg>
       </button>
     {% endif %}
