@@ -13,15 +13,15 @@
     <a href="{{ "/" | prepend: site.baseurl }}"><div class="site-title">ChatLab</div></a>
   </div>
   <nav id="nav-site">
-    <ul id="nav-site-links" class="list-reset no-margin-bottom">
+    <ul id="nav-site-links" class="list-reset no-margin-bottom toggle-target">
       <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
       <li><a href="{{ "/people.html" | prepend: site.baseurl }}">People</a></li>
       <li><a href="{{ "/research.html" | prepend: site.baseurl }}">Research</a></li>
       <li><a href="{{ "/news.html" | prepend: site.baseurl }}">News</a></li>
       <li><a href="{{ "/contact.html" | prepend: site.baseurl }}">Contact</a></li>
     </ul>
-    <button type="button" id="nav-site-toggle-button">
-      <svg><use id="nav-site-toggle-svg" xlink:href="#icon-close"></use></svg>
+    <button type="button" id="nav-site-toggle-button" name="toggle-button" value="menu">
+      <svg><use xlink:href="#icon-close"></use></svg>
     </button>
   </nav>
 </header>
