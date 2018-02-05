@@ -2,6 +2,7 @@ title: ChatLab
 baseurl: /chatterjee
 collections:
   pages:
+    # creating collection "pages" inside _pages
     output: true
     permalink: /:path
 exclude:

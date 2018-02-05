@@ -86,16 +86,17 @@ window.addEventListener("scroll", function () {
 // }
 
 // TODO: clean up old css for nav-site / nav-page - separate out any styles related to js (e.g., hiding buttons at larger breakpoints - otherwise regular non-mobile menus won't work)
-// if there are any buttons named toggle-button
+// if there are any toggle buttons
 if (toggleButtons = document.getElementsByName("toggle-button")) {
   var thisToggleButton, buttonType, toggleTargets, sib, opening;
 
   // TODO: create SVG element with js, based on button value
 
-  // click handler for every toggle-button, all values (i.e., all button types)
-  function toggleState(e) {
-    thisToggleButton = e.currentTarget;
+  // event handler for toggle buttons
+  function toggleState() {
+    thisToggleButton = this; // for functions used as event handlers `this` refers to the element the event was fired from (i.e., equivalent to passing `event` to function and using event.currentTarget)
 
+    // setup: gather local targets (siblings with class .toggle-target)
     toggleTargets = [];
     sib = thisToggleButton.parentNode.firstChild;
     do {
@@ -106,11 +107,12 @@ if (toggleButtons = document.getElementsByName("toggle-button")) {
       }
     } while (sib = sib.nextSibling);
 
+    // do the toggle based on toggle type (button value) and current toggle state
     buttonType = thisToggleButton.value;
     for (var i = 0; i < toggleTargets.length; i++) {
       this.blur(); // get rid of css button outline the accesible way
 
-      // check open state (for icon switching, below) and then toggle open state
+      // check current toggle state (for icon switching, below) and then toggle the state
       switch (buttonType) {
         case "menu":
         case "drawer":
@@ -128,7 +130,7 @@ if (toggleButtons = document.getElementsByName("toggle-button")) {
           break;
       }
 
-      // switch icon used based on button type and open state
+      // switch icon used based on toggle type and current toggle state
       switch (buttonType) {
         case "menu":
         case "menu-only-mobile":

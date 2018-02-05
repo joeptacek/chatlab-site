@@ -91,6 +91,7 @@ gulp.task('jekyll-watch', function () {
 
 // start browsersync development server
 gulp.task('bs', function () {
+  // maybe quiet bs the hell down?
   bs.init({
     files: '_site/**', // changes are either injected (CSS / img) or cause browser reload
     server: {
