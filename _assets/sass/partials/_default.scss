@@ -1,7 +1,5 @@
 // Default styles (mobile-first) -----------------------------------------------
 
-@import "partials/utilities/utilities";
-
 html {
   background-color: $background;
   padding: 6rem 2rem 0;
@@ -48,104 +46,23 @@ footer {
   }
 }
 
-#nav-site {
-  display: flex; // items: nav-site-links, nav-site-toggle-button
-  flex-flow: column;
-  background-color: $well;
-  border: solid $borders 1px;
-  border-radius: 4px;
-}
+.card, .well {
+  padding: 2rem;
+  margin-bottom: 2.5rem; // needs to be larger than 2rem ie height of gap from top to nav-page, or else previous section shadow visible after jumping down to section
 
-#nav-site-links {
-  display: flex; // items: list items
-  flex-flow: column;
-
-  li {
-    border-bottom: solid $borders 1px;
+  &:last-child {
+    margin-bottom: 0;
   }
-
-  a {
-    color: $site-links;
-    text-align: center;
-    padding: 1rem 0;
-  }
-}
-
-#nav-site-toggle-button {
-  // reset default button styles
-  border: none;
-  background-color: $button;
-  padding: 1.5rem 0;
-
-  svg {
-    margin: 0 auto;
-    width: 1.75rem;
-    height: 1.75rem;
-    fill: rgb(160, 160, 160);
-  }
-}
-
-#nav-page-main {
-  position: relative;
-  z-index: 1;
-  background-color: $card;
-  text-align: center;
-  margin-bottom: 2rem;
-  box-shadow: 0 1px 3px $shadows;
-
-  h1 {
-    padding: 2rem;
-    padding-bottom: 1.5rem; // separation from page-links (2rem looks too wide)
-
-    &:last-child {
-      padding-bottom: 2rem; // equal padding when no page-links
-    }
-  }
-}
-
-#nav-page-links {
-  display: flex;
-  flex-flow: column;
-  padding-bottom: 1.5rem; // same as distance from h1
-
-  li {
-    margin-bottom: 1rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-#nav-page-toggle-button {
-  padding: 0; // reset
-  padding: 0.5rem 0;
-  border: none; // reset
-  border-top: solid $button 1px;
-  background-color: $background;
-  border-radius: 0;
-
-  svg {
-    margin: 0 auto; // ...centering block-level element
-    width: 1.75rem;
-    height: 1.75rem;
-    fill: rgb(160, 160, 160);
-  }
-}
-
-#nav-page a, #nav-page-toggle-button {
-  display: block; // TODO: <a> already block per list-reset?
-  width: 100%; // TODO: maybe <a> shouldn't be 100%
-}
-
-#nav-page-jumpup {
-  display: none;
 }
 
 .card {
   background-color: $card;
-  padding: 2rem;
   box-shadow: 0 1px 3px $shadows;
+}
+
+.well {
+  background-color: $well;
+  border: solid $borders 1px;
 }
 
 .card-mini {
@@ -162,20 +79,279 @@ footer {
   }
 }
 
-.page-section {
-  margin-bottom: 2.5rem; // needs to be larger than 2rem ie height of gap from top to nav-page, or else previous section shadow visible after jumping down to section
+.rounded-subtle {
+  border-radius: 4px;
+}
 
-  &:last-child {
-    margin-bottom: 0;
+.toggle-panel {
+  display: flex;
+  flex-flow: column;
+
+  &.card, &.well {
+    // getting rid of default padding on card / well;
+    // children become responisible for dealing with padding from edge of card / well;
+    // e.g., header, nav-list, tp-block;
+    padding: 0;
+
+    > * {
+      // add left / right padding back to immediate children of toggle-panel (use margin instead?)
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    > hr {
+      // ...hr can't use padding...
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+
+    > .nav-list {
+      // ...skip horizontal padding on nav-list;
+      // (if grooved, the <ul> needs to be flush with parent toggle-panel)...
+      padding-left: 0;
+      padding-right: 0;
+
+      > * {
+        // ...instead, add padding to immediate children of nav-list (i.e., <li>)
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
   }
 
-  h1, h2, h3, h4 {
-    // h1 (page title) not used inside page-sections on chatlab-site (nor .site-title)
-    text-align: center;
+  > header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    &.tp-header-alt {
+      // styled like section > header (for use with <hr />)
+      padding-bottom: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  > header + .nav-list, header + hr + .nav-list {
+    // default toggle-panel header (no grooves) has 2rem padding-bottom;
+    // default nav-list (no grooves) has 1rem padding-top + 1rem padding-top on children;
+    // when adjacent, header and nav-list look too separated;
+    // so shift nav-list up via negative margin-top;
+    // why not padding-top 0? leaves too much gap unless also adjust padding-top on nav-list first-child
+    margin-top: -2rem;
+  }
+
+  &.grooved {
+    > header + .nav-list {
+      // undo margin-top -2rem
+      margin-top: 0;
+    }
+  }
+
+  > .nav-list {
+    margin-bottom: 0; // get rid of default margin on ul
   }
 }
 
+.nav-list {
+  padding-left: 0; // reset ul: remove tabs
+
+  li {
+    list-style: none; // reset li: remove bullets
+  }
+
+  // main styles
+  display: flex;
+  flex-flow: column;
+
+  // i.e., 2rem between top/bottom and link text
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  a {
+    display: block; // padded links
+    padding-top: 1rem; // i.e., 2rem between link text
+    padding-bottom: 1rem; // i.e., 2rem between link text
+    text-align: center;
+  }
+
+  &.nl-compact {
+    padding-top: 1.5rem; // sum to 2rem with padding on child a
+    padding-bottom: 1.5rem; // sum to 2rem with padding on child a
+
+    a {
+      padding-top: 0.5rem; // sum to 2rem with padding on parent nav-list
+      padding-bottom: 0.5rem; // sum to 2rem with padding on parent nav-list
+    }
+  }
+
+  &.nl-red  {
+    a {
+      color: $site-links;
+      &:hover {
+        color: $sl-hover;
+      }
+    }
+  }
+
+  &.grooved {
+    // equal sized rows
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.tp-block {
+  // e.g., to contain items in incremental drawer;
+  // maybe rename "drawer" / combine with nav-list / toggle-target;
+
+  // toggle-panel children responsible for top/bottom padding on the parent card / well...
+  // ...occasionally tp-block will be at the bottom;
+  padding-bottom: 2rem;
+}
+
+.card.grooved, .card .grooved {
+  // grooved cards, grooved descendants of cards (e.g., nav-list)
+  > * {
+    border-bottom: solid #e0e0e0 1px;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.well.grooved, .well .grooved {
+  // grooved wells, grooved descendants of wells (e.g., nav-list)
+  > * {
+    border-bottom: solid $borders 1px;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.tp-button {
+  border: none; // reset button: remove default border
+  padding: 1.5rem 0; // reset button: custom replacement for default padding
+
+  &.tp-button-compact {
+    padding: 0.75rem 0;
+  }
+
+  svg {
+    margin: 0 auto;
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: rgb(160, 160, 160); // should be iighter for cards?
+  }
+
+  .card > & {
+    background-color: $background;
+  }
+
+  .well > & {
+    background-color: $button;
+  }
+}
+
+// #nav-site {
+//   display: flex; // items: nav-site-links, nav-site-toggle-button
+//   flex-flow: column;
+//   background-color: $well;
+//   border: solid $borders 1px;
+//   border-radius: 4px;
+// }
+
+// #nav-site-links {
+//   display: flex; // items: list items
+//   flex-flow: column;
+//
+//   li {
+//     border-bottom: solid $borders 1px;
+//   }
+//
+//   a {
+//     color: $site-links;
+//     text-align: center;
+//     padding: 1rem 0;
+//   }
+// }
+
+// #nav-site-toggle-button {
+//   // // reset default button styles
+//   // border: none;
+//   // background-color: $button;
+//   // padding: 1.5rem 0;
+//
+//   svg {
+//     margin: 0 auto;
+//     width: 1.75rem;
+//     height: 1.75rem;
+//     fill: rgb(160, 160, 160);
+//   }
+// }
+
+#nav-page-main {
+  position: relative;
+  z-index: 1;
+  // background-color: $card;
+  // text-align: center;
+  margin-bottom: 2rem;
+  // box-shadow: 0 1px 3px $shadows;
+
+  // h1 {
+  //   padding: 2rem;
+  //   padding-bottom: 1.5rem; // separation from page-links (2rem looks too wide)
+  //
+  //   &:last-child {
+  //     padding-bottom: 2rem; // equal padding when no page-links
+  //   }
+  // }
+}
+
+// #nav-page-links {
+//   display: flex;
+//   flex-flow: column;
+//   padding-bottom: 1.5rem; // same as distance from h1
+//
+//   li {
+//     margin-bottom: 1rem;
+//
+//     &:last-child {
+//       margin-bottom: 0;
+//     }
+//   }
+// }
+
+// #nav-page-toggle-button {
+//   padding: 0; // reset
+//   padding: 0.5rem 0;
+//   border: none; // reset
+//   border-top: solid $button 1px;
+//   background-color: $background;
+//   border-radius: 0;
+//
+//   svg {
+//     margin: 0 auto; // ...centering block-level element
+//     width: 1.75rem;
+//     height: 1.75rem;
+//     fill: rgb(160, 160, 160);
+//   }
+// }
+
+// #nav-page a, #nav-page-toggle-button {
+//   display: block; // TODO: <a> already block per list-reset?
+//   width: 100%; // TODO: maybe <a> shouldn't be 100%
+// }
+
+#nav-page-jumpup {
+  display: none;
+}
+
+section > header {
+  margin-bottom: 1rem;
+}
+
 .section-title {
+  // get rid of this class, define in terms of element nesting section > header > h1, h2, etc
   &:before {
     display: block;
     content: " "; // space or empty?
@@ -322,7 +498,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem; // to match default margin-bottom inside fi-main > header
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   > * { // same as `& > *` scss ampersand is implied
     margin-right: 0.5rem;
@@ -354,8 +534,6 @@ footer {
 
 #nav-news {
   // turn into more general class
-  margin-bottom: 1rem;
-
   ul {
     display: flex;
     justify-content: center;

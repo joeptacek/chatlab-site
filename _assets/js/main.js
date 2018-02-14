@@ -7,6 +7,8 @@ var navPage = document.getElementById("nav-page");
 var navPageJumpUp = document.getElementById("nav-page-jumpup");
 var atTop = true;
 
+// TODO: TRIGGER BASED ON POSITION OF ELEMENT NOT PAGE
+
 window.addEventListener("scroll", function () {
   var scrollY = window.pageYOffset;
 
@@ -91,12 +93,14 @@ if (toggleButtons = document.getElementsByName("toggle-button")) {
   var thisToggleButton, buttonType, toggleTargets, sib, opening;
 
   // TODO: create SVG element with js, based on button value
+  // TODO: ...or even better, create the whole button for every toggle-panel, based on additional class name 
 
   // event handler for toggle buttons
   function toggleState() {
     thisToggleButton = this; // for functions used as event handlers `this` refers to the element the event was fired from (i.e., equivalent to passing `event` to function and using event.currentTarget)
 
     // setup: gather local targets (siblings with class .toggle-target)
+    // TODO: just grab first local target?
     toggleTargets = [];
     sib = thisToggleButton.parentNode.firstChild;
     do {

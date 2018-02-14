@@ -10,9 +10,11 @@ sections:
   - Visiting Researchers
   - Lab Alumni
 ---
-{% include data_sections.html data_source="people" item_type="person" %}
-<section class="page-section card">
-  <h2 id="lab-alumni" class="section-title">Lab Alumni</h2>
+{% include data_sections.html data_source="people" item_type="person" drawers=false %}
+<section class="card">
+  <header>
+    <h2 id="lab-alumni" class="section-title">Lab Alumni</h2>
+  </header>
   <hr />
     {% include data_section_groups.html data_source="alumni" item_type="alumnus" cols=true %}
   </div>

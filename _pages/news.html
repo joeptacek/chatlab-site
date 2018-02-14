@@ -4,16 +4,18 @@ title: News
 svg: true
 sections: null
 ---
-<section class="page-section card">
-  <nav id="nav-news">
-    {% comment %} Perhaps nav-news only display: visible via javascript {% endcomment %}
-    <ul class="list-reset no-margin-bottom">
-      <li><button class="button-reset hover-pointer" type="button" name="filter-button" value="filter-target">All</button></li>
-      <li><button class="button-reset hover-pointer" type="button" name="filter-button" value="media-type-print">Print</button></li>
-      <li><button class="button-reset hover-pointer" type="button" name="filter-button" value="media-type-audio">Video</button></li>
-      <li><button class="button-reset hover-pointer" type="button" name="filter-button" value="media-type-video">Audio</button></li>
-    </ul>
-  </nav>
+<section class="card">
+  <header>
+    <nav id="nav-news">
+      {% comment %} Perhaps nav-news only display: visible via javascript {% endcomment %}
+      <ul class="list-reset no-margin-bottom">
+        <li><button class="button-reset hover-pointer" type="button" name="filter-button" value="filter-target">All</button></li>
+        <li><button class="button-reset hover-pointer" type="button" name="filter-button" value="media-type-print">Print</button></li>
+        <li><button class="button-reset hover-pointer" type="button" name="filter-button" value="media-type-audio">Video</button></li>
+        <li><button class="button-reset hover-pointer" type="button" name="filter-button" value="media-type-video">Audio</button></li>
+      </ul>
+    </nav>
+  </header>
   <hr />
   {% include data_section_groups.html data_source="news" item_type="news" cols=false %}
 </section>

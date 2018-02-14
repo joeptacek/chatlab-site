@@ -104,9 +104,37 @@ h1, h2, h3, h4, p, ul, address {
   }
 }
 
+.margin-bottom-double {
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-group-cols > .section-group &,
+  .fi-main > header & {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 // Utility class for breaking margin rules
 .no-margin-bottom {
   margin-bottom: 0 !important; // !important so don't need to worry about specificity
+}
+
+// Center all headings by default
+.site-title, h1, h2, h3, h4 {
+  text-align: center;
+
+  // this seems to work but is this valid? per sass docs: yes? if so, do this everywhere??
+  // do component-specific media queries like this instead of file-per-query org style?
+  @media screen and (min-width: $small-width) {
+    text-align: left;
+  }
 }
 
 // Element resets: other text elements -----------------------------------------
@@ -128,13 +156,28 @@ hr {
   border: 0; /* Reset */
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+  &:last-child {
+    margin-bottom: 0;
+
+    &.force-margin-bottom {
+      margin-bottom: 2rem; // override above last-child rule
+    }
+  }
 }
 
 + hr {
   // is this use of a naked + safe? seems ok when naked + is nested under another selector (e.g., p { + hr {} } which implies p { & + hr {} } i.e., not truly naked); seems like it might be less okay to do it this way (e.g., + hr { p & {} }), esp risky if one of the nested items DOESN'T use a trailing ampersand to reference / append the outer selector (e.g., + hr { p {} }), which would cause a truly naked + to be compiled to css - would this be invalid css (e.g., is + hr p {} invalid), thus is this bad practice??
-  .section-group-cols > .section-group &,
   .fi-main > header & {
     margin-bottom: 1.5rem; // default 2rem; more compact inside fi-main header
+
+    &:last-child {
+      margin-bottom: 0;
+
+      &.force-margin-bottom {
+        margin-bottom: 1.5rem; // override above last-child-rule
+      }
+    }
   }
 }
 

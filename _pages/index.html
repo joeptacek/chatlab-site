@@ -7,14 +7,16 @@ sections:
   - Lab Director
   - Twitter
 ---
-<section class="page-section card">
-  <h2 id="{{ page.sections[0] | slugify }}" class="section-title">{{ page.sections[0] }}</h2>
+<section class="card">
+  <header>
+    <h2 id="{{ page.sections[0] | slugify }}" class="section-title">{{ page.sections[0] }}</h2>
+  </header>
   <hr />
   <p>Our lab is a part of the <a href="http://ccn.upenn.edu/" target="_blank">Center for Cognitive Neuroscience (CCN)</a> and the <a href="http://www.uphs.upenn.edu/neuro/" target="_blank">Department of Neurology</a> at the <a href="http://www.upenn.edu" target="_blank">University of Pennsylvania</a>. We are interested in interactions between cognition, language, and the brain.</p>
   <p>Our studies cover a diverse range of cognitive processes, including figurative and spatial language, event representation, aesthetics, neuroethics. Much of our research focuses on differences in processing of patients with brain injury, compared with healthy adults.</p>
   <img class="section-image" src="{{ "/assets/img/group/062217/800/group.jpg" | prepend: site.baseurl }}" alt="ChatLab: June 22, 2017" width="800" height="600" />
 </section>
-<section class="page-section card">
+<section class="card">
   <h2 id="{{ page.sections[1] | slugify }}" class="section-title">{{ page.sections[1] }}</h2>
   <hr />
   <div class="flex-item fi-compact">
@@ -84,8 +86,10 @@ sections:
     </div>
   </div>
 </section>
-<section class="page-section card">
-  <h2 id="{{ page.sections[2] | slugify }}" class="section-title">{{ page.sections[2] }}</h2>
+<section class="card">
+  <header>
+    <h2 id="{{ page.sections[2] | slugify }}" class="section-title">{{ page.sections[2] }}</h2>
+  </header>
   <hr />
   {% include twitter.html %}
 </section>

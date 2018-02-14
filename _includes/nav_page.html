@@ -1,4 +1,4 @@
-<nav id="nav-page">
+<!-- <nav id="nav-page">
   <div id="nav-page-main">
     <h1 class="no-margin-bottom">{{ page.title }}</h1>
     {% if page.sections.size > 1 %}
@@ -8,6 +8,26 @@
         {% endfor %}
       </ul>
       <button type="button" id="nav-page-toggle-button" name="toggle-button" value="drawer-only-mobile">
+        <svg><use xlink:href="#icon-chevron-up"></use></svg>
+      </button>
+    {% endif %}
+  </div>
+  <div id="nav-page-jumpup">
+    <a href="#top"><svg><use xlink:href="#icon-arrow-up2"></use></svg></a>
+  </div>
+</nav> -->
+<nav id="nav-page">
+  <div id="nav-page-main" class="toggle-panel tp-drawer tp-only-mobile card">
+    <header>
+      <h1>{{ page.title }}</h1>
+    </header>
+    {% if page.sections.size > 1 %}
+      <ul class="toggle-target flex-show nav-list nl-compact">
+        {% for section in page.sections %}
+          <li><a href="{{ section | slugify | prepend: "#" }}">{{ section }}</a></li>
+        {% endfor %}
+      </ul>
+      <button type="button" class="tp-button tp-button-compact <!--no-display-not-mobile-->" name="toggle-button" value="drawer-only-mobile">
         <svg><use xlink:href="#icon-chevron-up"></use></svg>
       </button>
     {% endif %}

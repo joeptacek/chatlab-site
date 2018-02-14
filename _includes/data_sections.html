@@ -1,13 +1,23 @@
 {% for section in site.data[include.data_source] %}
-  <section class="page-section card">
-    <h2 id="{{ section.section_title | slugify }}" class="section-title">{{ section.section_title }}</h2>
-    {% if section.section_description %}
-      <p class="font-large">{{ section.section_description }}</p>
-    {% endif %}
+  <section class="{% if include.drawers %}toggle-panel {% endif %}card">
+    <header{% if include.drawers %} class="tp-header-alt"{% endif %}>
+      <h2 id="{{ section.section_title | slugify }}" class="section-title">{{ section.section_title }}</h2>
+      {% if section.section_description %}
+        <p class="font-large">{{ section.section_description }}</p>
+      {% endif %}
+    </header>
     <hr />
-    {% assign item_path = include.item_type | prepend: "item/" | append: ".html" %}
-    {% for item in section.items %}
-      {% include {{ item_path }} pass=item %}
-    {% endfor %}
+    {% if include.drawers %}<div class="tp-block toggle-target">{% endif %}
+      {% assign item_path = include.item_type | prepend: "item/" | append: ".html" %}
+      {% for item in section.items %}
+        {% include {{ item_path }} pass=item %}
+      {% endfor %}
+    {% if include.drawers %}</div>{% endif %}
+    {% if include.drawers %}
+      <button type="button" class="tp-button" name="toggle-button" value="drawer-incremental">
+        <!-- use class tp-button or just target attribute [name^="toggle-button"] ? -->
+        <svg><use xlink:href="#icon-close"></use></svg>
+      </button>
+    {% endif %}
   </section>
 {% endfor %}

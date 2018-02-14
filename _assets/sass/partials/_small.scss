@@ -1,7 +1,6 @@
 // Styles for small screens ----------------------------------------------------
 
-@media screen and (min-width: 45rem) {
-  @import "partials/utilities/utilities-sm";
+@media screen and (min-width: $small-width) {
 
   html {
     padding: 6rem 4rem 0;
@@ -32,31 +31,135 @@
     }
   }
 
-  #nav-site {
-    padding: 1.5rem 2rem;
-  }
+  // think about padding vs margin
+  .toggle-panel {
+    &.card, &.well {
+      > .nav-list {
+        &.nl-col-row {
+          // ...add default padding for toggle-panel children BACK to nav-list
+          padding-left: 2rem;
+          padding-right: 2rem;
 
-  #nav-site-links {
-    flex-flow: row wrap;
-
-    li {
-      margin-right: 1.5rem;
-      border-bottom: none;
+          > * {
+            // ...and remove from nav-list children (i.e., <li>)
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
     }
 
-    a {
-      text-align: left;
-      padding: 0;
+    > .nav-list {
+      &.nl-col-row {
+        margin-top: -1.5rem;
+      }
+    }
 
-      &:hover {
-        color: $sl-hover;
+    &.grooved {
+      > .nav-list {
+        &.nl-col-row {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &.tp-only-mobile {
+      > .tp-button {
+        // get rid of tp-button...
+        display: none;
+      }
+
+      &.grooved > .nav-list {
+        // ...and the preceding border from .nav-list
+        border-bottom: none;
       }
     }
   }
 
-  #nav-site-toggle-button {
-    display: none;
+  .nav-list {
+    li {
+      // shift padding from <a> to parent <li> (more link-like vs. button-like)
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    a {
+      text-align: left;
+      display: inline-block; // more link-like vs. button-like;
+
+      // shift padding from <a> to parent <li>
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &.nl-compact {
+      li {
+        // shift padding from <a> to parent <li>
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      a {
+        // need to redeclare this due to specificity at default breakpoint
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    &.nl-col-row {
+      flex-flow: row;
+
+      // 2rem is too chunky / out of proporition with 2rem horizontal padding
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+
+      li {
+        // switch to horizontal "padding" between <li> (margin so not clickable)
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-right: 1.5rem; // for consistency, could consider 0.75 left and right except first-child
+      }
+    }
   }
+
+  .nav-list.grooved {
+    &.nl-col-row {
+      > * {
+        border-bottom: none;
+        // TODO: add vert grooves (default yes, optionally no) - would need to move top/bottom padding from ul to inner li
+        // border-right: solid $borders 1px;
+        // &:last-child {
+        //   border-right: none;
+        // }
+      }
+    }
+  }
+
+  // #nav-site {
+  //   padding: 1.5rem 2rem;
+  // }
+
+  // #nav-site-links {
+  //   flex-flow: row wrap;
+  //
+  //   li {
+  //     margin-right: 1.5rem;
+  //     border-bottom: none;
+  //   }
+  //
+  //   a {
+  //     text-align: left; // not necessary?
+  //     padding: 0;
+  //
+  //     &:hover {
+  //       color: $sl-hover;
+  //     }
+  //   }
+  // }
+  //
+  // #nav-site-toggle-button {
+  //   display: none;
+  // }
 
   #nav-page {
     flex: 0 0 16rem;
@@ -71,28 +174,29 @@
   }
 
   #nav-page-main {
-    text-align: left;
+    // text-align: left;
     margin-bottom: 0;
   }
 
-  #nav-page-links {
-    padding: 2rem;
-    padding-top: 0; // flush with padded h1
-
-    li {
-      margin-bottom: 0.6rem;
-    }
-
-    a {
-      display: inline; // shouldn't be full-width block otherwise empty space clickable
-    }
-  }
-
-  #nav-page-toggle-button {
-    display: none;
-  }
+  // #nav-page-links {
+  //   padding: 2rem;
+  //   padding-top: 0; // flush with padded h1
+  //
+  //   li {
+  //     margin-bottom: 0.6rem;
+  //   }
+  //
+  //   a {
+  //     display: inline; // shouldn't be full-width block otherwise empty space clickable
+  //   }
+  // }
+  //
+  // #nav-page-toggle-button {
+  //   display: none;
+  // }
 
   #nav-page-jumpup {
+    // define some of this at default breakpoint?
     transition: top 0.2s ease;
 
     display: inline-block;
@@ -137,20 +241,14 @@
     min-width: 0; // overflow: hidden screws up shadows
   }
 
-  .page-section {
-    h1, h2, h3, h4 {
-      text-align: left;
-    }
-  }
-
   .section-group-cols {
     columns: 2;
   }
 
   .fi-main {
     > header {
-      h1, h2, h3, h4 {
-        // page-section headings shift back left, but headings inside flex-item headers should stay centered until med breakpoint
+      .site-title, h1, h2, h3, h4 {
+        // per reset, headings shift back left, but headings inside flex-item headers should stay centered until med breakpoint
         text-align: center;
       }
     }
