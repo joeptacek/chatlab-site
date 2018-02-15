@@ -237,6 +237,9 @@ footer {
   // toggle-panel children responsible for top/bottom padding on the parent card / well...
   // ...occasionally tp-block will be at the bottom;
   padding-bottom: 2rem;
+  &.tp-target-partial {
+    margin-bottom: -2rem;
+  }
 }
 
 .card.grooved, .card .grooved {
@@ -260,7 +263,7 @@ footer {
 }
 
 .tp-no-display {
-  display: none;
+  display: none !important;
   // only works because this follows all other tp display declarations (e.g., nav-list);
   // consider improving specificity (without important) e.g., .toggle-panel > .tp-no-disply;
 }

@@ -156,7 +156,9 @@ if (togglePanels = document.getElementsByClassName("toggle-panel")) {
   // }
 
   // event handlers for different tp-types
-  var opening, clickedButton, localToggleTarget;
+  var opening, clickedButton, localToggleTarget, toggleCount;
+  var drawerIncrementalToggleMax = 5;
+  var drawerIncrementalInitVisible = 3;
   function toggleMenu() {
     clickedButton = this;
     clickedButton.blur(); // get rid of css button outline the accesible way
@@ -191,19 +193,29 @@ if (togglePanels = document.getElementsByClassName("toggle-panel")) {
     clickedButton = this;
     clickedButton.blur(); // get rid of css button outline the accesible way
     localToggleTarget = clickedButton.parentNode.getElementsByClassName("toggle-target")[0]; // if multiple toggle-targets, will only grab the first one
-
-    opening = localToggleTarget.classList.contains("tp-no-display");
-    localToggleTarget.classList.toggle("tp-no-display");
-    if (opening) {
-      clickedButton.getElementsByTagName("use")[0].setAttribute("xlink:href", "#icon-chevron-up");
-    } else {
-      // closing
-      clickedButton.getElementsByTagName("use")[0].setAttribute("xlink:href", "#icon-chevron-down");
+    drawerItems = localToggleTarget.children;
+    toggleCount = 0;
+    for (var i = drawerIncrementalInitVisible; i < drawerItems.length; i++) {
+      thisDrawerItem = drawerItems[i];
+      if (thisDrawerItem.classList.contains("tp-no-display")) {
+        if (toggleCount < drawerIncrementalToggleMax) {
+          thisDrawerItem.classList.remove("tp-no-display");
+          toggleCount++;
+          if (i == drawerItems.length - 1) {
+            // just toggled on final drawer drawer
+            clickedButton.classList.add("no-display"); // not tp-no-display (otherwise will display: block at non-mobile breakpoints if toggle-panel is tp-mobile-only)
+            localToggleTarget.classList.remove("tp-target-partial");
+            break;
+          }
+        } else {
+          break;
+        }
+      }
     }
   }
 
   // add buttons (button > svg > use) to toggle-panels based on tp-type
-  var newButton, newSVG, newUse, thisTogglePanel, thisToggleTarget;
+  var newButton, newSVG, newUse, thisTogglePanel, thisToggleTarget, drawerItems, thisDrawerItem;
   var svgns = "http://www.w3.org/2000/svg";
   var xlinkns = "http://www.w3.org/1999/xlink";
   for (var i = 0; i < togglePanels.length; i++) {
@@ -225,22 +237,27 @@ if (togglePanels = document.getElementsByClassName("toggle-panel")) {
         newButton.addEventListener("click", toggleMenu);
 
         // initialize tp state
-        thisToggleTarget.classList.toggle("tp-no-display");
         newUse.setAttributeNS(xlinkns, "xlink:href", "#icon-menu"); // need to use setAttributeNS for xlink attributes
+        thisToggleTarget.classList.toggle("tp-no-display");
 
       } else if (thisTogglePanel.classList.contains("tp-type-drawer")) {
         newButton.addEventListener("click", toggleDrawer);
 
         // initialize tp state
-        thisToggleTarget.classList.toggle("tp-no-display");
         newUse.setAttributeNS(xlinkns, "xlink:href", "#icon-chevron-down");
+        thisToggleTarget.classList.toggle("tp-no-display");
 
       } else if (thisTogglePanel.classList.contains("tp-type-drawer-incremental")) {
         newButton.addEventListener("click", toggleDrawerIncremental);
 
         // initialize tp state (add new function for drawer-incremental)
-        thisToggleTarget.classList.toggle("tp-no-display");
         newUse.setAttributeNS(xlinkns, "xlink:href", "#icon-chevron-down");
+        thisToggleTarget.classList.add("tp-target-partial");
+        drawerItems = thisToggleTarget.children;
+        for (var j = drawerIncrementalInitVisible; j < drawerItems.length; j++) {
+          thisDrawerItem = drawerItems[j];
+          thisDrawerItem.classList.add("tp-no-display");
+        }
       }
 
       newSVG.appendChild(newUse);

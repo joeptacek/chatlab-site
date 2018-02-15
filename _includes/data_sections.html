@@ -1,5 +1,5 @@
 {% for section in site.data[include.data_source] %}
-  <section class="{% if include.drawers %}toggle-panel tp-type-drawer-incremental {% endif %}card">
+  <section class="{% if include.drawers %}toggle-panel tp-type-drawer-incremental tp-button-compact {% endif %}card">
     <header{% if include.drawers %} class="tp-header-alt"{% endif %}>
       <h2 id="{{ section.section_title | slugify }}" class="section-title">{{ section.section_title }}</h2>
       {% if section.section_description %}

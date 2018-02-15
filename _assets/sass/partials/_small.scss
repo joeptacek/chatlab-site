@@ -137,10 +137,10 @@
 
   .tp-no-display {
     .tp-only-mobile & {
-      display: block;
+      display: block !important;
 
       &.nav-list {
-        display: flex;
+        display: flex !important;
       }
     }
   }
