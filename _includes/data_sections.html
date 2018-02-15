@@ -1,5 +1,5 @@
 {% for section in site.data[include.data_source] %}
-  <section class="{% if include.drawers %}toggle-panel {% endif %}card">
+  <section class="{% if include.drawers %}toggle-panel tp-type-drawer-incremental {% endif %}card">
     <header{% if include.drawers %} class="tp-header-alt"{% endif %}>
       <h2 id="{{ section.section_title | slugify }}" class="section-title">{{ section.section_title }}</h2>
       {% if section.section_description %}
@@ -13,11 +13,5 @@
         {% include {{ item_path }} pass=item %}
       {% endfor %}
     {% if include.drawers %}</div>{% endif %}
-    {% if include.drawers %}
-      <button type="button" class="tp-button" name="toggle-button" value="drawer-incremental">
-        <!-- use class tp-button or just target attribute [name^="toggle-button"] ? -->
-        <svg><use xlink:href="#icon-close"></use></svg>
-      </button>
-    {% endif %}
   </section>
 {% endfor %}

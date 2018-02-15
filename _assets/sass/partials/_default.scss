@@ -140,7 +140,7 @@ footer {
   }
 
   &.grooved {
-    > header + .nav-list {
+    > header + .nav-list, header + hr + .nav-list {
       // undo margin-top -2rem
       margin-top: 0;
     }
@@ -148,6 +148,37 @@ footer {
 
   > .nav-list {
     margin-bottom: 0; // get rid of default margin on ul
+  }
+
+  > button {
+    border: none; // reset button: remove default border
+    padding: 1.5rem 0; // reset button: custom replacement for default padding
+
+    svg {
+      margin: 0 auto;
+      width: 1.75rem;
+      height: 1.75rem;
+      fill: rgb(160, 160, 160); // should be iighter for cards?
+    }
+  }
+
+  &.card {
+    > button {
+      background-color: $background;
+    }
+  }
+
+  &.well {
+    > button {
+      background-color: $button;
+
+    }
+  }
+
+  &.tp-button-compact {
+    > button {
+      padding: 0.75rem 0;
+    }
   }
 }
 
@@ -228,28 +259,10 @@ footer {
   }
 }
 
-.tp-button {
-  border: none; // reset button: remove default border
-  padding: 1.5rem 0; // reset button: custom replacement for default padding
-
-  &.tp-button-compact {
-    padding: 0.75rem 0;
-  }
-
-  svg {
-    margin: 0 auto;
-    width: 1.75rem;
-    height: 1.75rem;
-    fill: rgb(160, 160, 160); // should be iighter for cards?
-  }
-
-  .card > & {
-    background-color: $background;
-  }
-
-  .well > & {
-    background-color: $button;
-  }
+.tp-no-display {
+  display: none;
+  // only works because this follows all other tp display declarations (e.g., nav-list);
+  // consider improving specificity (without important) e.g., .toggle-panel > .tp-no-disply;
 }
 
 // #nav-site {

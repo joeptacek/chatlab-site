@@ -17,19 +17,16 @@
   </div>
 </nav> -->
 <nav id="nav-page">
-  <div id="nav-page-main" class="toggle-panel tp-drawer tp-only-mobile card">
+  <div id="nav-page-main" class="toggle-panel tp-type-drawer tp-only-mobile tp-button-compact card">
     <header>
       <h1>{{ page.title }}</h1>
     </header>
     {% if page.sections.size > 1 %}
-      <ul class="toggle-target flex-show nav-list nl-compact">
+      <ul class="toggle-target nav-list nl-compact">
         {% for section in page.sections %}
           <li><a href="{{ section | slugify | prepend: "#" }}">{{ section }}</a></li>
         {% endfor %}
       </ul>
-      <button type="button" class="tp-button tp-button-compact <!--no-display-not-mobile-->" name="toggle-button" value="drawer-only-mobile">
-        <svg><use xlink:href="#icon-chevron-up"></use></svg>
-      </button>
     {% endif %}
   </div>
   <div id="nav-page-jumpup">

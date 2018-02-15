@@ -64,8 +64,8 @@
     }
 
     &.tp-only-mobile {
-      > .tp-button {
-        // get rid of tp-button...
+      > button {
+        // get rid of button...
         display: none;
       }
 
@@ -131,6 +131,16 @@
         // &:last-child {
         //   border-right: none;
         // }
+      }
+    }
+  }
+
+  .tp-no-display {
+    .tp-only-mobile & {
+      display: block;
+
+      &.nav-list {
+        display: flex;
       }
     }
   }
