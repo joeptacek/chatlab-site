@@ -461,12 +461,8 @@ section > header {
 
 // rename fi-icon
 .item-icon {
+  position: relative; // positioned (to apply position absolute to child svg)
   background-color: rgb(229, 229, 229); // default bg color
-  background-clip: content-box; // clip within padding (issues with ie8)
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   &:before {
     content: "";
@@ -478,6 +474,15 @@ section > header {
     fill: silver; // default icon color
     width: 70px;
     height: 70px;
+    max-width: 50%; // shrinks with parent
+
+    // vertical and horizontal centering (can't center via flex on parent item-icon due to inconsistent behavior of padding-top with flex)
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 
   .media-type-print & {

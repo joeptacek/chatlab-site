@@ -157,7 +157,7 @@ if (togglePanels = document.getElementsByClassName("toggle-panel")) {
 
   // event handlers for different tp-types
   var opening, clickedButton, localToggleTarget, toggleCount;
-  var drawerIncrementalToggleMax = 5;
+  var drawerIncrementalToggleMax = 10;
   var drawerIncrementalInitVisible = 3;
   function toggleMenu() {
     clickedButton = this;
