@@ -29,7 +29,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-
 // if there are any toggle panels
 if (togglePanels = document.getElementsByClassName("toggle-panel")) {
   // event handlers for different tp-types

@@ -202,6 +202,11 @@ footer {
     padding-top: 1rem; // i.e., 2rem between link text
     padding-bottom: 1rem; // i.e., 2rem between link text
     text-align: center;
+    // color and hover already $page-links and $pl-hover per reset
+
+    &.nl-selected {
+      color: $pl-hover;
+    }
   }
 
   &.nl-compact {
@@ -217,7 +222,12 @@ footer {
   &.nl-red  {
     a {
       color: $site-links;
+      
       &:hover {
+        color: $sl-hover;
+      }
+
+      &.nl-selected {
         color: $sl-hover;
       }
     }
