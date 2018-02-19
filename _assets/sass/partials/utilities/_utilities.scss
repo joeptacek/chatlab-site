@@ -16,6 +16,8 @@
 }
 
 .button-frame {
+  display: inline-block; // for padding (e.g., for inline <a> elements)
+  font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
   border: solid $page-links 1px;
   color: $page-links;
@@ -65,14 +67,27 @@
 
 // Reset formatting (e.g., for horizontal lists) ... rename: horizontal list?
 .list-reset {
-  // include flex?
   padding-left: 0;
 
   li {
     list-style: none;
+  }
 
-    a {
-      display: block; // Fixes a very minor height error (?) LEAVE THIS IN FOR NOW FIX LATER
+  &.lr-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > li {
+      margin-right: 0.5rem;
+
+      &.lr-double-margin-right {
+        margin-right: 1rem;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
@@ -83,19 +98,13 @@
   border: none;
   background-color: inherit;
   padding: 0;
-}
 
-.hover-pointer {
-  &:hover {
-    cursor: pointer;
-  }
-}
+  &.br-link-like {
+    color: $page-links;
 
-button.hover-pointer {
-  // move to reset?
-  color: $page-links;
-
-  &:hover {
-    color: $pl-hover;
+    &:hover {
+      cursor: pointer;
+      color: $pl-hover;
+    }
   }
 }

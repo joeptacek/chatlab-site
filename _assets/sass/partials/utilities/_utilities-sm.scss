@@ -13,4 +13,14 @@
     // stupid name
     display: none;
   }
+
+  .list-reset {
+    &.lr-horizontal {
+      justify-content: flex-start;
+
+      &.lr-left-med {
+        justify-content: center;
+      }
+    }
+  }
 }

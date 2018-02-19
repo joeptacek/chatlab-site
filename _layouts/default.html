@@ -9,6 +9,7 @@
         {% include svg/header.html %}
 
         <!-- page-specific defs -->
+        {% comment %} TODO: maybe page.svg should just be the path (or else null) {% endcomment %}
         {% if page.svg %}
           {% assign svg_path = page.path | remove: "_pages" | prepend: "svg/" %}
           {% include {{ svg_path }} %}

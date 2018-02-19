@@ -268,95 +268,11 @@ footer {
   // consider improving specificity (without important) e.g., .toggle-panel > .tp-no-disply;
 }
 
-// #nav-site {
-//   display: flex; // items: nav-site-links, nav-site-toggle-button
-//   flex-flow: column;
-//   background-color: $well;
-//   border: solid $borders 1px;
-//   border-radius: 4px;
-// }
-
-// #nav-site-links {
-//   display: flex; // items: list items
-//   flex-flow: column;
-//
-//   li {
-//     border-bottom: solid $borders 1px;
-//   }
-//
-//   a {
-//     color: $site-links;
-//     text-align: center;
-//     padding: 1rem 0;
-//   }
-// }
-
-// #nav-site-toggle-button {
-//   // // reset default button styles
-//   // border: none;
-//   // background-color: $button;
-//   // padding: 1.5rem 0;
-//
-//   svg {
-//     margin: 0 auto;
-//     width: 1.75rem;
-//     height: 1.75rem;
-//     fill: rgb(160, 160, 160);
-//   }
-// }
-
 #nav-page-main {
   position: relative;
   z-index: 1;
-  // background-color: $card;
-  // text-align: center;
   margin-bottom: 2rem;
-  // box-shadow: 0 1px 3px $shadows;
-
-  // h1 {
-  //   padding: 2rem;
-  //   padding-bottom: 1.5rem; // separation from page-links (2rem looks too wide)
-  //
-  //   &:last-child {
-  //     padding-bottom: 2rem; // equal padding when no page-links
-  //   }
-  // }
 }
-
-// #nav-page-links {
-//   display: flex;
-//   flex-flow: column;
-//   padding-bottom: 1.5rem; // same as distance from h1
-//
-//   li {
-//     margin-bottom: 1rem;
-//
-//     &:last-child {
-//       margin-bottom: 0;
-//     }
-//   }
-// }
-
-// #nav-page-toggle-button {
-//   padding: 0; // reset
-//   padding: 0.5rem 0;
-//   border: none; // reset
-//   border-top: solid $button 1px;
-//   background-color: $background;
-//   border-radius: 0;
-//
-//   svg {
-//     margin: 0 auto; // ...centering block-level element
-//     width: 1.75rem;
-//     height: 1.75rem;
-//     fill: rgb(160, 160, 160);
-//   }
-// }
-
-// #nav-page a, #nav-page-toggle-button {
-//   display: block; // TODO: <a> already block per list-reset?
-//   width: 100%; // TODO: maybe <a> shouldn't be 100%
-// }
 
 #nav-page-jumpup {
   display: none;
@@ -513,57 +429,6 @@ section > header {
 }
 
 // Page-specific: People
-
-.contact-links {
-  // turn into more general class
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0.5rem; // to match default margin-bottom inside fi-main > header
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  > * { // same as `& > *` scss ampersand is implied
-    margin-right: 0.5rem;
-
-    &.button-frame {
-      margin-right: 1rem;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  a {
-    font-size: 0.75rem;
-  }
-
-  svg {
-    width: 1rem;
-    height: 1rem;
-    fill: rgb(127, 127, 127);
-    &:hover {
-      fill: black; // Individual colors for different social?
-    }
-  }
-}
-
-// Page-specific: News
-
-#nav-news {
-  // turn into more general class
-  ul {
-    display: flex;
-    justify-content: center;
-  }
-
-  li {
-    margin: 0 0.5rem 0 0;
-  }
-}
 
 .sub-source {
   // turn this into .grey class

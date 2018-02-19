@@ -198,6 +198,10 @@ address {
 
 // Element resets: images ------------------------------------------------------
 
+img, svg {
+  display: block; // default leaves gap (e.g., in picture elements, in flex-item headers)
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -207,6 +211,12 @@ img {
   }
 }
 
-img, svg {
-  display: block; // default leaves gap (e.g., in picture elements, in flex-item headers)
+svg {
+  // declare this as default / reset elsewhere?
+  width: 1rem;
+  height: 1rem;
+  fill: rgb(127, 127, 127);
+  &:hover {
+    fill: black; // Individual colors for different social?
+  }
 }

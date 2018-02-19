@@ -85,7 +85,7 @@
 
     a {
       text-align: left;
-      display: inline-block; // more link-like vs. button-like;
+      display: inline-block; // more link-like vs. button-like (maybe just do inline?)
 
       // shift padding from <a> to parent <li>
       padding-top: 0;
@@ -145,32 +145,6 @@
     }
   }
 
-  // #nav-site {
-  //   padding: 1.5rem 2rem;
-  // }
-
-  // #nav-site-links {
-  //   flex-flow: row wrap;
-  //
-  //   li {
-  //     margin-right: 1.5rem;
-  //     border-bottom: none;
-  //   }
-  //
-  //   a {
-  //     text-align: left; // not necessary?
-  //     padding: 0;
-  //
-  //     &:hover {
-  //       color: $sl-hover;
-  //     }
-  //   }
-  // }
-  //
-  // #nav-site-toggle-button {
-  //   display: none;
-  // }
-
   #nav-page {
     flex: 0 0 16rem;
     margin-right: 2rem;
@@ -187,23 +161,6 @@
     // text-align: left;
     margin-bottom: 0;
   }
-
-  // #nav-page-links {
-  //   padding: 2rem;
-  //   padding-top: 0; // flush with padded h1
-  //
-  //   li {
-  //     margin-bottom: 0.6rem;
-  //   }
-  //
-  //   a {
-  //     display: inline; // shouldn't be full-width block otherwise empty space clickable
-  //   }
-  // }
-  //
-  // #nav-page-toggle-button {
-  //   display: none;
-  // }
 
   #nav-page-jumpup {
     // define some of this at default breakpoint?
@@ -261,12 +218,6 @@
         // per reset, headings shift back left, but headings inside flex-item headers should stay centered until med breakpoint
         text-align: center;
       }
-    }
-  }
-
-  #nav-news {
-    ul {
-      justify-content: flex-start;
     }
   }
 }

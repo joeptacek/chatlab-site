@@ -2,4 +2,12 @@
   .med-display-none {
     display: none;
   }
+
+  .list-reset {
+    &.lr-horizontal {
+      &.lr-left-med {
+        justify-content: flex-start;
+      }
+    }
+  }
 }
