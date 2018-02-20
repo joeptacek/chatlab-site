@@ -97,30 +97,32 @@
   border: none;
   background-color: inherit;
   padding: 0;
+}
 
-  &.br-link-like {
-    color: $page-links;
+.link-like {
+  color: $page-links;
 
-    &:hover {
-      cursor: pointer;
-      color: $pl-hover;
-    }
+  &:hover {
+    cursor: pointer;
+    color: $pl-hover;
   }
 }
 
-.link-selected {
-  color: $pl-hover;
+a, .link-like {
+  &.link-selected {
+    color: $pl-hover;
+  }
 }
 
 .links-red {
-  a, .br-link-like {
+  a, .link-like {
     color: $site-links;
 
-    &.link-selected {
+    &:hover {
       color: $sl-hover;
     }
 
-    &:hover {
+    &.link-selected {
       color: $sl-hover;
     }
   }
