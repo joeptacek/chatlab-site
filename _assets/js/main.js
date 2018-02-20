@@ -147,10 +147,12 @@ var filterButtons = document.getElementsByName("filter-button");
 var allTargetElements = document.getElementsByClassName("filter-target");
 if (filterButtons && allTargetElements) {
   // If page has at least one filter-button and filter-target
-  var filterButton, targetClass;
+  var filterButton, targetClass, grabFilterButtons;
   for (var i = 0; i < filterButtons.length; i++) {
     filterButton = filterButtons[i];
     filterButton.addEventListener("click", function () {
+      this.blur(); // get rid of css button outline the accesible way
+
       // Filter target determined by the value of the button's "value" attribute (target a class, or for show-all, use "filter-button")
       targetClass = this.value;
       for (var j = 0; j < allTargetElements.length; j++) {
@@ -160,7 +162,13 @@ if (filterButtons && allTargetElements) {
           allTargetElements[j].classList.add("no-display");
         }
       }
-      this.blur();
+
+      // Style buttons to show current filter
+      grabFilterButtons = document.getElementsByName("filter-button");
+      for (var j = 0; j < grabFilterButtons.length; j++) {
+        grabFilterButtons[j].classList.remove("nl-selected");
+      }
+      this.classList.add("nl-selected");
     });
   }
 }

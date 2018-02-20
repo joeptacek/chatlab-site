@@ -102,9 +102,13 @@
   &.br-link-like {
     color: $page-links;
 
+    &.nl-selected {
+      color: $pl-hover;
+    }
+
     &:hover {
       cursor: pointer;
       color: $pl-hover;
     }
-  }
+  }  
 }
