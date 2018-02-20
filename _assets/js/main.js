@@ -166,9 +166,9 @@ if (filterButtons && allTargetElements) {
       // Style buttons to show current filter
       grabFilterButtons = document.getElementsByName("filter-button");
       for (var j = 0; j < grabFilterButtons.length; j++) {
-        grabFilterButtons[j].classList.remove("nl-selected");
+        grabFilterButtons[j].classList.remove("link-selected");
       }
-      this.classList.add("nl-selected");
+      this.classList.add("link-selected");
     });
   }
 }

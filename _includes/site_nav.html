@@ -4,11 +4,11 @@
 
 
 <nav class="toggle-panel tp-type-menu tp-only-mobile well grooved rounded-subtle">
-  <ul class="toggle-target nav-list grooved nl-col-row nl-red">
-    <li><a class="{% if page.title == "Home" %}nl-selected{% endif %}" href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
-    <li><a class="{% if page.title == "People" %}nl-selected{% endif %}" href="{{ "/people.html" | prepend: site.baseurl }}">People</a></li>
-    <li><a class="{% if page.title == "Research" %}nl-selected{% endif %}" href="{{ "/research.html" | prepend: site.baseurl }}">Research</a></li>
-    <li><a class="{% if page.title == "News" %}nl-selected{% endif %}" href="{{ "/news.html" | prepend: site.baseurl }}">News</a></li>
-    <li><a class="{% if page.title == "Contact" %}nl-selected{% endif %}" href="{{ "/contact.html" | prepend: site.baseurl }}">Contact</a></li>
+  <ul class="toggle-target nav-list nl-col-row grooved links-red">
+    <li><a class="{% if page.title == "Home" %}link-selected{% endif %}" href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+    <li><a class="{% if page.title == "People" %}link-selected{% endif %}" href="{{ "/people.html" | prepend: site.baseurl }}">People</a></li>
+    <li><a class="{% if page.title == "Research" %}link-selected{% endif %}" href="{{ "/research.html" | prepend: site.baseurl }}">Research</a></li>
+    <li><a class="{% if page.title == "News" %}link-selected{% endif %}" href="{{ "/news.html" | prepend: site.baseurl }}">News</a></li>
+    <li><a class="{% if page.title == "Contact" %}link-selected{% endif %}" href="{{ "/contact.html" | prepend: site.baseurl }}">Contact</a></li>
   </ul>
 </nav>

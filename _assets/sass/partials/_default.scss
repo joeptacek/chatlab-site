@@ -182,6 +182,7 @@ footer {
   }
 }
 
+// rename: tp-nav-list?
 .nav-list {
   padding-left: 0; // reset ul: remove tabs
 
@@ -202,11 +203,6 @@ footer {
     padding-top: 1rem; // i.e., 2rem between link text
     padding-bottom: 1rem; // i.e., 2rem between link text
     text-align: center;
-    // color and hover already $page-links and $pl-hover per reset
-
-    &.nl-selected {
-      color: $pl-hover;
-    }
   }
 
   &.nl-compact {
@@ -216,20 +212,6 @@ footer {
     a {
       padding-top: 0.5rem; // sum to 2rem with padding on parent nav-list
       padding-bottom: 0.5rem; // sum to 2rem with padding on parent nav-list
-    }
-  }
-
-  &.nl-red  {
-    a {
-      color: $site-links;
-      
-      &:hover {
-        color: $sl-hover;
-      }
-
-      &.nl-selected {
-        color: $sl-hover;
-      }
     }
   }
 
@@ -252,6 +234,7 @@ footer {
   }
 }
 
+// rename tp-grooved?
 .card.grooved, .card .grooved {
   // grooved cards, grooved descendants of cards (e.g., nav-list)
   > * {

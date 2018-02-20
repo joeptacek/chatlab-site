@@ -65,7 +65,6 @@
   }
 }
 
-// Reset formatting (e.g., for horizontal lists) ... rename: horizontal list?
 .list-reset {
   padding-left: 0;
 
@@ -102,13 +101,27 @@
   &.br-link-like {
     color: $page-links;
 
-    &.nl-selected {
-      color: $pl-hover;
-    }
-
     &:hover {
       cursor: pointer;
       color: $pl-hover;
     }
-  }  
+  }
+}
+
+.link-selected {
+  color: $pl-hover;
+}
+
+.links-red {
+  a, .br-link-like {
+    color: $site-links;
+
+    &.link-selected {
+      color: $sl-hover;
+    }
+
+    &:hover {
+      color: $sl-hover;
+    }
+  }
 }
