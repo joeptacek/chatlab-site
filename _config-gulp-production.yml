@@ -1,0 +1,16 @@
+exclude:
+  # exclude _pages/demos (per collections config, the rest of _pages shouldn't be excluded since output of pages is set to true)
+  - _pages/demos
+
+  # need to re-exclude everything from _config.yml and _config-gulp.yml, otherwise will only exclude _pages/demos (when multiple configs are loaded, sequences are overwritten, not appended)
+  - _assets
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - package.json
+  - package-lock.json
+  - gulpfile.js
+  - README.md
+  - assets/archive
+  - assets/img/originals

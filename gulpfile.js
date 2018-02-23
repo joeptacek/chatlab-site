@@ -6,6 +6,8 @@ var gutil = require('gulp-util');
 var spawn = require('child_process').spawn;
 var bs = require('browser-sync').create();
 var sourcemaps = require('gulp-sourcemaps');
+var gulpif = require('gulp-if');
+
 // var debug = require('gulp-debug');
 
 // css
@@ -21,17 +23,35 @@ var uglify = require('gulp-uglify');
 
 var child_jk; // needs to be global so able to kill later
 
-var bundle_args_jkbuild = [
+var production = false;
+var development = !production;
+
+// _config-gulp.yml excludes _assets (for jekyll watch), keeps assets/js and assets/css (so gulp output isn't clobbered)
+// _config-gulp-production.yml also excludes _page/demos
+var jk_config_dev = '_config.yml,_config-gulp.yml';
+var jk_config_prod = jk_config_dev + ',_config-gulp-production.yml';
+
+var jk_command_build = [
+  'bundle',
   'exec',
   'jekyll',
-  'build',
-  // '--incremental', // i don't 100% trust incremental
+  'build'
+  // '--incremental', // i don't 100% trust incremental, but it's somewhat faster
   // '-V', // debug mode
-  '--config',
-  '_config.yml,_config-gulp.yml' // load base _config.yml and then _config-gulp.yml
 ];
 
-var bundle_args_jkwatch = bundle_args_jkbuild.concat('--watch');
+// create spawn_env object, using the default process environment as prototype...
+var spawn_env = Object.create(process.env);
+
+if (production) {
+  // ...in production, add this key-value pair to the spawn_env object
+  spawn_env.JEKYLL_ENV = 'production';
+  jk_command_build.push('--config', jk_config_prod);
+} else {
+  jk_command_build.push('--config', jk_config_dev);
+}
+
+var jk_command_watch = jk_command_build.concat('--watch');
 
 // TASKS -----------------------------------------------------------------------
 
@@ -43,10 +63,10 @@ gulp.task('css', function () {
   ];
   return gulp.src('_assets/sass/**/*.scss')
     // .pipe(debug({title: 'Debug (css):'})) // debug mode
-    .pipe(sourcemaps.init()) // only in development
+    .pipe(gulpif(development, sourcemaps.init())) // only in development
     .pipe(sass().on('error', sass.logError))
-    .pipe(sourcemaps.write()) // only in development
-    // .pipe(postcss(plugins)) // only in production
+    .pipe(gulpif(development, sourcemaps.write())) // only in development
+    .pipe(gulpif(production, postcss(plugins))) // only in production
     .pipe(gulp.dest('_site/assets/css'));
 });
 
@@ -54,7 +74,7 @@ gulp.task('css', function () {
 gulp.task('js', function () {
   return gulp.src('_assets/js/**/*.js')
     // .pipe(debug({title: 'Debug (js):'})) // debug mode
-    // .pipe(uglify()) // only in production
+    .pipe(gulpif(production, uglify())) // only in production
     .pipe(gulp.dest('_site/assets/js'));
 });
 
@@ -69,7 +89,10 @@ gulp.task('assets-watch', ['assets-build'], function () {
 
 // build jekyll
 gulp.task('jekyll-build', function () {
-  spawn('bundle', bundle_args_jkbuild, {stdio: 'inherit'});
+  spawn(jk_command_build[0], jk_command_build.slice(1), {
+    stdio: 'inherit',
+    env: spawn_env
+  });
 });
 
 // (build and) watch jekyll
@@ -85,7 +108,10 @@ gulp.task('jekyll-watch', function () {
   });
 
   function spawn_jk () {
-    return spawn('bundle', bundle_args_jkwatch, {stdio: 'inherit'});
+    return spawn(jk_command_watch[0], jk_command_watch.slice(1), {
+      stdio: 'inherit',
+      env: spawn_env
+    });
   }
 });
 
