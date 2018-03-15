@@ -2,7 +2,7 @@
 
 // core
 var gulp = require('gulp');
-var gutil = require('gulp-util');
+var gutil = require('gulp-util'); // deprecated?
 var spawn = require('child_process').spawn;
 var bs = require('browser-sync').create();
 var sourcemaps = require('gulp-sourcemaps');
