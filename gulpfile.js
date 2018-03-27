@@ -2,7 +2,7 @@
 
 // core
 var gulp = require('gulp');
-var gutil = require('gulp-util'); // deprecated?
+var gutil = require('gulp-util'); // deprecated! use fancy-log instead (per gulp-util team)
 var spawn = require('child_process').spawn;
 var bs = require('browser-sync').create();
 var sourcemaps = require('gulp-sourcemaps');
@@ -23,8 +23,10 @@ var uglify = require('gulp-uglify');
 
 var child_jk; // needs to be global so able to kill later
 
-var production = false;
-var development = !production;
+// check process.argv array for "-p" flag; alternatively, for more complicated parsing can use minimist or yargs
+if (process.argv.includes("-p")) {
+  var production = true;
+}
 
 // _config-gulp.yml excludes _assets (for jekyll watch), keeps assets/js and assets/css (so gulp output isn't clobbered)
 // _config-gulp-production.yml also excludes _page/demos
@@ -36,7 +38,7 @@ var jk_command_build = [
   'exec',
   'jekyll',
   'build'
-  // '--incremental', // i don't 100% trust incremental, but it's somewhat faster
+  // '--incremental', // i don't 100% trust incremental (still experimental), but it's somewhat faster
   // '-V', // debug mode
 ];
 
@@ -63,9 +65,9 @@ gulp.task('css', function () {
   ];
   return gulp.src('_assets/sass/**/*.scss')
     // .pipe(debug({title: 'Debug (css):'})) // debug mode
-    .pipe(gulpif(development, sourcemaps.init())) // only in development
+    .pipe(gulpif(!production, sourcemaps.init())) // only in development
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulpif(development, sourcemaps.write())) // only in development
+    .pipe(gulpif(!production, sourcemaps.write())) // only in development
     .pipe(gulpif(production, postcss(plugins))) // only in production
     .pipe(gulp.dest('_site/assets/css'));
 });
@@ -140,17 +142,17 @@ gulp.task('build', ['jekyll-build', 'assets-build']);
 gulp.task('watch', ['jekyll-watch', 'assets-watch']);
 
 // (build and) watch everything AND boot development server
-gulp.task('serve', ['watch', 'bs']); // might be better to do these async - specifically, wait until jekyll finishes initial build (use hooks?) and THEN serve via browsersync (or else browsersync watches / reloads while jekyll builds)
+gulp.task('serve', ['watch', 'bs']); // might be better to do these async - specifically, wait until jekyll finishes initial build (use hooks?) and THEN serve via browsersync (or else browsersync watches / reloads a lot while jekyll builds)
 
 // default task
 gulp.task('default', ['serve']);
 
 // NOTES -----------------------------------------------------------------------
 
-// require var vs const?
-
-// is it necessary to have EVERY task accept a callback / return a stream? yes, when trying to make another task run in series afterwards - but otherwise?
-
-// spawn vs exec: spawn has somewhat better log formatting via stdio, also performance possibly better
-
-// consider preceding dot for globs (explictly reference cwd)
+// TODO: move hard-coded constants (e.g., paths) to separate file
+// TODO: clean up quotes (consistent double / single)
+// TODO: make deploy task (build with production flag, rsync backup/copy to server; need SSH key)
+// TODO: require var vs const?
+// TODO: is it necessary to have EVERY task accept a callback / return a stream? yes, when trying to make another task run in series afterwards - but otherwise?
+// TODO: spawn vs exec: spawn has somewhat better log formatting via stdio, also performance possibly better
+// TODO: consider preceding dot for globs (explictly reference cwd)
