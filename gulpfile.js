@@ -152,6 +152,7 @@ gulp.task('default', ['serve']);
 // TODO: move hard-coded constants (e.g., paths) to separate file
 // TODO: clean up quotes (consistent double / single)
 // TODO: make deploy task (build with production flag, rsync backup/copy to server; need SSH key)
+// TODO: do any / all of this with npm scripts?
 // TODO: require var vs const?
 // TODO: is it necessary to have EVERY task accept a callback / return a stream? yes, when trying to make another task run in series afterwards - but otherwise?
 // TODO: spawn vs exec: spawn has somewhat better log formatting via stdio, also performance possibly better

@@ -26,6 +26,7 @@ footer {
   // flex: 0 0 auto;
   padding: 4rem 0;
   text-align: center;
+  color: $borders;
 }
 
 #logo {
@@ -414,11 +415,6 @@ section > header {
       fill: $news-icon;
     }
   }
-}
-
-#copyright {
-  // merge with .sub-source / .grey class
-  color: $borders;
 }
 
 // Page-specific: People
