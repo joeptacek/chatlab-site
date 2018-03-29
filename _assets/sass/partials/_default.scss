@@ -1,0 +1,432 @@
+// Default styles (mobile-first) -----------------------------------------------
+
+html {
+  background-color: $background;
+  padding: 6rem 2rem 0;
+  line-height: 1.3;
+}
+
+body {
+  max-width: 60rem;
+  margin: 0 auto;
+  -webkit-font-smoothing: subpixel-antialiased // otherwise, text inside a fixed element (e.g., nav-page) appears thinner in Safari
+}
+
+#page-header {
+  margin-bottom: 2rem;
+}
+
+main {
+  display: flex; // items: nav-page, page-content
+  flex-flow: column;
+}
+
+footer {
+  // As flex item (with main and footer), should not shrink
+  // flex: 0 0 auto;
+  padding: 4rem 0;
+  text-align: center;
+  color: $borders;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  a:first-child {
+    // shield
+    padding-right: 1.5rem;
+    border-right: solid 2px $borders;
+  }
+
+  a:last-child {
+    // chatlab
+    padding-left: 1.5rem;
+  }
+}
+
+.card, .well {
+  padding: 2rem;
+  margin-bottom: 2.5rem; // needs to be larger than 2rem ie height of gap from top to nav-page, or else previous section shadow visible after jumping down to section
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card {
+  background-color: $card;
+  box-shadow: 0 1px 3px $shadows;
+}
+
+.well {
+  background-color: $well;
+  border: solid $borders 1px;
+}
+
+.card-mini {
+  background-color: white;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 3px $shadows;
+  margin-bottom: 1rem;
+
+  border-left: solid $page-links 4px;
+  font-size: 0.8rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.rounded-subtle {
+  border-radius: 4px;
+}
+
+.toggle-panel {
+  display: flex;
+  flex-flow: column;
+
+  &.card, &.well {
+    // getting rid of default padding on card / well;
+    // children become responisible for dealing with padding from edge of card / well;
+    // e.g., header, nav-list, tp-block;
+    padding: 0;
+
+    > * {
+      // add left / right padding back to immediate children of toggle-panel (use margin instead?)
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    > hr {
+      // ...hr can't use padding...
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+
+    > .nav-list {
+      // ...skip horizontal padding on nav-list;
+      // (if grooved, the <ul> needs to be flush with parent toggle-panel)...
+      padding-left: 0;
+      padding-right: 0;
+
+      > * {
+        // ...instead, add padding to immediate children of nav-list (i.e., <li>)
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+  }
+
+  > header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    &.tp-header-alt {
+      // styled like section > header (for use with <hr />)
+      padding-bottom: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  > header + .nav-list, header + hr + .nav-list {
+    // default toggle-panel header (no grooves) has 2rem padding-bottom;
+    // default nav-list (no grooves) has 1rem padding-top + 1rem padding-top on children;
+    // when adjacent, header and nav-list look too separated;
+    // so shift nav-list up via negative margin-top;
+    // why not padding-top 0? leaves too much gap unless also adjust padding-top on nav-list first-child
+    margin-top: -2rem;
+  }
+
+  &.grooved {
+    > header + .nav-list, header + hr + .nav-list {
+      // undo margin-top -2rem
+      margin-top: 0;
+    }
+  }
+
+  > .nav-list {
+    margin-bottom: 0; // get rid of default margin on ul
+  }
+
+  > button {
+    border: none; // reset button: remove default border
+    padding: 1.5rem 0; // reset button: custom replacement for default padding
+
+    svg {
+      margin: 0 auto;
+      width: 1.75rem;
+      height: 1.75rem;
+      fill: rgb(160, 160, 160); // should be iighter for cards?
+    }
+  }
+
+  &.card {
+    > button {
+      background-color: $background;
+    }
+  }
+
+  &.well {
+    > button {
+      background-color: $button;
+
+    }
+  }
+
+  &.tp-button-compact {
+    > button {
+      padding: 0.75rem 0;
+    }
+  }
+}
+
+// rename: tp-nav-list?
+.nav-list {
+  padding-left: 0; // reset ul: remove tabs
+
+  li {
+    list-style: none; // reset li: remove bullets
+  }
+
+  // main styles
+  display: flex;
+  flex-flow: column;
+
+  // i.e., 2rem between top/bottom and link text
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  a {
+    display: block; // padded links
+    padding-top: 1rem; // i.e., 2rem between link text
+    padding-bottom: 1rem; // i.e., 2rem between link text
+    text-align: center;
+  }
+
+  &.nl-compact {
+    padding-top: 1.5rem; // sum to 2rem with padding on child a
+    padding-bottom: 1.5rem; // sum to 2rem with padding on child a
+
+    a {
+      padding-top: 0.5rem; // sum to 2rem with padding on parent nav-list
+      padding-bottom: 0.5rem; // sum to 2rem with padding on parent nav-list
+    }
+  }
+
+  &.grooved {
+    // equal sized rows
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.tp-block {
+  // e.g., to contain items in incremental drawer;
+  // maybe rename "drawer" / combine with nav-list / toggle-target;
+
+  // toggle-panel children responsible for top/bottom padding on the parent card / well...
+  // ...occasionally tp-block will be at the bottom;
+  padding-bottom: 2rem;
+  &.tp-target-partial {
+    margin-bottom: -2rem;
+  }
+}
+
+// rename tp-grooved?
+.card.grooved, .card .grooved {
+  // grooved cards, grooved descendants of cards (e.g., nav-list)
+  > * {
+    border-bottom: solid #e0e0e0 1px;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.well.grooved, .well .grooved {
+  // grooved wells, grooved descendants of wells (e.g., nav-list)
+  > * {
+    border-bottom: solid $borders 1px;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.tp-no-display {
+  display: none !important;
+  // only works because this follows all other tp display declarations (e.g., nav-list);
+  // consider improving specificity (without important) e.g., .toggle-panel > .tp-no-disply;
+}
+
+#nav-page-main {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2rem;
+}
+
+#nav-page-jumpup {
+  display: none;
+}
+
+section > header {
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  // get rid of this class, define in terms of element nesting section > header > h1, h2, etc
+  &:before {
+    display: block;
+    content: " "; // space or empty?
+    margin-top: -4rem;
+    height: 4rem;
+    visibility: hidden; // just in case?
+  }
+}
+
+.section-image {
+  // display: block;
+  // max-width: 100%; // Shrink images on horizontal resize (doesn't work to set as absolute size like max-width: 400px... why?)
+  // height: auto; // Scale height (seemingly needed for flex images)
+  padding: 5px;
+  border: solid $borders 1px;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.section-group {
+  margin-bottom: 4rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.section-group-cols {
+  columns: 1;
+  column-gap: 2rem;
+  font-size: 0.8rem;
+
+  > .section-group {
+    margin-bottom: 2rem;
+    break-inside: avoid; // poorly supported by firefox
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.flex-item {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 4rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.fi-compact {
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // flex-item header (containing for <img> or item-icon)
+  > header {
+    width: 212px; // 200px content + (1px border + 5px pading) x 2
+    max-width: 100%; // shrink inside parent at small screen widths
+
+    margin-bottom: 1rem;
+    border: solid $borders 1px;
+    padding: 5px;
+  }
+}
+
+.fi-main {
+  width: 100%; // stretching very short content e.g., contact page - TODO: consider how this affects things when width aligns with main- vs. cross-axis
+
+  &.fi-main-def-sm-compact {
+    max-width: 20rem;
+  }
+
+  // fi-main header (title, subtile, etc.)
+  > header {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// rename fi-icon
+.item-icon {
+  position: relative; // positioned (to apply position absolute to child svg)
+  background-color: rgb(229, 229, 229); // default bg color
+
+  &:before {
+    content: "";
+    display: block; // default inline (need block for padding)
+    padding-top: 100%; // i.e., 100% of width (forces height equal to width)
+  }
+
+  svg {
+    fill: silver; // default icon color
+    width: 70px;
+    height: 70px;
+    max-width: 50%; // shrinks with parent
+
+    // vertical and horizontal centering (can't center via flex on parent item-icon due to inconsistent behavior of padding-top with flex)
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .media-type-print & {
+    background-color: $print-bg;
+    svg {
+      fill: $news-icon;
+    }
+  }
+
+  .media-type-video & {
+    background-color: $video-bg;
+    svg {
+      fill: $news-icon;
+    }
+  }
+
+  .media-type-audio & {
+    background-color: $audio-bg;
+    svg {
+      fill: $news-icon;
+    }
+  }
+}
+
+// Page-specific: People
+
+.sub-source {
+  // turn this into .grey class
+  color: grey;
+}
+
+#map {
+  // thurn this into .border class
+  display: block;
+  padding: 5px;
+  border: solid $borders 1px;
+}

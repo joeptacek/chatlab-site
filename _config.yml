@@ -1,12 +1,20 @@
 title: ChatLab
 baseurl: /chatterjee
+collections:
+  pages:
+    # creating collection "pages" inside _pages
+    output: true
+    permalink: /:path
 exclude:
-  - Gemfile
-  - Gemfile.lock
   - vendor
+  - package.json
+  - package-lock.json
+  - gulpfile.js
   - README.md
-  - todo.txt
   - assets/archive
   - assets/img/originals
-sass:
-  style: compressed
+
+  # excluded by default (need to re-exclude because user _config.yml overwrites the default sequence, doesn't append to it)
+  - Gemfile
+  - Gemfile.lock
+  - node_modules

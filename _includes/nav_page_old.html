@@ -1,0 +1,96 @@
+<div class="drawer">
+  <!-- drawer can be a div or nav -->
+  <h1>title</h1>
+  <div class="drawer-content">
+    <!-- drawer-content can be a div or ul -->
+  </div>
+  <button class="drawer-toggle">
+    <!-- toggle content display -->
+  </button>
+</div>
+
+<nav class="drawer">
+  <!-- drawer can be a div or nav -->
+  <h1>title</h1>
+  <ul class="drawer-content">
+    <!-- drawer-content can be a div or ul -->
+    <li><a href="">link</a></li>
+    <li><a href="">link</a></li>
+    <li><a href="">link</a></li>
+  </ul>
+  <button class="drawer-expand">
+    <!-- expand content display by at most n items -->
+  </button>
+</div>
+
+<nav id="nav-site">
+  <ul id="nav-site-links" class="list-reset no-margin-bottom">
+    <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+    <li><a href="{{ "/people.html" | prepend: site.baseurl }}">People</a></li>
+    <li><a href="{{ "/research.html" | prepend: site.baseurl }}">Research</a></li>
+    <li><a href="{{ "/news/all.html" | prepend: site.baseurl }}">News</a></li>
+    <li><a href="{{ "/contact.html" | prepend: site.baseurl }}">Contact</a></li>
+  </ul>
+  <button id="nav-site-toggle-button">
+    <svg><use id="nav-site-toggle-svg" xlink:href="#icon-close"></use></svg>
+  </button>
+</nav>
+
+<nav id="nav-page">
+  <div id="nav-page-main">
+    <h1>{{ page.title }}</h1>
+    <ul id="nav-page-links" class="list-reset no-margin-bottom">
+      <li><a href="#about_chatlab">About ChatLab</a></li>
+      <li><a href="#lab_director">Lab Director</a></li>
+      <li><a href="#twitter">Twitter</a></li>
+    </ul>
+    <button id="nav-page-toggle-button">
+      <svg><use id="nav-page-toggle-svg" xlink:href="#icon-chevron-up"></use></svg>
+    </button>
+  </div>
+  <div id="nav-page-jumpup">
+    <a href="#top"><svg><use xlink:href="#icon-arrow-up2"></use></svg></a>
+  </div>
+</nav>
+
+<nav id="nav-page">
+  <div id="nav-page-main">
+    <h1>{{ page.title }}</h1>
+    <ul id="nav-page-links" class="list-reset no-margin-bottom">
+      {% for section in site.data.people %}
+        <li><a href="{{ "#" | append: section.section_id }}">{{ section.section_title }}</a></li>
+      {% endfor %}
+      <li><a href="#lab-alumni">Lab Alumni</a></li>
+    </ul>
+    <button id="nav-page-toggle-button">
+      <svg><use id="nav-page-toggle-svg" xlink:href="#icon-chevron-up"></use></svg>
+    </button>
+  </div>
+  <div id="nav-page-jumpup">
+    <a href="#top"><svg><use xlink:href="#icon-arrow-up2"></use></svg></a>
+  </div>
+</nav>
+
+<nav id="nav-page">
+  <div id="nav-page-main">
+    <h1>{{ page.title }}</h1>
+  </div>
+  <div id="nav-page-jumpup">
+    <a href="#top"><svg><use xlink:href="#icon-arrow-up2"></use></svg></a>
+  </div>
+</nav>
+
+<nav id="nav-page">
+  <div id="nav-page-main">
+    <h1>{{ page.title }}</h1>
+    <ul id="nav-page-links" class="list-reset no-margin-bottom">
+      {% for section in site.data.XXXXX %}
+        <li><a href="{{ "#" | append: section.section_id }}">{{ section.section_title }}</a></li>
+      {% endfor %}
+      <li><a href="#lab-alumni">Lab Alumni</a></li>
+    </ul>
+  </div>
+  <div id="nav-page-jumpup">
+    <a href="#top"><svg><use xlink:href="#icon-arrow-up2"></use></svg></a>
+  </div>
+</nav>

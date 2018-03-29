@@ -1,7 +1,6 @@
 - section_title: 'Language and Space'
-  section_id: 'language_space'
   section_description: 'The lab’s research on language and space is concerned with a variety of concepts. Our primary interests lie in spatial and gestural representations in language, as well as in the processing of metaphoric and figurative language in patients and controls.'
-  item_list:
+  items:
   - work_authors: 'Özer, D., Tansan, M., Özer, E.E., Malykhina, K., Chatterjee, A., & Göksun, T.'
     work_year: 2017
     work_title: 'The effects of gesture restriction on spatial language in young and elderly adults'
@@ -447,9 +446,8 @@
     edited_work_data: null
     pdf_filename: 'Chatterjee_2001_01.pdf'
 - section_title: 'Event Representation'
-  section_id: 'event_representation'
   section_description: 'Our examination of event representation focuses on how humans visualize and process moving events and infer causality within these events, as well as focusing on the neural bases of processing action-based information in general.'
-  item_list:
+  items:
   - work_authors: 'Quandt, L.C., Lee, Y.-S., & Chatterjee, A.'
     work_year: 2017
     work_title: 'Neural bases of action abstraction'
@@ -659,9 +657,8 @@
     edited_work_data: null
     pdf_filename: 'Chatterjee_Southwood_Basilico_1999_01.pdf'
 - section_title: 'Neuroaesthetics'
-  section_id: 'neuroaesthetics'
   section_description: 'Neuroaesthetics refers to the role of the brain in evaluating visual stimuli and their aesthetic appeal. Our research ranges from aesthetic choices of brain-injured individuals to aesthetic preferences in every day life (in architecture, art, and facial beauty).'
-  item_list:
+  items:
   - work_authors: 'Vartanian, O., Navarrete, G., Chatterjee, A., Fich, L. B., Leder, H., Modroño, C., Rostrup, N., Skov, M., Corradi, G., & Nadal, M.'
     work_year: 2017
     work_title: 'Preference for curvilinear contour in interior architectural spaces: Evidence from experts and nonexperts'
@@ -1099,9 +1096,8 @@
     edited_work_data: null
     pdf_filename: 'Chatterjee_2002_01.pdf'
 - section_title: 'Neuroethics'
-  section_id: 'neuroethics'
   section_description: 'Neuroethics focuses mainly on the ethical implications of neuroscientific progress, such as “cosmetic neurology,” the use of drugs to enhance cognitive performance and ability.'
-  item_list:
+  items:
   - work_authors: 'Weisberg, S., Badgio, D., & Chatterjee, A.'
     work_year: 2017
     work_title: 'A CRISPR new world: Attitudes in the public toward innovations in human genetic modification'
@@ -1263,9 +1259,8 @@
     edited_work_data: null
     pdf_filename: 'Chatterjee_2004_02.pdf'
 - section_title: 'Miscellaneous'
-  section_id: 'miscellaneous'
   section_description: 'Cognitive neurology covers many different areas and we are interested in a number of these facets of brain and behavior. These topics include visuospatial attention, methodology in cognitive neuroscience, as well as some case study research.'
-  item_list:
+  items:
   - work_authors: 'Siegler, J.E., Kable J.W., & Chatterjee, A.'
     work_year: 2016
     work_title: 'Resident decision making: Opioids in the outpatient setting'

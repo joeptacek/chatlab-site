@@ -1,0 +1,21 @@
+// Manifest --------------------------------------------------------------------
+
+@import "vendor/normalize";
+
+@import "modules/colors";
+@import "modules/media";
+
+@import "partials/reset";
+
+// for all below:
+// declare media queires within components (a la reset) instead of file-per-query organization
+@import "partials/utilities/utilities";
+@import "partials/utilities/utilities-sm";
+@import "partials/utilities/utilities-med";
+@import "partials/utilities/utilities-full";
+
+// separate into layout / components
+@import "partials/default";
+@import "partials/small";
+@import "partials/medium";
+@import "partials/full";

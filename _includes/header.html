@@ -1,4 +1,4 @@
-<header>
+<header id="page-header">
   <div id="logo">
     <a href="http://www.med.upenn.edu" target="_blank">
       <picture>
@@ -6,22 +6,11 @@
         <source srcset="{{ "/assets/img/logo/psom_logo.png" | prepend: site.baseurl }}" media="(min-width: 45rem)" />
         <source srcset="{{ "/assets/img/logo/shield.png" | prepend: site.baseurl }}" />
         <!-- Omitting src/srcset on the required fallback image to prevent flash of wrong image on Safari (...may cause problems on Android <=2.3)-->
-        <img alt="PSOM Logo" />
+        <img class="no-shrink" alt="PSOM Logo" />
         <!--[if IE 9]></video><![endif]-->
       </picture>
     </a>
-    <span><a href="{{ "/" | prepend: site.baseurl }}">ChatLab</a></span>
+    <a href="{{ "/" | prepend: site.baseurl }}"><div class="site-title">ChatLab</div></a>
   </div>
-  <nav id="nav-site">
-    <ul id="nav-site-links">
-      <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
-      <li><a href="{{ "/people.html" | prepend: site.baseurl }}">People</a></li>
-      <li><a href="{{ "/research.html" | prepend: site.baseurl }}">Research</a></li>
-      <li><a href="{{ "/news/all.html" | prepend: site.baseurl }}">News</a></li>
-      <li><a href="{{ "/contact.html" | prepend: site.baseurl }}">Contact</a></li>
-    </ul>
-    <button id="nav-site-toggle-button">
-      <svg><use id="nav-site-toggle-svg" xlink:href="#icon-close"></use></svg>
-    </button>
-  </nav>
+  {% include site_nav.html %}
 </header>

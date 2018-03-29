@@ -1,0 +1,222 @@
+// Resets ----------------------------------------------------------------------
+
+// Universal resets ------------------------------------------------------------
+
+* {
+  box-sizing: border-box;
+}
+
+// Element resets: Typography --------------------------------------------------
+
+$font-default: 'Open Sans', sans-serif;
+$font-headings: 'Bitter', serif;
+$font-ui: 'Open Sans', sans-serif;
+
+html {
+  font-family: $font-default;
+  font-size: 1rem;
+}
+
+.font-family-reset {
+  font-family: $font-default;
+}
+
+.font-weight-reset {
+  font-weight: normal;
+}
+
+.font-size-reset {
+  // does this belong up here, or under the element size declarations
+  font-size: 1em
+}
+
+.site-title, h1, h2, h3, h4 {
+  font-family: $font-headings;
+}
+
+nav a, .button-frame {
+  font-family: $font-ui;
+}
+
+nav a {
+  // does this belong up here, or under the element size declarations
+  font-size: 1.1em;
+}
+
+// Element resets: Vertical rhythm ---------------------------------------------
+
+// Major second / 9:8 / 1.125
+p  {
+  font-size: 1em;
+  &.font-large {
+    font-size: 1.1em;
+  }
+}
+h4 {font-size: 1.125em;}
+h3 {font-size: 1.266em;}
+h2 {font-size: 1.424em;}
+h1 {font-size: 1.602em;}
+.site-title {font-size: 1.802em} // skipping...
+.site-title {font-size: 2.027em} // skipping...
+.site-title {font-size: 2.281em} // ...nice and big
+
+
+// Margin rules: no margin-top, margin-bottom 1rem unless :last-child
+
+// Clear default margins on elements that have them
+h1, h2, h3, h4, p, ul {
+  margin: 0;
+}
+
+h1, h2, h3, h4, p, ul, address {
+  // Add back margin-bottom on elements wherever desired
+  // change to em?
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-group-cols > .section-group &,
+  .fi-main > header & {
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.margin-bottom-compact {
+  margin-bottom: 0.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-group-cols > .section-group &,
+  .fi-main > header & {
+    margin-bottom: 0.25rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.margin-bottom-double {
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-group-cols > .section-group &,
+  .fi-main > header & {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Utility class for breaking margin rules
+.no-margin-bottom {
+  margin-bottom: 0 !important; // !important so don't need to worry about specificity
+}
+
+// Center all headings by default
+.site-title, h1, h2, h3, h4 {
+  text-align: center;
+
+  // this seems to work but is this valid? per sass docs: yes? if so, do this everywhere??
+  // do component-specific media queries like this instead of file-per-query org style?
+  @media screen and (min-width: $small-width) {
+    text-align: left;
+  }
+}
+
+// Element resets: other text elements -----------------------------------------
+
+a {
+  color: $page-links;
+  text-decoration: none;
+
+  &:hover {
+    color: $pl-hover;
+  }
+}
+
+hr {
+  margin: 0 0 2rem 0; // 2rem margin-bottom (larger than margin-bottom 1rem for preceeding headers, paragraphs)
+  border: 0;
+
+  // Subtle inset <hr /> inspired by Dan Eden's
+  border: 0; /* Reset */
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+  &:last-child {
+    margin-bottom: 0;
+
+    &.force-margin-bottom {
+      margin-bottom: 2rem; // override above last-child rule
+    }
+  }
+}
+
++ hr {
+  // is this use of a naked + safe? seems ok when naked + is nested under another selector (e.g., p { + hr {} } which implies p { & + hr {} } i.e., not truly naked); seems like it might be less okay to do it this way (e.g., + hr { p & {} }), esp risky if one of the nested items DOESN'T use a trailing ampersand to reference / append the outer selector (e.g., + hr { p {} }), which would cause a truly naked + to be compiled to css - would this be invalid css (e.g., is + hr p {} invalid), thus is this bad practice??
+  .fi-main > header & {
+    margin-bottom: 1.5rem; // default 2rem; more compact inside fi-main header
+
+    &:last-child {
+      margin-bottom: 0;
+
+      &.force-margin-bottom {
+        margin-bottom: 1.5rem; // override above last-child-rule
+      }
+    }
+  }
+}
+
+cite {
+  font-style: italic; // Should be italic by default, but just in case not
+}
+
+address {
+  p {
+    // each line of address should go in <p> for pretty styling
+    margin-bottom: 0;
+
+    // mini hanging indent (helpful when wrapping at small width)
+    padding-left: 0.5rem;
+    text-indent: -0.5rem;
+  }
+}
+
+// Element resets: images ------------------------------------------------------
+
+img, svg {
+  display: block; // default leaves gap (e.g., in picture elements, in flex-item headers)
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+
+  &.no-shrink {
+    max-width: none !important;
+  }
+}
+
+svg {
+  // declare this as default / reset elsewhere?
+  width: 1rem;
+  height: 1rem;
+  fill: rgb(127, 127, 127);
+  &:hover {
+    fill: black; // Individual colors for different social?
+  }
+}

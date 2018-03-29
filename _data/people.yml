@@ -1,7 +1,6 @@
-- section_title: Lab Director
-  section_id: lab_director
+- section_title: 'Lab Director'
   section_description: null
-  item_list:
+  items:
   - name: Anjan Chatterjee
     photo_filename: anjan.jpg
     cv: Anjan_CV.pdf
@@ -14,10 +13,9 @@
     instagram: null
     github: null
     flickr: https://www.flickr.com/photos/anjan58/
-- section_title: Staff
-  section_id: staff
+- section_title: 'Staff'
   section_description: null
-  item_list:
+  items:
   - name: Eileen Cardillo
     photo_filename: eileen.jpg
     cv: null
@@ -42,10 +40,9 @@
     instagram: https://www.instagram.com/joeptacek/
     github: https://github.com/joeptacek
     flickr: null
-- section_title: Postdoctoral Fellows
-  section_id: postdoctoral-fellows
+- section_title: 'Postdoctoral Fellows'
   section_description: null
-  item_list:
+  items:
   - name: Steve Weisberg
     photo_filename: steve.jpg
     cv: https://smweis.files.wordpress.com/2011/11/weisberg_cv_living.pdf
@@ -130,10 +127,9 @@
     instagram: https://www.instagram.com/unter_geher/
     github: null
     flickr: null
-- section_title: Student Researchers
-  section_id: student-researchers
+- section_title: 'Student Researchers'
   section_description: null
-  item_list:
+  items:
   - name: Daniel Badgio
     photo_filename: daniel.jpg
     cv: null
@@ -182,10 +178,9 @@
     instagram: null
     github: null
     flickr: null
-- section_title: Visiting Researchers
-  section_id: visiting-researchers
+- section_title: 'Visiting Researchers'
   section_description: null
-  item_list:
+  items:
   - name: Alex Coburn
     photo_filename: alex.jpg
     cv: null

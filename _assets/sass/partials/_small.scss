@@ -1,0 +1,223 @@
+// Styles for small screens ----------------------------------------------------
+
+@media screen and (min-width: $small-width) {
+
+  html {
+    padding: 6rem 4rem 0;
+  }
+
+  main {
+    flex-flow: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  footer {
+    padding: 6rem 0;
+  }
+
+  #logo {
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+
+    a:first-child {
+      // shield
+      padding-right: 2.5rem;
+    }
+
+    a:last-child {
+      // chatlab
+      padding-left: 2.5rem;
+    }
+  }
+
+  // think about padding vs margin
+  .toggle-panel {
+    &.card, &.well {
+      > .nav-list {
+        &.nl-col-row {
+          // ...add default padding for toggle-panel children BACK to nav-list
+          padding-left: 2rem;
+          padding-right: 2rem;
+
+          > * {
+            // ...and remove from nav-list children (i.e., <li>)
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+
+    > .nav-list {
+      &.nl-col-row {
+        margin-top: -1.5rem;
+      }
+    }
+
+    &.grooved {
+      > .nav-list {
+        &.nl-col-row {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &.tp-only-mobile {
+      > button {
+        // get rid of button...
+        display: none;
+      }
+
+      &.grooved > .nav-list {
+        // ...and the preceding border from .nav-list
+        border-bottom: none;
+      }
+    }
+  }
+
+  .nav-list {
+    li {
+      // shift padding from <a> to parent <li> (more link-like vs. button-like)
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    a {
+      text-align: left;
+      display: inline-block; // more link-like vs. button-like (maybe just do inline?)
+
+      // shift padding from <a> to parent <li>
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &.nl-compact {
+      li {
+        // shift padding from <a> to parent <li>
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      a {
+        // need to redeclare this due to specificity at default breakpoint
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    &.nl-col-row {
+      flex-flow: row;
+
+      // 2rem is too chunky / out of proporition with 2rem horizontal padding
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+
+      li {
+        // switch to horizontal "padding" between <li> (margin so not clickable)
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-right: 1.5rem; // for consistency, could consider 0.75 left and right except first-child
+      }
+    }
+  }
+
+  .nav-list.grooved {
+    &.nl-col-row {
+      > * {
+        border-bottom: none;
+        // TODO: add vert grooves (default yes, optionally no) - would need to move top/bottom padding from ul to inner li
+        // border-right: solid $borders 1px;
+        // &:last-child {
+        //   border-right: none;
+        // }
+      }
+    }
+  }
+
+  .tp-no-display {
+    .tp-only-mobile & {
+      display: block !important;
+
+      &.nav-list {
+        display: flex !important;
+      }
+    }
+  }
+
+  #nav-page {
+    flex: 0 0 16rem;
+    margin-right: 2rem;
+
+    &.nav-page-fancy-fixed {
+      position: fixed;
+      width: 16rem;
+      top: 2rem;
+      left: 4rem;
+    }
+  }
+
+  #nav-page-main {
+    // text-align: left;
+    margin-bottom: 0;
+  }
+
+  #nav-page-jumpup {
+    // define some of this at default breakpoint?
+    transition: top 0.2s ease;
+
+    display: inline-block;
+    padding: 1.5rem;
+    border-radius: 9999px;
+    background-color: $card;
+    box-shadow: 0 1px 3px $shadows; // shadows already transp
+
+    position: relative;
+    top: -5rem;
+    left: 1.5rem;
+    bottom: auto; // reset
+    right: auto; // reset
+    z-index: 0;
+
+    svg {
+      transition: margin-top 0.2s ease;
+
+      width: 1.75rem;
+      height: 1.75rem;
+      margin-top: 0;
+      fill: $page-links;
+
+      &:hover {
+        fill: $pl-hover;
+      }
+    }
+
+    &.nav-page-jumpup-lowered {
+      top: -3.5rem;
+
+      svg {
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  #page-content {
+    // flex: 1 1 auto; // allows flex item to grow to fill remaining width of body / main [initial default is 0 1 auto, corresponding to grow, shrink, basis]
+    flex: 0 1 calc(100% - 18rem); // Calc is not well supported... perhaps implement in js?
+    // overflow: hidden; // by default, flex items have min-width (and min-height) as auto, meaning will not shrink smaller than size of contents. override with mid-width: 0 or even more elegantly, overflow: hidden (any value of overflow except visible makes min-width: 0 and content will disappear at small sizes as needed)
+    min-width: 0; // overflow: hidden screws up shadows
+  }
+
+  .section-group-cols {
+    columns: 2;
+  }
+
+  .fi-main {
+    > header {
+      .site-title, h1, h2, h3, h4 {
+        // per reset, headings shift back left, but headings inside flex-item headers should stay centered until med breakpoint
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+// Styles for medium screens ---------------------------------------------------
+
+@media screen and (min-width: $medium-width) {
+
+  .section-group-cols {
+    columns: 3;
+  }
+
+  .flex-item {
+    flex-flow: row;
+    align-items: flex-start; // default: top-align
+
+    &.fi-med-center {
+      align-items: center; // optional: (re-)center-align with this class
+    }
+
+    &.fi-med-compact {
+      margin-bottom: 2rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    > header {
+      flex: 0 0 212px; // or else shrinks (200px header + 5px paddings + 1px borders)
+      margin-right: 2rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .fi-main {
+    &.fi-main-def-sm-compact {
+      max-width: none;
+    }
+
+    > header {
+      text-align: left;
+      .site-title, h1, h2, h3, h4 {
+        // headings inside flex-item headers finally shift left
+        text-align: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+.dotted-border {
+  border: 1px dotted red;
+}
+
+.positioned {
+  position: relative;
+  z-index: 1;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.button-frame {
+  display: inline-block; // for padding (e.g., for inline <a> elements)
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border: solid $page-links 1px;
+  color: $page-links;
+
+  &:hover {
+    background-color: hsl(211, 26%, 96%); // i.e., page-links with more luminence
+    color: $page-links; // override $pl-hover default
+  }
+}
+
+.no-display, .no-display-only-mobile {
+  display: none !important;
+}
+
+// Hanging indent (e.g., for citations)
+.hanging-indent {
+  padding-left: 0.75rem;
+  text-indent: -0.75rem;
+}
+
+// To override default italics, for example in a <cite> or <address>
+.font-style-normal {
+  font-style: normal !important;
+}
+
+// Round only this element (element should be block or inline-block)
+.rounded {
+  border-radius: 9999px;
+}
+
+// Round this element and all children
+.rounded-descending {
+  border-radius: 9999px;
+
+  * {
+    border-radius: 9999px;
+
+    &.rounded-skip {
+      border-radius: 0; // for use with rounded-descending
+    }
+  }
+
+  a {
+    display: block; // otherwise won't be rounded (default inline)
+  }
+}
+
+.list-reset {
+  padding-left: 0;
+
+  li {
+    list-style: none;
+  }
+
+  &.lr-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > li {
+      margin-right: 0.5rem;
+
+      &.lr-double-margin-right {
+        margin-right: 1rem;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.button-reset {
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  background-color: inherit;
+  padding: 0;
+}
+
+.link-like {
+  color: $page-links;
+
+  &:hover {
+    cursor: pointer;
+    color: $pl-hover;
+  }
+}
+
+a, .link-like {
+  &.link-selected {
+    color: $pl-hover;
+  }
+}
+
+.links-red {
+  a, .link-like {
+    color: $site-links;
+
+    &:hover {
+      color: $sl-hover;
+    }
+
+    &.link-selected {
+      color: $sl-hover;
+    }
+  }
+}

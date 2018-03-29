@@ -1,0 +1,11 @@
+{% comment %} oddly enough jekyll refuses to watch this file if named nav_site.html {% endcomment %}
+{% comment %} TODO: add highlight to current page {% endcomment %}
+<nav class="toggle-panel tp-type-menu tp-only-mobile well grooved rounded-subtle">
+  <ul class="toggle-target nav-list nl-col-row grooved links-red">
+    <li><a {% if page.title == "Home" %}class="link-selected"{% endif %}href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+    <li><a {% if page.title == "People" %}class="link-selected"{% endif %}href="{{ "/people.html" | prepend: site.baseurl }}">People</a></li>
+    <li><a {% if page.title == "Research" %}class="link-selected"{% endif %}href="{{ "/research.html" | prepend: site.baseurl }}">Research</a></li>
+    <li><a {% if page.title == "News" %}class="link-selected"{% endif %}href="{{ "/news.html" | prepend: site.baseurl }}">News</a></li>
+    <li><a {% if page.title == "Contact" %}class="link-selected"{% endif %}href="{{ "/contact.html" | prepend: site.baseurl }}">Contact</a></li>
+  </ul>
+</nav>
