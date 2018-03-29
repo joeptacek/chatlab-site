@@ -144,6 +144,17 @@ gulp.task('watch', ['jekyll-watch', 'assets-watch']);
 // (build and) watch everything AND boot development server
 gulp.task('serve', ['watch', 'bs']); // might be better to do these async - specifically, wait until jekyll finishes initial build (use hooks?) and THEN serve via browsersync (or else browsersync watches / reloads a lot while jekyll builds)
 
+// gulp.task('serve', ['watch'], function () {
+//   // watch needs to return a callback
+//   // bs tasks go here
+// });
+
+// build for production and deploy to production server
+// gulp.task('deploy', ['build'], function () {
+//   // build needs to return a callback
+//   // deployment tasks depend on build finishing, returning callback
+// });
+
 // default task
 gulp.task('default', ['serve']);
 
