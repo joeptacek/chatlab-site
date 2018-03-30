@@ -21,11 +21,12 @@ var uglify = require('gulp-uglify');
 
 // VARIABLES -------------------------------------------------------------------
 
-var child_jk; // needs to be global so able to kill later
+var child_jk_watch; // needs to be global so we can kill later
 
 // check process.argv array for "-p" flag; alternatively, for more complicated parsing can use minimist or yargs
+var production = false;
 if (process.argv.includes("-p")) {
-  var production = true;
+  production = true;
 }
 
 // _config-gulp.yml excludes _assets (for jekyll watch), keeps assets/js and assets/css (so gulp output isn't clobbered)
@@ -37,9 +38,9 @@ var jk_command_build = [
   'bundle',
   'exec',
   'jekyll',
-  'build'
+  'build', // trailing comma is fine
   // '--incremental', // i don't 100% trust incremental (still experimental), but it's somewhat faster
-  // '-V', // debug mode
+  // '-V' // debug
 ];
 
 // create spawn_env object, using the default process environment as prototype...
@@ -57,14 +58,14 @@ var jk_command_watch = jk_command_build.concat('--watch');
 
 // TASKS -----------------------------------------------------------------------
 
-// build css (development only: sourcemaps; production only: autoprefixer, cssnano)
+// build css
 gulp.task('css', function () {
   var plugins = [
     autoprefixer(),
     cssnano()
   ];
   return gulp.src('_assets/sass/**/*.scss')
-    // .pipe(debug({title: 'Debug (css):'})) // debug mode
+    // .pipe(debug({title: 'Debug (css):'})) // debug
     .pipe(gulpif(!production, sourcemaps.init())) // only in development
     .pipe(sass().on('error', sass.logError))
     .pipe(gulpif(!production, sourcemaps.write())) // only in development
@@ -75,52 +76,95 @@ gulp.task('css', function () {
 // build js
 gulp.task('js', function () {
   return gulp.src('_assets/js/**/*.js')
-    // .pipe(debug({title: 'Debug (js):'})) // debug mode
+    // .pipe(debug({title: 'Debug (js):'})) // debug
     .pipe(gulpif(production, uglify())) // only in production
     .pipe(gulp.dest('_site/assets/js'));
 });
 
 // build assets
-gulp.task('assets-build', ['css', 'js']);
+gulp.task('assets-build', ['css', 'js'], function (cb) {
+  // css and js return streams (and run in parallel?) so assets-build will wait until they finish
+  cb(); // for assets-watch, deploy
+});
 
 // (build and) watch assets
-gulp.task('assets-watch', ['assets-build'], function () {
+gulp.task('assets-watch', ['assets-build'], function (cb) {
+  // assets-build returns callback so assets-watch will wait until it finishes
   gulp.watch('_assets/sass/**/*.scss', ['css']);
   gulp.watch('_assets/js/**/*.js', ['js']);
+  cb(); // for watch
 });
 
 // build jekyll
-gulp.task('jekyll-build', function () {
-  spawn(jk_command_build[0], jk_command_build.slice(1), {
-    stdio: 'inherit',
-    env: spawn_env
-  });
-});
+gulp.task('jekyll-build', function (cb) {
+  child_jk_build = spawn_jk_build();
 
-// (build and) watch jekyll
-gulp.task('jekyll-watch', function () {
-  // spawn initial jekyll, assign to global to kill later
-  child_jk = spawn_jk();
+  child_jk_build.stdout.on('data', function (buff) {
+    // send jekyll output to log TODO: also log stderr etc.
+    // using console.log() introduces extra newlines, so just write out to main gulp process (need to convert buffer to string)
+    process.stdout.write(buff.toString());
 
-  gulp.watch('@(_config.yml|_config-*.yml)', function () {
-    // on changes to jekyll config, kill / re-spawn
-    gutil.log('Jekyll config updated, rebooting...');
-    child_jk.kill();
-    child_jk = spawn_jk();
+    // execute callback when jekyll finishes build; listen for hints on child process stdout
+    // apparently `includes` can find a string in a buffer, toString() conversion not necessary
+    if (buff.includes("Auto-regeneration: disabled")) {
+      cb();
+    }
   });
 
-  function spawn_jk () {
-    return spawn(jk_command_watch[0], jk_command_watch.slice(1), {
-      stdio: 'inherit',
+  function spawn_jk_build () {
+    return spawn(jk_command_build[0], jk_command_build.slice(1), {
       env: spawn_env
     });
   }
 });
 
-// start browsersync development server
-gulp.task('bs', function () {
-  // maybe quiet bs the hell down?
+// (build and) watch jekyll
+gulp.task('jekyll-watch', function (cb) {
+  // spawn initial jekyll child process, assign to global to kill later
+  child_jk_watch = spawn_jk_watch();
+
+  child_jk_watch.stdout.on('data', function (buff) {
+    // send jekyll output to log TODO: also log stderr etc.
+    // using console.log() introduces extra newlines, so just write out to main gulp process (need to convert buffer to string)
+    process.stdout.write(buff.toString());
+
+    // execute callback when jekyll-watch finishes initial build; listen for hints on child process stdout
+    if (buff.includes("Auto-regeneration: enabled")) {
+      cb();
+    }
+  });
+
+  gulp.watch('@(_config.yml|_config-*.yml)', function () {
+    // on changes to jekyll config, kill / re-spawn
+    gutil.log('Jekyll config updated, rebooting...');
+    child_jk_watch.kill();
+    child_jk_watch = spawn_jk_watch();
+  });
+
+  function spawn_jk_watch () {
+    return spawn(jk_command_watch[0], jk_command_watch.slice(1), {
+      env: spawn_env
+    });
+  }
+});
+
+// build everything
+gulp.task('build', ['assets-build', 'jekyll-build'], function (cb) {
+  // assets-build and jekyll-build return callback (and run in parallel?) so build will wait until they finish
+  cb(); // for deploy
+});
+
+// (build and) watch everything
+gulp.task('watch', ['assets-watch', 'jekyll-watch'], function (cb) {
+  // assets-watch and jekyll-watch return callback (and run in parallel?) so watch will wait until they finish
+  cb(); // for serve
+});
+
+gulp.task('serve', ['watch'], function () {
+  // watch returns callback so serve will wait until it finishes
+  // start browsersync development server (currently no need for separate gulp task, but could turn this into its own function)
   bs.init({
+    // maybe quiet bs the hell down?
     files: '_site/**', // changes are either injected (CSS / img) or cause browser reload
     server: {
       baseDir: '_site',
@@ -133,33 +177,24 @@ gulp.task('bs', function () {
     startPath: "/chatterjee",
     notify: false
   });
+  // currently no need to return callback
 });
 
-// build everything
-gulp.task('build', ['jekyll-build', 'assets-build']);
-
-// (build and) watch everything
-gulp.task('watch', ['jekyll-watch', 'assets-watch']);
-
-// (build and) watch everything AND boot development server
-gulp.task('serve', ['watch', 'bs']); // might be better to do these async - specifically, wait until jekyll finishes initial build (use hooks?) and THEN serve via browsersync (or else browsersync watches / reloads a lot while jekyll builds)
-
-// gulp.task('serve', ['watch'], function () {
-//   // watch needs to return a callback
-//   // bs tasks go here
-// });
-
 // build for production and deploy to production server
-// gulp.task('deploy', ['build'], function () {
-//   // build needs to return a callback
-//   // deployment tasks depend on build finishing, returning callback
-// });
+gulp.task('deploy', ['build'], function () {
+  // build returns callback so deploy will wait until it finishes
+  // deployment tasks
+  production = true;
+});
 
 // default task
 gulp.task('default', ['serve']);
 
 // NOTES -----------------------------------------------------------------------
 
+// TODO: maybe improve DRYness of spawn_jk_build vs. spawn_jk_watch
+// TODO: maybe use named function for stdout.on listeners (DRY), passing hint string
+// TODO: task callbacks can accept error objects, look into this?
 // TODO: move hard-coded constants (e.g., paths) to separate file
 // TODO: clean up quotes (consistent double / single)
 // TODO: make deploy task (build with production flag, rsync backup/copy to server; need SSH key)
