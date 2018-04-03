@@ -13,14 +13,14 @@ window.addEventListener("scroll", function () {
   var scrollY = window.pageYOffset;
 
   if (atTop) {
-    if (scrollY > 261) {
+    if (scrollY > 260) {
       atTop = false;
       // Only fires once when crossing from low to high
       navPage.classList.add("nav-page-fancy-fixed");
       navPageJumpUp.classList.add("nav-page-jumpup-lowered");
     }
   } else {
-    if (scrollY < 262) {
+    if (scrollY < 261) {
       atTop = true;
       // Only fires once when crossing from high to low
       navPage.classList.remove("nav-page-fancy-fixed");
