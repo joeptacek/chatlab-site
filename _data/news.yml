@@ -1,5 +1,21 @@
 - group_title: null
   items:
+  - title: '“It’s a Snapshot of America in This Moment” – Behind the Netflix Film on Adderall Abuse'
+    source: 'Decider'
+    sub_source: null
+    date_month: 3
+    date_day: 20
+    date_year: 2018
+    media_url: 'https://decider.com/2018/03/20/take-your-pills-netflix-review/'
+    media_type: 'print'
+  - title: '“Take Your Pills” Is an Unexpected Look Into Adderall Abuse'
+    source: 'The Guardian'
+    sub_source: null
+    date_month: 3
+    date_day: 14
+    date_year: 2018
+    media_url: 'https://www.theguardian.com/film/2018/mar/14/take-your-pills-netflix-adderall-america'
+    media_type: 'print'
   - title: 'Global Wellness Institute Releases Study on Removing Barriers Between Beauty and Wellness'
     source: 'Benzinga'
     sub_source: null
