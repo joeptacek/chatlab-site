@@ -657,8 +657,24 @@
     edited_work_data: null
     pdf_filename: 'Chatterjee_Southwood_Basilico_1999_01.pdf'
 - section_title: 'Neuroaesthetics'
-  section_description: 'Neuroaesthetics refers to the role of the brain in evaluating visual stimuli and their aesthetic appeal. Our research ranges from aesthetic choices of brain-injured individuals to aesthetic preferences in every day life (in architecture, art, and facial beauty).'
+  section_description: 'Neuroaesthetics refers to the role of the brain in evaluating visual stimuli and their aesthetic appeal. Our research ranges from aesthetic choices of brain-injured individuals to aesthetic preferences in everyday life (in architecture, art, and facial beauty).'
   items:
+  - work_authors: 'Meghani, S.H., Peterson, C., Kaiser, D.H., Rhodes, J., Rao, H., Chittams, J., & Chatterjee, A.'
+    work_year: 2018
+    work_title: 'A pilot study of a mindfullness-based art therapy intervention in outpatients with cancer'
+    work_publication_format: 'article_in_journal'
+    journal_data:
+      journal_title: 'American Journal of Hospice and Palliative Medicine'
+      advance_tf: true
+      journal_vol: null
+      journal_issue: null
+      journal_pages_start: null
+      journal_pages_stop: null
+      doi: '10.1177/1049909118760304'
+      review_tf: false
+      review_data: null
+    edited_work_data: null
+    pdf_filename: 'Meghani_Peterson_Kaiser_Rhodes_Rao_Chittams_Chatterjee_2018_01.pdf'
   - work_authors: 'Vartanian, O., Navarrete, G., Chatterjee, A., Fich, L. B., Leder, H., Modroño, C., Rostrup, N., Skov, M., Corradi, G., & Nadal, M.'
     work_year: 2017
     work_title: 'Preference for curvilinear contour in interior architectural spaces: Evidence from experts and nonexperts'
@@ -1261,6 +1277,22 @@
 - section_title: 'Miscellaneous'
   section_description: 'Cognitive neurology covers many different areas and we are interested in a number of these facets of brain and behavior. These topics include visuospatial attention, methodology in cognitive neuroscience, as well as some case study research.'
   items:
+  - work_authors: 'Yeatts, S.D., Broderick, J.P., Chatterjee, A., Jauch, E.C., Levine, S.R., Romano, J.G., Saver, J.L., Vagal, A., Purdon, B., Devenport, J., & Khatri, P.'
+    work_year: 2018
+    work_title: 'Alteplase for the treatment of acute ischemic stroke in patients with low National Institutes of Health Stroke Scale and not clearly disabling deficits (Potential of rtPA for Ischemic Strokes with Mild Symptoms PRISMS): Rationale and design'
+    work_publication_format: 'article_in_journal'
+    journal_data:
+      journal_title: 'International Journal of Stroke'
+      advance_tf: true
+      journal_vol: null
+      journal_issue: null
+      journal_pages_start: null
+      journal_pages_stop: null
+      doi: '10.1177/1747493018765269'
+      review_tf: false
+      review_data: null
+    edited_work_data: null
+    pdf_filename: 'Yeatts_Broderick_Chatterjee_Jauch_Levine_Romano_Saver_Vagal_Purdon_Devenport_Khatri_2018_01.pdf'
   - work_authors: 'Siegler, J.E., Kable J.W., & Chatterjee, A.'
     work_year: 2016
     work_title: 'Resident decision making: Opioids in the outpatient setting'
