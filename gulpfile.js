@@ -2,7 +2,6 @@
 
 // core
 var gulp = require('gulp');
-var gutil = require('gulp-util'); // deprecated! use fancy-log instead (per gulp-util team)
 var spawn = require('child_process').spawn;
 var bs = require('browser-sync').create();
 var sourcemaps = require('gulp-sourcemaps');
@@ -84,7 +83,7 @@ gulp.task('js', function () {
 // build assets
 gulp.task('assets-build', ['css', 'js'], function (cb) {
   // css and js return streams (and run in parallel?) so assets-build will wait until they finish
-  cb(); // for assets-watch, deploy
+  cb(); // for assets-watch, build, deploy
 });
 
 // (build and) watch assets
@@ -107,7 +106,7 @@ gulp.task('jekyll-build', function (cb) {
     // execute callback when jekyll finishes build; listen for hints on child process stdout
     // apparently `includes` can find a string in a buffer, toString() conversion not necessary
     if (buff.includes("Auto-regeneration: disabled")) {
-      cb();
+      cb(); // for build
     }
   });
 
@@ -124,21 +123,32 @@ gulp.task('jekyll-watch', function (cb) {
   child_jk_watch = spawn_jk_watch();
 
   child_jk_watch.stdout.on('data', function (buff) {
+    // event listener for INITIAL Jekyll child process (killed / respawned Jekyll gets its own listener, below)
+
     // send jekyll output to log TODO: also log stderr etc.
     // using console.log() introduces extra newlines, so just write out to main gulp process (need to convert buffer to string)
     process.stdout.write(buff.toString());
 
     // execute callback when jekyll-watch finishes initial build; listen for hints on child process stdout
     if (buff.includes("Auto-regeneration: enabled")) {
-      cb();
+      // assumes (correctly?) that Jekyll will send this output only once for THIS child process (multiple callbacks cause errors); if Jekyll is killed / respawned, it might send this output again but THIS event listener won't hear it
+      cb(); // for watch
     }
   });
 
-  gulp.watch('@(_config.yml|_config-*.yml)', function () {
+  gulp.watch('@(_config.yml|_config-*.yml)', function (event) {
     // on changes to jekyll config, kill / re-spawn
-    gutil.log('Jekyll config updated, rebooting...');
-    child_jk_watch.kill();
-    child_jk_watch = spawn_jk_watch();
+
+    if (event.type === 'changed') {
+      // restricting to change events; otherwise on the very first build, this watch object will respond to files being *added* to _site and _site/demos (sort of unclear why not just watching config files), and then unecessarily kill / respawn Jekyll, also screwing up the existing event listener / callback
+      console.log('Jekyll config updated, rebooting...');
+      child_jk_watch.kill();
+      child_jk_watch = spawn_jk_watch();
+      child_jk_watch.stdout.on('data', function (buff) {
+        // event listener for respawned Jekyll
+        process.stdout.write(buff.toString());
+      });
+    }
   });
 
   function spawn_jk_watch () {
