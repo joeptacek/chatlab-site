@@ -192,9 +192,8 @@ gulp.task('serve', ['watch'], function () {
 
 // build for production and deploy to production server
 gulp.task('deploy', ['build'], function () {
-  // build returns callback so deploy will wait until it finishes
-  // deployment tasks
-  production = true;
+  // build returns callback so deploy will wait until it finishes deployment tasks
+  // need to enable "production" during build (can't assume that -p flag has been passed); can't just declare production = true here in this callback!
 });
 
 // default task
@@ -202,6 +201,8 @@ gulp.task('default', ['serve']);
 
 // NOTES -----------------------------------------------------------------------
 
+// TODO: cache invalidation
+// TODO: image optimization
 // TODO: maybe improve DRYness of spawn_jk_build vs. spawn_jk_watch
 // TODO: maybe use named function for stdout.on listeners (DRY), passing hint string
 // TODO: task callbacks can accept error objects, look into this?
