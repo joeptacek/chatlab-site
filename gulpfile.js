@@ -98,6 +98,10 @@ gulp.task('assets-watch', ['assets-build'], function (cb) {
 gulp.task('jekyll-build', function (cb) {
   child_jk_build = spawn_jk_build();
 
+  child_jk_build.stderr.on('data', function (buff) {
+    process.stderr.write(buff.toString());
+  })
+
   child_jk_build.stdout.on('data', function (buff) {
     // send jekyll output to log TODO: also log stderr etc.
     // using console.log() introduces extra newlines, so just write out to main gulp process (need to convert buffer to string)
@@ -122,6 +126,10 @@ gulp.task('jekyll-watch', function (cb) {
   // spawn initial jekyll child process, assign to global to kill later
   child_jk_watch = spawn_jk_watch();
 
+  child_jk_watch.stderr.on('data', function (buff) {
+    process.stderr.write(buff.toString());
+  })
+
   child_jk_watch.stdout.on('data', function (buff) {
     // event listener for INITIAL Jekyll child process (killed / respawned Jekyll gets its own listener, below)
 
@@ -144,6 +152,11 @@ gulp.task('jekyll-watch', function (cb) {
       console.log('Jekyll config updated, rebooting...');
       child_jk_watch.kill();
       child_jk_watch = spawn_jk_watch();
+
+      child_jk_watch.stderr.on('data', function (buff) {
+        process.stderr.write(buff.toString());
+      })
+
       child_jk_watch.stdout.on('data', function (buff) {
         // event listener for respawned Jekyll
         process.stdout.write(buff.toString());
