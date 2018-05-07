@@ -4,6 +4,7 @@ exclude:
 
   # need to re-exclude everything from _config.yml and _config-gulp.yml, otherwise will only exclude _pages/demos (when multiple configs are loaded, sequences are overwritten, not appended)
   - _assets
+  - _docs
   - Gemfile
   - Gemfile.lock
   - vendor
