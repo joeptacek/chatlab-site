@@ -25,7 +25,7 @@
     </main>
     {% include footer.html %}
     <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
-    {% if page.url == "/" %}
+    {% if page.title == "Home" %}
       <!-- for Netlify CMS login -->
       <script>
         if (window.netlifyIdentity) {
