@@ -22,10 +22,11 @@ var uglify = require('gulp-uglify');
 
 var child_jk_watch; // needs to be global so we can kill later
 
-// check process.argv array for "-p" flag; alternatively, for more complicated parsing can use minimist or yargs
+// check process.argv array for "-p" flag or "deploy" task command; alternatively, for more complicated parsing can use minimist or yargs
 var production = false;
-if (process.argv.includes("-p")) {
-  production = true;
+var productionArgs = ["-p", "deploy"]; // add any CLI tasks that require production = true, or that depend on / make a non-CLI call to another task requiring production = true
+if (productionArgs.some(target => process.argv.includes(target))) {
+  production = true; // maybe set $NODE_ENV environment variable?
 }
 
 // _config-gulp.yml excludes _assets (for jekyll watch), keeps assets/js and assets/css (so gulp output isn't clobbered)
@@ -45,6 +46,7 @@ var jk_command_build = [
 // create spawn_env object, using the default process environment as prototype...
 var spawn_env = Object.create(process.env);
 
+// perhaps move this into the jekyll-build task (e.g., similar to checking production locally in the css / js tasks)
 if (production) {
   // ...in production, add this key-value pair to the spawn_env object
   spawn_env.JEKYLL_ENV = 'production';
@@ -54,6 +56,14 @@ if (production) {
 }
 
 var jk_command_watch = jk_command_build.concat('--watch');
+
+var rsync_command = [
+  'rsync',
+  '-ahzP',
+  '--delete',
+  './_site/',
+  'jptacek@hosting.med.upenn.edu:/home/ccn/web_docs/chatterjee'
+];
 
 // TASKS -----------------------------------------------------------------------
 
@@ -206,7 +216,13 @@ gulp.task('serve', ['watch'], function () {
 // build for production and deploy to production server
 gulp.task('deploy', ['build'], function () {
   // build returns callback so deploy will wait until it finishes deployment tasks
-  // need to enable "production" during build (can't assume that -p flag has been passed); can't just declare production = true here in this callback!
+
+  // when deploy is called via CLI `gulp deploy`, production will be set to true for the build task because 'deploy' is included among `productionArgs`
+  // if deploy is ever called from another CLI task (e.g., as dependency), production would NOT be set to true for build; could (re-)enable production by adding the other task to `productionArgs`
+
+  // could also use `this.seq` to set conditionally set production within all the lowest-level dependencies (e.g., css, js, jekyll-build), based on whether the Gulp task seq array (might be gulp v3 specific) includes certain tasks (e.g., deploy); avoids needing to maintain a `productionArgs` list, but seems messier
+  // in gulp v4, could do something like this using gulp.tree
+  spawn(rsync_command[0], rsync_command.slice(1), { stdio: 'inherit' });
 });
 
 // default task
