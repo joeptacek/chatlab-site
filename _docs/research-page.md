@@ -1,6 +1,10 @@
 # research page
 
-## object in publication_items array
+## publication_list (array)
+
+array of `publication` objects
+
+## publication (object)
 
 ### work_authors (string)
 

@@ -25,5 +25,19 @@
     </main>
     {% include footer.html %}
     <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
+    {% if page.url == "/" %}
+      <!-- for Netlify CMS login -->
+      <script>
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      </script>
+    {% endif %}
   </body>
 </html>

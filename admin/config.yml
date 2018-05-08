@@ -1,0 +1,34 @@
+backend:
+  name: git-gateway
+  branch: develop-netlify
+publish_mode: editorial_workflow
+media_folder: "assets/img/netlify"
+collections:
+- name: "pages"
+  label: "Pages"
+  label_singular: "Page"
+  files:
+  - name: "research"
+    label: "Research Page"
+    file: "_data/research.yml"
+    fields:
+    - name: "publication_list"
+      label: "Publications"
+      widget: list
+      # fields:
+  - name: "people"
+    label: "People Page"
+    file: "_data/people.yml"
+    fields:
+    - name: "people_list"
+      label: "People"
+      widget: list
+      # fields:
+  - name: "news"
+    label: "People Page"
+    file: "_data/people.yml"
+    fields:
+    - name: "people_list"
+      label: "People"
+      widget: list
+      # fields:

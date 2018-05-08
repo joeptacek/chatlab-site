@@ -17,4 +17,8 @@
   </script>
   <script async src="{{ "/assets/js/vendor/picturefill.js" | prepend: site.baseurl }}"></script>
   {% if jekyll.environment == "production" %}{% include analytics.html %}{% endif %}
+  {% comment %}this is comment{% endcomment %}
+
+  <!-- for Netlify CMS login -->
+  {% if page.url == "/" %}<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>{% endif %}
 </head>
