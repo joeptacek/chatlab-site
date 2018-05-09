@@ -2,7 +2,6 @@
 
 // core
 var gulp = require('gulp');
-var gutil = require('gulp-util'); // deprecated! use fancy-log instead (per gulp-util team)
 var spawn = require('child_process').spawn;
 var bs = require('browser-sync').create();
 var sourcemaps = require('gulp-sourcemaps');
@@ -23,10 +22,11 @@ var uglify = require('gulp-uglify');
 
 var child_jk_watch; // needs to be global so we can kill later
 
-// check process.argv array for "-p" flag; alternatively, for more complicated parsing can use minimist or yargs
+// check process.argv array for "-p" flag or "deploy" task command; alternatively, for more complicated parsing can use minimist or yargs
 var production = false;
-if (process.argv.includes("-p")) {
-  production = true;
+var productionArgs = ["-p", "deploy"]; // add any CLI tasks that require production = true, or that depend on / make a non-CLI call to another task requiring production = true
+if (productionArgs.some(target => process.argv.includes(target))) {
+  production = true; // maybe set $NODE_ENV environment variable?
 }
 
 // _config-gulp.yml excludes _assets (for jekyll watch), keeps assets/js and assets/css (so gulp output isn't clobbered)
@@ -46,6 +46,7 @@ var jk_command_build = [
 // create spawn_env object, using the default process environment as prototype...
 var spawn_env = Object.create(process.env);
 
+// perhaps move this into the jekyll-build task (e.g., similar to checking production locally in the css / js tasks)
 if (production) {
   // ...in production, add this key-value pair to the spawn_env object
   spawn_env.JEKYLL_ENV = 'production';
@@ -55,6 +56,14 @@ if (production) {
 }
 
 var jk_command_watch = jk_command_build.concat('--watch');
+
+var rsync_command = [
+  'rsync',
+  '-ahzP',
+  '--delete',
+  './_site/',
+  'jptacek@hosting.med.upenn.edu:/home/ccn/web_docs/chatterjee'
+];
 
 // TASKS -----------------------------------------------------------------------
 
@@ -84,7 +93,7 @@ gulp.task('js', function () {
 // build assets
 gulp.task('assets-build', ['css', 'js'], function (cb) {
   // css and js return streams (and run in parallel?) so assets-build will wait until they finish
-  cb(); // for assets-watch, deploy
+  cb(); // for assets-watch, build, deploy
 });
 
 // (build and) watch assets
@@ -99,6 +108,10 @@ gulp.task('assets-watch', ['assets-build'], function (cb) {
 gulp.task('jekyll-build', function (cb) {
   child_jk_build = spawn_jk_build();
 
+  child_jk_build.stderr.on('data', function (buff) {
+    process.stderr.write(buff.toString());
+  })
+
   child_jk_build.stdout.on('data', function (buff) {
     // send jekyll output to log TODO: also log stderr etc.
     // using console.log() introduces extra newlines, so just write out to main gulp process (need to convert buffer to string)
@@ -107,7 +120,7 @@ gulp.task('jekyll-build', function (cb) {
     // execute callback when jekyll finishes build; listen for hints on child process stdout
     // apparently `includes` can find a string in a buffer, toString() conversion not necessary
     if (buff.includes("Auto-regeneration: disabled")) {
-      cb();
+      cb(); // for build
     }
   });
 
@@ -123,22 +136,42 @@ gulp.task('jekyll-watch', function (cb) {
   // spawn initial jekyll child process, assign to global to kill later
   child_jk_watch = spawn_jk_watch();
 
+  child_jk_watch.stderr.on('data', function (buff) {
+    process.stderr.write(buff.toString());
+  })
+
   child_jk_watch.stdout.on('data', function (buff) {
+    // event listener for INITIAL Jekyll child process (killed / respawned Jekyll gets its own listener, below)
+
     // send jekyll output to log TODO: also log stderr etc.
     // using console.log() introduces extra newlines, so just write out to main gulp process (need to convert buffer to string)
     process.stdout.write(buff.toString());
 
     // execute callback when jekyll-watch finishes initial build; listen for hints on child process stdout
     if (buff.includes("Auto-regeneration: enabled")) {
-      cb();
+      // assumes (correctly?) that Jekyll will send this output only once for THIS child process (multiple callbacks cause errors); if Jekyll is killed / respawned, it might send this output again but THIS event listener won't hear it
+      cb(); // for watch
     }
   });
 
-  gulp.watch('@(_config.yml|_config-*.yml)', function () {
+  gulp.watch('@(_config.yml|_config-*.yml)', function (event) {
     // on changes to jekyll config, kill / re-spawn
-    gutil.log('Jekyll config updated, rebooting...');
-    child_jk_watch.kill();
-    child_jk_watch = spawn_jk_watch();
+
+    if (event.type === 'changed') {
+      // restricting to change events; otherwise on the very first build, this watch object will respond to files being *added* to _site and _site/demos (sort of unclear why not just watching config files), and then unecessarily kill / respawn Jekyll, also screwing up the existing event listener / callback
+      console.log('Jekyll config updated, rebooting...');
+      child_jk_watch.kill();
+      child_jk_watch = spawn_jk_watch();
+
+      child_jk_watch.stderr.on('data', function (buff) {
+        process.stderr.write(buff.toString());
+      })
+
+      child_jk_watch.stdout.on('data', function (buff) {
+        // event listener for respawned Jekyll
+        process.stdout.write(buff.toString());
+      });
+    }
   });
 
   function spawn_jk_watch () {
@@ -182,9 +215,14 @@ gulp.task('serve', ['watch'], function () {
 
 // build for production and deploy to production server
 gulp.task('deploy', ['build'], function () {
-  // build returns callback so deploy will wait until it finishes
-  // deployment tasks
-  production = true;
+  // build returns callback so deploy will wait until it finishes deployment tasks
+
+  // when deploy is called via CLI `gulp deploy`, production will be set to true for the build task because 'deploy' is included among `productionArgs`
+  // if deploy is ever called from another CLI task (e.g., as dependency), production would NOT be set to true for build; could (re-)enable production by adding the other task to `productionArgs`
+
+  // could also use `this.seq` to set conditionally set production within all the lowest-level dependencies (e.g., css, js, jekyll-build), based on whether the Gulp task seq array (might be gulp v3 specific) includes certain tasks (e.g., deploy); avoids needing to maintain a `productionArgs` list, but seems messier
+  // in gulp v4, could do something like this using gulp.tree
+  spawn(rsync_command[0], rsync_command.slice(1), { stdio: 'inherit' });
 });
 
 // default task
@@ -192,6 +230,8 @@ gulp.task('default', ['serve']);
 
 // NOTES -----------------------------------------------------------------------
 
+// TODO: cache invalidation
+// TODO: image optimization
 // TODO: maybe improve DRYness of spawn_jk_build vs. spawn_jk_watch
 // TODO: maybe use named function for stdout.on listeners (DRY), passing hint string
 // TODO: task callbacks can accept error objects, look into this?
