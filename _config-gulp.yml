@@ -5,7 +5,6 @@ exclude:
 
 # need to re-exclude everything from _config.yml, otherwise will only exclude _assets (when multiple configs are loaded, sequences are overwritten, not appended)
 - netlify.toml
-- admin/config.yml
 - vendor
 - package.json
 - package-lock.json

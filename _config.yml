@@ -7,7 +7,6 @@ collections:
     permalink: /:path
 exclude:
 - netlify.toml
-- admin/config.yml
 - vendor
 - package.json
 - package-lock.json
