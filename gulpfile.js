@@ -181,7 +181,7 @@ gulp.task('jekyll-watch', function (cb) {
   }
 });
 
-// build everything
+// build everything (use -p for production build)
 gulp.task('build', ['assets-build', 'jekyll-build'], function (cb) {
   // assets-build and jekyll-build return callback (and run in parallel?) so build will wait until they finish
   cb(); // for deploy
@@ -202,7 +202,7 @@ gulp.task('serve', ['watch'], function () {
     server: {
       baseDir: '_site',
       routes: {
-        '/chatterjee': '_site'
+        '/chatterjee': '_site' // on the UPenn server, / refers to ccn.upenn.edu, but chatlab-site assets are all at ccn.upenn.edu/chatterjee, so Jekyll prepends all URLs with /chatterjee/; because assets are actually at / here, need to have browsersync reroute requests there
       }
     },
     // logLevel: 'debug', // debug mode
@@ -213,7 +213,7 @@ gulp.task('serve', ['watch'], function () {
   // currently no need to return callback
 });
 
-// build for production and deploy to production server
+// build for production (no -p flag required) and deploy to production server
 gulp.task('deploy', ['build'], function () {
   // build returns callback so deploy will wait until it finishes deployment tasks
 

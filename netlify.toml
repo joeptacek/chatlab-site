@@ -1,3 +1,5 @@
+# netlify notes:
+# - build command runs development build (`gulp build` not `gulp build -p`), since version hosted at chatlab-site.netlify.com is not production build
 [[redirects]]
   from = "/chatterjee/*" # on the UPenn server, / refers to ccn.upenn.edu, but chatlab-site assets are all at ccn.upenn.edu/chatterjee, so Jekyll prepends all URLs with /chatterjee/
   to = "/:splat" # on the Netlify server, / actually refers to chatlab-site.netlify.com where the assets are, so need to rewrite URLs to this endpoint

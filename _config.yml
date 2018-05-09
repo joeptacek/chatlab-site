@@ -1,5 +1,5 @@
 title: ChatLab
-baseurl: /chatterjee # on the UPenn server, / refers to ccn.upenn.edu, but chatlab-site assets are all at ccn.upenn.edu/chatterjee, so Jekyll should prepend all URLs with /chatterjee/
+baseurl: /chatterjee # on the UPenn server, / refers to ccn.upenn.edu, but chatlab-site assets are all at ccn.upenn.edu/chatterjee, so Jekyll should prepend all URLs with /chatterjee/ (could consider moving this to the production-specific config, but this is easier for now; would sort avoid needing to configure routes in Netlify but would also require setting up multiple environement dependant gulp configs for browsersync)
 collections:
   pages:
     # creating collection "pages" inside _pages
