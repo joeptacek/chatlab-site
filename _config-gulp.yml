@@ -1,21 +1,23 @@
 exclude:
-  # exclude _assets so jekyll-watch ignores these file changes (by default, files / directories with leading underscore aren't BUILT, but jekyll-watch will still monitor them for changes unless excluded)
-  - _assets
-  - _docs
+# exclude _assets / _docs so jekyll-watch ignores these file changes (by default, files / directories with leading underscore aren't BUILT, but jekyll-watch will still monitor them for changes unless excluded)
+- _assets
+- _docs
 
-  # need to re-exclude everything from _config.yml, otherwise will only exclude _assets (when multiple configs are loaded, sequences are overwritten, not appended)
-  - Gemfile
-  - Gemfile.lock
-  - vendor
-  - node_modules
-  - package.json
-  - package-lock.json
-  - gulpfile.js
-  - README.md
-  - assets/archive
-  - assets/img/originals
+# need to re-exclude everything from _config.yml, otherwise will only exclude _assets (when multiple configs are loaded, sequences are overwritten, not appended)
+- netlify.toml
+- admin/config.yml
+- vendor
+- package.json
+- package-lock.json
+- gulpfile.js
+- README.md
+- assets/archive
+- assets/img/originals
+- Gemfile
+- Gemfile.lock
+- node_modules
 
 keep_files:
-  # protect gulp output from jekyll clobbering during serve or build (only clobber _site)
-  - assets/js
-  - assets/css
+# protect gulp output from jekyll clobbering during serve or build (only clobber _site); because default _config.yml doesn't include this, `bundle exec jekyll <serve or build>` will result in missing assets
+- assets/js
+- assets/css

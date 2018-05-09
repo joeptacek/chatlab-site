@@ -1,20 +1,22 @@
 title: ChatLab
-baseurl: /chatterjee
+baseurl: /chatterjee # on the UPenn server, / refers to ccn.upenn.edu, but chatlab-site assets are all at ccn.upenn.edu/chatterjee, so Jekyll should prepend all URLs with /chatterjee/
 collections:
   pages:
     # creating collection "pages" inside _pages
     output: true
     permalink: /:path
 exclude:
-  - vendor
-  - package.json
-  - package-lock.json
-  - gulpfile.js
-  - README.md
-  - assets/archive
-  - assets/img/originals
+- netlify.toml
+- admin/config.yml
+- vendor
+- package.json
+- package-lock.json
+- gulpfile.js
+- README.md
+- assets/archive
+- assets/img/originals
 
-  # excluded by default (need to re-exclude because user _config.yml overwrites the default sequence, doesn't append to it)
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
+# excluded by default (need to re-exclude because user _config.yml overwrites the default sequence, doesn't append to it)
+- Gemfile
+- Gemfile.lock
+- node_modules
