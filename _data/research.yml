@@ -659,6 +659,20 @@
 - section_title: 'Neuroaesthetics'
   section_description: 'Neuroaesthetics refers to the role of the brain in evaluating visual stimuli and their aesthetic appeal. Our research ranges from aesthetic choices of brain-injured individuals to aesthetic preferences in everyday life (in architecture, art, and facial beauty).'
   items:
+  - work_authors: 'Chatterjee, A.'
+    work_year: 2018
+    work_title: 'Beauty matters in ways we know and in ways we don’t'
+    work_publication_format: 'article_in_edited_work'
+    journal_data: null
+    edited_work_data:
+      edited_work_type: 'book'
+      edited_work_title: 'Think tank: Forty neuroscientists explore the bilogical roots of human experience'
+      edited_work_pages_start: 238
+      edited_work_pages_stop: 244
+      edited_work_editors: 'D. J. Linden (Ed.)'
+      edited_work_location: 'New Haven, CT'
+      edited_work_publisher: 'Yale University Press'
+    pdf_filename: null
   - work_authors: 'Meghani, S. H., Peterson, C., Kaiser, D. H., Rhodes, J., Rao, H., Chittams, J., & Chatterjee, A.'
     work_year: 2018
     work_title: 'A pilot study of a mindfullness-based art therapy intervention in outpatients with cancer'
