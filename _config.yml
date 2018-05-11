@@ -8,9 +8,11 @@ collections:
 
 analytics: false
 
-baseurl: /
+baseurl: null
 
-keep_files: [".git", ".svn"] # defaults
+keep_files: [".git", ".svn"] # default
+
+include: [".htaccess"] # default
 
 exclude:
 - netlify.toml

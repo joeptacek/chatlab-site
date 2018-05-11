@@ -8,15 +8,14 @@ collections:
 
 analytics: false
 
-baseurl: /
+baseurl: null
 
 keep_files: [".git", ".svn", "assets/js", "assets/css"] # protect gulp output from jekyll clobbering during serve or build (only clobber _site); because default _config.yml doesn't include this, `bundle exec jekyll <serve or build>` will result in missing assets
 
+include: [] # need to exclude .htaccess (jekyll includes by default)
+
 exclude:
 - _pages/demos # exclude _pages/demos (per collections config, the rest of _pages shouldn't be excluded since output of pages is set to true)
-
-# just for UPenn server
-- .htaccess # dotfiles automatically excluded, except .htacces which is included via jekyll default config (could consider un-including by default, then re-including for prod?)
 
 # need to re-exclude everything from _config.yml and _config-gulp.yml, otherwise will only exclude _pages/demos (when multiple configs are loaded, sequences are overwritten, not appended)
 - _assets
