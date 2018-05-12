@@ -1,11 +1,4 @@
-# netlify notes:
-# - can't "disable" deployment to Netlify, but it seems mostly inobtrusive (especially with headers to avoid indexing); would it make more sense to deploy just a blank index.html, maybe with redirect to ccn.upenn.edu?
-# - build command runs / deploys development build (`gulp build` not `gulp build -p`); primarily, this is to avoid including analytics scripts / screwing up analytics; seems fine to leave this publically viewable, for now? alternatively, could add a gulp task command that builds "production" without analytics
-[[redirects]]
-  from = "/chatterjee/*" # on the UPenn server, / refers to ccn.upenn.edu, but chatlab-site assets are all at ccn.upenn.edu/chatterjee, so Jekyll prepends all URLs with /chatterjee/
-  to = "/:splat" # on the Netlify server, / actually refers to chatlab-site.netlify.com where the assets are, so need to rewrite URLs to this endpoint
-  status = 200 # rewrite, don't redirect
 [[headers]]
-  for = "/*"
+  for = "*"
   [headers.values]
     X-Robots-Tag = "none" # i.e., noindex, nofollow because we don't want the Netlify deployment to show up in search results (it's a development build, shouldn't distract from main site at ccn.upenn.edu, etc.)
