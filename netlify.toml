@@ -1,3 +1,4 @@
+# can check headers in chrome devtools (clear cache first)
 [[headers]]
   for = "/*"
   [headers.values]
