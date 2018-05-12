@@ -1,4 +1,4 @@
 [[headers]]
-  for = "*"
+  for = "/*"
   [headers.values]
     X-Robots-Tag = "none" # i.e., noindex, nofollow because we don't want the Netlify deployment to show up in search results (it's a development build, shouldn't distract from main site at ccn.upenn.edu, etc.)
