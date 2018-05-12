@@ -20,13 +20,26 @@ var uglify = require('gulp-uglify');
 
 // VARIABLES -------------------------------------------------------------------
 
+//// args ----------------------------------------------------------------------
+var args = process.argv;
+
 // for more complicated parsing can use minimist or yargs
-var optimize = ['--optimize', '--netlify', '--production', 'deploy'].some(target => process.argv.includes(target));
-var netlify = process.argv.includes('--netlify');
-var production = ['--production', 'deploy'].some(target => process.argv.includes(target));
+var production = ['--production', 'deploy'].some(target => args.includes(target));
+var netlify = args.includes('--netlify');
 var development = !(netlify || production);
 
-// jekyll stuff
+if (netlify && production) {
+  var error_invalid_command;
+  if (args.includes('deploy')) {
+    error_invalid_command = new Error('Cannot use deploy command argument with --netlify argument');
+  } else {
+    error_invalid_command = new Error('Cannot use --production argument with --netlify argument');
+  }
+  throw error_invalid_command
+  // ^ is this bad practice in Node? at least better (?) than console.log() with process.exit()?
+}
+
+//// jekyll stuff --------------------------------------------------------------
 
 var child_jk_watch; // needs to be global so we can kill later
 
@@ -43,14 +56,7 @@ var jk_build_command = [
   // '-V' // debug
 ];
 
-// is this redundant with default behavior
-// process.on('uncaughtException', function () {
-//   process.exit(1);
-// });
-
-if (netlify && production) {
-  throw new Error('Cannot use the deploy command or --production argument with the --netlify argument'); // is this bad practice in Node? at least better (?) than console.log() with process.exit()?
-} else if (production) {
+if (production) {
   jk_build_command.push('--config', jk_config_gulp_production);
 } else if (netlify) {
   jk_build_command.push('--config', jk_config_gulp_netlify);
@@ -62,7 +68,7 @@ var jk_watch_command = jk_build_command.concat('--watch');
 
 // TASKS -----------------------------------------------------------------------
 
-// build css
+// build css -------------------------------------------------------------------
 gulp.task('css', function () {
   var plugins = [
     autoprefixer({
@@ -73,27 +79,27 @@ gulp.task('css', function () {
   return gulp.src('_assets/sass/**/*.scss')
     // .pipe(debug({title: 'Debug (css):'})) // debug
     .pipe(gulpif(development, sourcemaps.init()))
-    .pipe(sass().on('error', sass.logError)) // TODO: should build fail e.g., if (production)?
-    .pipe(gulpif(optimize, postcss(plugins)))
+    .pipe(sass().on('error', sass.logError))
     .pipe(gulpif(development, sourcemaps.write()))
+    .pipe(gulpif(!development, postcss(plugins)))
     .pipe(gulp.dest('_site/assets/css'));
 });
 
-// build js
+// build js --------------------------------------------------------------------
 gulp.task('js', function () {
   return gulp.src('_assets/js/**/*.js')
     // .pipe(debug({title: 'Debug (js):'})) // debug
-    .pipe(gulpif(optimize, uglify())) // only in production
+    .pipe(gulpif(!development, uglify()))
     .pipe(gulp.dest('_site/assets/js'));
 });
 
-// build assets
+// build assets ----------------------------------------------------------------
 gulp.task('assets-build', ['css', 'js'], function (cb) {
   // css and js return streams (and run in parallel?) so assets-build will wait until they finish
   cb(); // for assets-watch, build, deploy
 });
 
-// (build and) watch assets
+// (build and) watch assets ----------------------------------------------------
 gulp.task('assets-watch', ['assets-build'], function (cb) {
   // assets-build returns callback so assets-watch will wait until it finishes
   gulp.watch('_assets/sass/**/*.scss', ['css']);
@@ -101,7 +107,7 @@ gulp.task('assets-watch', ['assets-build'], function (cb) {
   cb(); // for watch
 });
 
-// build jekyll
+// build jekyll ----------------------------------------------------------------
 gulp.task('jekyll-build', function (cb) {
   child_jk_build = spawn_jk_build();
 
@@ -127,7 +133,7 @@ gulp.task('jekyll-build', function (cb) {
   }
 });
 
-// (build and) watch jekyll
+// (build and) watch jekyll ----------------------------------------------------
 gulp.task('jekyll-watch', function (cb) {
   // spawn initial jekyll child process, assign to global to kill later
   child_jk_watch = spawn_jk_watch();
@@ -178,18 +184,19 @@ gulp.task('jekyll-watch', function (cb) {
 
 // MAIN CLI TASKS //////////////////////////////////////////////////////////////
 
-// build everything
+// build everything ------------------------------------------------------------
 gulp.task('build', ['assets-build', 'jekyll-build'], function (cb) {
   // assets-build and jekyll-build return callback (and run in parallel?) so build will wait until they finish
   cb(); // for deploy
 });
 
-// (build and) watch everything
+// (build and) watch everything ------------------------------------------------
 gulp.task('watch', ['assets-watch', 'jekyll-watch'], function (cb) {
   // assets-watch and jekyll-watch return callback (and run in parallel?) so watch will wait until they finish
   cb(); // for serve
 });
 
+// (watch everything and) serve site -------------------------------------------
 gulp.task('serve', ['watch'], function () {
   // watch returns callback so serve will wait until it finishes
   // start browsersync development server (currently no need for separate gulp task, but could turn this into its own function)
@@ -219,15 +226,13 @@ gulp.task('serve', ['watch'], function () {
   // currently no need to return callback
 });
 
-// build for production (no --production flag required) and deploy to production server
+// (build for production and) deploy to production server ----------------------
 gulp.task('deploy', ['build'], function () {
   // build returns callback so deploy will wait until it finishes deployment tasks
 
   // when deploy is called via CLI `gulp deploy`, production will be set to true for the build task
   // if deploy is ever called from another CLI task (e.g., as dependency), production would NOT be set to true for build; could (re-)enable production by adding the other task to the array of CLI commands requiring production
-
-  // could also use `this.seq` to set conditionally set production within all the lowest-level dependencies (e.g., css, js, jekyll-build), based on whether the Gulp task seq array (might be gulp v3 specific) includes certain tasks (e.g., deploy); avoids needing to maintain a `prod_args` list, but seems messier
-  // in gulp v4, could do something like this using gulp.tree
+  // could also use `this.seq` to set conditionally set production within all the lowest-level dependencies (e.g., css, js, jekyll-build), based on whether the Gulp task seq array (might be gulp v3 specific) includes certain tasks (e.g., deploy); avoids needing to maintain a `prod_args` list, but seems messier; in gulp v4, could do something like this using gulp.tree
 
   var rsync_command = [
     'rsync',

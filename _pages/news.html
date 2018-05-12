@@ -12,7 +12,7 @@ sections:
     <h2 id="{{ page.sections[0] | slugify }}" class="section-title">{{ page.sections[0] }}</h2>
   </header>
   <hr />
-  {% include twitter.html %}
+  {% include plugins/twitter.html %}
 </section>
 <section class="card">
   <header>
@@ -27,5 +27,5 @@ sections:
     </ul>
   </header>
   <hr />
-  {% include data_section_groups.html data_source="news" item_type="news" cols=false %}
+  {% include page_layout/data_section_groups.html data_source="news" item_type="news" cols=false %}
 </section>

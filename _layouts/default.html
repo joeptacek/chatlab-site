@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  {% include head.html %}
+  {% include site_layout/head.html %}
   <body>
     <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <!-- SVGs from IcoMoon.io -->
@@ -9,21 +9,21 @@
         {% include svg/header.html %}
 
         <!-- page-specific defs -->
-        {% comment %} TODO: maybe page.svg should just be the path (or else null) {% endcomment %}
         {% if page.svg %}
+          {% comment %} TODO: maybe page.svg should just be the path to the svg (or else null); avoids liquid exceptions if missing / incorrectly named svg includes {% endcomment %}
           {% assign svg_path = page.path | remove: "_pages" | prepend: "svg/" %}
           {% include {{ svg_path }} %}
         {% endif %}
       </defs>
     </svg>
-    {% include header.html %}
+    {% include site_layout/header.html %}
     <main>
-      {% include nav_page.html %}
+      {% include site_layout/nav_page.html %}
       <div id="page-content">
         {{ content }}
       </div>
     </main>
-    {% include footer.html %}
+    {% include site_layout/footer.html %}
     <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
     {% if page.title == "Home" %}
       <!-- for Netlify CMS login -->
