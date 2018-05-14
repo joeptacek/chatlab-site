@@ -32,12 +32,15 @@ collections:
       label: "News Items"
       widget: list
       fields:
-      - {name: "title", label: "Article Title", widget: "string"}
-      - {name: "source", label: "Article Source", widget: "string"}
-      - {name: "sub_source", label: "Article Subsource", widget: "string"}
-      - {name: "date", label: "Publish Date", widget: "date", format: "YYYY-MM-DD"}
-      - {name: "media_url", label: "URL", widget: "string"}
+      - {name: "title", label: "Article Title", widget: "string", default: ""}
+      - {name: "source", label: "Article Source", widget: "string", default: ""}
+      - {name: "sub_source", label: "Article Subsource", widget: "string", default: ""}
+      - {name: "date", label: "Publish Date", widget: "date", format: "YYYY-MM-DD", default: ""}
+      - {name: "media_url", label: "URL", widget: "string", default: ""}
       - name: "media_type"
         label: "Type"
         widget: "select"
-        options: ["print", "audio", "video"]
+        options:
+        - {label: "Print", value: "print"}
+        - {label: "Audio", value: "audio"}
+        - {label: "Video", value: "video"}
