@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: develop-netlify
 publish_mode: editorial_workflow
-media_folder: "assets/img/netlify"
+media_folder: "assets/netlify"
 collections:
 - name: "pages"
   label: "Pages"
@@ -25,10 +25,10 @@ collections:
       widget: list
       # fields:
   - name: "news"
-    label: "People Page"
-    file: "_data/people.yml"
+    label: "News Page"
+    file: "_data/news.yml"
     fields:
-    - name: "people_list"
-      label: "People"
+    - name: "news_list"
+      label: "News Items"
       widget: list
       # fields:

@@ -8,6 +8,8 @@ collections:
 
 analytics: false
 
+netlify_login: true
+
 baseurl: null
 
 keep_files: [".git", ".svn"] # default

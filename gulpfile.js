@@ -71,9 +71,7 @@ var jk_watch_command = jk_build_command.concat('--watch');
 // build css -------------------------------------------------------------------
 gulp.task('css', function () {
   var plugins = [
-    autoprefixer({
-      browsers: ['cover 99.5%'] // best to move this to package.json
-    }),
+    autoprefixer(), // consider playing with this (currently, not prefixing flexbox; consider setting browserslist key via package.json)
     cssnano()
   ];
   return gulp.src('_assets/sass/**/*.scss')

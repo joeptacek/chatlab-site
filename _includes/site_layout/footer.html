@@ -1,3 +1,5 @@
 <footer>
-  <span>Copyright © 2017 ChatLab</span>
+  <p id="copyright">Copyright © 2017 ChatLab</p>
+  <p>Built by <a href="https://github.com/joeptacek" target="_blank">Joe Ptacek</a></p>
+  {% if site.netlify_login %}<p><a href="{{ "/admin/index.html" | prepend: site.baseurl }}">Content Manager Login</a></p>{% endif %}
 </footer>
