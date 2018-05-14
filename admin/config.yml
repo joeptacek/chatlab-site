@@ -31,4 +31,13 @@ collections:
     - name: "news_list"
       label: "News Items"
       widget: list
-      # fields:
+      fields:
+      - {name: "title", label: "Article Title", widget: "string"}
+      - {name: "source", label: "Article Source", widget: "string"}
+      - {name: "sub_source", label: "Article Subsource", widget: "string", required: false}
+      - {name: "date", label: "Publish Date", widget: "date", format: "YYYY-MM-DD"}
+      - {name: "media_url", label: "URL", widget: "string"}
+      - name: "media_type"
+        label: "Type"
+        widget: "select"
+        options: ["print", "audio", "video"]

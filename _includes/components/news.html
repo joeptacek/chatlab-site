@@ -13,7 +13,7 @@
     <header>
       <h3><a href="{{ include.pass.media_url }}" target="_blank">{{ include.pass.title }}</a></h3>
       <p class="margin-bottom-compact font-large">{{ include.pass.source }}{% if include.pass.sub_source != null %} | <span class="sub-source">{{ include.pass.sub_source }}</span>{% endif %}</p>
-      <p class="font-large">{% if include.pass.date_year != null %}<!-- show date when at least year is known -->{% if include.pass.date_month != null %}<!-- show month/ or month/day/ if these exist; nested if logic should prevent poorly-formed null/day/year month/day/null etc. -->{{ include.pass.date_month }}/{% if include.pass.date_day != null %}{{ include.pass.date_day }}/{% endif %}{% endif %}<!-- endifs for date_month != null, date_day != null -->{{ include.pass.date_year }}<!-- at least show year if it exists -->{% endif %}<!-- endif for date_year != null --></p>
+      <p class="font-large">{{ include.pass.date | date: "%B %e, %Y" }}</p>
     </header>
   </div>
 </div>
