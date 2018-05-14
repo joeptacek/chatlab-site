@@ -494,8 +494,12 @@ news_list:
     media_url: 'http://www.nytimes.com/2004/10/05/health/05side.html'
     source: The New York Times
     title: The Possibility of Cosmetic Surgery for the Soul
-  - date: '2018-05-14'
+  - date: '2018-05-12'
     media_type: print
-    media_url: ''
+    media_url: 'https://www.google.com'
     source: The New York Times
     title: Testing This Article Title
+  - date: '2018-05-14'
+    media_type: audio
+    media_url: 'https://www.google.com'
+    title: Here's Another One (Missing Source)
