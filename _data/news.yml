@@ -1,4 +1,4 @@
-sub_source: ''news_list:
+news_list:
 - title: 'Why Scientists Are Battling Over Pleasure'
   source: 'The New York Times'
   sub_source: ''
@@ -489,7 +489,7 @@ sub_source: ''news_list:
   source: 'The Times'
   sub_source: ''
   date: 2007-05-14
-  media_url: ''
+  media_url: null
   media_type: 'print'
 - title: 'Drug May Be a Help to the Sleep Deprived'
   source: 'NPR'
@@ -501,7 +501,7 @@ sub_source: ''news_list:
   source: 'The Seattle Times'
   sub_source: ''
   date: 2004-11-06
-  media_url: ''
+  media_url: null
   media_type: 'print'
 - title: 'The Possibility of Cosmetic Surgery for the Soul'
   source: 'The New York Times'
