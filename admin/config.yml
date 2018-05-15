@@ -7,6 +7,7 @@ collections:
 - name: "test"
   label: "Folder Collection"
   folder: "_test"
+  create: true
   fields:
   - {name: "title", label: "Title", widget: "string"}
   - {name: "test_req_imp", label: "Test Implicit Required", widget: "string"}
