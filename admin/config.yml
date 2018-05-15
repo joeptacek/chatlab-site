@@ -5,15 +5,17 @@ publish_mode: editorial_workflow
 media_folder: "assets/netlify"
 collections:
 - name: "example"
+  labe: "Example"
   folder: "_example"
   create: true
   fields:
   - {name: "title", label: "Title", widget: "string"}
   - name: "test"
+    label: "Test"
     widget: "list"
     fields:
-    - {name: "one", widget: "string"} # implicitly required by default?
-    - {name: "two", widget: "string", required: true} # explicitly required
+    - {name: "one", label: "One", widget: "string"} # implicitly required by default?
+    - {name: "two", label: "Two", widget: "string", required: true} # explicitly required
 - name: "pages"
   label: "Pages"
   label_singular: "Page"
