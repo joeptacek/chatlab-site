@@ -16,8 +16,8 @@ collections:
   - {name: "test_req_exp_default_str", label: "Test Explicit Required With Default String", widget: "string", required: true, default: ""}
   - {name: "test_req_imp_default_null", label: "Test Implicit Required With Default Null", widget: "string", default: null}
   - {name: "test_req_exp_default_str", label: "Test Explicit Required With Default Null", widget: "string", required: true, default: null}
-  - {name: "test_regex", label: "Test Regex a", widget: "string", pattern: '[a]'}
-  - {name: "test_regex", label: "Test Regex Anything", widget: "string", pattern: '.+'}
+  - {name: "test_regex_a", label: "Test Regex a", widget: "string", pattern: '[a]'}
+  - {name: "test_regex_anything", label: "Test Regex Anything", widget: "string", pattern: '.+'}
 - name: "pages"
   label: "Pages"
   label_singular: "Page"
