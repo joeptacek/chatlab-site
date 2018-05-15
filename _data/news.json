@@ -509,7 +509,7 @@
       "source": "The Philadelphia Inquirer",
       "sub_source": null,
       "date": "2010-07-12",
-      "media_url": "",
+      "media_url": null,
       "media_type": "print"
     },
     {
@@ -533,7 +533,7 @@
       "source": "Wired",
       "sub_source": null,
       "date": "2010-07-08",
-      "media_url": "",
+      "media_url": null,
       "media_type": "print"
     },
     {
@@ -541,7 +541,7 @@
       "source": "Science",
       "sub_source": null,
       "date": "2010-07-08",
-      "media_url": "",
+      "media_url": null,
       "media_type": "print"
     },
     {
@@ -565,7 +565,7 @@
       "source": "ABC News",
       "sub_source": null,
       "date": "2010-07-08",
-      "media_url": "",
+      "media_url": null,
       "media_type": "print"
     },
     {
@@ -653,7 +653,7 @@
       "source": "The Times",
       "sub_source": null,
       "date": "2007-05-14",
-      "media_url": "",
+      "media_url": null,
       "media_type": "print"
     },
     {
@@ -669,7 +669,7 @@
       "source": "The Seattle Times",
       "sub_source": null,
       "date": "2004-11-06",
-      "media_url": "",
+      "media_url": null,
       "media_type": "print"
     },
     {
