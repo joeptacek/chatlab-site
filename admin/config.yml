@@ -19,7 +19,7 @@ collections:
     - {name: "test_req_imp_default_str", label: "Test Implicit Required With Default String", widget: "string", default: ""}
     - {name: "test_req_exp_default_str", label: "Test Explicit Required With Default String", widget: "string", required: true, default: ""}
     - {name: "test_req_imp_default_null", label: "Test Implicit Required With Default Null", widget: "string", default: null}
-    - {name: "test_req_exp_default_str", label: "Test Explicit Required With Default Null", widget: "string", required: true, default: null}
+    - {name: "test_req_exp_default_null", label: "Test Explicit Required With Default Null", widget: "string", required: true, default: null}
 - name: "pages"
   label: "Pages"
   label_singular: "Page"
