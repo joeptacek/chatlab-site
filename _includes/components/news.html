@@ -11,7 +11,7 @@
   </header>
   <div class="fi-main fi-main-def-sm-compact">
     <header>
-      <h3><a href="{{ include.pass.media_url }}" target="_blank">{{ include.pass.title }}</a></h3>
+      <h3><a href="{{ include.pass.media_url }}" target="_blank">{{ include.pass.title | smartify }}</a></h3>
       <p class="margin-bottom-compact font-large">{{ include.pass.source }}{% if include.pass.sub_source != "" %} | <span class="sub-source">{{ include.pass.sub_source }}</span>{% endif %}</p>
       <p class="font-large">{{ include.pass.date | date: "%B %e, %Y" }}</p>
     </header>
