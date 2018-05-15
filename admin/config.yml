@@ -26,7 +26,7 @@ collections:
       # fields:
   - name: "news"
     label: "News Page"
-    file: "_data/news.yml"
+    file: "_data/news.json"
     fields:
     - name: "news_list"
       label: "News Items"
