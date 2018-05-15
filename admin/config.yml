@@ -5,7 +5,7 @@ publish_mode: editorial_workflow
 media_folder: "assets/netlify"
 collections:
 - name: "example"
-  labe: "Example"
+  label: "Example"
   folder: "_example"
   create: true
   fields:
