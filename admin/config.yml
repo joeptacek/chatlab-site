@@ -32,7 +32,7 @@ collections:
       label: "News Items"
       widget: list
       fields:
-      - {name: "title", label: "Article Title", widget: "string"}
+      - {name: "title", label: "Article Title", widget: "string", default: ""}
       - {name: "source", label: "Article Source", widget: "string"}
       - {name: "sub_source", label: "Article Subsource", widget: "string"}
       - {name: "date", label: "Publish Date", widget: "date", format: "YYYY-MM-DD"}
