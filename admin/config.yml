@@ -17,7 +17,7 @@ collections:
     fields:
     - {name: "one", label: "One", widget: "string"} # implicitly required by default?
     - {name: "two", label: "Two", widget: "string", required: true} # explicitly required
-    - {name: "three", label: "Two", widget: "string", default: "foo"} # explicitly required
+    - {name: "three", label: "Three", widget: "string", default: "foo"} # explicitly required
 - name: "pages"
   label: "Pages"
   label_singular: "Page"
