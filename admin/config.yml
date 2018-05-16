@@ -4,20 +4,6 @@ backend:
 publish_mode: editorial_workflow
 media_folder: "assets/netlify"
 collections:
-- name: "example"
-  label: "Example"
-  folder: "_example"
-  create: true
-  fields:
-  - {name: "title", label: "Title", widget: "string"}
-  - {name: "default", label: "Default", widget: "string", default: "foo"}
-  - name: "test"
-    label: "Test"
-    widget: "list"
-    fields:
-    - {name: "one", label: "One", widget: "string"} # implicitly required by default?
-    - {name: "two", label: "Two", widget: "string", required: true} # explicitly required
-    - {name: "three", label: "Three", widget: "string", default: "foo"} # explicitly required
 - name: "pages"
   label: "Pages"
   label_singular: "Page"
@@ -46,6 +32,7 @@ collections:
       label: "News Items"
       widget: list
       fields:
+      # per issue 476 Netlify CMS doesn't enforce field validation on nested fields (e.g., string fields nested inside list field) thus, it's possible to create invalid objects with required fields missing
       - {name: "title", label: "Article Title", widget: "string"}
       - {name: "source", label: "Article Source", widget: "string"}
       - {name: "sub_source", label: "Article Subsource", widget: "string"}
