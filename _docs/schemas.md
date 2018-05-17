@@ -1,3 +1,18 @@
+## news_list
+
+see [news](../_data/schemas/news.json) schema
+
+key | required | type | format | values
+--- | --- | --- | --- | ---
+title | yes | string ||
+source | yes | string ||
+sub_source | no | string ||
+date | yes | string | YYYY-MM-DD |
+media_url | no | string ||
+media_type | yes | string || print, audio, video
+
+## Liquid
+
 For optional keys, Liquid template logic should be constructed so the same behavior is seen for:
 
 - Key set with null value
@@ -10,13 +25,7 @@ Liquid variables that are null or undefined are falsy, but empty string is truth
 {% if foo and foo != "" %}Do things{% endif %}
 ```
 
-## news_list
+## Schema tools (validation etc.)
 
-key | required | type | format | values
---- | --- | --- | --- | ---
-title | yes | string ||
-source | yes | string ||
-sub_source | no | string ||
-date | yes | string | YYYY-MM-DD |
-media_url | no | string ||
-media_type | yes | string || print, audio, video
+- [Create schema from JSON online](https://app.quicktype.io/) ([also](https://www.jsonschema.net/))
+- [Validate against schema online](https://www.jsonschemavalidator.net/) ([also](https://jsonschemalint.com/#/version/draft-06/markup/json))
