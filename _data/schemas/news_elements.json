@@ -1,24 +1,24 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/News",
+    "$ref": "#/definitions/NewsElements",
     "definitions": {
-        "News": {
+        "NewsElements": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "news_list": {
+                "news_elements": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/NewsList"
+                        "$ref": "#/definitions/NewsElement"
                     }
                 }
             },
             "required": [
-                "news_list"
+                "news_elements"
             ],
-            "title": "News"
+            "title": "NewsElements"
         },
-        "NewsList": {
+        "NewsElement": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -48,7 +48,7 @@
                 "source",
                 "title"
             ],
-            "title": "NewsList"
+            "title": "NewsElement"
         },
         "MediaType": {
             "type": "string",

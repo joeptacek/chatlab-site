@@ -18,12 +18,57 @@ collections:
       # fields:
   - name: "people"
     label: "People Page"
-    file: "_data/people.yml"
+    file: "_data/people.json"
     fields:
     - name: "people_list"
       label: "People"
       widget: list
-      # fields:
+      fields:
+      # per issue 476 Netlify CMS doesn't enforce field validation on nested fields (e.g., string fields nested inside list field) thus, it's possible to create invalid objects with required fields missing
+      - {name: "photo_path", label: "Photo", widget: "image"}
+      - {name: "first_name", label: "First Name", widget: "string"}
+      - {name: "middle_last_name", label: "(Middle and) Last Name", widget: "string"}
+      - {name: "suffix", label: "Suffix (e.g., Ph.D., D.Phil.)", widget: "string"}
+      - {name: "position", label: "Position", widget: "string"}
+      - {name: "bio", label: "Bio", widget: "string"} # widget type?
+      - {name: "cv", label: "CV", widget: "file"} # widget tyoe? any issue reformatting cv URL?
+      - {name: "email", label: "Email", widget: "string"}
+      - {name: "website", label: "Website URL", widget: "string"}
+      - {name: "twitter", label: "Twitter URL", widget: "string"}
+      - {name: "instagram", label: "Instagram URL", widget: "string"}
+      - {name: "flickr", label: "Flickr URL", widget: "string"}
+      - {name: "github", label: "Github URL", widget: "string"}
+      - name: "category"
+        label: "Category"
+        widget: "select"
+        options:
+        - {label: "Lab Director", value: "lab_director"}
+        - {label: "Staff", value: "staff"}
+        - {label: "Postdoctoral Researchers", value: "postdoctoral_researchers"}
+        - {label: "Student Researchers", value: "student_researchers"}
+        - {label: "Visiting Researchers", value: "visiting_researchers"}
+      - name: "staff_category"
+        label: "Staff Category (if staff)"
+        widget: "select"
+        options:
+        - {label: "Patient Coordinators", value: "patient_coordinators"}
+        - {label: "Lab Managers", value: "lab_managers"}
+      - name: "student_category"
+        label: "Student Category (if student)"
+        widget: "select"
+        options:
+        - {label: "Graduate Students", value: "graduate_students"}
+        - {label: "Medical Students", value: "medical_students"}
+        - {label: "Post Baccalaureate Students", value: "post_baccalaureate_students"}
+        - {label: "Undergraduate Students", value: "undergraduate_students"}
+        - {label: "High School Students", value: "hs_students"} # none so far
+        # - {label: "Undergraduate or High School Students", value: "undergraduate_or_hs_students"} # this value is only for hard-coded (older) items where it wasn't clear if high school or undergraduate students (combined cateogory used in alumni template)
+      - name: "status"
+        label: "Status"
+        widget: "select"
+        options:
+        - {label: "Active", value: "active"}
+        - {label: "Alumn", value: "alumn"}
   - name: "news"
     label: "News Page"
     file: "_data/news.json"

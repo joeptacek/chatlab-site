@@ -1,8 +1,58 @@
+## people_list
+
+### person_active_elements
+
+TODO: create `person_active_elements` JSON schema
+
+key | required | type | format | value(s)
+--- | --- | --- | --- | ---
+first_name | yes | string ||
+middle_last_name | yes | string ||
+suffix | no | string ||
+position | yes | string ||
+bio | yes | string ||
+cv | no | string | absolute file path or external URL for .pdf |
+email | no | string | email address |
+website | no | string | external URL |
+twitter | no | string | external URL |
+instagram | no | string | external URL |
+flickr | no | string | external URL |
+github | no | string | external URL |
+category | yes | string || lab_director, staff, postdoctoral_researchers, student_researchers, visiting_researchers
+staff_category | yes if `category: staff` | string || patient_coordinators, lab_managers
+student_category | yes if `category: student_researchers` | string || graduate_students, medical_students, post_baccalaureate_students, undergraduate_students, hs_students, undergraduate_or_hs_students
+status | yes | string || active
+
+### person_alumn_elements
+
+TODO: create `person_alumn_elements` JSON schema
+
+key | required | type | format | value(s)
+--- | --- | --- | --- | ---
+first_name | yes | string ||
+middle_last_name | yes | string ||
+suffix | no | string ||
+position | no | string ||
+bio | no | string ||
+cv | no | string | absolute file path or external URL for .pdf |
+email | no | string | email address |
+website | no | string | external URL |
+twitter | no | string | external URL |
+instagram | no | string | external URL |
+flickr | no | string | external URL |
+github | no | string | external URL |
+category | yes | string || lab_director, staff, postdoctoral_researchers, student_researchers, visiting_researchers
+staff_category | yes if `category: staff` | string || patient_coordinators, lab_managers
+student_category | yes if `category: student_researchers` | string || graduate_students, medical_students, post_baccalaureate_students, undergraduate_students, hs_students, undergraduate_or_hs_students
+status | yes | string || alumn
+
 ## news_list
 
-see [news](../_data/schemas/news.json) schema
+### news_elements
 
-key | required | type | format | values
+see [`news_elements`](../_data/schemas/news.json) JSON schema
+
+key | required | type | format | value(s)
 --- | --- | --- | --- | ---
 title | yes | string ||
 source | yes | string ||
@@ -12,6 +62,8 @@ media_url | no | string ||
 media_type | yes | string || print, audio, video
 
 ## Liquid
+
+### Empty strings and nulls
 
 For optional keys, Liquid template logic should be constructed so the same behavior is seen for:
 
@@ -23,6 +75,14 @@ Liquid variables that are null or undefined are falsy, but empty string is truth
 
 ```
 {% if foo and foo != "" %}Do things{% endif %}
+```
+
+### Smart quotes
+
+Use Jeckyll's custom Liquid filters to deal with straight quotes and apostrophes entered via Netlify CMS interface:
+
+```
+{{ foo | smartify }}
 ```
 
 ## Schema tools (validation etc.)

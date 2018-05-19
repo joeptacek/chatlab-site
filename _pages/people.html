@@ -6,17 +6,106 @@ svg: true
 sections:
   - Lab Director
   - Staff
-  - Postdoctoral Fellows
+  - Postdoctoral Researchers
   - Student Researchers
   - Visiting Researchers
   - Lab Alumni
 ---
-{% include page_layout/data_sections.html data_source="people" item_type="person" drawers=false %}
+{% assign people_sorted = site.data.people.people_list | sort: "middle_last_name" %}
+{% for section in page.sections %}
+  {% unless section == "Lab Alumni" %}
+    {% assign section_slug = section | slugify %}
+    {% assign section_slug_underscore = section_slug | replace: "-", "_" %}
+    <section class="card">
+      <header>
+        <h2 id="{{ section_slug }}" class="section-title">{{ section }}</h2>
+      </header>
+      <hr />
+      {% for person in people_sorted %}
+        {% unless person.status == "alumn" %}
+          {% if person.category == section_slug_underscore %}
+            {% include components/person.html pass=person %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </section>
+  {% endunless %}
+{% endfor %}
 <section class="card">
   <header>
     <h2 id="lab-alumni" class="section-title">Lab Alumni</h2>
   </header>
   <hr />
-  {% include page_layout/data_section_groups.html data_source="alumni" item_type="alumnus" cols=true %}
+  <div class="section-group-cols">
+    <div class="section-group col-group">
+      <h3>Postdoctoral Researchers</h3>
+      {% for person in people_sorted %}
+        {% unless person.status == "active" %}
+          {% if person.category == "postdoctoral_researchers" %}
+            {% include components/alumn.html pass=person %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+    <div class="section-group col-group">
+      <h3>Visiting Researchers</h3>
+      {% for person in people_sorted %}
+        {% unless person.status == "active" %}
+          {% if person.category == "visiting_researchers" %}
+            {% include components/alumn.html pass=person %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+    <div class="section-group col-group">
+      <h3>Medical Students</h3>
+      {% for person in people_sorted %}
+        {% unless person.status == "active" %}
+          {% if person.student_category == "medical_students" %}
+            {% include components/alumn.html pass=person %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+    <div class="section-group col-group">
+      <h3>Graduate Students</h3>
+      {% for person in people_sorted %}
+        {% unless person.status == "active" %}
+          {% if person.student_category == "graduate_students" %}
+            {% include components/alumn.html pass=person %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+    <div class="section-group col-group">
+      <h3>Undergraduate & High School Students</h3>
+      {% for person in people_sorted %}
+        {% unless person.status == "active" %}
+          {% if person.student_category == "undergraduate_students" or person.student_category == "hs_students" or person.student_category == "undergraduate_or_hs_students" %}
+            {% include components/alumn.html pass=person %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+    <div class="section-group col-group">
+      <h3>Lab Managers</h3>
+      {% for person in people_sorted %}
+        {% unless person.status == "active" %}
+          {% if person.staff_category == "lab_managers" %}
+            {% include components/alumn.html pass=person %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+    <div class="section-group col-group">
+      <h3>Patient Coordinators</h3>
+      {% for person in people_sorted %}
+        {% unless person.status == "active" %}
+          {% if person.staff_category == "patient_coordinators" %}
+            {% include components/alumn.html pass=person %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </div>
   </div>
 </section>

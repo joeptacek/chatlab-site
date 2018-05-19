@@ -1,25 +1,25 @@
 <div class="flex-item">
   <header class="rounded-descending">
-    <img src="{{ "/assets/img/people/200/" | prepend: site.baseurl | append: include.pass.photo_filename }}" alt="{{ include.pass.name }}" width="200" height="200"/>
+    <img src="{{ include.pass.photo_path | prepend: site.baseurl }}" alt="{{ include.pass.first_name }} {{ include.pass.middle_last_name }}" width="200" height="200"/>
   </header>
   <div class="fi-main">
     <header>
       <div class="margin-bottom-double">
-        <h3 class="margin-bottom-compact">{{ include.pass.name }}{% if include.pass.suffix %}, {{ include.pass.suffix }}{% endif %}</h3>
+        <h3 class="margin-bottom-compact">{{ include.pass.first_name }} {{ include.pass.middle_last_name }}{% if include.pass.suffix and include.pass.suffix != "" %}, {{ include.pass.suffix }}{% endif %}</h3>
         <p class="font-large">{{ include.pass.position }}</p>
       </div>
       <ul class="list-reset lr-horizontal lr-left-med">
-        {% comment %} in people.yml cv can be set as local file at /assets/pdf/cv/ (Anjan's case) OR an external url (Steve's case) {% endcomment %}
-        {% if include.pass.cv %}{% capture cv_slice %}{{ include.pass.cv | slice: 0, 4 }}{% endcapture %}<li class="lr-double-margin-right"><a class="button-frame rounded" href="{% if cv_slice == "http" %}{{ include.pass.cv }}{% else %}{{ "/assets/pdf/cv/" | prepend: site.baseurl | append: include.pass.cv }}{% endif %}" target="_blank">View CV</a></li>{% endif %}
-        {% if include.pass.email %}<li><a href="mailto:{{ include.pass.email }}"><svg><use xlink:href="#icon-mail"></use></svg></a></li>{% endif %}
-        {% if include.pass.website %}<li><a href="{{ include.pass.website }}" target="_blank"><svg><use xlink:href="#icon-earth"></use></svg></a></li>{% endif %}
-        {% if include.pass.twitter %}<li><a href="{{ include.pass.twitter }}" target="_blank"><svg><use xlink:href="#icon-twitter"></use></svg></a></li>{% endif %}
-        {% if include.pass.instagram %}<li><a href="{{ include.pass.instagram }}" target="_blank"><svg><use xlink:href="#icon-instagram"></use></svg></a></li>{% endif %}
-        {% if include.pass.github %}<li><a href="{{ include.pass.github }}" target="_blank"><svg><use xlink:href="#icon-github"></use></svg></a></li>{% endif %}
-        {% if include.pass.flickr %}<li><a href="{{ include.pass.flickr }}" target="_blank"><svg><use xlink:href="#icon-flickr"></use></svg></a></li>{% endif %}
+        {% comment %}by default, cv in people.json is set as local file path via Netlify CMS (e.g., see Anjan), but can also set cv as external URL (e.g., Steve){% endcomment %}
+        {% if include.pass.cv and include.pass.cv != "" %}{% capture cv_slice %}{{ include.pass.cv | slice: 0, 4 }}{% endcapture %}<li class="lr-double-margin-right"><a class="button-frame rounded" href="{% if cv_slice == "http" %}{{ include.pass.cv }}{% else %}{{ include.pass.cv | prepend: site.baseurl }}{% endif %}" target="_blank">View CV</a></li>{% endif %}
+        {% if include.pass.email and include.pass.email != "" %}<li><a href="mailto:{{ include.pass.email }}"><svg><use xlink:href="#icon-mail"></use></svg></a></li>{% endif %}
+        {% if include.pass.website and include.pass.website != "" %}<li><a href="{{ include.pass.website }}" target="_blank"><svg><use xlink:href="#icon-earth"></use></svg></a></li>{% endif %}
+        {% if include.pass.twitter and include.pass.twitter != "" %}<li><a href="{{ include.pass.twitter }}" target="_blank"><svg><use xlink:href="#icon-twitter"></use></svg></a></li>{% endif %}
+        {% if include.pass.instagram and include.pass.instagram != "" %}<li><a href="{{ include.pass.instagram }}" target="_blank"><svg><use xlink:href="#icon-instagram"></use></svg></a></li>{% endif %}
+        {% if include.pass.github and include.pass.github != "" %}<li><a href="{{ include.pass.github }}" target="_blank"><svg><use xlink:href="#icon-github"></use></svg></a></li>{% endif %}
+        {% if include.pass.flickr and include.pass.flickr != "" %}<li><a href="{{ include.pass.flickr }}" target="_blank"><svg><use xlink:href="#icon-flickr"></use></svg></a></li>{% endif %}
       </ul>
     </header>
     <hr class="med-display-none" />
-    <p>{{ include.pass.bio }}</p>
+    <p>{{ include.pass.bio | smartify }}</p>
   </div>
 </div>
