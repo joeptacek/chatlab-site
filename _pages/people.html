@@ -22,7 +22,7 @@ sections:
       </header>
       <hr />
       {% for person in people_sorted %}
-        {% unless person.status == "alumn" %}
+        {% unless person.status == "alum" %}
           {% if person.category == section_slug_underscore %}
             {% include components/person.html pass=person %}
           {% endif %}
@@ -42,7 +42,7 @@ sections:
       {% for person in people_sorted %}
         {% unless person.status == "active" %}
           {% if person.category == "postdoctoral_researchers" %}
-            {% include components/alumn.html pass=person %}
+            {% include components/alum.html pass=person %}
           {% endif %}
         {% endunless %}
       {% endfor %}
@@ -52,7 +52,7 @@ sections:
       {% for person in people_sorted %}
         {% unless person.status == "active" %}
           {% if person.category == "visiting_researchers" %}
-            {% include components/alumn.html pass=person %}
+            {% include components/alum.html pass=person %}
           {% endif %}
         {% endunless %}
       {% endfor %}
@@ -62,7 +62,7 @@ sections:
       {% for person in people_sorted %}
         {% unless person.status == "active" %}
           {% if person.student_category == "medical_students" %}
-            {% include components/alumn.html pass=person %}
+            {% include components/alum.html pass=person %}
           {% endif %}
         {% endunless %}
       {% endfor %}
@@ -72,7 +72,7 @@ sections:
       {% for person in people_sorted %}
         {% unless person.status == "active" %}
           {% if person.student_category == "graduate_students" %}
-            {% include components/alumn.html pass=person %}
+            {% include components/alum.html pass=person %}
           {% endif %}
         {% endunless %}
       {% endfor %}
@@ -82,7 +82,7 @@ sections:
       {% for person in people_sorted %}
         {% unless person.status == "active" %}
           {% if person.student_category == "undergraduate_students" or person.student_category == "hs_students" or person.student_category == "undergraduate_or_hs_students" %}
-            {% include components/alumn.html pass=person %}
+            {% include components/alum.html pass=person %}
           {% endif %}
         {% endunless %}
       {% endfor %}
@@ -92,7 +92,7 @@ sections:
       {% for person in people_sorted %}
         {% unless person.status == "active" %}
           {% if person.staff_category == "lab_managers" %}
-            {% include components/alumn.html pass=person %}
+            {% include components/alum.html pass=person %}
           {% endif %}
         {% endunless %}
       {% endfor %}
@@ -102,7 +102,7 @@ sections:
       {% for person in people_sorted %}
         {% unless person.status == "active" %}
           {% if person.staff_category == "patient_coordinators" %}
-            {% include components/alumn.html pass=person %}
+            {% include components/alum.html pass=person %}
           {% endif %}
         {% endunless %}
       {% endfor %}

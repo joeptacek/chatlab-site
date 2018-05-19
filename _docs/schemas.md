@@ -24,9 +24,9 @@ staff_category | yes if `category: staff` | string || patient_coordinators, lab_
 student_category | yes if `category: student_researchers` | string || graduate_students, medical_students, post_baccalaureate_students, undergraduate_students, hs_students, undergraduate_or_hs_students
 status | yes | string || active
 
-### person_alumn_elements
+### person_alum_elements
 
-TODO: create `person_alumn_elements` JSON schema
+TODO: create `person_alum_elements` JSON schema
 
 key | required | type | format | value(s)
 --- | --- | --- | --- | ---
@@ -46,7 +46,7 @@ github | no | string | external URL |
 category | yes | string || lab_director, staff, postdoctoral_researchers, student_researchers, visiting_researchers
 staff_category | yes if `category: staff` | string || patient_coordinators, lab_managers
 student_category | yes if `category: student_researchers` | string || graduate_students, medical_students, post_baccalaureate_students, undergraduate_students, hs_students, undergraduate_or_hs_students
-status | yes | string || alumn
+status | yes | string || alum
 
 ## news_list
 

@@ -68,7 +68,7 @@ collections:
         widget: "select"
         options:
         - {label: "Active", value: "active"}
-        - {label: "Alumn", value: "alumn"}
+        - {label: "Alum", value: "alum"}
   - name: "news"
     label: "News Page"
     file: "_data/news.json"
