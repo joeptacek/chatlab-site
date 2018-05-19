@@ -8,6 +8,7 @@ key | required | type | format | value(s)
 --- | --- | --- | --- | ---
 first_name | yes | string ||
 middle_last_name | yes | string ||
+photo | yes | string | absolute file path |
 suffix | no | string ||
 position | yes | string ||
 bio | yes | string ||
@@ -31,6 +32,7 @@ key | required | type | format | value(s)
 --- | --- | --- | --- | ---
 first_name | yes | string ||
 middle_last_name | yes | string ||
+photo | no | string | absolute file path |
 suffix | no | string ||
 position | no | string ||
 bio | no | string ||
