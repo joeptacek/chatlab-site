@@ -25,8 +25,8 @@ collections:
       widget: list
       fields:
       # per issue 476 Netlify CMS doesn't enforce field validation on nested fields (e.g., string fields nested inside list field) thus, it's possible to create invalid objects with required fields missing
-      - {name: "first_name", label: "First Name", widget: "string"}
       - {name: "middle_last_name", label: "(Middle and) Last Name", widget: "string"}
+      - {name: "first_name", label: "First Name", widget: "string"}
       - {name: "photo_path", label: "Photo", widget: "image"}
       - {name: "suffix", label: "Suffix", widget: "string"}
       - {name: "position", label: "Position", widget: "string"}
