@@ -35,7 +35,7 @@ if (netlify && production) {
   } else {
     error_invalid_command = new Error('Cannot use --production argument with --netlify argument');
   }
-  throw error_invalid_command
+  throw error_invalid_command;
   // ^ is this bad practice in Node? at least better (?) than console.log() with process.exit()?
 }
 
