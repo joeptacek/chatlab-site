@@ -111,7 +111,7 @@ gulp.task('jekyll-build', function (cb) {
 
   child_jk_build.stderr.on('data', function (buff) {
     process.stderr.write(buff.toString());
-  })
+  });
 
   child_jk_build.stdout.on('data', function (buff) {
     // send jekyll output to log TODO: also log stderr etc.
@@ -138,7 +138,7 @@ gulp.task('jekyll-watch', function (cb) {
 
   child_jk_watch.stderr.on('data', function (buff) {
     process.stderr.write(buff.toString());
-  })
+  });
 
   child_jk_watch.stdout.on('data', function (buff) {
     // event listener for INITIAL Jekyll child process (killed / respawned Jekyll gets its own listener, below)
