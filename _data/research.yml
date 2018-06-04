@@ -1,6 +1,38 @@
 - section_title: 'Language and Space'
   section_description: 'The lab’s research on language and space is concerned with a variety of concepts. Our primary interests lie in spatial and gestural representations in language, as well as in the processing of metaphoric and figurative language in patients and controls.'
   items:
+  - work_authors: 'Weisberg, S. M., Marchette, S. A., & Chatterjee, A.'
+    work_year: 2018
+    work_title: 'Behavioral and neural representations of spatial directions across words, schemas, and images'
+    work_publication_format: 'article_in_journal'
+    journal_data:
+      journal_title: 'Journal of Neuroscience'
+      advance_tf: false
+      journal_vol: 38
+      journal_issue: 21
+      journal_pages_start: 4996
+      journal_pages_stop: 5007
+      doi: '10.1523/JNEUROSCI.3250-17.2018'
+      review_tf: false
+      review_data: null
+    edited_work_data: null
+    pdf_filename: 'Weisberg_Marchette_Chatterjee_2018_01.pdf'
+  - work_authors: 'Weisberg, S.M., Badgio, D., & Chatterjee, A.'
+    work_year: 2018
+    work_title: 'Feel the way with a vibrotactile compass: Does a navigational aid aid navigation?'
+    work_publication_format: 'article_in_journal'
+    journal_data:
+      journal_title: 'Journal of Experimental Psychology'
+      advance_tf: false
+      journal_vol: 44
+      journal_issue: 5
+      journal_pages_start: 667
+      journal_pages_stop: 679
+      doi: '10.1037/xlm0000472'
+      review_tf: false
+      review_data: null
+    edited_work_data: null
+    pdf_filename: 'Weisberg_Badgio_Chatterjee_2018_01.pdf'
   - work_authors: 'Özer, D., Tansan, M., Özer, E. E., Malykhina, K., Chatterjee, A., & Göksun, T.'
     work_year: 2017
     work_title: 'The effects of gesture restriction on spatial language in young and elderly adults'
