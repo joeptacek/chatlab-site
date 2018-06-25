@@ -178,6 +178,18 @@
     instagram: null
     github: null
     flickr: null
+  - name: Charlie Siegel
+    photo_filename: charlie.jpg
+    cv: null
+    suffix: null
+    position: Undergraduate Student
+    bio: I am a Biology and Psychology double major with a Neuroscience minor at the Haverford College. My past experiences stem from an interest in medicine and healthcare. Previously, at the Johns Hopkins Hospital I worked as a research assistant in the Neurosciences Critical Care Unit, where I explored the challenges of extubating patients with acute neurological injury who are often intubated for airway protection. My curiosity in how the natural and social sciences intersect have shaped my research interests which principally lie in cognitive neuroscience. More precisely, I am interested in how neuroscientific perspectives can better explain an individual’s process of decision-making and reasoning. At Penn, I am assisting the post-docs with a variety of different projects before conducting my own research in the ChatLab for my honors thesis. After completing my undergraduate degree, I plan to attend medical school and pursue a career in neurology/psychiatry.
+    email: csiegel@haverford.edu
+    website: null
+    twitter: null
+    instagram: null
+    github: null
+    flickr: null
 - section_title: 'Visiting Researchers'
   section_description: null
   items:
