@@ -172,6 +172,17 @@
       "status": "active"
     },
     {
+      "middle_last_name": "Siegel",
+      "first_name": "Charlie",
+      "photo_path": "/assets/img/people/200/charlie.jpg",
+      "position": "Undergraduate Student",
+      "bio": "I am a Biology and Psychology double major with a Neuroscience minor at the Haverford College. My past experiences stem from an interest in medicine and healthcare. Previously, at the Johns Hopkins Hospital I worked as a research assistant in the Neurosciences Critical Care Unit, where I explored the challenges of extubating patients with acute neurological injury who are often intubated for airway protection. My curiosity in how the natural and social sciences intersect have shaped my research interests which principally lie in cognitive neuroscience. More precisely, I am interested in how neuroscientific perspectives can better explain an individual’s process of decision-making and reasoning. At Penn, I am assisting the post-docs with a variety of different projects before conducting my own research in the ChatLab for my honors thesis. After completing my undergraduate degree, I plan to attend medical school and pursue a career in neurology/psychiatry.",
+      "email": "csiegel@haverford.edu",
+      "category": "student_researchers",
+      "student_category": "undergraduate_students",
+      "status": "active"
+    },
+    {
       "middle_last_name": "Coburn",
       "first_name": "Alex",
       "photo_path": "/assets/img/people/200/alex.jpg",
