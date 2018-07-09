@@ -128,6 +128,19 @@
       "status": "active"
     },
     {
+      "middle_last_name": "Kenett",
+      "first_name": "Yoed",
+      "photo_path": "/assets/img/people/200/yoed.jpg",
+      "suffix": "Ph.D.",
+      "position": "Postdoctoral Researcher",
+      "bio": "I examine how semantic memory structure enables and constrains high level cognitive processes in typical and clinical populations. During my Ph.D. at Bar-Ilan University, I investigated the computational, behavioral, and electrophysiological differences of semantic memory structure in low and high creative individuals. Here at Penn, I am gaining experience in neuroimaging research, applying network neuroscience methods to study creativity. In parallel, I am exploring further cognitive domains, such as conceptual combinations and aesthetic perception.",
+      "email": "yoedk@sas.upenn.edu",
+      "website": "https://yoedkenett.academia.edu",
+      "twitter": "https://twitter.com/yoed_kenett",
+      "category": "postdoctoral_researchers",
+      "status": "active"
+    },
+    {
       "middle_last_name": "Badgio",
       "first_name": "Daniel",
       "photo_path": "/assets/img/people/200/daniel.jpg",
@@ -402,13 +415,6 @@
     {
       "middle_last_name": "Nicosia",
       "first_name": "Antonio",
-      "category": "student_researchers",
-      "student_category": "undergraduate_students",
-      "status": "alum"
-    },
-    {
-      "middle_last_name": "Dinh",
-      "first_name": "Claire",
       "category": "student_researchers",
       "student_category": "undergraduate_students",
       "status": "alum"
