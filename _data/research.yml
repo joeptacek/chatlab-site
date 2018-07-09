@@ -1015,7 +1015,7 @@
     pdf_filename: 'Chatterjee_Widick_Sternschein_Smith_Bromberger_2010_01.pdf'
     link_data:
       link_name: 'Download the AAA materials and instructions'
-      link_url: '/chatterjee/assets/downloads/AAA.zip'
+      link_url: '/assets/downloads/AAA.zip'
   - work_authors: 'Chatterjee, A., Bromberger, B., Smith, W., Sternschein, R., & Widick, P.'
     work_year: 2011
     work_title: 'Artistic production following brain damage: A study of three artists'
