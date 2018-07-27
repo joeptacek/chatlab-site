@@ -1,16 +1,30 @@
-exclude:
-  # exclude _pages/demos (per collections config, the rest of _pages shouldn't be excluded since output of pages is set to true)
-  - _pages/demos
+title: ChatLab
 
-  # need to re-exclude everything from _config.yml and _config-gulp.yml, otherwise will only exclude _pages/demos (when multiple configs are loaded, sequences are overwritten, not appended)
-  - _assets
-  - Gemfile
-  - Gemfile.lock
-  - vendor
-  - node_modules
-  - package.json
-  - package-lock.json
-  - gulpfile.js
-  - README.md
-  - assets/archive
-  - assets/img/originals
+collections:
+  pages:
+    # creating collection "pages" inside _pages
+    output: true
+    permalink: /:path
+
+analytics: true
+
+baseurl: /chatterjee # on the UPenn server, / refers to ccn.upenn.edu, but chatlab-site assets are all at ccn.upenn.edu/chatterjee, so Jekyll should prepend all URLs with /chatterjee/ (could consider moving this to the production-specific config, but this is easier for now; would sort avoid needing to configure routes in Netlify but would also require setting up multiple environement dependant gulp configs for browsersync)
+
+keep_files: [".git", ".svn", "assets/js", "assets/css"] # protect gulp output from jekyll clobbering during serve or build (only clobber _site); because default _config.yml doesn't include this, `bundle exec jekyll <serve or build>` will result in missing assets
+
+exclude:
+- _pages/demos # exclude _pages/demos (per collections config, the rest of _pages shouldn't be excluded since output of pages is set to true)
+
+# need to re-exclude everything from _config.yml and _config-gulp.yml, otherwise will only exclude _pages/demos (when multiple configs are loaded, sequences are overwritten, not appended)
+- _assets
+- _docs
+- vendor
+- package.json
+- package-lock.json
+- gulpfile.js
+- README.md
+- assets/archive
+- assets/img/originals
+- Gemfile
+- Gemfile.lock
+- node_modules

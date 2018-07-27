@@ -6,16 +6,6 @@
     padding: 6rem 4rem 0;
   }
 
-  main {
-    flex-flow: row;
-    align-items: flex-start;
-    justify-content: flex-end;
-  }
-
-  footer {
-    padding: 6rem 0;
-  }
-
   #logo {
     justify-content: flex-start;
     margin-bottom: 2rem;
@@ -29,6 +19,16 @@
       // chatlab
       padding-left: 2.5rem;
     }
+  }
+
+  main {
+    flex-flow: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  footer {
+    padding: 6rem 0;
   }
 
   // think about padding vs margin

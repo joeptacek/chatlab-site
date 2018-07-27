@@ -12,13 +12,11 @@ sections:
     <h2 id="{{ page.sections[0] | slugify }}" class="section-title">{{ page.sections[0] }}</h2>
   </header>
   <hr />
-  {% include twitter.html %}
+  {% include plugins/twitter.html %}
 </section>
 <section class="card">
   <header>
     <h2 id="{{ page.sections[1] | slugify }}" class="section-title">{{ page.sections[1] }}</h2>
-    {% comment %} perhaps nav-news only display: visible via javascript - or don't even render without javascript? {% endcomment %}
-    {% comment %} TODO: add highlight to current filter {% endcomment %}
     <ul class="list-reset lr-horizontal">
       <li><button class="button-reset link-like link-selected" type="button" name="filter-button" value="filter-target">All</button></li>
       <li><button class="button-reset link-like" type="button" name="filter-button" value="media-type-print">Print</button></li>
@@ -27,5 +25,8 @@ sections:
     </ul>
   </header>
   <hr />
-  {% include data_section_groups.html data_source="news" item_type="news" cols=false %}
+  {% assign news_sort = site.data.news.news_list | sort: "date" | reverse %}
+  {% for item in news_sort %}
+    {% include components/news.html pass=item %}
+  {% endfor %}
 </section>

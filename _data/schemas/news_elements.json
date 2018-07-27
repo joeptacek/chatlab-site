@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/NewsElements",
+    "definitions": {
+        "NewsElements": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "news_elements": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NewsElement"
+                    }
+                }
+            },
+            "required": [
+                "news_elements"
+            ],
+            "title": "NewsElements"
+        },
+        "NewsElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "source": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "media_url": {
+                    "type": "string"
+                },
+                "media_type": {
+                    "$ref": "#/definitions/MediaType"
+                },
+                "sub_source": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "date",
+                "media_type",
+                "source",
+                "title"
+            ],
+            "title": "NewsElement"
+        },
+        "MediaType": {
+            "type": "string",
+            "enum": [
+                "print",
+                "audio",
+                "video"
+            ],
+            "title": "MediaType"
+        }
+    }
+}
