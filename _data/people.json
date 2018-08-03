@@ -25,7 +25,7 @@
       "twitter": "https://twitter.com/EileenCardillo",
       "category": "staff",
       "staff_category": "patient_coordinators",
-      "status": "active"
+      "status": "alum"
     },
     {
       "middle_last_name": "Ptacek",
@@ -137,6 +137,19 @@
       "email": "yoedk@sas.upenn.edu",
       "website": "https://yoedkenett.academia.edu",
       "twitter": "https://twitter.com/yoed_kenett",
+      "category": "postdoctoral_researchers",
+      "status": "active"
+    },
+    {
+      "middle_last_name": "Cliff",
+      "first_name": "Workman",
+      "photo_path": "/assets/img/people/200/cliff.jpg",
+      "suffix": "Ph.D.",
+      "position": "Postdoctoral Researcher",
+      "bio": "When we judge people for their moral or prosocial behaviors, do our perceptions of their beauty influence our evaluations? I am interested in understanding how morality and beauty interact to modulate decision-making. Prior to joining the ChatLab, I was a postdoctoral scholar in the Social Cognitive Neuroscience Lab at the University of Chicago under the supervision of Jean Decety. Our work investigates the psycholigical and neural mechansisms underpinning political polarization and support for ideologically-motivated violence. I received my Ph.D. from the University of Manchester in England in 2016 where I investigated relations between moral cognition and emotions and the physiopathology of major depression. Before starting my PhD, I worked at Johns Hopkins University on neuroimaging studies of psychiatric disorders, and also completed a B.S. in Psychology at the University of Maryland, Baltimore County, where I worked on studies of clinical, cognitive, and social functioning.",
+      "email": "cliffworkmanphd@gmail.com",
+      "website": "https://cliffworkmanphd.blog/",
+      "twitter": "https://twitter.com/cliffordianw",
       "category": "postdoctoral_researchers",
       "status": "active"
     },
