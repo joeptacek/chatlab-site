@@ -16,19 +16,6 @@ body {
   margin-bottom: 2rem;
 }
 
-main {
-  display: flex; // items: nav-page, page-content
-  flex-flow: column;
-}
-
-footer {
-  // As flex item (with main and footer), should not shrink
-  // flex: 0 0 auto;
-  padding: 4rem 0;
-  text-align: center;
-  color: $borders;
-}
-
 #logo {
   display: flex;
   justify-content: center;
@@ -45,6 +32,38 @@ footer {
     // chatlab
     padding-left: 1.5rem;
   }
+}
+
+main {
+  display: flex; // items: nav-page, page-content
+  flex-flow: column;
+}
+
+footer {
+  // As flex item (with main and footer), should not shrink
+  // flex: 0 0 auto;
+  padding: 4rem 0;
+  text-align: center;
+  color: $borders;
+
+  a {
+    color: $borders;
+    &:hover {
+      color: $borders-dark;
+    }
+  }
+
+  > * {
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#copyright {
+  color: $borders-dark;
 }
 
 .card, .well {

@@ -16,5 +16,5 @@
     document.createElement( "picture" );
   </script>
   <script async src="{{ "/assets/js/vendor/picturefill.js" | prepend: site.baseurl }}"></script>
-  {% if jekyll.environment == "production" %}{% include analytics.html %}{% endif %}
+  {% if site.analytics %}{% include plugins/analytics.html %}{% endif %}
 </head>

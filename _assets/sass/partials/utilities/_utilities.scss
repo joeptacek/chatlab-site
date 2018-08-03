@@ -23,8 +23,8 @@
   color: $page-links;
 
   &:hover {
-    background-color: hsl(211, 26%, 96%); // i.e., page-links with more luminence
-    color: $page-links; // override $pl-hover default
+    border: solid $pl-hover 1px;
+    color: $pl-hover; // override $pl-hover default
   }
 }
 

@@ -5,7 +5,7 @@
         <h3>{{ group.group_title }}</h3>
         {% unless include.cols %}<hr />{% endunless %}
       {% endif %}
-      {% assign item_path = include.item_type | prepend: "item/" | append: ".html" %}
+      {% assign item_path = include.item_type | prepend: "components/" | append: ".html" %}
       {% for item in group.items %}
         {% include {{ item_path }} pass=item %}
       {% endfor %}
