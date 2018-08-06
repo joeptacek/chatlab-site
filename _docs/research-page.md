@@ -48,6 +48,8 @@ contains journal data, see below (null if not an edited work item)
 
 filename for .pdf file if this exists, otherwise null will be handled as "missing file" (won't display title as link)
 
+there are some unresolved issues involving filenames / URLs with special characters e.g., when authors are Göksun or Özer. the same rendered character can have multiple representations in unicode (see also: unicode equivalence, composed vs. decomposed characters). the pdf_filename string should match the actual filename down to the underlying unicode or else links might not work on the server. it seems like macos tries to override this in some cases (unclear?). git may also ignore changes to filename when the rendered character appears the same. in the future might be better to avoid non-ascii filenames / URLs.
+
 might be best to change this to absolute path
 
 ## journal_data object
