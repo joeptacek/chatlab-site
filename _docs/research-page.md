@@ -8,11 +8,13 @@ array of `publication` objects
 
 ### work_authors (string)
 
-for each author: first name + comma + first initial + middle initial(s)
+for each author: last name + comma + first initial + middle initial(s)
+
+period after each initial, space between consecutive initials
 
 if multiple authors, comma after each (even if only two authors), including oxford comma
 
-period after each initial, space between consecutive initials
+use ampersand & before final author, not "and"
 
 hyphenated names become hyphenated initials, no space (e.g., if middle name is `Jean-Baptise` use `J.-B.`)
 
