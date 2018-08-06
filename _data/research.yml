@@ -1,6 +1,22 @@
 - section_title: 'Language and Space'
   section_description: 'The lab’s research on language and space is concerned with a variety of concepts. Our primary interests lie in spatial and gestural representations in language, as well as in the processing of metaphoric and figurative language in patients and controls.'
   items:
+  - work_authors: 'Akbıyıka, S., Karaduman, A., Göksun, T., & Chatterjee, A.'
+    work_year: 2018
+    work_title: 'The relationship between co-speech gesture production and macrolinguistic discourse abilities in people with focal brain injury'
+    work_publication_format: 'article_in_journal'
+    journal_data:
+      journal_title: 'Neuropsychologia'
+      advance_tf: false
+      journal_vol: 117
+      journal_issue: null
+      journal_pages_start: 440
+      journal_pages_stop: 453
+      doi: '10.1016/j.neuropsychologia.2018.06.025'
+      review_tf: false
+      review_data: null
+    edited_work_data: null
+    pdf_filename: 'Akbıyıka_Karaduman_Göksun_Chatterjee_2018_01.pdf'
   - work_authors: 'Weisberg, S. M., Marchette, S. A., & Chatterjee, A.'
     work_year: 2018
     work_title: 'Behavioral and neural representations of spatial directions across words, schemas, and images'
@@ -17,7 +33,7 @@
       review_data: null
     edited_work_data: null
     pdf_filename: 'Weisberg_Marchette_Chatterjee_2018_01.pdf'
-  - work_authors: 'Weisberg, S.M., Badgio, D., & Chatterjee, A.'
+  - work_authors: 'Weisberg, S. M., Badgio, D., & Chatterjee, A.'
     work_year: 2018
     work_title: 'Feel the way with a vibrotactile compass: Does a navigational aid aid navigation?'
     work_publication_format: 'article_in_journal'
@@ -1112,6 +1128,9 @@
       review_data: null
     edited_work_data: null
     pdf_filename: 'Wilson_Chatterjee_2005_01.pdf'
+    link_data:
+      link_name: 'Download the APB materials and instructions'
+      link_url: '/assets/downloads/APB.zip'
   - work_authors: 'Chatterjee A.'
     work_year: 2004
     work_title: 'The neuropsychology of visual artistic expression'
