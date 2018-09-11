@@ -8,7 +8,6 @@ sections:
   - Staff
   - Postdoctoral Researchers
   - Student Researchers
-  - Visiting Researchers
   - Lab Alumni
 ---
 {% assign people_sorted = site.data.people.people_list | sort: "middle_last_name" %}
@@ -72,6 +71,16 @@ sections:
       {% for person in people_sorted %}
         {% unless person.status == "active" %}
           {% if person.student_category == "graduate_students" %}
+            {% include components/alum.html pass=person %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+    <div class="section-group col-group">
+      <h3>Postbaccalaureate Students</h3>
+      {% for person in people_sorted %}
+        {% unless person.status == "active" %}
+          {% if person.student_category == "post_baccalaureate_students" %}
             {% include components/alum.html pass=person %}
           {% endif %}
         {% endunless %}
