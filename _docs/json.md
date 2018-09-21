@@ -1,3 +1,5 @@
+# JSON schemas etc.
+
 ## people_list
 
 ### person_active_elements
@@ -81,11 +83,16 @@ Liquid variables that are null or undefined are falsy, but empty string is truth
 
 ### Smart quotes
 
-Use Jeckyll's custom Liquid filters to deal with straight quotes and apostrophes entered via Netlify CMS interface:
+Use Jekyll's custom Liquid filters to deal with straight quotes and apostrophes entered via Netlify CMS interface:
 
 ```
 {{ foo | smartify }}
 ```
+## JSON
+
+### Escaping
+
+Need to escape double quotes with `\"`
 
 ## Schema tools (validation etc.)
 

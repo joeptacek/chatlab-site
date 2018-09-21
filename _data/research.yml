@@ -95,7 +95,7 @@
       review_data: null
     edited_work_data: null
     pdf_filename: 'McQuire_McCollum_Chatterjee_2016_01.pdf'
-  - work_authors: 'Jamrozic, A., McQuire, M., Cardillo, E., & Chatterjee, A.'
+  - work_authors: 'Jamrozik, A., McQuire, M., Cardillo, E., & Chatterjee, A.'
     work_year: 2016
     work_title: 'Metaphor: Bridging embodiment to abstraction'
     work_publication_format: 'article_in_journal'
@@ -110,7 +110,7 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: 'Jamrozic_McQuire_Cardillo_Chatterjee_2016_01.pdf'
+    pdf_filename: 'Jamrozik_McQuire_Cardillo_Chatterjee_2016_01.pdf'
   - work_authors: 'Nozari, N., Göksun T., Thompson-Schill, S. L., & Chatterjee, A.'
     work_year: 2015
     work_title: 'Phonological similarity affects production of gestures, even in the absence of overt speech'
@@ -126,7 +126,7 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: 'Nozari_Göksun_Thompson-Schill_Chatterjee_2015_01.pdf'
+    pdf_filename: 'Nozari_Göksun_Thompson-Schill_Chatterjee_2015_01.pdf'
   - work_authors: 'Göksun T., Lehet M., Malykhina K., & Chatterjee A.'
     work_year: 2015
     work_title: 'Spontaneous gesture and spatial language: Evidence from focal brain injury'
@@ -142,7 +142,7 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: 'Göksun_Lehet_Malykhina_Chatterjee_2015_01.pdf'
+    pdf_filename: 'Göksun_Lehet_Malykhina_Chatterjee_2015_01.pdf'
   - work_authors: 'Ianni, G. R., Cardillo, E. R., McQuire, M., & Chatterjee, A.'
     work_year: 2014
     work_title: 'Flying under the radar: Figurative language impairments in focal lesion patients'
@@ -204,7 +204,7 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: 'Göksun_Lehet_Malykhina_Chatterjee_2013_01.pdf'
+    pdf_filename: 'Göksun_Lehet_Malykhina_Chatterjee_2013_01.pdf'
   - work_authors: 'Amorapanth, P., Kranjec, A., Bromberger, B., Lehet, M., Widick, P., Woods, A. J., Kimberg, D. Y., & Chatterjee, A.'
     work_year: 2012
     work_title: 'Language, perception, and the schematic representation of spatial relations'
@@ -768,7 +768,7 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: 'Vartanian_Navarrete_Chatterjee_Fich_Leder_Modroño_Rostrup_Skov_Corradi_Nadal_2017_01.pdf'
+    pdf_filename: 'Vartanian_Navarrete_Chatterjee_Fich_Leder_Modroño_Rostrup_Skov_Corradi_Nadal_2017_01.pdf'
   - work_authors: 'Chatterjee, A.'
     work_year: 2017
     work_title: 'Orange is the new aesthetic'
@@ -888,7 +888,7 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: 'Vartanian_Navarrete_Chatterjee_Brorson_Fich_Gonzalez-Mora_Leder_Modroño_Nadal_Rostrup_Skov_2015_01.pdf'
+    pdf_filename: 'Vartanian_Navarrete_Chatterjee_Brorson_Fich_Gonzalez-Mora_Leder_Modroño_Nadal_Rostrup_Skov_2015_01.pdf'
   - work_authors: 'Graham, D., Schwarz, B., Chatterjee, A., Kircher, T., & Straube, B.'
     work_year: 2014
     work_title: 'Preference for luminance histogram regularities in natural scenes'
@@ -966,7 +966,7 @@
       edited_work_editors: 'A. Kozbelt (Ed.)'
       edited_work_location: 'New York, NY'
       edited_work_publisher: 'International Association of Empirical Aesthetics'
-    pdf_filename: 'Göksun_Kranjec_Chatterjee_2014_01.pdf'
+    pdf_filename: 'Göksun_Kranjec_Chatterjee_2014_01.pdf'
   - work_authors: 'Vartanian, O., Navarrete, G., Chatterjee, A., Fich, L. B., Leder, H., Modroño, C., Nadal, M., Rostrup, N., & Skov, M.'
     work_year: 2013
     work_title: 'Impact of contour on aesthetic judgments and approach-avoidance decisions in architecture'
@@ -982,7 +982,7 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: 'Vartanian_Navarrete_Chatterjee_Fich_Leder_Modroño_Nadal_Rostrup_Skov_2013_01.pdf'
+    pdf_filename: 'Vartanian_Navarrete_Chatterjee_Fich_Leder_Modroño_Nadal_Rostrup_Skov_2013_01.pdf'
   - work_authors: 'van Buren, B., Bromberger, B., Potts, D., Miller, B., & Chatterjee A.'
     work_year: 2013
     work_title: 'Changes in painting styles of two artists with Alzheimer’s disease'
@@ -1456,7 +1456,7 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: 'Göksun_Woods_Chatterjee_Zelonis_Glass_Smith_2013_01.pdf'
+    pdf_filename: 'Göksun_Woods_Chatterjee_Zelonis_Glass_Smith_2013_01.pdf'
   - work_authors: 'Woods, A. J., Göksun, T., Chatterjee, A., Zelonis, S., Mehta, A., & Smith, S.'
     work_year: 2013
     work_title: 'The development of organized visual search'
@@ -1472,7 +1472,7 @@
       review_tf: false
       review_data: null
     edited_work_data: null
-    pdf_filename: 'Woods_Göksun_Chatterjee_Zelonis_Mehta_Smith_2013_01.pdf'
+    pdf_filename: 'Woods_Göksun_Chatterjee_Zelonis_Mehta_Smith_2013_01.pdf'
   - work_authors: 'Smith, S. E., & Chatterjee, A.'
     work_year: 2008
     work_title: 'Visuospatial attention in children'
