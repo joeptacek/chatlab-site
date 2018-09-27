@@ -11,7 +11,7 @@
         <!-- page-specific defs -->
         {% if page.svg %}
           {% comment %} TODO: maybe page.svg should just be the path to the svg (or else null); avoids liquid exceptions if missing / incorrectly named svg includes {% endcomment %}
-          {% assign svg_path = page.path | remove: "_pages" | prepend: "svg/" %}
+          {% assign svg_path = page.path | remove: "_pages" | prepend: "svg" %}
           {% include {{ svg_path }} %}
         {% endif %}
       </defs>
