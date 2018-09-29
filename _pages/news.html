@@ -5,7 +5,7 @@ description: See what we're up to on Twitter and in other media.
 svg: true
 sections:
   - Twitter
-  - Media
+  - News
 ---
 <section class="card">
   <header>
@@ -20,13 +20,15 @@ sections:
     <ul class="list-reset lr-horizontal">
       <li><button class="button-reset link-like link-selected" type="button" name="filter-button" value="filter-target">All</button></li>
       <li><button class="button-reset link-like" type="button" name="filter-button" value="media-type-print">Print</button></li>
-      <li><button class="button-reset link-like" type="button" name="filter-button" value="media-type-audio">Video</button></li>
-      <li><button class="button-reset link-like" type="button" name="filter-button" value="media-type-video">Audio</button></li>
+      <li><button class="button-reset link-like" type="button" name="filter-button" value="media-type-video">Video</button></li>
+      <li><button class="button-reset link-like" type="button" name="filter-button" value="media-type-audio">Audio</button></li>
     </ul>
   </header>
   <hr />
-  {% assign news_sort = site.data.news.news_list | sort: "date" | reverse %}
-  {% for item in news_sort %}
-    {% include components/news.html pass=item %}
+  {% assign news_sort = site.data.news.published.items | sort: "date" | reverse %}
+  {% for news_item in news_sort %}
+    {% if news_item.sites.chatlab %}
+      {% include components/news.html pass=news_item %}
+    {% endif %}
   {% endfor %}
 </section>
