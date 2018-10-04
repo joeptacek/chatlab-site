@@ -34,8 +34,6 @@ if title ends with question mark, include this (template will skip inserting def
 
 either `article_in_journal` or `article_in_edited_work`
 
-*get rid of this*
-
 ### journal_data (object)
 
 contains journal data, see below (null if not a journal item)
@@ -50,8 +48,6 @@ filename for .pdf file if this exists, otherwise null will be handled as "missin
 
 might be best to change this to absolute path
 
-## journal_data object
-
 ### journal_title
 
 ### advance_tf
@@ -60,15 +56,17 @@ might be best to change this to absolute path
 
 ### journal_issue
 
+as applicable
+
 ### journal_pages_start
 
 ### journal_pages_stop
 
 ### doi
 
-### review_tf (boolean)
+TODO: formatting notes
 
-*get rid of this*
+### review_tf (boolean)
 
 ### review_data (object)
 
@@ -104,7 +102,7 @@ see below
 
 ## examples
 
-### article appearing in a journal
+### publication appearing in a journal
 
 ```yml
 work_authors: 'Karaduman, A., Göksun, T., & Chatterjee, A.'
@@ -125,7 +123,7 @@ edited_work_data: null
 pdf_filename: 'Karaduman_Göksun_Chatterjee_2017_01.pdf'
 ```
 
-### article appearing in a journal (review)
+### publication appearing in a journal (review)
 
 ```yml
 work_authors: 'Chatterjee, A.'
@@ -150,7 +148,7 @@ edited_work_data: null
 pdf_filename: 'Chatterjee_2017_01.pdf'
 ```
 
-### article appearing in an edited work
+### publication appearing in an edited work
 
 ```yml
 work_authors: 'Özer, D., Tansan, M., Özer, E. E., Malykhina, K., Chatterjee, A., & Göksun, T.'

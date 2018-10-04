@@ -1,23 +1,48 @@
 # Conventions
 
-## Smart quotes and other Unicode
+## Unicode
 
-- For smart quotes just use Jekyll's custom Liquid filters, for example:
+- Unicode is OK to use in HTML (e.g., `<p>Göksun et al.</p>`)
+
+## Liquid
+
+### Empty strings and nulls
+
+For optional keys, Liquid template logic should be constructed so the same behavior is seen for:
+
+- Keys with `null` value
+- Missing keys (when Netlify CMS processes user JSON / YAML, it reformats to remove any keys with `null` value)
+- Empty strings (when user erases an optional field in Netlify CMS it's represented as an empty string, not `null`)
+
+Liquid variables that are null or undefined are falsy, but empty string is truthy. In practice, the following construction should work:
+
+```
+{% if foo and foo != "" %}Do things{% endif %}
+```
+
+### Smart quotes
+
+- Use Jekyll's custom Liquid filters to convert with straight quotes and apostrophes entered via text editor or Netlify CMS interface:
 
   ```
   {{ foo | smartify }}
   ```
 
+## JSON
+
+- Escape double quotes with `\"`
 
 ## News
 
-- Use title case (APA style exceptions)
+- See json-validation.md
 
 ## Publications
 
-- See `research.md` and eventually move some of those docs here
+- See json-validation.md
 
 ## People
+
+- See json-validation.md
 
 ## Filenames
 

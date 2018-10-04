@@ -10,4 +10,84 @@ sections:
   - Neuroethics
   - Miscellaneous
 ---
-{% include page_layout/data_sections.html data_source="research" item_type="publication" drawers=true %}
+{% assign pubs_sorted = site.data.publications | sort: "work_post_date" | reverse %}
+<section class="toggle-panel tp-type-drawer-incremental tp-button-compact card">
+  <header class="tp-header-alt">
+    <h2 id="{{ page.sections[0] | slugify }}" class="section-title">{{ page.sections[0] }}</h2>
+    <p class="font-large">
+      The lab’s research on language and space is concerned with a variety of concepts. Our primary interests lie in spatial and gestural representations in language, as well as in the processing of metaphoric and figurative language in patients and controls.
+    </p>
+  </header>
+  <hr />
+  <div class="tp-block toggle-target">
+    {% for pub in pubs_sorted %}
+      {% if pub.category == "language_and_space" %}
+        {% include components/publication.html pass=pub %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+<section class="toggle-panel tp-type-drawer-incremental tp-button-compact card">
+  <header class="tp-header-alt">
+    <h2 id="{{ page.sections[1] | slugify }}" class="section-title">{{ page.sections[1] }}</h2>
+    <p class="font-large">
+      Our examination of event representation focuses on how humans visualize and process moving events and infer causality within these events, as well as focusing on the neural bases of processing action-based information in general.
+    </p>
+  </header>
+  <hr />
+  <div class="tp-block toggle-target">
+    {% for pub in pubs_sorted %}
+      {% if pub.category == "event_representation" %}
+        {% include components/publication.html pass=pub %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+<section class="toggle-panel tp-type-drawer-incremental tp-button-compact card">
+  <header class="tp-header-alt">
+    <h2 id="{{ page.sections[2] | slugify }}" class="section-title">{{ page.sections[2] }}</h2>
+    <p class="font-large">
+      Neuroaesthetics refers to the role of the brain in evaluating visual stimuli and their aesthetic appeal. Our research ranges from aesthetic choices of brain-injured individuals to aesthetic preferences in everyday life (in architecture, art, and facial beauty).
+    </p>
+  </header>
+  <hr />
+  <div class="tp-block toggle-target">
+    {% for pub in pubs_sorted %}
+      {% if pub.category == "neuroaesthetics" %}
+        {% include components/publication.html pass=pub %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+<section class="toggle-panel tp-type-drawer-incremental tp-button-compact card">
+  <header class="tp-header-alt">
+    <h2 id="{{ page.sections[3] | slugify }}" class="section-title">{{ page.sections[3] }}</h2>
+    <p class="font-large">
+      Neuroethics focuses mainly on the ethical implications of neuroscientific progress, such as “cosmetic neurology,” the use of drugs to enhance cognitive performance and ability.
+    </p>
+  </header>
+  <hr />
+  <div class="tp-block toggle-target">
+    {% for pub in pubs_sorted %}
+      {% if pub.category == "neuroethics" %}
+        {% include components/publication.html pass=pub %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+<section class="toggle-panel tp-type-drawer-incremental tp-button-compact card">
+  <header class="tp-header-alt">
+    <h2 id="{{ page.sections[4] | slugify }}" class="section-title">{{ page.sections[4] }}</h2>
+    <p class="font-large">
+      Cognitive neurology covers many different areas and we are interested in a number of these facets of brain and behavior. These topics include visuospatial attention, methodology in cognitive neuroscience, as well as some case study research.
+    </p>
+  </header>
+  <hr />
+  <div class="tp-block toggle-target">
+    {% for pub in pubs_sorted %}
+      {% if pub.category == "miscellaneous" %}
+        {% include components/publication.html pass=pub %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

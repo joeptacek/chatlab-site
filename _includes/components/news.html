@@ -1,3 +1,4 @@
+{% comment %} TODO: Don't need to use include.pass, can just refer to variable being iterated in the outer for loop {% endcomment %}
 {% comment %} Entire item needs class so js can target / hide {% endcomment %}
 <div class="flex-item fi-med-compact fi-med-center filter-target {% case include.pass.category %}{% when 'print' %}media-type-print{% when 'audio' %}media-type-audio{% when 'video' %}media-type-video{% endcase %}">
   <header class="rounded-descending">

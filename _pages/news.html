@@ -7,6 +7,7 @@ sections:
   - Twitter
   - News
 ---
+{% assign news_sort = site.data.news | sort: "date" | reverse %}
 <section class="card">
   <header>
     <h2 id="{{ page.sections[0] | slugify }}" class="section-title">{{ page.sections[0] }}</h2>
@@ -25,9 +26,8 @@ sections:
     </ul>
   </header>
   <hr />
-  {% assign news_sort = site.data.news.published.items | sort: "date" | reverse %}
   {% for news_item in news_sort %}
-    {% if news_item.sites.chatlab %}
+    {% if news_item.site_chatlab and news_item.archived == false %}
       {% include components/news.html pass=news_item %}
     {% endif %}
   {% endfor %}

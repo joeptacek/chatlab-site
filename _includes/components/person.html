@@ -1,6 +1,7 @@
+{% comment %} TODO: Don't need to use include.pass, can just refer to variable being iterated in the outer for loop {% endcomment %}
 <div class="flex-item">
   <header class="rounded-descending">
-    <img src="{{ include.pass.photo_path | prepend: site.baseurl }}" alt="{{ include.pass.first_name }} {{ include.pass.middle_last_name }}" width="200" height="200"/>
+    <img src="{{ include.pass.photo | prepend: site.baseurl }}" alt="{{ include.pass.first_name }} {{ include.pass.middle_last_name }}" width="200" height="200"/>
   </header>
   <div class="fi-main">
     <header>
