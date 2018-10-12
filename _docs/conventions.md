@@ -54,7 +54,19 @@ Liquid variables that are null or undefined are falsy, but empty string is truth
 
   Issues can arise on the server when an html reference and the corresponding filename use different representations of the same character (broken link).
 
-  Use percent encoding for special characters. Most fool-proof, if kind of dumb-looking and time consuming. To be consistent, use precomposed (arbitrary decision).
+  Use closest-looking ASCII character:
+
+  Ö > O
+
+  ö > o
+
+  ñ > n
+
+  ı > i
+
+  Formerly (still 404):
+
+  Use percent encoding for special characters. Seems fool-proof, if kind of dumb-looking and time consuming. To be consistent, use precomposed (arbitrary decision).
 
   Formerly (error-prone):
 
