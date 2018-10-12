@@ -10,7 +10,7 @@ sections:
   - Neuroethics
   - Miscellaneous
 ---
-{% assign pubs_sorted = site.data.publications | sort: "work_post_date" | reverse %}
+{% assign pubs_sorted = site.data.publications | sort: "work_post_date_fake" | reverse %}
 <section class="toggle-panel tp-type-drawer-incremental tp-button-compact card">
   <header class="tp-header-alt">
     <h2 id="{{ page.sections[0] | slugify }}" class="section-title">{{ page.sections[0] }}</h2>

@@ -68,6 +68,7 @@ work_title | yes | string ||
 work_publication_format | yes | string || article_in_journal, article_in_edited_work
 work_doi | no | string ||
 work_post_date | yes | string | YYYY-MM-DD |
+work_post_date_fake | yes | integer ||
 pdf | no | string | absolute file path |
 category | yes | string || language_and_space, event_representation, neuroaesthetics, neuroethics, miscellaneous
 review | yes | boolean ||
@@ -79,10 +80,11 @@ key | required | type | format | value(s)
 --- | --- | --- | --- | ---
 journal_title | yes | string ||
 journal_advance | yes | boolean ||
-journal_vol | yes unless `journal_advance` is `true` | integer ||
+journal_preprint | yes | boolean ||
+journal_vol | yes unless `journal_advance` or `journal_preprint` is `true` | integer ||
 journal_issue | no | integer ||
-journal_pages_start | yes unless `journal_advance` is `true` | integer ||
-journal_pages_stop | yes unless `journal_advance` is `true` | integer ||
+journal_pages_start | yes unless `journal_advance` or `journal_preprint` is `true` | integer ||
+journal_pages_stop | yes unless `journal_advance` or `journal_preprint` is `true` | integer ||
 
 ### if `work_publication_format` is `article_in_edited_work`
 
@@ -124,7 +126,7 @@ link_url | yes | absolute file path or external URL ||
 
 #### `work_year`
 
-- four-digit year
+- four-digit year. include year headers in template? could just sort alphabetically under years instead of by work_post_date / work_post_date_fake.
 
 #### `work_title`
 
@@ -135,11 +137,15 @@ link_url | yes | absolute file path or external URL ||
 #### `work_doi`
 
 - TODO: formating notes
-- DOI is not currently implemented in template for articles in edited works
+- ignored if `work_publication_format` is `article_in_edited_work`. template not currently implemented for edited works with DOIs (but could in theory so don't make this a journal-specific property?)
 
 #### `work_post_date`
 
-- not fully implemented yet. using increasing integers for newer publications, starting at 1 within each category. use work_post_date to sort chronologically (JSON is unordered). need to keep separate work_year to include in the citation itself (occasionally, might be different than post date?).
+- used in template to sort chronologically within year. not fully implemented yet. gradually, fill these in. need to decide which post date to use - orig publication date? citation date? may need to keep separate work_year to include in the citation itself - is this ever different than post date?
+
+#### `work_post_date_fake`
+
+- using increasing integers for newer publications, starting at 1 within each category. currently used in template, eventually switch to using work_post_date.
 
 #### `pdf`
 
@@ -147,17 +153,41 @@ link_url | yes | absolute file path or external URL ||
 
 #### `review`
 
-- template not currently implemented for reviews in edited works
+- ignored if `work_publication_format` is `article_in_edited_work`. template not currently implemented for reviews in edited works (but could in theory so don't make this a journal-specific property?)
+
+#### `journal_*`
+
+- ignored if `work_publication_format` is `article_in_edited_work`.
 
 #### `journal_title`
+
+#### `journal_advance`
+
+- for works in process to appear in a publication. eventually cite the published version once this is available, providing info for vol / issue / pages.
+- works in this category are considered published? generally (always?) these works are peer-reviewed, available online with the publisher.
+- publishers use various names for these editions (e.g., Online First), but it makes sense to be consistent in citing all of these as Advance Online Publication.
+
+#### `journal_preprint`
+
+- distinct from an advance. for posted works (e.g., on bioRxiv) that aren't necessarily in process to appear in a publication. if the work is every published, eventually cite that version instead, providing info for vol / issue / pages.
+- works in this category are considered unpublished? generally not (never?) peer reviewed.
+- besides works on bioRxiv, what else counts as a preprint? any publically posted work?
+- some (?) publishers don't accept works that have already been posted elsewhere. ideally, cite the final published version once this appears.
+- ignored if journal_advance is `true`
 
 #### `journal_vol`
 
 #### `journal_issue`
 
+- TODO: notes about Frontiers
+
 #### `journal_pages_start`
 
 #### `journal_pages_stop`
+
+#### `edited_work_*`
+
+- ignored if `work_publication_format` is `article_in_journal`.
 
 #### `edited_work_type`
 
@@ -196,7 +226,7 @@ link_url | yes | absolute file path or external URL ||
 * fill in notes for publications
 * constants in enums uppercase with underscore e.g., LAB_DIRECTOR
 * camelCase property names?
-* be more semantic with property names e.g., photo_path instead of photo, twitter_url instead of twitter
+* be more specific / semantic with property names e.g., photo_path instead of photo, twitter_url instead of twitter
 
 ## JSON Schema tools (spec, generate, validate, etc.)
 

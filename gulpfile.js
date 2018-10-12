@@ -31,8 +31,8 @@ var development = !(production);
 
 var child_jk_watch; // needs to be global so we can kill later
 
-var jk_config_gulp = '_config.yml,_config-gulp.yml'; // _config-gulp.yml excludes _assets (for jekyll watch), keeps assets/js and assets/css (so gulp output isn't clobbered)
-var jk_config_gulp_production = jk_config_gulp + ',_config-gulp-production.yml'; // _config-gulp-production.yml excludes _page/demos; enables analytics; sets baseurl to /chatterjee
+var jk_config_gulp = '_config-gulp.yml'; // _config-gulp.yml excludes _assets (for jekyll watch), keeps assets/js and assets/css (so gulp output isn't clobbered)
+var jk_config_gulp_production = '_config-gulp-production.yml'; // _config-gulp-production.yml excludes _page/demos; enables analytics; sets baseurl to /chatterjee
 
 var jk_build_command = [
   'bundle',

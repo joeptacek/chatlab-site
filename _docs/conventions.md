@@ -54,8 +54,8 @@ Liquid variables that are null or undefined are falsy, but empty string is truth
 
   Issues can arise on the server when an html reference and the corresponding filename use different representations of the same character (broken link).
 
-  Possibly:
+  Use percent encoding for special characters. Most fool-proof, if kind of dumb-looking and time consuming. To be consistent, use precomposed (arbitrary decision).
+
+  Formerly (error-prone):
 
   If on macOS, name the file using long-press / precomposed version; will automatically convert to decomposed version. Copy-paste decomposed version from filename into html. Upload file and html to server (both decomposed). Commit both to Git - filename converted to precomposed, html still decomposed but who cares? Maybe broken links if pull from git to Windows and try to upload to server?
-
-  Or maybe use percent encoding for special characters? Most fool-proof, if kind of dumb-looking and time consuming
