@@ -185,6 +185,8 @@ link_url | yes | absolute file path or external URL ||
 
 #### `journal_pages_stop`
 
+- include both `journal_pages_start` and `journal_pages_stop` even if publication is a single page (i.e., use the same value for each key). the template will handle this.
+
 #### `edited_work_*`
 
 - ignored if `work_publication_format` is `article_in_journal`.
