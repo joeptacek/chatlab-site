@@ -1,5 +1,25 @@
 [
   {
+    "work_authors": "Cardillo, E., McQuire, M., & Chatterjee, A.",
+    "work_year": 2018,
+    "work_title": "Selective metaphor impairments after left, not right, hemisphere injury",
+    "work_publication_format": "article_in_journal",
+    "work_doi": "10.3389/fpsyg.2018.02308",
+    "work_post_date_fake": 33,
+    "work_post_date": "2018-12-03",
+    "pdf": "/assets/pdf/publications/Cardillo_McQuire_Chatterjee_2018_01.pdf",
+    "category": "language_and_space",
+    "journal_title": "Frontiers in Psychology",
+    "journal_advance": false,
+    "journal_preprint": false,
+    "journal_vol": 9,
+    "journal_issue": 2308,
+    "journal_pages_start": 1,
+    "journal_pages_stop": 17,
+    "review": false,
+    "link": false
+  },
+  {
     "work_authors": "Weisberg, S., Newcomb, N., & Chatterjee, A.",
     "work_year": 2018,
     "work_title": "Everyday taxi drivers: Do better navigators have larger hippocampi?",
