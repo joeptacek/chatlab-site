@@ -657,7 +657,7 @@
     "work_post_date_fake": 11,
     "pdf": "/assets/pdf/publications/Quandt_Chatterjee_2015_01.pdf",
     "category": "event_representation",
-    "journal_title": "WIREs Cognitive Science",
+    "journal_title": "Wiley Interdisciplinary Reviews: Cognitive Science",
     "journal_advance": false,
     "journal_preprint": false,
     "journal_vol": 6,
@@ -853,7 +853,22 @@
     "link": false
   },
   {
-    "work_authors": "Faust, N. T., Chatterjee, A., Christopoulos, G. I.",
+    "work_authors": "Nadal, M., & Chatterjee, A.",
+    "work_year": 2018,
+    "work_title": "Neuroaesthetics and art's diversity and universality",
+    "work_publication_format": "article_in_journal",
+    "work_doi": "10.1002/wcs.1487",
+    "work_post_date_fake": 31,
+    "pdf": "/assets/pdf/publications/Nadal_Chatterjee_2018_01.pdf",
+    "category": "neuroaesthetics",
+    "journal_title": "Wiley Interdisciplinary Reviews: Cognitive Science",
+    "journal_advance": true,
+    "journal_preprint": false,
+    "review": false,
+    "link": false
+  },
+  {
+    "work_authors": "Faust, N. T., Chatterjee, A., & Christopoulos, G. I.",
     "work_year": 2018,
     "work_title": "The eﬀect of unrelated social exchanges on facial attractiveness judgments",
     "work_publication_format": "article_in_journal",
