@@ -853,6 +853,22 @@
     "link": false
   },
   {
+    "work_authors": "Hayn-Leichsenring, G. U., & Chatterjee, A.",
+    "work_year": 2018,
+    "work_title": "Colliding terminological systems—Immanuel Kant and contemporary empirical aesthetics",
+    "work_publication_format": "article_in_journal",
+    "work_doi": "10.1177/0276237418818635",
+    "work_post_date_fake": 33,
+    "work_post_date": "2018-12-18",
+    "pdf": "/assets/pdf/publications/Hayn-Leichsenring_Chatterjee_2018_01.pdf",
+    "category": "neuroaesthetics",
+    "journal_title": "Empirical Studies of the Arts",
+    "journal_advance": true,
+    "journal_preprint": false,
+    "review": false,
+    "link": false
+  },
+  {
     "work_authors": "Belfi, A. M., Vessel, E. A., Brielmann, A., Isik, A. I., Chatterjee, A., Leder, H., Pelli, D. G., & Starr, G. G.",
     "work_year": 2018,
     "work_title": "Dynamics of aesthetic experience are reflected in the default-mode network",
