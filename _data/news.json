@@ -1,10 +1,30 @@
 [
   {
+    "title": "Your Brain on Art: Neuroscientists Define the Aesthetic Experience",
+    "source": "Missouri S&T",
+    "date": "2018-12-20",
+    "url": "https://news.mst.edu/2018/12/your-brain-on-art-neuroscientists-define-the-aesthetic-experience/",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
     "title": "The Power of Penn in London",
     "source": "Penn Today",
     "date": "2018-11-15",
     "url": "https://penntoday.upenn.edu/news/power-penn-london",
     "category": "print",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
+    "title": "The Power of Penn in London: Campaign Kickoff Celebration",
+    "source": "The Power of Penn",
+    "date": "2018-11-15",
+    "url": "https://www.facebook.com/UnivPennsylvania/videos/354108261817428/?v=354108261817428",
+    "category": "video",
     "archived": false,
     "site_pcfn": true,
     "site_chatlab": true
@@ -17,6 +37,16 @@
     "category": "print",
     "archived": false,
     "site_pcfn": false,
+    "site_chatlab": true
+  },
+  {
+    "title": "GWS 2018: Buildings, Beauty, and the Brain: A Neuroscience of Architectural Experience",
+    "source": "Global Wellness Summit",
+    "date": "2018-10-07",
+    "url": "https://www.globalwellnesssummit.com/beauty/buildings-beauty-and-brain-neuroscience-of-architecture/",
+    "category": "video",
+    "archived": false,
+    "site_pcfn": true,
     "site_chatlab": true
   },
   {

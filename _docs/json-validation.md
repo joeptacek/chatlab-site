@@ -120,8 +120,8 @@ link_url | yes | absolute file path or external URL ||
 
 - for each author: last name + comma + first initial + middle initial(s)
 - period after each initial, space between consecutive initials
-- if multiple authors, comma after each (even if only two authors), including oxford comma
-- use ampersand & before final author, not "and"
+- if multiple authors, comma after each (EVEN if only two authors), including oxford comma
+- use ampersand & before final author (not "and")
 - hyphenated names become hyphenated initials, no space (e.g., if middle name is `Jean-Baptise` use `J.-B.`)
 
 #### `work_year`
@@ -203,6 +203,13 @@ link_url | yes | absolute file path or external URL ||
 
 #### `edited_work_editors`
 
+- for each editor: first initial + middle initial(s) + last name
+- period after each initial, space between consecutive initials
+- if multiple editors, comma after each (NOT if only two authors), including oxford comma
+- use ampersand & before final author (not "and")
+- hyphenated names become hyphenated initials, no space (e.g., if middle name is `Jean-Baptise` use `J.-B.`)
+- after listing editor(s) include `(Ed.)` or `(Eds.)`
+
 #### `edited_work_location`
 
 #### `edited_work_publisher`
@@ -218,6 +225,12 @@ link_url | yes | absolute file path or external URL ||
 #### `reviewed_work_title`
 
 #### `reviewed_work_author`
+
+- for each author: first initial + middle initial(s) + last name
+- period after each initial, space between consecutive initials
+- if multiple authors, comma after each (NOT if only two authors), including oxford comma
+- use ampersand & before final author (not "and")
+- hyphenated names become hyphenated initials, no space (e.g., if middle name is `Jean-Baptise` use `J.-B.`)
 
 #### `link_name`
 
