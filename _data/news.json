@@ -1,5 +1,25 @@
 [
   {
+    "title": "Neuroaesthetics — The Science of Pleasure: An Interview With Dr. Anjan Chatterjee",
+    "source": "Brain World",
+    "date": "2019-03-02",
+    "url": "https://brainworldmagazine.com/neuroaesthetics-the-science-of-pleasure-an-interview-with-dr-anjan-chatterjee/",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
+    "title": "Can the New Penn Center for Neuroaesthetics Unlock the Science of Beauty?",
+    "source": "Philadelphia Magazine",
+    "date": "2019-03-02",
+    "url": "https://www.phillymag.com/news/2019/03/02/penn-center-for-neuroaesthetics/",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
     "title": "Beauty and Neuroaesthetics",
     "source": "Minding the Brain",
     "date": "2019-02-01",
@@ -293,7 +313,7 @@
     "title": "Straight Talk With Dr. Anjan Chatterjee",
     "source": "SciArt Magazine",
     "date": "2017-02-01",
-    "url": "http://www.sciartmagazine.com/straight-talk-with-neuroaesthetics-researcher-dr-anjan-chatterjee.html",
+    "url": "https://www.sciartmagazine.com/straight-talk-dr-anjan-chatterjee.html",
     "category": "print",
     "archived": false,
     "site_pcfn": false,
@@ -621,7 +641,7 @@
   },
   {
     "title": "Can Adderall Save the Boomers?",
-    "source": "Philadelphia",
+    "source": "Philadelphia Magazine",
     "date": "2013-06-28",
     "url": "http://www.phillymag.com/articles/adderall-adhd-boomers-millennials",
     "category": "print",
@@ -655,6 +675,16 @@
     "date": "2012-09-10",
     "url": "http://www.pbs.org/video/tpt-documentaries-arts-mind-art-connection",
     "category": "video",
+    "archived": false,
+    "site_pcfn": false,
+    "site_chatlab": true
+  },
+  {
+    "title": "Metaphors Conference: The Neuroscience of Relational Thinking",
+    "source": "Emory Center for Mind, Brain, and Culture",
+    "date": "2012-03-08",
+    "url": "  https://center-for-mind-brain-and-culture.simplecast.com/episodes/metaphors-conference-2-of-5-anjan-51064e7a",
+    "category": "audio",
     "archived": false,
     "site_pcfn": false,
     "site_chatlab": true
@@ -701,7 +731,7 @@
   },
   {
     "title": "Is It Just Us, Or Are Kids Getting Really Stupid?",
-    "source": "Philadelphia",
+    "source": "Philadelphia Magazine",
     "date": "2010-11-26",
     "url": "http://www.phillymag.com/articles/feature_is_it_just_us_or_are_kids_getting_really_stupid",
     "category": "print",
