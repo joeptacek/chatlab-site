@@ -83,8 +83,8 @@ journal_advance | yes | boolean ||
 journal_preprint | yes | boolean ||
 journal_vol | yes unless `journal_advance` or `journal_preprint` is `true` | integer ||
 journal_issue | no | integer ||
-journal_pages_start | yes unless `journal_advance` or `journal_preprint` is `true` | integer ||
-journal_pages_stop | yes unless `journal_advance` or `journal_preprint` is `true` | integer ||
+journal_pages_start | yes unless `journal_advance` or `journal_preprint` is `true` | integer (or maybe not, e.g., WIREs might use alphanumeric article numbers in the page field ||
+journal_pages_stop | yes unless `journal_advance` or `journal_preprint` is `true` | integer (or maybe not, e.g., WIREs might use alphanumeric article numbers in the page field ||
 
 ### if `work_publication_format` is `article_in_edited_work`
 
@@ -126,7 +126,7 @@ link_url | yes | absolute file path or external URL ||
 
 #### `work_year`
 
-- four-digit year. include year headers in template? could just sort alphabetically under years instead of by work_post_date / work_post_date_fake.
+- four-digit year. update this (and filename) as new versions are published (e.g., when advance appears at end of year and then final version appears at beginning of following year). include year headings in template? if so could just sort alphabetically under years instead of by work_post_date / work_post_date_fake.
 
 #### `work_title`
 
@@ -141,7 +141,7 @@ link_url | yes | absolute file path or external URL ||
 
 #### `work_post_date`
 
-- used in template to sort chronologically within year. not fully implemented yet. gradually, fill these in. need to decide which post date to use - orig publication date? citation date? may need to keep separate work_year to include in the citation itself - is this ever different than post date?
+- used in template to sort chronologically within year. not fully implemented yet. gradually, fill these in. need to decide which post date to use: first publication date? final publication date? generally, indicating the first pub date (e.g., date when advance posted online) and then later updating this to the final publication date (e.g., date when finalized volume/issue comes out). exact dates aren't always clear, so probably fine to guess (e.g., date of google alert, first day of publication month). could include all post dates using separate fields but that seems unnecessary?
 
 #### `work_post_date_fake`
 
@@ -179,7 +179,7 @@ link_url | yes | absolute file path or external URL ||
 
 #### `journal_issue`
 
-- TODO: notes about Frontiers
+- some journals with online content (e.g., Frontiers, Wiley Interdisciplinary Reviews/WIREs) introduce the concept of an article number within a volume or issue (e.g., Frontiers Volume 10, Article 48; WIREs Volume 10, Issue 3, e1487). the corresponding PDF will (always?) have page numbers beginning with 1 (e.g., 1-11). it seems that the suggestion for citing is to indicate the article number as "page(s)" i.e., disregard actual page numbering in PDF. for Frontiers, i've been indicating the article number as "issue" because they only publish by volume, but perhaps i should convert to "pages." for WIREs, can't indicate article number as "issue" because WIREs is already using actual issue numbers; for now, skipped article number in the citation (indicated PDF pages as "pages") but should probably include article number later.
 
 #### `journal_pages_start`
 
@@ -199,7 +199,11 @@ link_url | yes | absolute file path or external URL ||
 
 #### `edited_work_pages_start`
 
+- some journals with online content (e.g., Frontiers, Wiley Interdisciplinary Reviews/WIREs) introduce the concept of an article number within a volume or issue (e.g., Frontiers Volume 10, Article 48; WIREs Volume 10, Issue 3, e1487). the corresponding PDF will (always?) have page numbers beginning with 1 (e.g., 1-11). it seems that the suggestion for citing is to indicate the article number as "page(s)" i.e., disregard actual page numbering in PDF. for Frontiers, i've been indicating the article number as "issue" because they only publish by volume, but perhaps i should convert to "pages." for WIREs, can't indicate article number as "issue" because WIREs is already using actual issue numbers; for now, skipped article number in the citation (indicated PDF pages as "pages") but should probably include article number later.
+
 #### `edited_work_pages_stop`
+
+- see above
 
 #### `edited_work_editors`
 
