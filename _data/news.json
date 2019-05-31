@@ -1,5 +1,43 @@
 [
   {
+    "title": "We Have A Subconscious Negative Brain Response To Disfigured Faces Penn Study Finds",
+    "source": "Philly Voice",
+    "date": "2019-05-29",
+    "url": "https://www.phillyvoice.com/implicit-bias-brain-behavior-response-disfigured-faces/",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
+    "title": "Seeing Disfigured Faces Prompts Negative Brain and Behavior Responses",
+    "source": "Penn Medicine News",
+    "date": "2019-05-29",
+    "url": "https://www.pennmedicine.org/news/news-releases/2019/may/people-have-negative-responses-in-their-behavior-and-brains-to-disfigured-faces",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true,
+    "reprints": [
+      {
+        "source": "ScienceDaily",
+        "url": "https://www.sciencedaily.com/releases/2019/05/190529122142.htm"
+      },
+      {
+        "source": "Neuroscience News",
+        "url": "https://neurosciencenews.com/facial-disfigurement-brain-14112/"
+      },
+      {
+        "source": "Medical Xpress",
+        "url": "https://medicalxpress.com/news/2019-05-disfigured-prompts-negative-brain-behavior.html"
+      },
+      {
+        "source": "News Medical",
+        "url": "https://www.news-medical.net/news/20190530/Seeing-disfigured-faces-evokes-negative-behavioral-and-brain-reactions.aspx"
+      }
+    ],
+  },
+  {
     "title": "The Majority of People Are Fine With Brain Doping, As Long As You Don't Call It That",
     "source": "Forbes",
     "date": "2019-05-10",

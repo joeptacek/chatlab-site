@@ -1,5 +1,21 @@
 [
   {
+    "work_authors": "Özer, D., Göksun, T., & Chatterjee, A.",
+    "work_year": 2019,
+    "work_title": "Differential roles of gestures on spatial language in neurotypical elderly adults and individuals with focal brain injury",
+    "work_publication_format": "article_in_journal",
+    "work_doi": "10.1080/02643294.2019.1618255",
+    "work_post_date_fake": 35,
+    "work_post_date": "2019-05-26",
+    "pdf": "/assets/pdf/publications/Ozer_Goksun_Chatterjee_2019_01.pdf",
+    "category": "language_and_space",
+    "journal_title": "Cognitive Neuropsychology",
+    "journal_advance": true,
+    "journal_preprint": false,
+    "review": false,
+    "link": false
+  },
+  {
     "work_authors": "Weisberg, S., Newcomb, N., & Chatterjee, A.",
     "work_year": 2019,
     "work_title": "Everyday taxi drivers: Do better navigators have larger hippocampi?",
@@ -872,6 +888,25 @@
     "journal_vol": 37,
     "journal_pages_start": 395,
     "journal_pages_stop": 402,
+    "review": false,
+    "link": false
+  },
+  {
+    "work_authors": "Hartung, F., Jamrozik, A., Rosen, M. E., Aguirre, G., Sarwer, D. B., & Chatterjee, A.",
+    "work_year": 2019,
+    "work_title": "Behavioural and neural responses to facial disfigurement",
+    "work_publication_format": "article_in_journal",
+    "work_doi": "10.1038/s41598-019-44408-8",
+    "work_post_date_fake": 35,
+    "work_post_date": "2019-05-29",
+    "pdf": "/assets/pdf/publications/Hartung_Jamrozik_Rosen_Aguirre_Sarwer_Chatterjee_2019_01.pdf",
+    "category": "neuroaesthetics",
+    "journal_title": "Scientific Reports",
+    "journal_advance": false,
+    "journal_preprint": false,
+    "journal_vol": 9,
+    "journal_pages_start": 8021,
+    "journal_pages_stop": 8021,
     "review": false,
     "link": false
   },

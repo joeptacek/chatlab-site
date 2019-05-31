@@ -15,6 +15,15 @@
       <h3><a href="{{ include.pass.url }}" target="_blank">{{ include.pass.title | smartify }}</a></h3>
       <p class="margin-bottom-compact font-large">{{ include.pass.source }}{% if include.pass.sub_source and include.pass.sub_source != "" %} | <span class="sub-source">{{ include.pass.sub_source }}</span>{% endif %}</p>
       <p class="font-large">{{ include.pass.date | date: "%B %e, %Y" }}</p>
+      {% if include.pass.reprints and include.pass.reprints != "" %}
+        {% comment %} TODO: move style attribute to stylesheet {% endcomment %}
+        <p style="color:gray">
+          Additional coverage:
+          {% for reprint in include.pass.reprints %}
+            <a href="{{ reprint.url }}" target="_blank">{{ reprint.source }}</a>{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        </p>
+      {% endif %}
     </header>
   </div>
 </div>

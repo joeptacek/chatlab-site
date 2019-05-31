@@ -40,13 +40,21 @@ key | required | type | format | value(s)
 --- | --- | --- | --- | ---
 title | yes | string ||
 source | yes | string ||
-sub_source* | no | string ||
+sub_source | no | string ||
 date | yes | string | YYYY-MM-DD |
 url | yes unless `archived` is `true` | string ||
 category | yes | string || print, audio, video
 archived | yes | boolean ||
 site_pcfn | yes | boolean ||
 site_chatlab | yes | boolean ||
+reprints | no | array ||
+
+### objects in `reprints` array
+
+key | required | type | format | value(s)
+--- | --- | --- | --- | ---
+source | yes | string ||
+url | yes | string | external URL |
 
 ### notes and conventions for objects in `news` array
 
@@ -56,7 +64,7 @@ site_chatlab | yes | boolean ||
 
 #### `sub_source`
 
-- deprecated in templates
+- deprecated in templates?
 
 ## objects in `publications` array
 
@@ -179,7 +187,7 @@ link_url | yes | absolute file path or external URL ||
 
 #### `journal_issue`
 
-- some journals with online content (e.g., Frontiers, Wiley Interdisciplinary Reviews/WIREs) introduce the concept of an article number within a volume or issue (e.g., Frontiers Volume 10, Article 48; WIREs Volume 10, Issue 3, e1487). the corresponding PDF will (always?) have page numbers beginning with 1 (e.g., 1-11). it seems that the suggestion for citing is to indicate the article number as "page(s)" i.e., disregard actual page numbering in PDF. for Frontiers, i've been indicating the article number as "issue" because they only publish by volume, but perhaps i should convert to "pages." for WIREs, can't indicate article number as "issue" because WIREs is already using actual issue numbers; for now, skipped article number in the citation (indicated PDF pages as "pages") but should probably include article number later.
+- some journals with online content (e.g., Frontiers, Wiley Interdisciplinary Reviews/WIREs, Scientific Reports) introduce the concept of an article number within a volume or issue (e.g., Frontiers Volume 10, Article 48; WIREs Volume 10, Issue 3, e1487). the corresponding PDF will (always?) have page numbers beginning with 1 (e.g., 1-11). it seems that the suggestion for citing is to indicate the article number as "page(s)" i.e., disregard actual page numbering in PDF. for Frontiers, i've been indicating the article number as "issue" because they only publish by volume, but perhaps i should convert to "pages." for WIREs, can't indicate article number as "issue" because WIREs is already using actual issue numbers; for now, skipped article number in the citation (indicated PDF pages as "pages") but should probably include article number later. for Scientific Reports, have started indicating article number as "page(s)."
 
 #### `journal_pages_start`
 
