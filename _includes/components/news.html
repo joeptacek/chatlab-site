@@ -17,7 +17,7 @@
       <p class="font-large">{{ include.pass.date | date: "%B %e, %Y" }}</p>
       {% if include.pass.reprints and include.pass.reprints != "" %}
         {% comment %} TODO: move style attribute to stylesheet {% endcomment %}
-        <p style="color:gray">
+        <p class="font-large" style="color:gray">
           Additional coverage:
           {% for reprint in include.pass.reprints %}
             <a href="{{ reprint.url }}" target="_blank">{{ reprint.source }}</a>{% unless forloop.last %},{% endunless %}
