@@ -8,6 +8,7 @@ sections:
   - Staff
   - Postdoctoral Researchers
   - Student Researchers
+  - Visiting Researchers
   - Lab Alumni
 ---
 {% comment %} TODO: always include visiting researcher / student researcher sections but only display them if active members in that category  {% endcomment %}
@@ -52,6 +53,17 @@ sections:
   <hr />
   {% for person in people_sorted %}
     {% if person.alum == false and person.category == "student_researchers" %}
+      {% include components/person.html pass=person %}
+    {% endif %}
+  {% endfor %}
+</section>
+<section class="card">
+  <header>
+    <h2 id="{{ page.sections[4] | slugify }}" class="section-title">{{ page.sections[4] }}</h2>
+  </header>
+  <hr />
+  {% for person in people_sorted %}
+    {% if person.alum == false and person.category == "visiting_researchers" %}
       {% include components/person.html pass=person %}
     {% endif %}
   {% endfor %}

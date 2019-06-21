@@ -89,20 +89,6 @@
     "alum": false
   },
   {
-    "middle_last_name": "Hayn-Leichsenring",
-    "first_name": "Gregor",
-    "photo": "/assets/img/people/200/gregor.jpg",
-    "suffix": "D.D.S.",
-    "position": "Postdoctoral Researcher",
-    "bio": "I received a D.D.S. degree as well as a B.A. degree in philosophy from the University of Jena. Previously, I performed research in neuroembryology as well as empirical aesthetics, focusing on face attractiveness, beauty in visual abstract artworks, and philosophical aesthetics at the Institute of Anatomy I in Jena. At present, I am a postdoctoral scientist at the University of Pennsylvania working on global image properties and their correlation with neurophysiological activities. I am trying to relate the neuronal responses to landscape paintings, art portraits, and abstract art paintings with their statistical image properties. Special focus is on specific areas of the sensorimotor system and the emotion-valuation system.",
-    "email": "gregor.hayn-leichsenring@uphs.upenn.edu",
-    "website": "https://www.gregor-hayn.com/",
-    "twitter": "https://twitter.com/unter_geher",
-    "instagram": "https://www.instagram.com/unter_geher/",
-    "category": "postdoctoral_researchers",
-    "alum": false
-  },
-  {
     "middle_last_name": "Kenett",
     "first_name": "Yoed",
     "photo": "/assets/img/people/200/yoed.jpg",
@@ -129,6 +115,41 @@
     "alum": false
   },
   {
+    "middle_last_name": "Yuchao",
+    "first_name": "Wang",
+    "photo": "/assets/img/people/200/yuchao.jpg",
+    "position": "Undergraduate Student",
+    "bio": "Yuchao Wang is pursuing his B.A. in cognitive science at Haverford College. He currently conducts thesis research in ChatLab on how the brain responds to literariness in stories. Before this exciting journey in neuroaesthetics, he has researched on the biophysics of peacock feathers as perceived through avian and mammalian vision, which has evolutionary implications. In his free time, he enjoys Bach on Youtube and puppies on Instagram.",
+    "email": "ywang24@haverford.edu",
+    "category": "visiting_researchers",
+    "alum": false
+  },
+  {
+    "middle_last_name": "Nadir",
+    "first_name": "Bilici",
+    "photo": "/assets/img/people/200/nadir.jpg",
+    "position": "Medical Student",
+    "bio": "After studying neurobiology at UC Berkeley, I worked as a product manager developing health & fitness apps in Palo Alto. I am now a fourth year medical student at Perelman School of Medicine and am interested in the intersection of technology and medicine. In the ChatLab, I am researching how implicit biases are shaped by our perception of facial features. Beyond the lab and clinic, I develop mobile apps, teach culinary medicine, and get outside as much as possible to hike, camp, ski, and play frisbee.",
+    "email": "nadir.bilici@pennmedicine.upenn.edu",
+    "category": "student_researchers",
+    "student_category": "medical_students",
+    "alum": false
+  },
+  {
+    "middle_last_name": "Hayn-Leichsenring",
+    "first_name": "Gregor",
+    "photo": "/assets/img/people/200/gregor.jpg",
+    "suffix": "D.D.S.",
+    "position": "Postdoctoral Researcher",
+    "bio": "I received a D.D.S. degree as well as a B.A. degree in philosophy from the University of Jena. Previously, I performed research in neuroembryology as well as empirical aesthetics, focusing on face attractiveness, beauty in visual abstract artworks, and philosophical aesthetics at the Institute of Anatomy I in Jena. At present, I am a postdoctoral scientist at the University of Pennsylvania working on global image properties and their correlation with neurophysiological activities. I am trying to relate the neuronal responses to landscape paintings, art portraits, and abstract art paintings with their statistical image properties. Special focus is on specific areas of the sensorimotor system and the emotion-valuation system.",
+    "email": "gregor.hayn-leichsenring@uphs.upenn.edu",
+    "website": "https://www.gregor-hayn.com/",
+    "twitter": "https://twitter.com/unter_geher",
+    "instagram": "https://www.instagram.com/unter_geher/",
+    "category": "postdoctoral_researchers",
+    "alum": true
+  },
+  {
     "middle_last_name": "Dinh",
     "first_name": "Claire",
     "photo": "/assets/img/people/200/claire.jpg",
@@ -137,7 +158,7 @@
     "email": "dinhc@pennmedicine.upenn.edu",
     "category": "student_researchers",
     "student_category": "graduate_students",
-    "alum": false
+    "alum": true
   },
   {
     "middle_last_name": "Porter",
@@ -148,7 +169,7 @@
     "email": "emilyu@sas.upenn.edu",
     "category": "student_researchers",
     "student_category": "undergraduate_students",
-    "alum": false
+    "alum": true
   },
   {
     "middle_last_name": "Siegel",
