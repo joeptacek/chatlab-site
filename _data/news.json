@@ -1,5 +1,15 @@
 [
   {
+    "title": "Scarring Your Children With The Lion King",
+    "source": "Psychology Today: Brain, Behavior, and Beauty",
+    "date": "2019-08-05",
+    "url": "https://www.psychologytoday.com/us/blog/brain-behavior-and-beauty/201908/scarring-your-children-the-lion-king",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
     "title": "Everyone Wants to Instagram the World’s Most Beautiful Canyon. Should They?",
     "source": "Vox",
     "date": "2019-07-11",
@@ -333,6 +343,16 @@
     "date": "2017-10-08",
     "url": "http://www.buckscountycouriertimes.com/news/local/trip-to-the-beach-sparks-memories-in-dementia-patients/article_b6876bcc-aab9-11e7-b465-cf4a9fd3bbcf.html",
     "category": "print",
+    "archived": false,
+    "site_pcfn": false,
+    "site_chatlab": true
+  },
+  {
+    "title": "The Good, the Bad, and the Ugly of Beauty",
+    "source": "Max Planck Institute for Emprical Aesthetics",
+    "date": "2017-10-24",
+    "url": "https://vimeo.com/246334901",
+    "category": "video",
     "archived": false,
     "site_pcfn": false,
     "site_chatlab": true
