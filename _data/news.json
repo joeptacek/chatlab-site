@@ -1,7 +1,18 @@
 [
   {
+    "title": "Five Insights Into How the Brain Works",
+    "source": "Penn Today",
+    "date": "2019-08-09",
+    "url": "https://penntoday.upenn.edu/news/five-insights-how-brain-works-from-Penn-Center-for-Neuroscience-Society",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
     "title": "Scarring Your Children With The Lion King",
     "source": "Psychology Today: Brain, Behavior, and Beauty",
+    "source_short": "Brain, Behavior, and Beauty",
     "date": "2019-08-05",
     "url": "https://www.psychologytoday.com/us/blog/brain-behavior-and-beauty/201908/scarring-your-children-the-lion-king",
     "category": "print",
@@ -22,6 +33,7 @@
   {
     "title": "Cognitive Enhancement Is Okay, But Wait Until You Graduate",
     "source": "Psychology Today: Brain, Behavior, and Beauty",
+    "source_short": "Brain, Behavior, and Beauty",
     "date": "2019-07-01",
     "url": "https://www.psychologytoday.com/us/blog/brain-behavior-and-beauty/201907/cognitive-enhancement-is-okay-wait-until-you-graduate",
     "category": "print",

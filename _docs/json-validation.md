@@ -40,6 +40,7 @@ key | required | type | format | value(s)
 --- | --- | --- | --- | ---
 title | yes | string ||
 source | yes | string ||
+source_short | no | string ||
 sub_source | no | string ||
 date | yes | string | YYYY-MM-DD |
 url | yes unless `archived` is `true` | string ||
