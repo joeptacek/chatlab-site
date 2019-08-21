@@ -15,12 +15,12 @@ middle_last_name | yes | string ||
 suffix | no | string ||
 position | yes | string ||
 alum | yes | boolean ||
-photo | yes unless `alum` is `true` | string | absolute file path |
+photo | yes unless `alum` is `true` | string | absolute file path [chatlab-site] |
 bio | yes unless `alum` is `true` | string ||
 category | yes | string || lab_director, staff, postdoctoral_researchers, student_researchers, visiting_researchers
 staff_category | yes if `category` is `staff` | string || patient_coordinators, lab_managers
 student_category | yes if `category` is `student_researchers` | string || graduate_students, medical_students, post_baccalaureate_students, undergraduate_students, hs_students, undergraduate_or_hs_students
-cv | no | string | absolute file path or external URL |
+cv | no | string | absolute file path [chatlab-site] or external URL |
 email | no | string | email address |
 website | no | string | external URL |
 twitter | no | string | external URL |
@@ -49,6 +49,7 @@ archived | yes | boolean ||
 site_pcfn | yes | boolean ||
 site_chatlab | yes | boolean ||
 reprints | no | array ||
+highlights_data | no | object ||
 
 ### objects in `reprints` array
 
@@ -56,6 +57,13 @@ key | required | type | format | value(s)
 --- | --- | --- | --- | ---
 source | yes | string ||
 url | yes | string | external URL |
+
+### `highlights_data` object
+
+key | required | type | format | value(s)
+--- | --- | --- | --- | ---
+highlights_rank | yes | number ||
+highlights_photo | yes | string | absolute file path [neuroaesthetics-site] |
 
 ### notes and conventions for objects in `news` array
 
@@ -66,6 +74,10 @@ url | yes | string | external URL |
 #### `sub_source`
 
 - deprecated in templates?
+
+#### `highlights_rank`
+
+- higher rank appears first (easier for prioritizing new additions to highlights)
 
 ## objects in `publications` array
 
@@ -78,7 +90,7 @@ work_publication_format | yes | string || article_in_journal, article_in_edited_
 work_doi | no | string ||
 work_post_date | yes | string | YYYY-MM-DD |
 work_post_date_fake | yes | integer ||
-pdf | no | string | absolute file path |
+pdf | no | string | absolute file path [chatlab-site] |
 category | yes | string || language_and_space, event_representation, neuroaesthetics, neuroethics, miscellaneous
 review | yes | boolean ||
 link | yes | boolen ||
@@ -121,7 +133,7 @@ reviewed_work_author | yes | string ||
 key | required | type | format | value(s)
 --- | --- | --- | --- | ---
 link_name | yes | string ||
-link_url | yes | absolute file path or external URL ||
+link_url | yes | absolute file path [chatlab-site] ||
 
 ### notes and conventions for objects in `publications` array
 

@@ -210,14 +210,18 @@
     "site_chatlab": true
   },
   {
-    "title": "GWS 2018: Buildings, Beauty, and the Brain: A Neuroscience of Architectural Experience",
-    "source": "Global Wellness Summit",
+    "title": "Buildings, Beauty, and the Brain: A Neuroscience of Architectural Experience",
+    "source": "Global Wellness Summit 2018",
     "date": "2018-10-07",
     "url": "https://www.globalwellnesssummit.com/beauty/buildings-beauty-and-brain-neuroscience-of-architecture/",
     "category": "video",
     "archived": false,
     "site_pcfn": true,
-    "site_chatlab": true
+    "site_chatlab": true,
+    "highlights_data": {
+      "highlights_rank": 4,
+      "highlights_photo": "/assets/img/highlights/ac-gws.jpg"
+    }
   },
   {
     "title": "Why We Binge",
@@ -361,13 +365,17 @@
   },
   {
     "title": "The Good, the Bad, and the Ugly of Beauty",
-    "source": "Max Planck Institute for Emprical Aesthetics",
+    "source": "Max Planck Institute",
     "date": "2017-10-24",
     "url": "https://vimeo.com/246334901",
     "category": "video",
     "archived": false,
-    "site_pcfn": false,
-    "site_chatlab": true
+    "site_pcfn": true,
+    "site_chatlab": true,
+    "highlights_data": {
+      "highlights_rank": 5,
+      "highlights_photo": "/assets/img/highlights/ac-mp.jpg"
+    }
   },
   {
     "title": "The Best Books on the Neuroscience of Aesthetics Recommended by Anjan Chatterjee",
@@ -470,14 +478,18 @@
     "site_chatlab": true
   },
   {
-    "title": "TEDMED 2015: How Your Brain Decides What Is Beautiful",
-    "source": "TEDMED",
+    "title": "How Your Brain Decides What Is Beautiful",
+    "source": "TEDMED 2015",
     "date": "2016-12-02",
     "url": "https://www.ted.com/talks/anjan_chatterjee_how_your_brain_decides_what_is_beautiful",
     "category": "video",
     "archived": false,
-    "site_pcfn": false,
-    "site_chatlab": true
+    "site_pcfn": true,
+    "site_chatlab": true,
+    "highlights_data": {
+      "highlights_rank": 3,
+      "highlights_photo": "/assets/img/highlights/ac-ted.jpg"
+    }
   },
   {
     "title": "Neurologists Study Beauty and Aesthetics",
@@ -500,7 +512,7 @@
     "site_chatlab": true
   },
   {
-    "title": "The Aesthetic Brain (Book Review)",
+    "title": "The Aesthetic Brain [Book Review]",
     "source": "BioLogos",
     "date": "2016-09-27",
     "url": "http://biologos.org/blogs/jim-stump-faith-and-science-seeking-understanding/the-aesthetic-brain-book-review",
@@ -580,14 +592,18 @@
     "site_chatlab": true
   },
   {
-    "title": "Interact 2015: The Neuroscience of Aesthetics",
-    "source": "Interact",
+    "title": "The Neuroscience of Aesthetics",
+    "source": "Interact 2015",
     "date": "2015-10-21",
     "url": "https://www.youtube.com/watch?v=NhT5-ufKVW8",
     "category": "video",
     "archived": false,
-    "site_pcfn": false,
-    "site_chatlab": true
+    "site_pcfn": true,
+    "site_chatlab": true,
+    "highlights_data": {
+      "highlights_rank": 1,
+      "highlights_photo": "/assets/img/highlights/ac-interact.jpg"
+    }
   },
   {
     "title": "Anjan Chatterjee Interview at #interactLDN 2015",
@@ -600,7 +616,7 @@
     "site_chatlab": true
   },
   {
-    "title": "The Aesthetic Brain (Book Review)",
+    "title": "The Aesthetic Brain [Book Review]",
     "source": "The Journal of Clinical Psychiatry",
     "date": "2015-10-01",
     "url": "http://www.psychiatrist.com/JCP/article/Pages/2015/v76n10/v76n1013.aspx",
@@ -660,14 +676,18 @@
     "site_chatlab": true
   },
   {
-    "title": "CNS 2015: The Neuroaesthetics of Aesthetics and Art",
-    "source": "CNS Blog",
+    "title": "The Neuroscience of Aesthetics and Art",
+    "source": "CNS 2015",
     "date": "2015-04-13",
     "url": "https://www.cogneurosociety.org/cns2015_videos/",
     "category": "video",
     "archived": false,
-    "site_pcfn": false,
-    "site_chatlab": true
+    "site_pcfn": true,
+    "site_chatlab": true,
+    "highlights_data": {
+      "highlights_rank": 2,
+      "highlights_photo": "/assets/img/highlights/ac-cns.jpg"
+    }
   },
   {
     "title": "My Q and A With Cognitive Neuroscientist Anjan Chatterjee",
@@ -720,8 +740,8 @@
     "site_chatlab": true
   },
   {
-    "title": "Cynthia Pannucci: Probing the Common Ground of Art and Science",
-    "source": "Psychology Today",
+    "title": "Probing the Common Ground of Art and Science",
+    "source": "Psychology Today: Sensoria",
     "date": "2014-11-04",
     "url": "http://www.psychologytoday.com/blog/sensoria/201411/cynthia-pannucci",
     "category": "print",
@@ -820,7 +840,7 @@
     "site_chatlab": true
   },
   {
-    "title": "Metaphors Conference: The Neuroscience of Relational Thinking",
+    "title": "Metaphors and the Mind: The Neuroscience of Relational Thinking",
     "source": "Emory Center for Mind, Brain, and Culture",
     "date": "2012-03-08",
     "url": "  https://center-for-mind-brain-and-culture.simplecast.com/episodes/metaphors-conference-2-of-5-anjan-51064e7a",
@@ -980,7 +1000,7 @@
     "site_chatlab": true
   },
   {
-    "title": "The Ethics of Enhancement (Part 1)",
+    "title": "The Ethics of Enhancement [Part 1]",
     "source": "Penn Center for Neuroscience & Society",
     "date": "2010-01-05",
     "url": "https://youtu.be/8nrdAFU3xpw",
@@ -990,7 +1010,7 @@
     "site_chatlab": true
   },
   {
-    "title": "The Ethics of Enhancement (Part 2)",
+    "title": "The Ethics of Enhancement [Part 2]",
     "source": "Penn Center for Neuroscience & Society",
     "date": "2010-01-05",
     "url": "https://youtu.be/Mb6mhm9w6qA",
