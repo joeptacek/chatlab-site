@@ -4,9 +4,9 @@ title: Research
 description: Learn more about what we study, and view our recent publications.
 svg: false
 sections:
+  - Neuroaesthetics
   - Language and Space
   - Event Representation
-  - Neuroaesthetics
   - Neuroethics
   - Miscellaneous
 ---
@@ -14,6 +14,22 @@ sections:
 <section class="toggle-panel tp-type-drawer-incremental tp-button-compact card">
   <header class="tp-header-alt">
     <h2 id="{{ page.sections[0] | slugify }}" class="section-title">{{ page.sections[0] }}</h2>
+    <p class="font-large">
+      Neuroaesthetics refers to the role of the brain in evaluating visual stimuli and their aesthetic appeal. Our research ranges from aesthetic choices of brain-injured individuals to aesthetic preferences in everyday life (in architecture, art, and facial beauty).
+    </p>
+  </header>
+  <hr />
+  <div class="tp-block toggle-target">
+    {% for pub in pubs_sorted %}
+      {% if pub.category == "neuroaesthetics" %}
+        {% include components/publication.html pass=pub %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+<section class="toggle-panel tp-type-drawer-incremental tp-button-compact card">
+  <header class="tp-header-alt">
+    <h2 id="{{ page.sections[1] | slugify }}" class="section-title">{{ page.sections[1] }}</h2>
     <p class="font-large">
       The lab’s research on language and space is concerned with a variety of concepts. Our primary interests lie in spatial and gestural representations in language, as well as in the processing of metaphoric and figurative language in patients and controls.
     </p>
@@ -29,7 +45,7 @@ sections:
 </section>
 <section class="toggle-panel tp-type-drawer-incremental tp-button-compact card">
   <header class="tp-header-alt">
-    <h2 id="{{ page.sections[1] | slugify }}" class="section-title">{{ page.sections[1] }}</h2>
+    <h2 id="{{ page.sections[2] | slugify }}" class="section-title">{{ page.sections[2] }}</h2>
     <p class="font-large">
       Our examination of event representation focuses on how humans visualize and process moving events and infer causality within these events, as well as focusing on the neural bases of processing action-based information in general.
     </p>
@@ -38,22 +54,6 @@ sections:
   <div class="tp-block toggle-target">
     {% for pub in pubs_sorted %}
       {% if pub.category == "event_representation" %}
-        {% include components/publication.html pass=pub %}
-      {% endif %}
-    {% endfor %}
-  </div>
-</section>
-<section class="toggle-panel tp-type-drawer-incremental tp-button-compact card">
-  <header class="tp-header-alt">
-    <h2 id="{{ page.sections[2] | slugify }}" class="section-title">{{ page.sections[2] }}</h2>
-    <p class="font-large">
-      Neuroaesthetics refers to the role of the brain in evaluating visual stimuli and their aesthetic appeal. Our research ranges from aesthetic choices of brain-injured individuals to aesthetic preferences in everyday life (in architecture, art, and facial beauty).
-    </p>
-  </header>
-  <hr />
-  <div class="tp-block toggle-target">
-    {% for pub in pubs_sorted %}
-      {% if pub.category == "neuroaesthetics" %}
         {% include components/publication.html pass=pub %}
       {% endif %}
     {% endfor %}
