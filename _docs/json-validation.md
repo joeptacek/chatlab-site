@@ -190,10 +190,10 @@ link_url | yes | absolute file path [chatlab-site] ||
 
 #### `journal_preprint`
 
-- distinct from an advance. for posted works (e.g., on bioRxiv) that aren't necessarily in process to appear in a publication. if the work is every published, eventually cite that version instead, providing info for vol / issue / pages.
+- distinct from an advance. for posted works (e.g., on bioRxiv, PsyArXiv) that aren't necessarily in process to appear in a publication. if the work is ever published, eventually cite that version instead, providing info for vol / issue / pages.
 - works in this category are considered unpublished? generally not (never?) peer reviewed.
 - besides works on bioRxiv, what else counts as a preprint? any publically posted work?
-- some (?) publishers don't accept works that have already been posted elsewhere. ideally, cite the final published version once this appears.
+- some (?) publishers don't accept works that have already been posted elsewhere.
 - ignored if journal_advance is `true`
 
 #### `journal_vol`
