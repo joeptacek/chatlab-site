@@ -661,6 +661,22 @@
     "link": false
   },
   {
+    "work_authors": "Weisberg, S. M., & Chatterjee, A.",
+    "work_year": 2019,
+    "work_title": "Reference frames in spatial communication for navigation and sports: An empirical study in ultimate frisbee players",
+    "work_publication_format": "article_in_journal",
+    "work_doi": "10.31234/osf.io/un2vr",
+    "work_post_date_fake": 36,
+    "work_post_date": "2019-08-19",
+    "pdf": "/assets/pdf/publications/Weisberg_Chatterjee_2019_01.pdf",
+    "category": "language_and_space",
+    "journal_title": "PsyArXiv",
+    "journal_advance": false,
+    "journal_preprint": true,
+    "review": false,
+    "link": false
+  },
+  {
     "work_authors": "Özer, D., Göksun, T., & Chatterjee, A.",
     "work_year": 2019,
     "work_title": "Differential roles of gestures on spatial language in neurotypical elderly adults and individuals with focal brain injury",
