@@ -261,6 +261,26 @@ link_url | yes | absolute file path [chatlab-site] ||
 
 #### `link_url`
 
+## objects in `resources` array [docs for neuroaesthetics-site data]
+
+key | required | type | format | value(s)
+--- | --- | --- | --- | ---
+title | yes | string ||
+img | yes | absolute file path [neuroaesthetics-site] ||
+description | yes | string ||
+links | yes | array ||
+
+### objects in `links` array
+
+key | required | type | format | value(s)
+--- | --- | --- | --- | ---
+name | yes | string ||
+url | yes | string | external URL [or absolute file path?] |
+
+### notes and conventions for objects in `resources` array
+
+- `resources.json` is stored with neuroaesthetics-site (thus far the only JSON stored locally to that project)
+
 ## TODO
 * find work_post_date for all pubs
 * fill in notes for publications
