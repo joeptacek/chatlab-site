@@ -1157,7 +1157,9 @@
     "journal_pages_start": 651,
     "journal_pages_stop": 664,
     "review": false,
-    "link": false
+    "link": true,
+    "link_name": "Download the supplementary materials",
+    "link_url": "/assets/downloads/Cardillo-BRM-2010.zip"
   },
   {
     "work_authors": "Kranjec, A., Lehet, M., Bromberger, B., & Chatterjee, A.",
