@@ -1,5 +1,19 @@
 [
   {
+    "title": "Current Progress in the Neurofields: Neuroaesthetics",
+    "source": "Penn Center for Neuroscience & Society",
+    "date": "2019-09-07",
+    "url": "https://youtu.be/PxRduVMDymI",
+    "category": "video",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true,
+    "highlights_data": {
+      "highlights_rank": 7,
+      "highlights_photo": "/assets/img/highlights/ac-neurofields.jpg"
+    }
+  },
+  {
     "title": "Eye of the Beholder",
     "source": "The Pennsylvania Gazette",
     "date": "2019-08-27",
@@ -289,7 +303,7 @@
     "site_chatlab": true
   },
   {
-    "title": "Interview with Anjan Chatterjee",
+    "title": "Interview With Anjan Chatterjee",
     "source": "Christopher Maute Interviews",
     "date": "2018-04-29",
     "url": "https://www.youtube.com/watch?v=uXKQt-2mAWs",
@@ -389,17 +403,17 @@
     "site_chatlab": true
   },
   {
-    "title": "Trip to the Beach Sparks Memories in Dementia Patients",
-    "source": "Bucks County Courier Times",
-    "date": "2017-10-08",
-    "url": "http://www.buckscountycouriertimes.com/news/local/trip-to-the-beach-sparks-memories-in-dementia-patients/article_b6876bcc-aab9-11e7-b465-cf4a9fd3bbcf.html",
-    "category": "print",
+    "title": "How Your Brain Decides What Is Beautiful",
+    "source": "Global Wellness Summit 2017",
+    "date": "2017-10-31",
+    "url": "https://youtu.be/EMYS0_RXbcY",
+    "category": "video",
     "archived": false,
-    "site_pcfn": false,
+    "site_pcfn": true,
     "site_chatlab": true
   },
   {
-    "title": "The Good, the Bad, and the Ugly of Beauty",
+    "title": "Fechner Lecture: The Good, the Bad, and the Ugly of Beauty",
     "source": "Max Planck Institute",
     "date": "2017-10-24",
     "url": "https://vimeo.com/246334901",
@@ -411,6 +425,16 @@
       "highlights_rank": 5,
       "highlights_photo": "/assets/img/highlights/ac-mp.jpg"
     }
+  },
+  {
+    "title": "Trip to the Beach Sparks Memories in Dementia Patients",
+    "source": "Bucks County Courier Times",
+    "date": "2017-10-08",
+    "url": "http://www.buckscountycouriertimes.com/news/local/trip-to-the-beach-sparks-memories-in-dementia-patients/article_b6876bcc-aab9-11e7-b465-cf4a9fd3bbcf.html",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": false,
+    "site_chatlab": true
   },
   {
     "title": "The Best Books on the Neuroscience of Aesthetics Recommended by Anjan Chatterjee",
@@ -443,13 +467,24 @@
     "site_chatlab": true
   },
   {
-    "title": "Buildings, Beauty, and the Brain: Q & A with Anjan Chatterjee",
+    "title": "Buildings, Beauty, and the Brain: Q & A With Anjan Chatterjee",
     "source": "CNS Blog",
     "date": "2017-06-15",
     "url": "https://www.cogneurosociety.org/buildings-beauty-and-the-brain-qa-with-anjan-chatterjee",
     "category": "print",
     "archived": false,
     "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
+    "title": "Some Thoughts on Embodiment and Abstraction",
+    "source": "Rovereto Workshop on Concepts, Actions, and Objects 2017",
+    "source_short": "CAOs 2017",
+    "date": "2017-05-05",
+    "url": "https://youtu.be/1vpsWN10Kws",
+    "category": "video",
+    "archived": false,
+    "site_pcfn": false,
     "site_chatlab": true
   },
   {
@@ -525,6 +560,16 @@
       "highlights_rank": 3,
       "highlights_photo": "/assets/img/highlights/ac-ted.jpg"
     }
+  },
+  {
+    "title": "Interview With Anjan Chatterjee",
+    "source": "Asian Society for Architectural Psychology",
+    "date": "2016-12-01",
+    "url": "https://youtu.be/mr96zzeTTnI",
+    "category": "video",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
   },
   {
     "title": "Neurologists Study Beauty and Aesthetics",
@@ -815,11 +860,31 @@
     "site_chatlab": true
   },
   {
+    "title": "The Aesthetic Brain: How We Evolved to Desire Beauty and Enjoy Art",
+    "source": "Penn Center for Neuroscience & Society",
+    "date": "2014-02-06",
+    "url": "https://youtu.be/PJLRO2Peb4U",
+    "category": "video",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
     "title": "In the Brain of the Beholder",
     "source": "The Economist",
     "date": "2013-12-25",
     "url": "https://www.economist.com/blogs/prospero/2013/12/why-we-find-things-beautiful",
     "category": "audio",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
+    "title": "Warburg Symposium: Neuroaesthetics",
+    "source": "The Helix Center",
+    "date": "2013-10-12",
+    "url": "https://youtu.be/11t4toF0sN0",
+    "category": "video",
     "archived": false,
     "site_pcfn": true,
     "site_chatlab": true
@@ -872,6 +937,16 @@
     "category": "audio",
     "archived": false,
     "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
+    "title": "Space, Time and Causality: Some Neural Observations",
+    "source": "CogSci 2011",
+    "date": "2011-07-21",
+    "url": "https://youtu.be/IlPUMmwBC2o",
+    "category": "video",
+    "archived": false,
+    "site_pcfn": false,
     "site_chatlab": true
   },
   {
@@ -1015,20 +1090,20 @@
     "site_chatlab": true
   },
   {
-    "title": "The Ethics of Enhancement [Part 1]",
+    "title": "A Clinician Looks at Enhancement",
     "source": "Penn Center for Neuroscience & Society",
-    "date": "2010-01-05",
-    "url": "https://youtu.be/8nrdAFU3xpw",
+    "date": "2010-02-01",
+    "url": "https://youtu.be/n7oJdIpkx90",
     "category": "video",
     "archived": false,
     "site_pcfn": false,
     "site_chatlab": true
   },
   {
-    "title": "The Ethics of Enhancement [Part 2]",
+    "title": "The Ethics of Enhancement",
     "source": "Penn Center for Neuroscience & Society",
     "date": "2010-01-05",
-    "url": "https://youtu.be/Mb6mhm9w6qA",
+    "url": "https://youtu.be/G6Su4d3WUY4",
     "category": "video",
     "archived": false,
     "site_pcfn": false,
@@ -1143,7 +1218,7 @@
     "archived": true,
     "site_pcfn": true,
     "site_chatlab": true
-  },    
+  },
   {
     "title": "Anjan Chatterjee on Neuroethics, Cosmetic Neurology, and Neuromarketing",
     "source": "Neurons Inc",
