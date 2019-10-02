@@ -1,5 +1,15 @@
 [
   {
+    "title": "This Is Your Brain on Euphoria",
+    "source": "Playboy",
+    "date": "2019-09-17",
+    "url": "https://www.playboy.com/read/neuroaesthetics-rising",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
     "title": "Are You Moved by Beauty?",
     "source": "Psychology Today: Brain, Behavior, and Beauty",
     "source_short": "Brain, Behavior, and Beauty",
@@ -1297,7 +1307,7 @@
     "site_chatlab": true
   },
   {
-    "title": "Hey, Ref! How Do You Read it? Scoring World Cup Bias",
+    "title": "Hey, Ref! How Do You Read It? Scoring World Cup Bias",
     "source": "The Philadelphia Inquirer",
     "date": "2010-07-12",
     "category": "print",
