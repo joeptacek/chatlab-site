@@ -26,21 +26,6 @@
     "alum": false
   },
   {
-    "middle_last_name": "Weisberg",
-    "first_name": "Steve",
-    "photo": "/assets/img/people/200/steve.jpg",
-    "suffix": "Ph.D.",
-    "position": "Postdoctoral Researcher",
-    "bio": "My research explores how people navigate. As a graduate student at Temple University, I conducted behavioral experiments in virtual environments to determine what makes some people navigational experts and others constantly lost. At Penn, I will incorporate patient and neuroimaging techniques to pursue questions at the intersection of language and navigation. Understanding how spatial and linguistic representations differ will hopefully provide windows to treatment for those with navigational deficits.",
-    "cv": "https://smweis.files.wordpress.com/2011/11/weisberg_cv_living.pdf",
-    "email": "stweis@pennmedicine.upenn.edu",
-    "website": "https://stevenmweisberg.com",
-    "twitter": "https://twitter.com/3chordwonder",
-    "github": "https://github.com/smweis",
-    "category": "postdoctoral_researchers",
-    "alum": false
-  },
-  {
     "middle_last_name": "Humphries",
     "first_name": "Stacey",
     "photo": "/assets/img/people/200/stacey.jpg",
@@ -121,7 +106,19 @@
     "position": "Undergraduate Student",
     "bio": "Yuchao Wang is pursuing his B.A. in cognitive science at Haverford College. He currently conducts thesis research in ChatLab on how the brain responds to literariness in stories. Before this exciting journey in neuroaesthetics, he has researched on the biophysics of peacock feathers as perceived through avian and mammalian vision, which has evolutionary implications. In his free time, he enjoys Bach on Youtube and puppies on Instagram.",
     "email": "ywang24@haverford.edu",
-    "category": "visiting_researchers",
+    "category": "student_researchers",
+    "student_category": "undergraduate_students",
+    "alum": false
+  },
+  {
+    "middle_last_name": "Siegel",
+    "first_name": "Charlie",
+    "photo": "/assets/img/people/200/charlie.jpg?ver=2",
+    "position": "Undergraduate Student",
+    "bio": "I am a Senior at Haverford college, pursuing a B.A in Psychology along with a minor in Neuroscience. My past experiences stem from an interest in medicine and healthcare. Previously, at the Johns Hopkins Hospital, I worked as a research assistant in the Neurosciences Critical Care Unit, where I explored the challenges of extubating patients with acute neurological injury who are often intubated for airway protection. My curiosity in how clinical neuroscience interfaces cognitive science has informed my work here at ChatLab, where I am studying the relationship between neuroaesthetics and cognitive enhancement as part of my Senior Thesis. More specifically, I am interested in how incidental social information can impact our moral attitudes about cognitive enhancement. After completing my undergraduate degree, I will be attending Sidney Kimmel Medical School at Jefferson University, where I will also be exploring my research interests in health policy as part of the curriculum’s population health critical inquiry track.",
+    "email": "csiegel@haverford.edu",
+    "category": "student_researchers",
+    "student_category": "undergraduate_students",
     "alum": false
   },
   {
@@ -134,6 +131,21 @@
     "category": "student_researchers",
     "student_category": "medical_students",
     "alum": false
+  },
+  {
+    "middle_last_name": "Weisberg",
+    "first_name": "Steve",
+    "photo": "/assets/img/people/200/steve.jpg",
+    "suffix": "Ph.D.",
+    "position": "Postdoctoral Researcher",
+    "bio": "My research explores how people navigate. As a graduate student at Temple University, I conducted behavioral experiments in virtual environments to determine what makes some people navigational experts and others constantly lost. At Penn, I will incorporate patient and neuroimaging techniques to pursue questions at the intersection of language and navigation. Understanding how spatial and linguistic representations differ will hopefully provide windows to treatment for those with navigational deficits.",
+    "cv": "https://smweis.files.wordpress.com/2011/11/weisberg_cv_living.pdf",
+    "email": "stweis@pennmedicine.upenn.edu",
+    "website": "https://stevenmweisberg.com",
+    "twitter": "https://twitter.com/3chordwonder",
+    "github": "https://github.com/smweis",
+    "category": "postdoctoral_researchers",
+    "alum": true
   },
   {
     "middle_last_name": "Hayn-Leichsenring",
@@ -167,17 +179,6 @@
     "position": "Undergraduate Student",
     "bio": "Kelly Porter is a junior at the University of Pennsylvania studying criminology, neuroscience, and Africana studies. She hopes to attend law school and to provide resources for mental health to individuals within the criminal justice system. Outside of class, she is involved in the Kappa Iota chapter of Sigma Kappa, peer academic advising, and Project HEAL. She enjoys traveling, reading, and hanging with her friends.",
     "email": "emilyu@sas.upenn.edu",
-    "category": "student_researchers",
-    "student_category": "undergraduate_students",
-    "alum": true
-  },
-  {
-    "middle_last_name": "Siegel",
-    "first_name": "Charlie",
-    "photo": "/assets/img/people/200/charlie.jpg",
-    "position": "Undergraduate Student",
-    "bio": "I am a Biology and Psychology double major with a Neuroscience minor at the Haverford College. My past experiences stem from an interest in medicine and healthcare. Previously, at the Johns Hopkins Hospital I worked as a research assistant in the Neurosciences Critical Care Unit, where I explored the challenges of extubating patients with acute neurological injury who are often intubated for airway protection. My curiosity in how the natural and social sciences intersect have shaped my research interests which principally lie in cognitive neuroscience. More precisely, I am interested in how neuroscientific perspectives can better explain an individual’s process of decision-making and reasoning. At Penn, I am assisting the post-docs with a variety of different projects before conducting my own research in the ChatLab for my honors thesis. After completing my undergraduate degree, I plan to attend medical school and pursue a career in neurology/psychiatry.",
-    "email": "csiegel@haverford.edu",
     "category": "student_researchers",
     "student_category": "undergraduate_students",
     "alum": true

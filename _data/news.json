@@ -881,6 +881,16 @@
     "site_chatlab": true
   },
   {
+    "title": "Neuroaesthetics: Researchers Unravel the Biology of Beauty and Art",
+    "source": "The Scientist",
+    "date": "2014-05-01",
+    "url": "https://www.the-scientist.com/cover-story/neuroaesthetics-37572",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
     "title": "The Aesthetic Brain: How We Evolved to Desire Beauty and Enjoy Art",
     "source": "Penn Center for Neuroscience & Society",
     "date": "2014-02-06",
@@ -1220,6 +1230,16 @@
     "site_pcfn": false,
     "site_chatlab": true
   },
+  {
+    "title": "\"Cosmetic Neurology\" and the Problem of Pain",
+    "source": "Dana Foundation: Cerebrum",
+    "date": "2007-07-30",
+    "url": "https://www.dana.org/article/cosmetic-neurology-and-the-problem-of-pain/",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": false,
+    "site_chatlab": true
+  },  
   {
     "title": "The Aesthetic Brain [Book Review]",
     "source": "BioLogos",

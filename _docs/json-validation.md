@@ -187,6 +187,7 @@ link_url | yes | absolute file path [chatlab-site] ||
 - for works in process to appear in a publication. eventually cite the published version once this is available, providing info for vol / issue / pages.
 - works in this category are considered published? generally (always?) these works are peer-reviewed, available online with the publisher.
 - publishers use various names for these editions (e.g., Online First), but it makes sense to be consistent in citing all of these as Advance Online Publication.
+- include works that are "in press" including works in the "pre-proof" stage?
 
 #### `journal_preprint`
 

@@ -680,6 +680,22 @@
     "link": false
   },
   {
+    "work_authors": "Humphries, S., Klooster, N., Cardillo, E. R., Weintraub, D., Rick, J., & Chatterjee, A.",
+    "work_year": 2019,
+    "work_title": "From action to abstraction: The sensorimotor grounding of metaphor in Parkinson’s disease",
+    "work_publication_format": "article_in_journal",
+    "work_doi": "10.1016/j.cortex.2019.09.005",
+    "work_post_date_fake": 38,
+    "work_post_date": "2019-10-02",
+    "pdf": "/assets/pdf/publications/Humphries_Klooster_Cardillo_Weintraub_Rick_Chatterjee_2019_01.pdf",
+    "category": "language_and_space",
+    "journal_title": "Cortex",
+    "journal_advance": true,
+    "journal_preprint": false,
+    "review": false,
+    "link": false
+  },
+  {
     "work_authors": "Weisberg, S. M., & Chatterjee, A.",
     "work_year": 2019,
     "work_title": "Reference frames in spatial communication for navigation and sports: An empirical study in ultimate frisbee players",
