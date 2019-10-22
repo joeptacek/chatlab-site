@@ -1,5 +1,27 @@
 [
   {
+    "title": "What is Philosophy of the Arts?",
+    "source": "Closer to Truth",
+    "source_short": "Brain, Behavior, and Beauty",
+    "date": "2019-10-17",
+    "url": "https://www.closertotruth.com/interviews/77997",
+    "category": "video",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
+    "title": "Does Impaired Movement Impair Thinking About Movement?",
+    "source": "Psychology Today: Brain, Behavior, and Beauty",
+    "source_short": "Brain, Behavior, and Beauty",
+    "date": "2019-10-17",
+    "url": "https://www.psychologytoday.com/us/blog/brain-behavior-and-beauty/201910/does-impaired-movement-impair-thinking-about-movement",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
     "title": "Are You Moved by Beauty?",
     "source": "Psychology Today: Brain, Behavior, and Beauty",
     "source_short": "Brain, Behavior, and Beauty",
@@ -1239,7 +1261,7 @@
     "archived": false,
     "site_pcfn": false,
     "site_chatlab": true
-  },  
+  },
   {
     "title": "The Aesthetic Brain [Book Review]",
     "source": "BioLogos",

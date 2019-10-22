@@ -48,7 +48,7 @@ category | yes | string || print, audio, video
 archived | yes | boolean ||
 site_pcfn | yes | boolean ||
 site_chatlab | yes | boolean ||
-reprints | no | array ||
+reprints | no | array || info about `reprints` array below
 highlights_data | no | object ||
 
 ### objects in `reprints` array
@@ -269,18 +269,28 @@ key | required | type | format | value(s)
 title | yes | string ||
 img | yes | absolute file path [neuroaesthetics-site] ||
 description | yes | string ||
-links | yes | array ||
+sources | yes | array || info about `sources` array below
+
+### objects in `sources` array
+
+key | required | type | format | value(s)
+--- | --- | --- | --- | ---
+title | yes | string ||
+links | yes | array || info about `links` array below
 
 ### objects in `links` array
 
 key | required | type | format | value(s)
 --- | --- | --- | --- | ---
-name | yes | string ||
+title | yes | string ||
 url | yes | string | external URL [or absolute file path?] |
 
 ### notes and conventions for objects in `resources` array
 
 - `resources.json` is stored with neuroaesthetics-site (thus far the only JSON stored locally to that project)
+- each object in `resources` corresponds to a "high-level" resource
+- `resources.sources` includes one or multiple sources for the "high-level" resource (e.g., publications, websites)
+- `sources.links` includes one or more links per source (e.g., websites, publications, downloads)
 
 ## TODO
 * find work_post_date for all pubs
