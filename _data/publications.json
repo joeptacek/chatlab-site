@@ -917,7 +917,9 @@
     "journal_pages_start": 316,
     "journal_pages_stop": 331,
     "review": false,
-    "link": false
+    "link": true,
+    "link_name": "Download the supplementary materials",
+    "link_url": "/assets/downloads/Metaphor_2016.zip"
   },
   {
     "work_authors": "Jamrozik, A., McQuire, M., Cardillo, E. R., & Chatterjee, A.",
