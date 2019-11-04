@@ -27,7 +27,11 @@
     "category": "video",
     "archived": false,
     "site_pcfn": true,
-    "site_chatlab": true
+    "site_chatlab": true,
+    "highlights_data": {
+      "highlights_rank": 8,
+      "highlights_photo": "/assets/img/highlights/ac-truth.jpg"
+    }
   },
   {
     "title": "Does Impaired Movement Impair Thinking About Movement?",
