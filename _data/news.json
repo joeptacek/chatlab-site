@@ -1,5 +1,19 @@
 [
   {
+    "title": "Beauty, Explained",
+    "source": "Vox: Explained",
+    "date": "2019-11-21",
+    "url": "https://www.netflix.com/watch/81062200",
+    "category": "video",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true,
+    "highlights_data": {
+      "highlights_rank": 9,
+      "highlights_photo": "/assets/img/highlights/ac-vox.jpg"
+    }
+  },
+  {
     "title": "Beauty Is in the Hand and Not the Eyes of the Beholder",
     "source": "Science X",
     "date": "2019-11-11",
