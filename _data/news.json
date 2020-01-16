@@ -1,5 +1,26 @@
 [
   {
+    "title": "Why Do People Enjoy Meaningless Splatters of Paint?",
+    "source": "Psychology Today: Brain, Behavior, and Beauty",
+    "source_short": "Brain, Behavior, and Beauty",
+    "date": "2020-01-03",
+    "url": "https://www.psychologytoday.com/us/blog/brain-behavior-and-beauty/202001/why-do-people-enjoy-meaningless-splatters-paint",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
+    "title": "Neuroscience and Beauty: How to Create an Immediate Connection With Your Audience",
+    "source": "MarTech Today",
+    "date": "2019-12-06",
+    "url": "https://martechtoday.com/neuroscience-and-beauty-how-to-create-an-immediate-connection-with-your-audience-237278",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
     "title": "Beauty, Explained",
     "source": "Vox: Explained",
     "date": "2019-11-21",
@@ -21,6 +42,17 @@
     "category": "print",
     "archived": false,
     "site_pcfn": true,
+    "site_chatlab": true
+  },
+  {
+    "title": "GPS in the Brain",
+    "source": "Psychology Today: Brain, Behavior, and Beauty",
+    "source_short": "Brain, Behavior, and Beauty",
+    "date": "2019-11-06",
+    "url": "https://www.psychologytoday.com/us/blog/brain-behavior-and-beauty/201911/gps-in-the-brain",
+    "category": "print",
+    "archived": false,
+    "site_pcfn": false,
     "site_chatlab": true
   },
   {
