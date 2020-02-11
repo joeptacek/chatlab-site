@@ -1,0 +1,14 @@
+# redirects for old pages
+Redirect 301 /chatterjee/index.html https://neuroaesthetics.med.upenn.edu/chatlab.html
+Redirect 301 /chatterjee/people.html https://neuroaesthetics.med.upenn.edu/chatlab.html
+Redirect 301 /chatterjee/research.html https://neuroaesthetics.med.upenn.edu/chatlab.html
+Redirect 301 /chatterjee/news.html https://neuroaesthetics.med.upenn.edu/chatlab.html
+Redirect 301 /chatterjee/contact.html https://neuroaesthetics.med.upenn.edu/chatlab.html
+
+# redirects for critical assets
+Redirect 301 /chatterjee/assets/pdf/icf/ https://neuroaesthetics.med.upenn.edu/assets/pdf/icf/
+Redirect 301 /chatterjee/assets/pdf/cv/ https://neuroaesthetics.med.upenn.edu/assets/pdf/cv/
+Redirect 301 /chatterjee/assets/downloads/ https://neuroaesthetics.med.upenn.edu/assets/downloads/
+
+# custom error
+ErrorDocument 404 /chatterjee/404.html

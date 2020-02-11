@@ -1,0 +1,41 @@
+---
+title: Page not found
+---
+<!doctype html>
+<html class="basic" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ page.title | append: " | " | append: site.title }}</title>
+
+    <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}">
+
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans">
+
+    {% if site.analytics %}{% include plugins/analytics.html %}{% endif %}
+  </head>
+  <body class="basic">
+    <main class="basic">
+      <div id="page-content" class="basic">
+        <section class="card--img">
+          <div style="background-image: url({{ '/assets/img/backgrounds/angles.jpg' | prepend: site.baseurl }} )">
+            <!-- background image -->
+          </div>
+          <div>
+            <p>
+              ChatLab has a new website at the <b>Penn Center for Neuroaesthetics</b>!
+            </p>
+            <p>
+              <a href="https://neuroaesthetics.med.upenn.edu/chatlab.html" target="_blank">
+                Go to ChatLab @ PCfN →
+              </a>
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
